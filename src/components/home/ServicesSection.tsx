@@ -2,67 +2,107 @@
 
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 const serviceCards = [
     {
         title: "Carpet Cleaning",
-        description: "Professional deep cleaning for all types of carpets, removing stains and allergens.",
-        image: "/assets/images/service-carpet.jpg",
-        href: "/carpet-cleaning",
+        description: "See our qualified residential and commercial carpet cleaners for effective dirt removal on carpet and rugs and specialist stain removal for a range of spot stains.",
+        image: "/assets/images/Carpet Cleaning.png",
     },
     {
         title: "Upholstery Cleaning",
-        description: "Specialized care for your furniture, restoring its beauty and extending its life.",
-        image: "/assets/images/service-upholstery.jpg",
-        href: "/upholstery-cleaning",
+        description: "Professional upholstery cleaning and mattress cleaning will give your home a new lease of life. And our team can get your car upholstery looking like new as well.",
+        image: "/assets/images/Upholstery Cleaning.png",
     },
     {
         title: "Flood Restoration",
-        description: "24/7 emergency response for water damage, minimizing impact and restoring your space.",
-        image: "/assets/images/service-flood.jpg",
-        href: "/flood-restoration",
+        description: "Flooded your floors? Get help fast with Bay Ultra Dry's affordable flood restoration services; guaranteed to restore your water damaged carpet and floor.",
+        image: "/assets/images/Flood Restoration.png",
     }
 ];
 
 const ServicesSection = () => {
     return (
-        <section className="w-full py-24 bg-[#FFFDE7]">
-            <div className="max-w-[1440px] mx-auto px-8 md:px-16">
-                <div className="space-y-4 mb-16 text-center">
-                    <span className="text-[#FBA41C] font-bold text-sm uppercase tracking-[0.2em]">What we do</span>
-                    <h2 className="text-4xl md:text-5xl font-black text-gray-900">Our Services</h2>
+        <section className="relative w-full min-h-screen bg-[#FEF9C3] flex flex-col justify-center overflow-hidden py-20 px-6 md:px-12 lg:px-20">
+            {/* Background Wavy Lines */}
+            <div className="absolute top-0 right-0 w-1/3 h-1/3 opacity-80 pointer-events-none">
+                <Image
+                    src="/assets/images/Service_Frame.png"
+                    alt="Background wavy lines"
+                    fill
+                    className="object-contain object-right-top"
+                />
+            </div>
+            <div className="absolute bottom-0 left-0 w-1/3 h-1/3 opacity-80 pointer-events-none rotate-180">
+                <Image
+                    src="/assets/images/Service_Frame.png"
+                    alt="Background wavy lines"
+                    fill
+                    className="object-contain object-left-bottom"
+                />
+            </div>
+
+            <div className="max-w-[1440px] mx-auto w-full relative z-10">
+                {/* Header section */}
+                <div className="mb-12">
+                    <div className="flex items-center gap-2 mb-4">
+                        <div className="flex gap-1">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L13.8 8.2H20L15 12L16.8 18.2L12 14.4L7.2 18.2L9 12L4 8.2H10.2L12 2Z" fill="#FBA41C" />
+                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="-mt-2">
+                                <path d="M12 2L13.8 8.2H20L15 12L16.8 18.2L12 14.4L7.2 18.2L9 12L4 8.2H10.2L12 2Z" fill="#FBA41C" />
+                            </svg>
+                        </div>
+                        <span className="text-[#1D3557] font-bold text-sm tracking-wider uppercase">Services</span>
+                    </div>
+                    <h2 className="text-5xl md:text-6xl font-bold text-[#1D3557] tracking-tight">
+                        Our Services
+                    </h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                {/* Cards Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {serviceCards.map((service, index) => (
-                        <Link
-                            href={service.href}
+                        <div
                             key={index}
-                            className="group bg-white rounded-[32px] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100"
+                            className="group bg-white rounded-[40px] overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.06)] flex flex-col h-full transition-all duration-500 hover:shadow-[0_25px_60px_rgba(0,0,0,0.1)]"
                         >
-                            <div className="relative h-[250px] w-full">
+                            {/* Image Container with precise Cutout Effect */}
+                            <div className="relative h-[260px] w-full overflow-hidden">
                                 <Image
                                     src={service.image}
                                     alt={service.title}
                                     fill
-                                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
-                                <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-blue-900/0 transition-colors duration-500"></div>
 
-                                {/* Decorative circle */}
-                                <div className="absolute -bottom-6 right-8 w-12 h-12 bg-[#FBA41C] rounded-full border-4 border-white z-10 shadow-lg group-hover:scale-125 transition-transform duration-500"></div>
-                            </div>
+                                {/* The Cutout Circular Area (The White "Bite") */}
+                                <div className="absolute -bottom-1 -right-1 w-[140px] h-[140px] bg-white rounded-tl-full flex items-center justify-center pt-6 pl-6">
+                                    {/* The Orange Button */}
+                                    <div className="w-[88px] h-[88px] bg-[#FBA41C] rounded-full flex items-center justify-center shadow-[0_8px_20px_rgba(251,164,28,0.3)] transition-transform duration-300 group-hover:scale-110 relative z-20">
+                                        <ArrowUpRight
+                                            className="text-white w-10 h-10 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                                            strokeWidth={3}
+                                        />
+                                    </div>
 
-                            <div className="p-10 space-y-4">
-                                <h3 className="text-2xl font-black text-gray-900 group-hover:text-[#2B59C3] transition-colors">{service.title}</h3>
-                                <p className="text-gray-500 leading-relaxed font-medium">{service.description}</p>
-                                <div className="pt-4 flex items-center gap-2 text-[#2B59C3] font-bold uppercase text-xs tracking-[0.1em]">
-                                    Discover More
-                                    <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
+                                    {/* Subtle shadow overlay to blend the rounded-tl better with the white card background */}
+                                    <div className="absolute inset-0 bg-white rounded-tl-full shadow-[-5px_-5px_15px_rgba(0,0,0,0.02)] -z-10"></div>
                                 </div>
                             </div>
-                        </Link>
+
+                            {/* Text Content */}
+                            <div className="p-10 pt-4 flex flex-col flex-grow">
+                                <h3 className="text-[32px] font-bold text-[#1E3A8A] mb-5 tracking-tight leading-none">
+                                    {service.title}
+                                </h3>
+                                <p className="text-[#64748B] leading-relaxed text-[17px] font-medium">
+                                    {service.description}
+                                </p>
+                            </div>
+                        </div>
                     ))}
                 </div>
             </div>
