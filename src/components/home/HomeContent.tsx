@@ -7,9 +7,7 @@ import HeroSection from "./HeroSection";
 import Marquee from "./Marquee";
 import WelcomeSection from "./WelcomeSection";
 import ServicesSection from "./ServicesSection";
-import RestorationSection from "./RestorationSection";
-import CarpetCleaningSection from "./CarpetCleaningSection";
-import UpholsteryCleaningSection from "./UpholsteryCleaningSection";
+import HomeSectionsContainer from "./HomeSectionsContainer";
 import WhyChooseUsSection from "./WhyChooseUsSection";
 import CTASection from "./CTASection";
 import QuoteSection from "./QuoteSection";
@@ -38,14 +36,8 @@ const HomeContent = () => {
             {/* Services Section */}
             <ServicesSection />
 
-            {/* Special Section: 24/7 Restoration */}
-            <RestorationSection />
-
-            {/* Detailed Feature: Carpet Cleaning */}
-            <CarpetCleaningSection />
-
-            {/* Detailed Feature: Upholstery Cleaning */}
-            <UpholsteryCleaningSection />
+            {/* Unified Service Sections: Restoration, Carpet, and Upholstery */}
+            <HomeSectionsContainer />
 
             {/* Why Choose Us */}
             <WhyChooseUsSection />
