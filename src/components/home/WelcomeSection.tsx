@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Button from "../ui/Button";
 import { Check, Star } from "lucide-react";
@@ -11,26 +11,33 @@ const testimonials = [
         text: "Excellent communication, fantastic results. Will definitely use again. Very fast response for a flood emergency — saved our carpet! Great value, friendly team — carpets look like new!",
         author: "Alen",
         role: "Consult Director",
-        image: "/assets/images/placeholder-user.jpg"
+        image: "/assets/images/Alen-user.png"
     },
     {
         id: 2,
         text: "Professional, punctual and high-quality service. They handled our upholstery with great care and the results are amazing. Highly recommend Bay Ultra Dry!",
         author: "Sarah J.",
         role: "Home Owner",
-        image: "/assets/images/placeholder-user.jpg"
+        image: "/assets/images/Alen-user.png"
     },
     {
         id: 3,
         text: "The team was incredible! They fixed a major spill on our office carpet that we thought was permanent. Incredible service and very friendly staff.",
         author: "Michael T.",
         role: "Facility Manager",
-        image: "/assets/images/placeholder-user.jpg"
+        image: "/assets/images/Alen-user.png"
     }
 ];
 
 const WelcomeSection = () => {
     const [activeTestimonial, setActiveTestimonial] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
+        }, 5000);
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <section className="w-full py-8 md:py-12 bg-white relative overflow-hidden">
@@ -126,22 +133,17 @@ const WelcomeSection = () => {
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-grow">
                             {/* Google Card */}
                             <div className="bg-[#0F172A] text-white p-6 rounded-[24px] flex flex-col justify-between shadow-md h-full">
-                                <div className="space-y-3">
-                                    <div className="flex gap-1 text-[#FBBF24]">
-                                        {[1, 2, 3, 4, 5].map((i) => (
-                                            <Star key={i} size={14} fill="currentColor" />
-                                        ))}
-                                    </div>
-                                    <div className="flex items-center gap-1 text-2xl font-bold tracking-tight">
-                                        <span className="text-[#4285F4]">G</span>
-                                        <span className="text-[#EA4335]">o</span>
-                                        <span className="text-[#FBBC05]">o</span>
-                                        <span className="text-[#4285F4]">g</span>
-                                        <span className="text-[#34A853]">l</span>
-                                        <span className="text-[#EA4335]">e</span>
+                                <div className="space-y-2">
+                                    <div className="relative h-[120px] w-[150px]">
+                                        <Image
+                                            src="/assets/images/google.png"
+                                            alt="Google"
+                                            fill
+                                            className="object-contain object-left"
+                                        />
                                     </div>
                                 </div>
-                                <p className="text-[15px] font-bold leading-tight mt-4">
+                                <p className="text-[20px] font-bold leading-tight mt-4">
                                     Fully Insured & Safety Certified
                                 </p>
                             </div>
@@ -149,14 +151,14 @@ const WelcomeSection = () => {
                             {/* Experience Card */}
                             <div className="bg-white border border-slate-100 p-6 rounded-[24px] shadow-sm flex flex-col justify-between h-full">
                                 <div className="flex items-center gap-3">
-                                    <span className="text-[36px] font-bold text-slate-900 leading-none">10+</span>
-                                    <p className="text-[10px] font-bold text-slate-500 uppercase leading-tight">
+                                    <span className="text-[45px] font-bold text-slate-900 leading-none">10+</span>
+                                    <p className="text-[14px] font-bold text-slate-500 uppercase leading-tight">
                                         Years<br />Experience
                                     </p>
                                 </div>
                                 <div className="mt-2 pt-2 border-t border-slate-50">
-                                    <h4 className="text-[14px] font-bold text-slate-900 mb-1">Fast Communication</h4>
-                                    <p className="text-[11px] text-slate-500 font-medium leading-relaxed">
+                                    <h4 className="text-[18px] font-bold text-slate-900 mb-1">Fast Communication</h4>
+                                    <p className="text-[16px] text-slate-500 font-medium leading-relaxed">
                                         quick responses and clear updates
                                     </p>
                                 </div>
@@ -165,46 +167,69 @@ const WelcomeSection = () => {
                     </div>
 
                     {/* 5. Testimonial Card */}
-                    <div className="lg:col-span-4 bg-gradient-to-br from-[#FFEDD5] via-[#E0F2FE] to-[#D1FAE5] p-6 rounded-[32px] relative overflow-hidden flex flex-col justify-between shadow-md">
+                    <div 
+                        className="lg:col-span-4 p-8 rounded-[30px] relative overflow-hidden flex flex-col shadow-lg"
+                        style={{ background: 'linear-gradient(241.26deg, #DAF1FF 28.79%, #FFCB71 98.22%)' }}
+                    >
+                        {/* Decorative Gradient Overlays */}
+                        <div 
+                            className="absolute bottom-0 left-0 w-full h-[25%] z-0"
+                            style={{ background: 'linear-gradient(91.57deg, #FFF8AA -7.72%, #C0E683 48.06%, #2B97FB 103.83%)' }}
+                        ></div>
+                        <div 
+                            className="absolute top-0 right-0 w-[20%] h-full z-0 bg-gradient-to-b from-transparent to-[#2B97FB]/50"
+                        ></div>
+                        
                         {/* Quote Icon */}
-                        <div className="absolute top-4 left-6 w-12 h-10 pointer-events-none select-none">
+                        <div className="absolute top-8 left-8 w-14 h-12 pointer-events-none select-none z-10 opacity-60">
                             <Image
                                 src="/assets/images/Frame 35.png"
                                 alt="Quote Icon"
                                 fill
-                                className="object-contain opacity-60"
+                                className="object-contain"
                             />
                         </div>
                         
                         {/* Dots */}
-                        <div className="absolute top-6 right-8 flex gap-1 z-10">
+                        <div className="absolute top-8 right-8 flex gap-2 z-20">
                             {testimonials.map((_, idx) => (
                                 <button
                                     key={idx}
                                     onClick={() => setActiveTestimonial(idx)}
-                                    className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${activeTestimonial === idx ? "bg-blue-600 w-3" : "bg-blue-600/20"}`}
+                                    className={`w-3 h-3 rounded-full transition-all duration-300 ${activeTestimonial === idx ? "bg-[#1E40AF]" : "bg-[#94A3B8] hover:bg-[#64748B]"}`}
+                                    aria-label={`Go to slide ${idx + 1}`}
                                 />
                             ))}
                         </div>
 
-                        <div className="relative pt-8">
-                            <p className="text-[14px] font-medium text-slate-700 leading-relaxed italic mb-6">
-                                {testimonials[activeTestimonial].text}
-                            </p>
-                            
-                            <div className="flex items-center gap-3">
-                                <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-white shadow-sm">
-                                    <Image
-                                        src={testimonials[activeTestimonial].image}
-                                        alt={testimonials[activeTestimonial].author}
-                                        fill
-                                        className="object-cover"
-                                    />
-                                </div>
-                                <div>
-                                    <h5 className="text-[14px] font-bold text-slate-900 leading-none mb-1">{testimonials[activeTestimonial].author}</h5>
-                                    <p className="text-[11px] font-semibold text-slate-500">{testimonials[activeTestimonial].role}</p>
-                                </div>
+                        {/* Slider Content */}
+                        <div className="relative z-10 mt-16 flex-grow overflow-hidden">
+                            <div 
+                                className="flex h-full transition-transform duration-500 ease-in-out"
+                                style={{ transform: `translateX(-${activeTestimonial * 100}%)` }}
+                            >
+                                {testimonials.map((testimonial, idx) => (
+                                    <div key={idx} className="w-full h-full flex-shrink-0 flex flex-col justify-between pr-10">
+                                        <p className="text-[15.5px] font-medium text-[#1E293B] leading-[1.6]">
+                                            {testimonial.text}
+                                        </p>
+                                        
+                                        <div className="flex items-center gap-4 mt-8 pb-1">
+                                            <div className="relative w-[52px] h-[52px] rounded-full overflow-hidden shadow-sm border-2 border-white/50">
+                                                <Image
+                                                    src={testimonial.image}
+                                                    alt={testimonial.author}
+                                                    fill
+                                                    className="object-cover"
+                                                />
+                                            </div>
+                                            <div>
+                                                <h5 className="text-[17px] font-bold text-[#1E293B] leading-none mb-1.5">{testimonial.author}</h5>
+                                                <p className="text-[13.5px] font-medium text-[#334155]">{testimonial.role}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
