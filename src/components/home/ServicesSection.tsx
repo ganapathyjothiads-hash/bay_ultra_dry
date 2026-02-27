@@ -48,12 +48,7 @@ const ServicesSection = () => {
                 <div className="mb-12">
                     <div className="flex items-center gap-2 mb-4">
                         <div className="flex gap-1">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L13.8 8.2H20L15 12L16.8 18.2L12 14.4L7.2 18.2L9 12L4 8.2H10.2L12 2Z" fill="#FBA41C" />
-                            </svg>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="-mt-2">
-                                <path d="M12 2L13.8 8.2H20L15 12L16.8 18.2L12 14.4L7.2 18.2L9 12L4 8.2H10.2L12 2Z" fill="#FBA41C" />
-                            </svg>
+                           <img src="" alt="" />
                         </div>
                         <span className="text-[#1D3557] font-bold text-sm tracking-wider uppercase">Services</span>
                     </div>
@@ -81,7 +76,7 @@ const ServicesSection = () => {
                                 {/* The Cutout Circular Area (The White "Bite") */}
                                 <div className="absolute -bottom-1 -right-1 w-[140px] h-[140px] bg-white rounded-tl-full flex items-center justify-center pt-6 pl-6">
                                     {/* The Orange Button */}
-                                    <div className="w-[88px] h-[88px] bg-[#FBA41C] rounded-full flex items-center justify-center shadow-[0_8px_20px_rgba(251,164,28,0.3)] transition-transform duration-300 group-hover:scale-110 relative z-20">
+                                    <div className="w-[auto] h-[auto] bg-[#FBA41C] rounded-full flex items-center justify-center shadow-[0_8px_20px_rgba(251,164,28,0.3)] transition-transform duration-300 group-hover:scale-110 relative z-20">
                                         <ArrowUpRight
                                             className="text-white w-10 h-10 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
                                             strokeWidth={3}
