@@ -12,6 +12,7 @@ import WhyChooseUsSection from "./WhyChooseUsSection";
 import CTASection from "./CTASection";
 import QuoteSection from "./QuoteSection";
 import Footer from "./Footer";
+import EnquireNowButton from "../ui/EnquireNowButton";
 
 const HomeContent = () => {
     return (
@@ -50,6 +51,9 @@ const HomeContent = () => {
 
             {/* Footer */}
             <Footer />
+
+            {/* Sticky Enquire Now button */}
+            <EnquireNowButton />
         </main>
     );
 };

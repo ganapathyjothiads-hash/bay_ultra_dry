@@ -67,8 +67,11 @@ const Navbar = () => {
                         <nav style={{
                             display: 'flex',
                             alignItems: 'center',
-                            justifyContent: 'space-between',
+                            justifyContent: 'space-evenly',
                             flex: 1,
+                            flexWrap: 'wrap',
+                            flexDirection: 'row',
+                            alignContent: 'flex-end',
                             paddingRight: '24px',
                         }}>
                             {navLinks.map((link) => (
