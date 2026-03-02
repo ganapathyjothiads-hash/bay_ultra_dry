@@ -7,7 +7,11 @@ import Link from "next/link";
 const Footer = () => {
     return (
         <footer className="w-full bg-white pt-16 pb-8 border-t border-gray-100">
-            <div className="max-w-[1440px] mx-auto px-6 md:px-16">
+            <div
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                className="max-w-[1440px] mx-auto px-6 md:px-16"
+            >
                 {/* Main Footer Content */}
                 <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-8 mb-16">
 

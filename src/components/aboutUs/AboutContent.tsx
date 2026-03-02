@@ -1,6 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import TopBanner from "../home/TopBanner";
 import Navbar from "../home/Navbar";
 import Footer from "../home/Footer";
@@ -8,8 +10,19 @@ import AboutUsHero from "./AboutUsHero";
 import AboutOurStory from "./AboutOurStory";
 import AboutWhatWeDo from "./AboutWhatWeDo";
 import AboutOurPromise from "./AboutOurPromise";
+import CTASection from "../home/CTASection";
+import QuoteSection from "../home/QuoteSection";
 
 const AboutContent = () => {
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: false,
+            easing: 'ease-in-out',
+            mirror: true,
+            offset: 50,
+        });
+    }, []);
     return (
         <main className="min-h-screen relative bg-white">
             {/* Header + hero area */}
@@ -31,6 +44,12 @@ const AboutContent = () => {
 
             {/* Our Promise section */}
             <AboutOurPromise />
+
+            {/* CTA section */}
+            <CTASection />
+
+            {/* Quote section */}
+            <QuoteSection variant="about" />
 
             {/* Footer */}
             <Footer />

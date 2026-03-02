@@ -4,18 +4,25 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, Phone, Mail, MapPin } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const pathname = usePathname();
 
     const navLinks = [
-        { label: "Home", href: "/", active: true },
+        { label: "Home", href: "/" },
         { label: "About Us", href: "/about" },
         { label: "Flood Restoration", href: "/flood-restoration" },
         { label: "Carpet Cleaning", href: "/carpet-cleaning" },
         { label: "Upholstery Cleaning", href: "/upholstery-cleaning" },
         { label: "Contact Us", href: "/contact" },
     ];
+
+    const isActive = (href: string) => {
+        if (href === "/") return pathname === "/";
+        return pathname === href;
+    };
 
     return (
         <>
@@ -82,10 +89,10 @@ const Navbar = () => {
                                     href={link.href}
                                     style={{
                                         fontSize: '14px',
-                                        fontWeight: link.active ? 700 : 500,
-                                        color: link.active ? '#2563EB' : '#374151',
-                                        textDecoration: link.active ? 'underline' : 'none',
-                                        textUnderlineOffset: '4px',
+                                        fontWeight: isActive(link.href) ? 700 : 500,
+                                        color: isActive(link.href) ? '#2563EB' : '#374151',
+                                        textDecoration: isActive(link.href) ? 'underline' : 'none',
+                                        textUnderlineOffset: '8px',
                                         textDecorationThickness: '2px',
                                         whiteSpace: 'nowrap',
                                         letterSpacing: '0.01em',
@@ -193,7 +200,7 @@ const Navbar = () => {
                                 key={link.label}
                                 href={link.href}
                                 onClick={() => setIsMenuOpen(false)}
-                                className={`text-2xl font-bold tracking-tight py-1 inline-block ${link.active ? 'text-blue-600 underline underline-offset-8 decoration-2' : 'text-gray-900 transition-colors hover:text-blue-600'
+                                className={`text-2xl font-bold tracking-tight py-1 inline-block ${isActive(link.href) ? 'text-blue-600 underline underline-offset-8 decoration-2' : 'text-gray-900 transition-colors hover:text-blue-600'
                                     }`}
                             >
                                 {link.label}

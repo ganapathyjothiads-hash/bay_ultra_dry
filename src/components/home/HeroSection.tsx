@@ -45,6 +45,9 @@ const HeroSection = () => {
 
             {/* Cleaner Girl - Repositioned for mobile overlap */}
             <img
+                data-aos="fade-left"
+                data-aos-duration="1200"
+                data-aos-delay="600"
                 src="/assets/images/clean-girl%203.png"
                 alt="Professional Cleaner"
                 className="absolute left-[50%] -translate-x-1/2 lg:translate-x-0 lg:left-auto lg:right-[2%] bottom-0 h-[48%] xs:h-[53%] lg:h-[64%] w-[100%] lg:w-[50%] object-contain object-bottom z-[4] pointer-events-none opacity-100"
@@ -95,6 +98,8 @@ const HeroSection = () => {
                 className="absolute inset-0 z-10 flex flex-col justify-start lg:justify-center items-center lg:items-start text-center lg:text-left px-4 md:px-12 lg:pl-[max(48px,6vw)] lg:pr-32 pt-[100px] xs:pt-[90px] lg:pt-10 lg:w-[70%]"
             >
                 <h1
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
                     className="text-white font-[600] lg:font-medium text-[24px] xs:text-[38px] md:text-[48px] lg:text-[60px] leading-[1.3] lg:leading-[1.15] mb-6 lg:mb-5 tracking-wide lg:tracking-tight"
                 >
                     <span className="lg:hidden">
@@ -110,6 +115,9 @@ const HeroSection = () => {
                 </h1>
 
                 <p
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                    data-aos-duration="1000"
                     className="text-[#FFF1A4] font-[600] text-[18px] xs:text-[20px] md:text-[22px] mb-6 xs:mb-8 leading-[1.5] max-w-[340px] xs:max-w-[380px] lg:max-w-none"
                 >
                     <span className="lg:hidden">
@@ -122,6 +130,9 @@ const HeroSection = () => {
                 </p>
 
                 <p
+                    data-aos="fade-up"
+                    data-aos-delay="400"
+                    data-aos-duration="1000"
                     className="text-[#CDCDCD] text-[16px] md:text-[18px] max-w-[360px] xs:max-w-[390px] lg:max-w-[620px] leading-[1.65] px-2 lg:px-0"
                 >
                     <span className="lg:hidden">

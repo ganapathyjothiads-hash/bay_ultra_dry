@@ -4,11 +4,19 @@ import React from "react";
 import Image from "next/image";
 import { Calendar, Clock, ChevronDown } from "lucide-react";
 
-const QuoteSection = () => {
+interface QuoteSectionProps {
+    variant?: "home" | "about";
+}
+
+const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
+    const backgroundStyle = variant === "home"
+        ? "linear-gradient(243.29deg, #F5A51C 6.14%, #FFFFFF 116.88%)"
+        : "linear-gradient(239.87deg, #B2DAFF 4.79%, #FFFFFF 140.86%)";
+
     return (
         <section className="relative w-full py-12 lg:py-20 overflow-hidden"
             style={{
-                background: "linear-gradient(243.29deg, #F5A51C 6.14%, #FFFFFF 116.88%)",
+                background: backgroundStyle,
             }}>
             {/* Background Wavy Lines - Top Right */}
             <div className="absolute top-0 right-0 w-[500px] lg:w-[720px] h-[300px] lg:h-[400px] opacity-40 pointer-events-none translate-x-1/4 -translate-y-1/4">
@@ -34,7 +42,11 @@ const QuoteSection = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_minmax(400px,500px)] gap-10 lg:gap-16 items-start">
 
                     {/* Left Side: Content & Map */}
-                    <div className="flex flex-col space-y-8 lg:sticky lg:top-24">
+                    <div
+                        data-aos="fade-right"
+                        data-aos-duration="1000"
+                        className="flex flex-col space-y-8 lg:sticky lg:top-24"
+                    >
                         <div className="space-y-6">
                             <h2 className="text-[32px] md:text-[48px] font-bold text-[#1E3A8A] leading-tight tracking-tight">
                                 Request A Fast Quote
@@ -62,18 +74,31 @@ const QuoteSection = () => {
                         </div>
 
                         {/* Map Image */}
-                        <div className="relative w-full aspect-[16/10] md:aspect-auto md:h-[350px] lg:h-[420px] rounded-[16px] overflow-hidden">
-                            <Image
-                                src="/assets/images/map.png"
-                                alt="Service Area Map"
-                                fill
-                                className="object-cover"
-                            />
+                        <div
+                            data-aos="zoom-in"
+                            data-aos-delay="200"
+                            data-aos-duration="1000"
+                            className="relative w-full aspect-[16/10] md:aspect-auto md:h-[350px] lg:h-[380px] rounded-[24px] overflow-hidden shadow-sm"
+                        >
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3157.3990875736154!2d176.16452847568848!3d-37.686825472007676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d6ddbdcf31994ed%3A0x6325ddbd94a4c66e!2s162%20Durham%20Street%2C%20Tauranga%203110%2C%20New%20Zealand!5e0!3m2!1sen!2sin!4v1772450751643!5m2!1sen!2sin"
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0 }}
+                                allowFullScreen
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                className="w-full h-full"
+                            ></iframe>
                         </div>
                     </div>
 
                     {/* Right Side: Form Card */}
-                    <div className="bg-white rounded-[20px] p-8 md:p-8 shadow-sm flex flex-col w-full border border-gray-100 mt-2 lg:mt-0">
+                    <div
+                        data-aos="fade-left"
+                        data-aos-duration="1000"
+                        className="bg-white rounded-[20px] p-8 md:p-8 shadow-sm flex flex-col w-full border border-gray-100 mt-2 lg:mt-0"
+                    >
                         <form className="space-y-5">
                             {/* Full Name */}
                             <div className="space-y-1.5">

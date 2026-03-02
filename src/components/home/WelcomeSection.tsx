@@ -47,7 +47,11 @@ const WelcomeSection = () => {
                 <div className="flex flex-col gap-6 lg:grid lg:grid-cols-12 lg:gap-6 lg:items-stretch lg:mb-8">
 
                     {/* Headline & Badge */}
-                    <div className="order-1 lg:order-none lg:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-left mt-2 lg:mt-0">
+                    <div
+                        data-aos="fade-right"
+                        data-aos-duration="1000"
+                        className="order-1 lg:order-none lg:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-left mt-2 lg:mt-0"
+                    >
                         <div className="flex items-center justify-center lg:justify-start mb-3">
                             <div className="relative w-[36px] h-[36px] mr-2">
                                 <Image
@@ -65,7 +69,12 @@ const WelcomeSection = () => {
                     </div>
 
                     {/* 100% Splash Badge */}
-                    <div className="order-2 lg:order-none lg:col-span-3 flex justify-center py-4 lg:py-0">
+                    <div
+                        data-aos="zoom-in"
+                        data-aos-duration="1000"
+                        data-aos-delay="200"
+                        className="order-2 lg:order-none lg:col-span-3 flex justify-center py-4 lg:py-0"
+                    >
                         <div className="relative w-[260px] h-[260px] md:w-[240px] md:h-[240px]">
                             {/* Splash Background Image */}
                             <Image
@@ -83,7 +92,12 @@ const WelcomeSection = () => {
                     </div>
 
                     {/* Yellow Commitment Card */}
-                    <div className="order-7 flex flex-col items-start lg:order-none lg:col-span-4 bg-[#FBBF24] p-8 md:p-8 rounded-[16px] shadow-lg mt-2 lg:mt-0">
+                    <div
+                        data-aos="fade-left"
+                        data-aos-duration="1000"
+                        data-aos-delay="400"
+                        className="order-7 flex flex-col items-start lg:order-none lg:col-span-4 bg-[#FBBF24] p-8 md:p-8 rounded-[16px] shadow-lg mt-2 lg:mt-0"
+                    >
                         <p className="text-[12px] md:text-[15px] leading-[1.6] text-[#1e293b] font-[500] mb-6">
                             <span className="font-bold">Bay Ultra Dry</span> is committed to exceptional results, clear communication, and a rapid response. Whether you need a deep carpet clean, an upholstery refresh, or emergency flood restoration, we deliver a thorough job with minimal disruption and the utmost care.
                         </p>
@@ -96,7 +110,11 @@ const WelcomeSection = () => {
                     </div>
 
                     {/* 1. Owners Image */}
-                    <div className="order-3 lg:order-none lg:col-span-3 relative rounded-[16px] overflow-hidden shadow-xl min-h-[460px] lg:min-h-[300px]">
+                    <div
+                        data-aos="fade-up"
+                        data-aos-duration="1000"
+                        className="order-3 lg:order-none lg:col-span-3 relative rounded-[16px] overflow-hidden shadow-xl min-h-[460px] lg:min-h-[300px]"
+                    >
                         <Image
                             src="/assets/images/owners.png"
                             alt="Bay Ultra Dry Owners"
@@ -107,7 +125,12 @@ const WelcomeSection = () => {
                     </div>
 
                     {/* 2 & 3 & 4. Features + Trust Cards Middle Section */}
-                    <div className="order-4 lg:order-none lg:col-span-5 flex flex-col gap-5 pt-2 lg:pt-0">
+                    <div
+                        data-aos="fade-up"
+                        data-aos-duration="1000"
+                        data-aos-delay="200"
+                        className="order-4 lg:order-none lg:col-span-5 flex flex-col gap-5 pt-2 lg:pt-0"
+                    >
                         {/* Features Checklist */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-[14px]">
                             {[
@@ -167,6 +190,9 @@ const WelcomeSection = () => {
 
                     {/* 5. Testimonial Card */}
                     <div
+                        data-aos="fade-left"
+                        data-aos-duration="1000"
+                        data-aos-delay="400"
                         className="order-8 lg:order-none lg:col-span-4 p-8 rounded-[16px] relative overflow-hidden flex flex-col shadow-lg mt-2 lg:mt-0"
                         style={{ background: 'linear-gradient(241.26deg, #DAF1FF 28.79%, #FFCB71 98.22%)' }}
                     >

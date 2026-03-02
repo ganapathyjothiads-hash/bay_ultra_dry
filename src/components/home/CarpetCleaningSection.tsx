@@ -4,23 +4,6 @@ import React, { useEffect, useRef, useState } from "react";
 import ServiceFeatureCard from "../ui/ServiceFeatureCard";
 
 const CarpetCleaningSection = () => {
-    const [isVisible, setIsVisible] = useState(false);
-    const sectionRef = useRef<HTMLElement>(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true);
-                }
-            },
-            { threshold: 0.1 }
-        );
-
-        if (sectionRef.current) observer.observe(sectionRef.current);
-        return () => observer.disconnect();
-    }, []);
-
     const features = [
         { title: "Residential Cleaning:", description: "Revitalise your home's carpets for a healthier living space." },
         { title: "Commercial Cleaning:", description: "Large-scale solutions for offices and facilities with minimal downtime." },
@@ -30,21 +13,14 @@ const CarpetCleaningSection = () => {
 
     return (
         <section
-            ref={sectionRef}
             className={`w-full overflow-hidden relative bg-white`}
         >
             <div className={`w-full flex flex-col lg:flex-row-reverse items-stretch lg:items-center pt-0 pb-12 lg:py-20`}>
                 {/* Image side */}
                 <div
-                    className={`w-full lg:w-[40%] h-[380px] md:h-[480px] lg:h-[591px] relative lg:shadow-2xl lg:rounded-l-[20px] transition-all duration-1000 ease-out ${isVisible
-                        ? "opacity-100 translate-x-0"
-                        : "opacity-0 translate-x-full"
-                        }`}
-                    style={{
-                        overflow: 'hidden',
-                        clipPath: isVisible ? "inset(0% 0% 0% 0%)" : "inset(0% 0% 0% 100%)",
-                        transition: "all 1.6s cubic-bezier(0.19, 1, 0.22, 1)"
-                    }}
+                    data-aos="fade-left"
+                    data-aos-duration="1200"
+                    className={`w-full lg:w-[40%] h-[380px] md:h-[480px] lg:h-[591px] relative lg:shadow-2xl lg:rounded-l-[20px]`}
                 >
                     <img
                         src="/assets/video/Carpet_Cleaning.gif"
@@ -55,11 +31,13 @@ const CarpetCleaningSection = () => {
                 </div>
 
                 {/* Content side */}
-                <div className={`w-full lg:w-[60%] flex flex-col justify-center px-6 md:px-16 lg:px-24 xl:px-32 pt-8 lg:pt-0`}>
-                    <div
-                        className={`transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-                            }`}
-                    >
+                <div
+                    data-aos="fade-right"
+                    data-aos-duration="1200"
+                    data-aos-delay="200"
+                    className={`w-full lg:w-[60%] flex flex-col justify-center px-6 md:px-16 lg:px-24 xl:px-32 pt-8 lg:pt-0`}
+                >
+                    <div>
                         <div className="mb-8 lg:mb-10">
                             <h2 className="text-[#2B426E] text-[26px] md:text-[54px] lg:text-[49px] font-[600] lg:font-bold leading-[1.05] mb-4 lg:mb-6 tracking-tight">
                                 Carpet Cleaning

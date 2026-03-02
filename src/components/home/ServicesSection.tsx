@@ -88,7 +88,11 @@ const ServicesSection = () => {
 
             <div className="max-w-[1240px] mx-auto w-full relative z-10">
                 {/* Header section - Left Aligned with Right Aligned Navigation */}
-                <div className="flex flex-row items-end justify-between mb-10 md:mb-14">
+                <div
+                    data-aos="fade-right"
+                    data-aos-duration="1000"
+                    className="flex flex-row items-end justify-between mb-10 md:mb-14"
+                >
                     <div className="flex flex-col items-start justify-start">
                         <div className="flex items-center gap-2 mb-3">
                             <div className="text-[#F5A51C]">
@@ -120,6 +124,9 @@ const ServicesSection = () => {
 
                 {/* Cards Slider */}
                 <div
+                    data-aos="fade-up"
+                    data-aos-duration="1200"
+                    data-aos-delay="200"
                     className="w-full relative"
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}

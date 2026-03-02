@@ -1,6 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import TopBanner from "./TopBanner";
 import Navbar from "./Navbar";
 import HeroSection from "./HeroSection";
@@ -15,6 +17,15 @@ import Footer from "./Footer";
 import EnquireNowButton from "../ui/EnquireNowButton";
 
 const HomeContent = () => {
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: false,
+            easing: 'ease-in-out',
+            mirror: true,
+            offset: 50,
+        });
+    }, []);
     return (
         <main className="min-h-screen relative bg-white">
             {/* Header Area */}
@@ -47,7 +58,7 @@ const HomeContent = () => {
             <CTASection />
 
             {/* Quote Section */}
-            <QuoteSection />
+            <QuoteSection variant="home" />
 
             {/* Footer */}
             <Footer />

@@ -19,7 +19,11 @@ const AboutUsHero: React.FC = () => {
     return (
         <section className="relative w-full min-h-[100vh] lg:min-h-[820px] overflow-hidden bg-white pt-32 lg:pt-0">
             {/* background image (man cleaning) positioned on the right */}
-            <div className="absolute right-0 top-0 w-full h-full z-0 overflow-hidden">
+            <div
+                className="absolute right-0 top-0 w-full h-full z-0 overflow-hidden"
+                data-aos="fade-left"
+                data-aos-duration="1500"
+            >
                 <img
                     src={bgImage}
                     alt=""
@@ -41,7 +45,9 @@ const AboutUsHero: React.FC = () => {
                 src={ringImage}
                 alt=""
                 aria-hidden
-                className="absolute inset-y-0 -left-[1%] w-[93%] h-[79%] object-cover z-[10] pointer-events-none opacity-100"
+                data-aos="fade-right"
+                data-aos-duration="1200"
+                className="absolute top-0 -left-[2%] w-[93%] h-[85%] object-cover z-[10] pointer-events-none opacity-100"
                 style={{
                     objectPosition: 'left center',
                 }}
@@ -51,11 +57,13 @@ const AboutUsHero: React.FC = () => {
             <div
                 aria-hidden
                 className="hidden lg:flex"
+                data-aos="fade-down"
+                data-aos-delay="500"
                 style={{
                     position: 'absolute',
-                    right: '-40px',
+                    right: '-35px',
                     top: '0',
-                    bottom: 0,
+                    bottom: "-85px",
                     width: '180px',
                     zIndex: 25,
                     alignItems: 'center',
@@ -66,36 +74,46 @@ const AboutUsHero: React.FC = () => {
             >
                 <div
                     style={{
-                        width: '800px',
+                        width: '900px',
                         height: '150px',
                         transform: 'rotate(90deg)',
                         transformOrigin: 'center center',
-                        fontSize: '140px',
+                        fontSize: '100px',
                         fontFamily: "'Inter', sans-serif",
-                        fontWeight: 700,
+                        fontWeight: 500,
                         fontStyle: 'normal',
-                        color: "transparent",
-                        WebkitTextStroke: "1px rgba(135, 178, 255, 0.6)",
-                        opacity: 1,
+                        color: "#77A2FF",
+                        opacity: 0.8,
                         whiteSpace: 'nowrap',
                         lineHeight: '150px',
                         textAlign: 'center',
-                        letterSpacing: '0.04em',
+                        letterSpacing: '-0.02em',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
                     }}
                 >
-                    {verticalText}
+                    About Us
                 </div>
             </div>
 
             {/* textual content */}
-            <div className="absolute inset-0 z-[30] flex flex-col justify-center px-6 md:px-12 lg:pl-[min(8%,120px)] max-w-[1440px] mx-auto pb-20 lg:pb-32 mt-10 lg:mt-0">
-                <h1 className="text-[42px] md:text-[52px] lg:text-[60px] font-[500] leading-[1.05] mb-8 tracking-[-0.03em] max-w-[1100px] text-[#324B6E]">
-                    About ✨ <span className="text-[#1C4195]">Bay Ultra Dry,</span> Your Local <br className="hidden lg:block" />
+            <div className="absolute inset-x-0 top-0 h-full z-[30] flex flex-col justify-center px-6 md:px-12 lg:pl-[min(8%,120px)] max-w-[1440px] mx-auto pb-20 lg:pb-32">
+                <h1
+                    className="text-[42px] md:text-[52px] lg:text-[60px] font-medium leading-[1.05] mb-8 tracking-[-0.03em] max-w-[1100px] text-[#2C4674]"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                >
+                    About <img src="/assets/images/star 1.png" alt="star" className="inline-block w-[35px] md:w-[45px] lg:w-[50px] h-auto align-middle mx-1 lg:mx-2 -mt-2 lg:-mt-4" /> <span className="text-[#1C4195]">Bay Ultra Dry,</span> Your Local <br className="hidden lg:block" />
                     Tauranga Cleaning Experts
                 </h1>
 
                 {subtitle && (
-                    <p className="text-[17px] md:text-[19px] lg:text-[20px] mb-4 font-semibold text-[#303030]/80 max-w-[700px] leading-relaxed">
+                    <p
+                        className="text-[17px] md:text-[19px] lg:text-[20px] mb-4 font-medium text-[#303030]/90 max-w-[750px] leading-relaxed"
+                        data-aos="fade-up"
+                        data-aos-delay="400"
+                    >
                         {subtitle}
                     </p>
                 )}

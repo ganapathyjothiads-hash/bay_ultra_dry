@@ -27,11 +27,15 @@ const CTASection = () => {
                 </div>
             </div>
 
-            <div className="max-w-[1440px] mx-auto px-8 md:px-16 text-center relative z-10 space-y-4">
+            <div
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                className="max-w-[1440px] mx-auto px-8 md:px-16 text-center relative z-10 space-y-4"
+            >
                 <div className="space-y-2 max-w-5xl mx-auto">
-                    <h2 
+                    <h2
                         className="font-normal text-white capitalize text-center"
-                        style={{ 
+                        style={{
                             fontFamily: 'Nebulas, sans-serif',
                             fontSize: '52px',
                             lineHeight: '76px',
@@ -40,7 +44,7 @@ const CTASection = () => {
                     >
                         Ready For A Fresher, Cleaner Space?
                     </h2>
-                    <p 
+                    <p
                         className="text-white/80 font-normal max-w-[850px] mx-auto text-center"
                         style={{
                             fontFamily: 'Nebulas, sans-serif',
@@ -54,9 +58,14 @@ const CTASection = () => {
                     </p>
                 </div>
 
-                <div className="flex flex-col sm:flex-row items-center justify-center pt-2">
-                    <Button 
-                        variant="accent" 
+                <div
+                    data-aos="zoom-in"
+                    data-aos-delay="200"
+                    data-aos-duration="800"
+                    className="flex flex-col sm:flex-row items-center justify-center pt-2"
+                >
+                    <Button
+                        variant="accent"
                         className="px-12 py-4 text-[16px] font-bold bg-black text-black hover:bg-white/90 rounded-full normal-case tracking-normal shadow-lg"
                     >
                         Enquire Now
