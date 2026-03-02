@@ -4,7 +4,10 @@ import React from "react";
 
 const AboutUsHero: React.FC = () => {
     const title = (
-        <>About&nbsp;✨&nbsp;Bay Ultra Dry,Your Local <br />Tauranga Cleaning Experts</>
+        <span className="text-[#324b6e]">
+            About ✨ <span className="text-[#134391]">Bay Ultra Dry,</span> Your Local <br className="hidden lg:block" />
+            Tauranga Cleaning Experts
+        </span>
     );
     const subtitle =
         "A locally owned and highly rated Tauranga business committed to reliable, quality service.";
@@ -12,46 +15,49 @@ const AboutUsHero: React.FC = () => {
     const bgImage = "/assets/images/clean_man.png";
     const ringImage = "/assets/images/wavyring.png";
     const verticalText = "About Us";
+
     return (
-        <section className="relative w-full min-h-[600px] h-[80vh] lg:h-screen overflow-hidden bg-[#1C2A45]">
-            {/* full‑bleed background */}
-            <img
-                src={bgImage}
-                alt=""
-                aria-hidden
-                className="absolute inset-0 w-full h-full object-cover opacity-80 z-0"
-            />
-
-            {/* gradient overlay */}
-            <div
-                aria-hidden
-                className="absolute inset-0 z-[1] bg-gradient-to-r from-[#142038]/95 via-[#142038]/90 to-[#142038]/20 lg:from-[#142038]/92 lg:via-[#142038]/85 lg:to-[#142038]/05"
-            />
-
-            {/* decorative overlay graphic placed top-left */}
-            {ringImage && (
+        <section className="relative w-full min-h-[100vh] lg:min-h-[820px] overflow-hidden bg-white pt-32 lg:pt-0">
+            {/* background image (man cleaning) positioned on the right */}
+            <div className="absolute right-0 top-0 w-full h-full z-0 overflow-hidden">
+                <img
+                    src={bgImage}
+                    alt=""
+                    aria-hidden
+                    className="absolute right-0 top-0 w-full h-[120%] object-cover z-0"
+                    style={{ objectPosition: 'center center' }}
+                />
+                {/* absolute page background gradient as requested */}
                 <div
                     aria-hidden
-                    className="absolute top-0 left-0 w-[100%] h-[100%] lg:w-[110%] lg:h-[110%] z-80 opacity-100 pointer-events-none -translate-x-[10%] -translate-y-[10%]"
-                >
-                    <img
-                        src={ringImage}
-                        alt=""
-                        className="w-full h-full object-contain"
-                    />
-                </div>
-            )}
+                    className="absolute inset-0 z-[1]"
+                    style={{ background: 'linear-gradient(246.21deg, rgba(9, 18, 36, 0) -7.98%, #091224 60.42%)' }}
+                />
+            </div>
 
+            {/* White Bend Shape & Rings Overlay (wavyring.png) */}
+            {/* This image handles the curve and the white background transition */}
+            <img
+                src={ringImage}
+                alt=""
+                aria-hidden
+                className="absolute inset-y-0 -left-[1%] w-[93%] h-[79%] object-cover z-[10] pointer-events-none opacity-100"
+                style={{
+                    objectPosition: 'left center',
+                }}
+            />
+
+            {/* Right side 'About Us' vertical text */}
             <div
                 aria-hidden
                 className="hidden lg:flex"
                 style={{
                     position: 'absolute',
-                    right: '5px',
-                    top: '170px',
+                    right: '-40px',
+                    top: '0',
                     bottom: 0,
-                    width: '100px',
-                    zIndex: 5,
+                    width: '180px',
+                    zIndex: 25,
                     alignItems: 'center',
                     justifyContent: 'center',
                     pointerEvents: 'none',
@@ -61,20 +67,20 @@ const AboutUsHero: React.FC = () => {
                 <div
                     style={{
                         width: '800px',
-                        height: '100px',
+                        height: '150px',
                         transform: 'rotate(90deg)',
                         transformOrigin: 'center center',
-                        fontSize: '90px',
-                        fontFamily: "'Aksara Bali Galang', sans-serif",
-                        fontWeight: 400,
+                        fontSize: '140px',
+                        fontFamily: "'Inter', sans-serif",
+                        fontWeight: 700,
                         fontStyle: 'normal',
-                        color: "rgba(37, 99, 235, 0.8)",
+                        color: "transparent",
+                        WebkitTextStroke: "1px rgba(135, 178, 255, 0.6)",
                         opacity: 1,
                         whiteSpace: 'nowrap',
-                        lineHeight: '100px',
+                        lineHeight: '150px',
                         textAlign: 'center',
-                        letterSpacing: '0.01em',
-                        marginLeft: '0px',
+                        letterSpacing: '0.04em',
                     }}
                 >
                     {verticalText}
@@ -82,13 +88,14 @@ const AboutUsHero: React.FC = () => {
             </div>
 
             {/* textual content */}
-            <div className="absolute inset-0 z-80 flex flex-col justify-center px-6 md:px-12 lg:px-24 text-[#304462]">
-                <h1 className="text-[36px] md:text-[48px] lg:text-[px] font-bold leading-tight mb-4">
-                    {title}
+            <div className="absolute inset-0 z-[30] flex flex-col justify-center px-6 md:px-12 lg:pl-[min(8%,120px)] max-w-[1440px] mx-auto pb-20 lg:pb-32 mt-10 lg:mt-0">
+                <h1 className="text-[42px] md:text-[52px] lg:text-[60px] font-[500] leading-[1.05] mb-8 tracking-[-0.03em] max-w-[1100px] text-[#324B6E]">
+                    About ✨ <span className="text-[#1C4195]">Bay Ultra Dry,</span> Your Local <br className="hidden lg:block" />
+                    Tauranga Cleaning Experts
                 </h1>
 
                 {subtitle && (
-                    <p className="text-[18px] md:text-[16px] mb-3 font-semibold text-[#2c2c2c]">
+                    <p className="text-[17px] md:text-[19px] lg:text-[20px] mb-4 font-semibold text-[#303030]/80 max-w-[700px] leading-relaxed">
                         {subtitle}
                     </p>
                 )}
@@ -100,13 +107,10 @@ const AboutUsHero: React.FC = () => {
                 )}
             </div>
 
-            <style jsx>{`
-                @keyframes spinSlow {
+            <style>{`
+                @keyframes heroRingSpin {
                     from { transform: rotate(0deg); }
                     to   { transform: rotate(360deg); }
-                }
-                .animate-spin-slow {
-                    animation: spinSlow 20s linear infinite;
                 }
             `}</style>
         </section>
@@ -114,3 +118,4 @@ const AboutUsHero: React.FC = () => {
 };
 
 export default AboutUsHero;
+

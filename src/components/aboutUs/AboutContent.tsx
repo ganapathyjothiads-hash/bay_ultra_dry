@@ -5,6 +5,9 @@ import TopBanner from "../home/TopBanner";
 import Navbar from "../home/Navbar";
 import Footer from "../home/Footer";
 import AboutUsHero from "./AboutUsHero";
+import AboutOurStory from "./AboutOurStory";
+import AboutWhatWeDo from "./AboutWhatWeDo";
+import AboutOurPromise from "./AboutOurPromise";
 
 const AboutContent = () => {
     return (
@@ -19,6 +22,15 @@ const AboutContent = () => {
 
             {/* Hero for About page */}
             <AboutUsHero />
+
+            {/* Content for About page */}
+            <AboutOurStory />
+
+            {/* What We Do section */}
+            <AboutWhatWeDo />
+
+            {/* Our Promise section */}
+            <AboutOurPromise />
 
             {/* Footer */}
             <Footer />

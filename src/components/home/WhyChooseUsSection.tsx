@@ -11,17 +11,17 @@ import { Star } from "lucide-react";
  */
 const WhyChooseUsSection = () => {
     return (
-        <section className="relative w-full h-auto lg:h-[100vh] lg:min-h-[750px] bg-white flex flex-col items-center justify-start overflow-visible lg:overflow-hidden py-12 lg:py-16">
+        <section className="relative w-full h-auto lg:h-[100vh] lg:min-h-[750px] bg-white flex flex-col items-center justify-start overflow-hidden py-12 lg:py-16">
             {/* 1. Section Title */}
-            <h2 className="text-[32px] md:text-5xl lg:text-[56px] font-normal text-[#1e2b58] text-center mb-10 lg:mb-4 px-6 z-20 max-w-[320px] md:max-w-none">
-                Why Choose Bay Ultra Dry
+            <h2 className="text-[26px] md:text-5xl lg:text-[56px] font-[600] lg:font-[400] text-[#0a0a0a] lg:text-[#1e2b58] text-center mb-8 lg:mb-4 px-6 z-20 max-w-[280px] md:max-w-none mx-auto leading-[1.3] lg:leading-tight">
+                Why Choose Bay<br className="lg:hidden" /> Ultra Dry
             </h2>
 
             {/* 2. Content Area */}
             <div className="relative w-full max-w-[1440px] flex-1 flex flex-col lg:flex-row items-center justify-center pt-0 lg:pt-0">
 
                 {/* Background Glow Image - Desktop Only or subtle on mobile */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[40%] lg:-translate-y-1/2 w-full max-w-[400px] aspect-square lg:max-w-[800px] z-0 pointer-events-none opacity-40 lg:opacity-80">
+                <div className="hidden lg:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[40%] lg:-translate-y-1/2 w-full max-w-[400px] aspect-square lg:max-w-[800px] z-0 pointer-events-none opacity-40 lg:opacity-80">
                     <Image
                         src="/assets/images/Ellipse 7.png"
                         alt="Background Glow"
@@ -31,27 +31,27 @@ const WhyChooseUsSection = () => {
                 </div>
 
                 {/* --- MOBILE CONTENT (Title already above) --- */}
-                <div className="lg:hidden flex flex-col items-center gap-6 w-full px-6 relative z-20">
+                <div className="lg:hidden flex flex-col items-center gap-4 w-full px-6 relative z-20">
 
                     {/* Stat Card 1: Trusted By */}
-                    <div className="w-full max-w-[340px] bg-white p-8 rounded-[20px] shadow-[0_15px_45px_rgba(0,0,0,0.06)] border border-gray-50 flex flex-col gap-1 text-center sm:text-left">
-                        <span className="text-gray-500 text-sm font-medium">Trusted by,</span>
-                        <div className="flex items-end justify-center sm:justify-start gap-1 my-1">
-                            <h3 className="text-[48px] font-bold text-[#1a1a1a] leading-none tracking-tight">1000</h3>
-                            <span className="text-3xl font-bold text-[#1a1a1a] leading-none mb-1">+</span>
+                    <div className="w-full max-w-[300px] bg-white px-6 py-[22px] rounded-[12px] shadow-[0_4px_24px_rgba(0,0,0,0.08)] border border-[#f1f5f9] flex flex-col gap-[2px] text-left">
+                        <span className="text-[#334155] text-[12px] font-[500] leading-none">Trusted by,</span>
+                        <div className="flex items-baseline justify-start gap-[1px] mt-[10px] mb-1">
+                            <h3 className="text-[44px] font-[700] text-[#0f172a] leading-none tracking-tight">1000</h3>
+                            <span className="text-[22px] font-[500] text-[#0f172a] leading-none pb-1">+</span>
                         </div>
-                        <p className="text-gray-500 text-sm font-medium">of locals across Tauranga.</p>
+                        <p className="text-[#475569] text-[11px] font-[500] leading-none">of locals across Tauranga.</p>
                     </div>
 
                     {/* Stat Card 2: Google Review */}
-                    <div className="w-full max-w-[340px] bg-white p-8 rounded-[20px] shadow-[0_15px_45px_rgba(0,0,0,0.06)] border border-gray-50 flex flex-col items-center sm:items-start gap-4">
-                        <div className="flex gap-1.5">
+                    <div className="w-full max-w-[300px] bg-white px-6 py-[22px] rounded-[12px] shadow-[0_4px_24px_rgba(0,0,0,0.08)] border border-[#f1f5f9] flex flex-col items-center gap-[10px]">
+                        <div className="flex gap-[3px]">
                             {[1, 2, 3, 4, 5].map((s) => (
-                                <Star key={s} size={18} fill="#fbbf24" color="#fbbf24" strokeWidth={0} />
+                                <Star key={s} size={15} fill="#fbbf24" color="#fbbf24" strokeWidth={0} />
                             ))}
                         </div>
-                        <div className="my-1">
-                            <span className="text-[42px] font-bold tracking-tight inline-flex items-center leading-none">
+                        <div className="my-[2px]">
+                            <span className="text-[38px] font-[600] tracking-tighter inline-flex items-center leading-none">
                                 <span className="text-[#4285F4]">G</span>
                                 <span className="text-[#EA4335]">o</span>
                                 <span className="text-[#FBBC05]">o</span>
@@ -60,67 +60,75 @@ const WhyChooseUsSection = () => {
                                 <span className="text-[#EA4335]">e</span>
                             </span>
                         </div>
-                        <p className="text-[#1a1a1a] text-[13px] font-bold leading-tight uppercase tracking-wider opacity-90 text-center sm:text-left">Fully Insured & Safety Certified</p>
+                        <p className="text-[#0f172a] text-[11px] font-[600] leading-tight text-center">Fully Insured & Safety Certified</p>
                     </div>
 
                     {/* Specialist Image - Mobile Centered */}
-                    <div className="relative w-full max-w-[320px] mt-4 mb-2">
+                    <div className="relative w-full max-w-[300px] mt-2 mb-2 flex justify-center">
+                        <div className="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220%] aspect-square z-0 pointer-events-none opacity-100">
+                            <Image
+                                src="/assets/images/Ellipse 7.png"
+                                alt="Background Glow"
+                                fill
+                                className="object-contain"
+                            />
+                        </div>
                         <Image
                             src="/assets/images/Why_Choose.png"
                             alt="Professional Cleaning Specialist"
-                            width={500}
-                            height={600}
-                            className="object-contain"
+                            width={300}
+                            height={360}
+                            className="object-contain relative z-10"
                             priority
                         />
                     </div>
 
-                    {/* Feature Cards Grid for mobile (Single column but could be 2 on larger mobile) */}
-                    <div className="grid grid-cols-1 gap-5 w-full max-w-[340px]">
+                    {/* Feature Cards Grid for mobile */}
+                    <div className="flex flex-col gap-4 w-full max-w-[300px] pb-10">
                         {/* Feature 1 */}
-                        <div className="bg-white p-7 rounded-[22px] shadow-[0_12px_35px_rgba(0,0,0,0.05)] border border-gray-50 flex flex-col gap-4">
-                            <div className="w-12 h-12 relative">
+                        <div className="bg-white px-[22px] py-6 rounded-[12px] shadow-[0_4px_24px_rgba(0,0,0,0.08)] border border-[#f1f5f9] flex flex-col gap-3">
+                            <div className="w-10 h-10 relative">
                                 <Image src="/assets/icons/bandwidth 1.png" alt="" fill className="object-contain" />
                             </div>
-                            <div className="space-y-1.5">
-                                <h4 className="text-[20px] font-bold text-[#1a1a1a] leading-tight">Fast Communication</h4>
-                                <p className="text-[14px] text-gray-400 font-medium leading-snug">Quick responses and clear updates</p>
+                            <div className="space-y-[6px]">
+                                <h4 className="text-[15px] font-[700] text-[#0f172a] leading-tight">Fast Communication</h4>
+                                <p className="text-[12px] text-[#475569] font-[500] leading-snug">Quick responses and clear updates</p>
                             </div>
                         </div>
 
                         {/* Feature 2 */}
-                        <div className="bg-white p-7 rounded-[22px] shadow-[0_12px_35px_rgba(0,0,0,0.05)] border border-gray-50 flex flex-col gap-4">
-                            <div className="flex items-center gap-3">
-                                <div className="w-11 h-11 relative shrink-0">
+                        <div className="bg-white px-[22px] py-6 rounded-[12px] shadow-[0_4px_24px_rgba(0,0,0,0.08)] border border-[#f1f5f9] flex flex-col gap-[14px]">
+                            <div className="flex items-center gap-[6px]">
+                                <div className="w-[34px] h-[34px] relative shrink-0">
                                     <Image src="/assets/icons/image 2.png" alt="" fill className="object-contain" />
                                 </div>
-                                <div className="font-bold text-[22px] text-[#1a1a1a] tracking-tight leading-none">IICRC</div>
+                                <div className="font-[600] text-[15px] text-[#0f172a] tracking-tight leading-none mt-1">IICRC</div>
                             </div>
-                            <div className="space-y-1">
-                                <h4 className="text-[19px] font-bold text-[#1a1a1a] leading-tight">Fully Insured & Safety Certified</h4>
-                                <p className="text-[14px] text-gray-400 font-medium leading-tight text-opacity-80">IICRC Certified</p>
+                            <div className="space-y-[6px]">
+                                <h4 className="text-[15px] font-[700] text-[#0f172a] leading-snug pr-4">Fully Insured & Safety<br />Certified</h4>
+                                <p className="text-[12px] text-[#475569] font-[500] leading-tight">IICRC Certified</p>
                             </div>
                         </div>
 
                         {/* Feature 3 */}
-                        <div className="bg-white p-7 rounded-[22px] shadow-[0_12px_35px_rgba(0,0,0,0.05)] border border-gray-50 flex flex-col gap-4">
-                            <div className="w-12 h-12 relative">
+                        <div className="bg-white px-[22px] py-6 rounded-[12px] shadow-[0_4px_24px_rgba(0,0,0,0.08)] border border-[#f1f5f9] flex flex-col gap-3">
+                            <div className="w-9 h-9 relative">
                                 <Image src="/assets/icons/place 1.png" alt="" fill className="object-contain" />
                             </div>
-                            <div className="space-y-1.5">
-                                <h4 className="text-[22px] font-bold text-[#1a1a1a] leading-tight">Locally Owned</h4>
-                                <p className="text-[14px] text-gray-400 font-medium leading-snug">A Tauranga business you can count on</p>
+                            <div className="space-y-[6px]">
+                                <h4 className="text-[15px] font-[700] text-[#0f172a] leading-tight">Locally Owned</h4>
+                                <p className="text-[12px] text-[#475569] font-[500] leading-snug">A Tauranga business you can<br />count on</p>
                             </div>
                         </div>
 
                         {/* Feature 4 */}
-                        <div className="bg-white p-7 rounded-[22px] shadow-[0_12px_35px_rgba(0,0,0,0.05)] border border-gray-50 flex flex-col gap-4 mb-10">
-                            <div className="w-12 h-12 relative">
+                        <div className="bg-white px-[22px] py-6 rounded-[12px] shadow-[0_4px_24px_rgba(0,0,0,0.08)] border border-[#f1f5f9] flex flex-col gap-3">
+                            <div className="w-9 h-9 relative">
                                 <Image src="/assets/icons/calendar 1.png" alt="" fill className="object-contain" />
                             </div>
-                            <div className="space-y-1.5">
-                                <h4 className="text-[22px] font-bold text-[#1a1a1a] leading-tight">Flexible Scheduling</h4>
-                                <p className="text-[14px] text-gray-400 font-medium leading-snug">Days, Nights, Weekends, and Holidays</p>
+                            <div className="space-y-[6px]">
+                                <h4 className="text-[15px] font-[700] text-[#0f172a] leading-tight">Flexible Scheduling</h4>
+                                <p className="text-[12px] text-[#475569] font-[500] leading-[1.4] pr-4">Days, Nights, Weekends, and<br />Holidays</p>
                             </div>
                         </div>
                     </div>
@@ -153,7 +161,7 @@ const WhyChooseUsSection = () => {
                         </div>
 
                         {/* Card 2: Top Right - Google Review */}
-                        <div className="absolute top-[10%] right-[16%] xl:right-[22%] w-[210px] bg-white p-6 rounded-[18px] shadow-[0_12px_45px_rgba(0,0,0,0.06)] border border-gray-100/50 flex flex-col gap-3 pointer-events-auto transition-all duration-300 hover:scale-105 z-20">
+                        <div className="absolute top-[10%] right-[16%] xl:right-[22%] w-[235px] bg-white p-6 rounded-[18px] shadow-[0_12px_45px_rgba(0,0,0,0.06)] border border-gray-100/50 flex flex-col gap-3 pointer-events-auto transition-all duration-300 hover:scale-105 z-20">
                             <div className="flex gap-1">
                                 {[1, 2, 3, 4, 5].map((s) => (
                                     <Star key={s} size={14} fill="#fbbf24" color="#fbbf24" strokeWidth={0} />
@@ -224,7 +232,7 @@ const WhyChooseUsSection = () => {
                         </div>
 
                         {/* Card 6: Bottom Right - Flexible Scheduling */}
-                        <div className="absolute bottom-[25%] right-[4%] xl:right-[8%] w-[270px] bg-white p-7 rounded-[22px] shadow-[0_15px_50px_rgba(0,0,0,0.07)] border border-gray-100/50 flex flex-col gap-4 pointer-events-auto transition-all duration-300 hover:scale-105 z-20">
+                        <div className="absolute bottom-[25%] right-[4%] xl:right-[8%] w-[285px] bg-white p-7 rounded-[22px] shadow-[0_15px_50px_rgba(0,0,0,0.07)] border border-gray-100/50 flex flex-col gap-4 pointer-events-auto transition-all duration-300 hover:scale-105 z-20">
                             <div className="w-12 h-12 relative">
                                 <Image
                                     src="/assets/icons/calendar 1.png"

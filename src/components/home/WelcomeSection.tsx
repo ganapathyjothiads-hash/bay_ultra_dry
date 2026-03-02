@@ -42,14 +42,14 @@ const WelcomeSection = () => {
     return (
         <section className="w-full py-8 md:py-12 bg-white relative overflow-hidden">
             <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-                
-                {/* FIRST ROW */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8 items-center">
-                    
+
+                {/* COMBINED ROW FOR MOBILE ORDERING */}
+                <div className="flex flex-col gap-6 lg:grid lg:grid-cols-12 lg:gap-6 lg:items-stretch lg:mb-8">
+
                     {/* Headline & Badge */}
-                    <div className="lg:col-span-5 flex flex-col justify-start">
-                        <div className="flex items-center mb-4">
-                            <div className="relative w-[80px] h-[32px]">
+                    <div className="order-1 lg:order-none lg:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-left mt-2 lg:mt-0">
+                        <div className="flex items-center justify-center lg:justify-start mb-3">
+                            <div className="relative w-[36px] h-[36px] mr-2">
                                 <Image
                                     src="/assets/images/Mask group.png"
                                     alt="Trust Badges"
@@ -57,16 +57,16 @@ const WelcomeSection = () => {
                                     className="object-contain"
                                 />
                             </div>
-                            <span className="text-[#2563EB] font-bold text-lg tracking-wide uppercase">About Us</span>
+                            <span className="text-[#1A4299] font-bold text-[17px]">About Us</span>
                         </div>
-                        <h2 className="text-[32px] md:text-[42px] lg:text-[49px] font-bold leading-[1.2] text-[#1E293B] tracking-tight">
-                            Where Quality Cleaning<br />Meets Genuine Care
+                        <h2 className="text-[26px] md:text-[42px] lg:text-[49px] font-[700] leading-[1.3] text-[#1E293B] tracking-tight max-w-[280px] lg:max-w-none mx-auto lg:mx-0">
+                            Where Quality Cleaning<br className="hidden lg:block" /> Meets Genuine Care
                         </h2>
                     </div>
 
                     {/* 100% Splash Badge */}
-                    <div className="lg:col-span-3 flex justify-center">
-                        <div className="relative w-[180px] h-[180px] md:w-[240px] md:h-[240px]">
+                    <div className="order-2 lg:order-none lg:col-span-3 flex justify-center py-4 lg:py-0">
+                        <div className="relative w-[260px] h-[260px] md:w-[240px] md:h-[240px]">
                             {/* Splash Background Image */}
                             <Image
                                 src="/assets/images/splash.png"
@@ -76,31 +76,27 @@ const WelcomeSection = () => {
                                 priority
                             />
                             <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
-                                <span className="text-[36px] md:text-[46px] font-serif italic text-[#1E40AF] leading-none mb-1">100%</span>
-                                <span className="text-[10px] md:text-[12px] font-extrabold text-[#1E40AF] uppercase tracking-[0.1em] leading-tight">Better Cleaning<br />Services</span>
+                                <span className="text-[44px] md:text-[46px] font-serif italic text-[#1E40AF] leading-none mb-1">100%</span>
+                                <span className="text-[12px] md:text-[12px] font-[800] text-[#1E40AF] tracking-[0.05em] leading-[1.3] mt-1">Better Cleaning<br />Services</span>
                             </div>
                         </div>
                     </div>
 
                     {/* Yellow Commitment Card */}
-                    <div className="lg:col-span-4 bg-[#FBBF24] p-6 md:p-8 rounded-[32px] shadow-lg">
-                        <p className="text-[13px] md:text-[15px] leading-relaxed text-slate-900 font-medium mb-6">
+                    <div className="order-7 flex flex-col items-start lg:order-none lg:col-span-4 bg-[#FBBF24] p-8 md:p-8 rounded-[16px] shadow-lg mt-2 lg:mt-0">
+                        <p className="text-[12px] md:text-[15px] leading-[1.6] text-[#1e293b] font-[500] mb-6">
                             <span className="font-bold">Bay Ultra Dry</span> is committed to exceptional results, clear communication, and a rapid response. Whether you need a deep carpet clean, an upholstery refresh, or emergency flood restoration, we deliver a thorough job with minimal disruption and the utmost care.
                         </p>
-                        <Button 
-                            variant="primary" 
-                            className="bg-[#1E40AF] text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-md hover:bg-[#1e3a8a] transition-colors"
+                        <Button
+                            variant="primary"
+                            className="bg-[#1E40AF] text-white px-7 py-2.5 rounded-full text-[13px] font-bold shadow-md hover:bg-[#1e3a8a] transition-colors"
                         >
-                            CONTACT US
+                            Contact Us
                         </Button>
                     </div>
-                </div>
 
-                {/* SECOND ROW */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-                    
                     {/* 1. Owners Image */}
-                    <div className="lg:col-span-3 relative rounded-[32px] overflow-hidden shadow-xl min-h-[300px]">
+                    <div className="order-3 lg:order-none lg:col-span-3 relative rounded-[16px] overflow-hidden shadow-xl min-h-[460px] lg:min-h-[300px]">
                         <Image
                             src="/assets/images/owners.png"
                             alt="Bay Ultra Dry Owners"
@@ -111,55 +107,58 @@ const WelcomeSection = () => {
                     </div>
 
                     {/* 2 & 3 & 4. Features + Trust Cards Middle Section */}
-                    <div className="lg:col-span-5 flex flex-col gap-6">
+                    <div className="order-4 lg:order-none lg:col-span-5 flex flex-col gap-5 pt-2 lg:pt-0">
                         {/* Features Checklist */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-[14px]">
                             {[
                                 "24/7 Emergency Response",
                                 "Advanced Deep-Clean Equipment",
                                 "Eco-Friendly Cleaning Solutions",
                                 "Fast Drying Technology"
                             ].map((feature, idx) => (
-                                <div key={idx} className="flex items-start gap-2">
-                                    <div className="mt-1 flex-shrink-0 w-4 h-4 rounded-full border-2 border-[#2563EB] flex items-center justify-center">
-                                        <Check className="w-2 h-2 text-[#2563EB] stroke-[4]" />
+                                <div key={idx} className="flex items-center gap-3">
+                                    <div className="flex-shrink-0 w-5 h-5 rounded-full border-[1.5px] border-[#2563EB] flex items-center justify-center">
+                                        <Check className="w-[11px] h-[11px] text-[#2563EB] stroke-[3.5]" />
                                     </div>
-                                    <span className="text-[13px] font-bold text-[#1E293B] leading-tight">{feature}</span>
+                                    <span className="text-[13px] font-[700] text-[#1E293B] leading-tight">{feature}</span>
                                 </div>
                             ))}
                         </div>
 
                         {/* Trust Cards Grid */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-grow">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 flex-grow mt-1 lg:mt-0">
                             {/* Google Card */}
-                            <div className="bg-[#0F172A] text-white p-6 rounded-[24px] flex flex-col justify-between shadow-md h-full">
-                                <div className="space-y-2">
-                                    <div className="relative h-[120px] w-[150px]">
-                                        <Image
-                                            src="/assets/images/google.png"
-                                            alt="Google"
-                                            fill
-                                            className="object-contain object-left"
-                                        />
-                                    </div>
+                            <div className="bg-[#020617] text-white p-5 rounded-[16px] flex flex-col justify-start shadow-md h-auto lg:h-full">
+                                <div className="flex items-center gap-[3px] mb-[18px]">
+                                    {[...Array(5)].map((_, i) => (
+                                        <Star key={i} className="w-[18px] h-[18px] fill-[#FBBF24] text-[#FBBF24]" />
+                                    ))}
                                 </div>
-                                <p className="text-[20px] font-bold leading-tight mt-4">
-                                    Fully Insured & Safety Certified
+                                <div className="relative h-[48px] w-[140px] mb-4">
+                                    <Image
+                                        src="/assets/images/google.png"
+                                        alt="Google"
+                                        fill
+                                        className="object-contain object-left"
+                                    />
+                                </div>
+                                <p className="text-[13px] font-[600] leading-[1.3] text-white">
+                                    Fully Insured & Safety<br />Certified
                                 </p>
                             </div>
 
                             {/* Experience Card */}
-                            <div className="bg-white border border-slate-100 p-6 rounded-[24px] shadow-sm flex flex-col justify-between h-full">
+                            <div className="bg-white border border-slate-100 p-6 pt-5 rounded-[16px] shadow-[0_4px_24px_rgba(0,0,0,0.06)] flex flex-col justify-start gap-[26px] h-full">
                                 <div className="flex items-center gap-3">
-                                    <span className="text-[45px] font-bold text-slate-900 leading-none">10+</span>
-                                    <p className="text-[14px] font-bold text-slate-500 uppercase leading-tight">
+                                    <span className="text-[34px] font-[500] text-[#0f172a] leading-none">10+</span>
+                                    <p className="text-[11px] font-[500] text-[#475569] leading-[1.3]">
                                         Years<br />Experience
                                     </p>
                                 </div>
-                                <div className="mt-2 pt-2 border-t border-slate-50">
-                                    <h4 className="text-[18px] font-bold text-slate-900 mb-1">Fast Communication</h4>
-                                    <p className="text-[16px] text-slate-500 font-medium leading-relaxed">
-                                        quick responses and clear updates
+                                <div className="flex flex-col gap-[6px]">
+                                    <h4 className="text-[12px] font-[700] text-[#0f172a] leading-tight">Fast Communication</h4>
+                                    <p className="text-[12px] text-[#475569] font-[500] leading-[1.4]">
+                                        quick responses<br />and clear updates
                                     </p>
                                 </div>
                             </div>
@@ -167,19 +166,19 @@ const WelcomeSection = () => {
                     </div>
 
                     {/* 5. Testimonial Card */}
-                    <div 
-                        className="lg:col-span-4 p-8 rounded-[30px] relative overflow-hidden flex flex-col shadow-lg"
+                    <div
+                        className="order-8 lg:order-none lg:col-span-4 p-8 rounded-[16px] relative overflow-hidden flex flex-col shadow-lg mt-2 lg:mt-0"
                         style={{ background: 'linear-gradient(241.26deg, #DAF1FF 28.79%, #FFCB71 98.22%)' }}
                     >
                         {/* Decorative Gradient Overlays */}
-                        <div 
+                        <div
                             className="absolute bottom-0 left-0 w-full h-[25%] z-0"
                             style={{ background: 'linear-gradient(91.57deg, #FFF8AA -7.72%, #C0E683 48.06%, #2B97FB 103.83%)' }}
                         ></div>
-                        <div 
+                        <div
                             className="absolute top-0 right-0 w-[20%] h-full z-0 bg-gradient-to-b from-transparent to-[#2B97FB]/50"
                         ></div>
-                        
+
                         {/* Quote Icon */}
                         <div className="absolute top-8 left-8 w-14 h-12 pointer-events-none select-none z-10 opacity-60">
                             <Image
@@ -189,7 +188,7 @@ const WelcomeSection = () => {
                                 className="object-contain"
                             />
                         </div>
-                        
+
                         {/* Dots */}
                         <div className="absolute top-8 right-8 flex gap-2 z-20">
                             {testimonials.map((_, idx) => (
@@ -204,7 +203,7 @@ const WelcomeSection = () => {
 
                         {/* Slider Content */}
                         <div className="relative z-10 mt-16 flex-grow overflow-hidden">
-                            <div 
+                            <div
                                 className="flex h-full transition-transform duration-500 ease-in-out"
                                 style={{ transform: `translateX(-${activeTestimonial * 100}%)` }}
                             >
@@ -213,7 +212,7 @@ const WelcomeSection = () => {
                                         <p className="text-[15.5px] font-medium text-[#1E293B] leading-[1.6]">
                                             {testimonial.text}
                                         </p>
-                                        
+
                                         <div className="flex items-center gap-4 mt-8 pb-1">
                                             <div className="relative w-[52px] h-[52px] rounded-full overflow-hidden shadow-sm border-2 border-white/50">
                                                 <Image
