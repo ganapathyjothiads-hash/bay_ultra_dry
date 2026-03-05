@@ -16,7 +16,7 @@ const WhyChooseUsSection = () => {
             <h2
                 data-aos="fade-up"
                 data-aos-duration="1000"
-                className="text-[26px] md:text-5xl lg:text-[56px] font-[600] lg:font-[400] text-[#0a0a0a] lg:text-[#1e2b58] text-center mb-8 lg:mb-4 px-6 z-20 max-w-[280px] md:max-w-none mx-auto leading-[1.3] lg:leading-tight"
+                className="text-[26px] md:text-5xl lg:text-[56px] font-[600] lg:font-[400] text-[#0a0a0a] lg:text-[#1e2b58] text-center px-6 z-20 max-w-[280px] md:max-w-none mx-auto leading-[1.3] lg:leading-tight"
             >
                 Why Choose Bay<br className="lg:hidden" /> Ultra Dry
             </h2>

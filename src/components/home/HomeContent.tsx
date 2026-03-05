@@ -3,17 +3,17 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import TopBanner from "./TopBanner";
-import Navbar from "./Navbar";
+import TopBanner from "../global_layout/TopBanner";
+import Navbar from "../global_layout/Navbar";
 import HeroSection from "./HeroSection";
 import Marquee from "./Marquee";
 import WelcomeSection from "./WelcomeSection";
 import ServicesSection from "./ServicesSection";
 import HomeSectionsContainer from "./HomeSectionsContainer";
 import WhyChooseUsSection from "./WhyChooseUsSection";
-import CTASection from "./CTASection";
-import QuoteSection from "./QuoteSection";
-import Footer from "./Footer";
+import CTASection from "../global_layout/CTASection";
+import QuoteSection from "../global_layout/QuoteSection";
+import Footer from "../global_layout/Footer";
 import EnquireNowButton from "../ui/EnquireNowButton";
 
 const HomeContent = () => {

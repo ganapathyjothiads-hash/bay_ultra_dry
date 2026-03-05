@@ -3,15 +3,15 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import TopBanner from "../home/TopBanner";
-import Navbar from "../home/Navbar";
-import Footer from "../home/Footer";
+import TopBanner from "../global_layout/TopBanner";
+import Navbar from "../global_layout/Navbar";
+import Footer from "../global_layout/Footer";
 import AboutUsHero from "./AboutUsHero";
 import AboutOurStory from "./AboutOurStory";
 import AboutWhatWeDo from "./AboutWhatWeDo";
 import AboutOurPromise from "./AboutOurPromise";
-import CTASection from "../home/CTASection";
-import QuoteSection from "../home/QuoteSection";
+import CTASection from "../global_layout/CTASection";
+import QuoteSection from "../global_layout/QuoteSection";
 
 const AboutContent = () => {
     useEffect(() => {

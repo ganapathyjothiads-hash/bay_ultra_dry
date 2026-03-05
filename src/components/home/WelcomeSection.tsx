@@ -234,12 +234,12 @@ const WelcomeSection = () => {
                                 style={{ transform: `translateX(-${activeTestimonial * 100}%)` }}
                             >
                                 {testimonials.map((testimonial, idx) => (
-                                    <div key={idx} className="w-full h-full flex-shrink-0 flex flex-col justify-between pr-10">
+                                    <div key={idx} className="w-full h-full flex-shrink-0 flex flex-col justify-between">
                                         <p className="text-[15.5px] font-medium text-[#1E293B] leading-[1.6]">
                                             {testimonial.text}
                                         </p>
 
-                                        <div className="flex items-center gap-4 mt-8 pb-1">
+                                        <div className="flex items-center gap-4 mt-20 pb-1">
                                             <div className="relative w-[52px] h-[52px] rounded-full overflow-hidden shadow-sm border-2 border-white/50">
                                                 <Image
                                                     src={testimonial.image}

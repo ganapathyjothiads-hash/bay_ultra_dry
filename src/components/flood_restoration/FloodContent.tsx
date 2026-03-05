@@ -1,48 +1,67 @@
 "use client";
 
-import React from "react";
-import TopBanner from "../home/TopBanner";
-import Navbar from "../home/Navbar";
-import Footer from "../home/Footer";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import TopBanner from "../global_layout/TopBanner";
+import Navbar from "../global_layout/Navbar";
+import Footer from "../global_layout/Footer";
 import FloodHero from "./FloodHero";
 import FloodServicesSlider from "./FloodServicesSlider";
 import EnquireNowButton from "../ui/EnquireNowButton";
 import FloodRestorationProcess from "./FloodRestorationProcess";
-import CTASection from "../home/CTASection";
+import CTASection from "../global_layout/CTASection";
 import FloodTrustBadges from "./FloodTrustBadges";
+import ServiceAreas from "../global_layout/ServiceAreas";
+import SmoothScroll from "../ui/SmoothScroll";
 
 const FloodContent = () => {
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            easing: "ease-out-cubic",
+            once: true,
+            offset: 50,
+        });
+    }, []);
+
     return (
-        <main className="min-h-screen relative bg-white">
-            {/* Header + hero area */}
-            <header className="absolute top-0 left-0 w-full z-[100]">
-                <TopBanner />
-                <div className="mt-0 lg:mt-[24px]">
-                    <Navbar />
-                </div>
-            </header>
+        <SmoothScroll>
+            <main className="min-h-screen relative bg-white">
 
-            {/* Flood hero */}
-            <FloodHero />
+                {/* Header + hero area */}
+                <header className="absolute top-0 left-0 w-full z-[100]">
+                    <TopBanner />
+                    <div className="mt-0 lg:mt-[24px]">
+                        <Navbar />
+                    </div>
+                </header>
 
-            {/* Services Slider */}
-            <FloodServicesSlider />
+                {/* Flood hero */}
+                <FloodHero />
 
-            {/* Flood Restoration Process */}
-            <FloodRestorationProcess />
+                {/* Services Slider */}
+                <FloodServicesSlider />
 
-            {/* Trust Badges */}
-            <FloodTrustBadges />
+                {/* Flood Restoration Process */}
+                <FloodRestorationProcess />
 
-            {/* CTA Section */}
-            <CTASection />
+                {/* Trust Badges */}
+                <FloodTrustBadges />
 
-            {/* Footer */}
-            <Footer />
+                {/* CTA Section */}
+                <CTASection />
 
-            {/* Sticky Enquire Now button */}
-            <EnquireNowButton/>
-        </main>
+                {/* Service Areas Section */}
+                <ServiceAreas />
+
+                {/* Footer */}
+                <Footer />
+
+                {/* Sticky Enquire Now button */}
+                <EnquireNowButton />
+            </main>
+        </SmoothScroll>
     );
 };
 

@@ -25,7 +25,7 @@ const FloodRestorationSection = () => {
                     <img
                         src="/assets/video/Flood_Restoration.gif"
                         alt="Flood Restoration"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover rounded-r-[20px]"
                     />
                     <div className="absolute inset-0 bg-black/5 pointer-events-none"></div>
                 </div>

@@ -17,17 +17,17 @@ const ServiceFeatureCard: React.FC<ServiceFeatureCardProps> = ({
 }) => {
     return (
         <div
-            className={`bg-white rounded-[8px] px-5 py-5 md:px-[5px] md:py-[24px] w-full flex items-start gap-4 transition-all duration-300 hover:-translate-y-1 ${className}`}
+            className={`bg-white rounded-[8px] px-5 py-5 md:px-[5px] w-full flex items-start gap-4 transition-all duration-300 hover:-translate-y-1 ${className}`}
             style={{ boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.05)" }}
         >
-            <div className="flex-shrink-0 mt-0.5">
+            <div className="flex-shrink-0 ml-3 mt-0.5">
                 {icon ? (
                     icon
                 ) : (
                     <img
                         src="/assets/icons/Star 15.png"
                         alt="Feature icon"
-                        className="w-[20px] h-[20px] md:w-[24px] md:h-[24px] object-contain"
+                        className="w-[20px] h-[20px] md:w-[20px] md:h-[24px] object-contain"
                     />
                 )}
             </div>

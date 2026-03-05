@@ -25,7 +25,7 @@ const CarpetCleaningSection = () => {
                     <img
                         src="/assets/video/Carpet_Cleaning.gif"
                         alt="Carpet Cleaning"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover rounded-l-[20px]"
                     />
                     <div className="absolute inset-0 bg-black/5 pointer-events-none"></div>
                 </div>

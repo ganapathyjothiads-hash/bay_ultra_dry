@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Footer = () => {
     return (
-        <footer className="w-full bg-white pt-16 pb-8 border-t border-gray-100">
+        <footer className="w-full bg-white pt-16 pb-8 border-t border-gray-400">
             <div
                 data-aos="fade-up"
                 data-aos-duration="1000"

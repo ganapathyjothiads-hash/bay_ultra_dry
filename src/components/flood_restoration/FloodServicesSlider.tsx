@@ -54,19 +54,29 @@ const FloodServicesSlider = () => {
         });
     };
 
+    React.useEffect(() => {
+        const interval = setInterval(() => {
+            handleNext();
+        }, 3000);
+        return () => clearInterval(interval);
+    }, [currentIndex, maxIndex]);
+
     return (
         <section className="w-full py-8 md:py-12 lg:py-16 bg-white px-6 md:px-12 lg:px-24">
             <div className="max-w-[1400px] mx-auto">
                 {/* Header with title and navigation */}
-                <div className="flex items-center justify-between mb-12 md:mb-16">
+                <div
+                    data-aos="fade-right"
+                    className="flex items-center justify-between mb-12 md:mb-16"
+                >
                     <div className="flex items-center gap-3 md:gap-4">
                         <img
-                            src="/assets/images/star_image.png"
+                            src="/assets/images/star_2.png"
                             alt=""
                             aria-hidden
                             className="w-6 h-6 md:w-8 md:h-8"
                         />
-                        <h2 className="text-[#304462] font-semibold text-[20px] md:text-[40px] lg:text-[46px]">
+                        <h2 className="text-[#304462] font-['Nebulas'] font-normal text-[32px] md:text-[50px] lg:text-[62px] leading-tight lg:leading-[76px] tracking-[0.01em] capitalize">
                             Our Flood Restoration Services
                         </h2>
                     </div>
@@ -91,7 +101,11 @@ const FloodServicesSlider = () => {
                 </div>
 
                 {/* Services Grid/Slider */}
-                <div className="overflow-hidden">
+                <div
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                    className="overflow-hidden"
+                >
                     <div
                         className="flex gap-6 transition-transform duration-300 ease-out"
                         style={{
@@ -103,11 +117,11 @@ const FloodServicesSlider = () => {
                             <div
                                 key={index}
                                 className="flex-shrink-0"
-                                style={{ width: `${100 / itemsPerView}%` }}
+                                style={{ width: `${125 / itemsPerView}%` }}
                             >
-                                <div className="flex flex-col h-full">
+                                <div className="flex flex-col h-full hover:transform hover:scale-105 transition-transform duration-300">
                                     {/* Service Image */}
-                                    <div className="relative w-full h-[280px] md:h-[320px] lg:h-[380px] rounded-2xl overflow-hidden mb-4">
+                                    <div className="relative w-full h-[280px] md:h-[300px] lg:h-[310px] rounded-[20] overflow-hidden mb-4 shadow-md">
                                         <img
                                             src={service.image}
                                             alt={service.title}
@@ -116,9 +130,9 @@ const FloodServicesSlider = () => {
                                     </div>
 
                                     {/* Service Title */}
-                                    <div className="flex items-start gap-2">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-[#3780FF] mt-2 flex-shrink-0"></div>
-                                        <h3 className="text-[#3780FF] font-semibold text-[15px] md:text-[15px] lg:text-[16px]">
+                                    <div className="flex items-start gap-4">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-[#3780FF] mt-3.5 flex-shrink-0"></div>
+                                        <h3 className="text-[#3780FF] font-['Nebulas'] font-medium text-[16px] md:text-[18px] lg:text-[22px] leading-[1.4] lg:leading-[36px] tracking-[0.02em] capitalize">
                                             {service.title}
                                         </h3>
                                     </div>
@@ -127,6 +141,7 @@ const FloodServicesSlider = () => {
                         ))}
                     </div>
                 </div>
+
             </div>
         </section>
     );

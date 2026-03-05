@@ -19,12 +19,12 @@ const UpholsteryCleaningSection = () => {
                 <div
                     data-aos="fade-right"
                     data-aos-duration="1200"
-                    className={`w-full lg:w-[46%] h-[400px] lg:h-[591px] relative lg:shadow-2xl lg:rounded-r-[20px]`}
+                    className={`w-full lg:w-[46%] h-[400px] lg:h-[591px] relative lg:shadow-2xl rounded-r-[20px]`}
                 >
                     <img
                         src="/assets/video/Upholstery_Cleaning.gif"
                         alt="Upholstery Cleaning"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover rounded-r-[20px]"
                     />
                     <div className="absolute inset-0 bg-black/5 pointer-events-none"></div>
                 </div>

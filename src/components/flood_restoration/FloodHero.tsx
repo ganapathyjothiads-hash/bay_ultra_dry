@@ -4,77 +4,94 @@ import React from "react";
 
 const FloodHero = () => {
     return (
-        <>
-            <section className="relative w-full h-[900px] lg:h-[1000px] overflow-hidden">
-            {/* yellow ellipse at left */}
-            <img
-                src="/assets/images/Ellipse yellow.png"
-                alt=""
-                aria-hidden
-                className="absolute left-0 top-60 w-[30%] h-auto object-contain z-0 opacity-100"
-            />
-
-            {/* blue ellipse at right */}
-            <img
-                src="/assets/images/Ellipse blue.png"
-                alt=""
-                aria-hidden
-                className="absolute right-0 bottom-0 w-[30%] h-auto object-contain z-0 opacity-100"
-            />
-
-            {/* owner photo overlay inside a centered container */}
-            <div className="absolute left-0 right-0 z-30 flex justify-center items-end pointer-events-none" style={{ bottom: '60px' }}>
+        <div className="w-full flex flex-col items-center bg-white">
+            {/* Main Hero Section */}
+            <section className="relative w-full min-h-screen flex flex-col items-center pt-24 md:pt-32 lg:pt-40 overflow-hidden">
+                {/* Background Image (Subtle) */}
                 <img
-                    src="/assets/images/owner_fullwidth.png"
-                    alt="Our team on site"
-                    className="w-auto max-w-[100%] lg:max-w-[80%] h-auto object-contain opacity-100"
+                    src="/assets/images/Flood_Restroation_bg.png"
+                    alt=""
+                    aria-hidden
+                    className="absolute inset-x-0 top-0 w-full h-[50%] object-cover opacity-15 block z-0 [mask-image:linear-gradient(to_bottom,black_85%,transparent_100%)]"
                 />
-            </div>
 
-            {/* text content positioned near top */}
-            <div className="absolute inset-0 z-20 flex flex-col justify-start items-center text-center pt-20 md:pt-30 lg:pt-38 px-6 md:px-12 lg:px-24">
-                {/* subtle white overlay for legibility */}
-                <div className="absolute inset-0 bg-white/40 z-0"></div>
-                <h1 className="relative text-[#304462] font-bold text-[20px] md:text-[30px] lg:text-[65px] leading-tight lg:leading-[1.1] max-w-[1200px]">
-                    Emergency Flood Restoration In Tauranga,{' '}
-                    <span className="text-[#005D38]">24/7</span>{' '}
-                    Water Damage Experts
-                </h1>
-                <p className="relative mt-6 text-[#1D1D1D] font-medium text-[16px] md:text-[17px] max-w-[640px]">
-                    Water damage? Call your local Tauranga team for a fast, effective response.
-                </p>
-            </div>
-            </section>
+                {/* Yellow Glow (Left) */}
+                <div
+                    className="absolute z-10 pointer-events-none rounded-full"
+                    style={{
+                        width: '525px',
+                        height: '675px',
+                        top: '30%',
+                        left: '-300px',
+                        background: '#F4A51B',
+                        opacity: 0.65,
+                        filter: 'blur(75px)',
+                    }}
+                />
 
-            {/* Star section with description */}
-            <section className="w-full py-6 md:py-8 lg:py-0 bg-white px-6 md:px-12 lg:px-24">
-                <div className="max-w-[1000px] mx-auto">
-                    {/* Star icon decorations with text */}
-                    <div className="flex items-center justify-center gap-4 md:gap-6 mb-8">
+                {/* Blue Glow (Right) */}
+                <div
+                    className="absolute z-10 pointer-events-none rounded-full"
+                    style={{
+                        width: '525px',
+                        height: '675px',
+                        top: '30%',
+                        right: '-300px',
+                        background: '#006FFF',
+                        opacity: 0.75,
+                        filter: 'blur(75px)',
+                    }}
+                />
+
+                {/* Content Overlay */}
+                <div className="relative z-20 flex flex-col items-center text-center px-6 md:px-12 lg:px-24 w-full">
+                    <h1
+                        data-aos="fade-up"
+                        className="text-[#304462] font-['Nebulas'] font-bold text-[32px] md:text-[50px] lg:text-[68px] leading-[1.1] max-w-[1300px] mb-6 tracking-tight"
+                    >
+                        Emergency Flood Restoration In<br />Tauranga, <span className="text-[#005D38]">24/7</span> Water Damage Experts
+                    </h1>
+                    <p
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                        className="text-[#1D1D1D] font-medium text-[16px] md:text-[18px] lg:text-[20px] max-w-[800px] mb-12 opacity-80"
+                    >
+                        Water damage? Call your local Tauranga team for a fast, effective response.
+                    </p>
+
+                    {/* Team Photo Container */}
+                    <div
+                        data-aos="zoom-in"
+                        data-aos-delay="400"
+                        className="w-full max-w-[1200px] mx-auto mb-16 rounded-[20px] overflow-hidden shadow-2xl"
+                    >
                         <img
-                            src="/assets/images/star_image.png"
-                            alt=""
-                            aria-hidden
-                            className="w-8 h-8 md:w-10 md:h-10"
-                        />
-                        <h2 className="text-[#304462] font-bold text-[28px] md:text-[38px] lg:text-[48px] leading-tight text-center">
-                            Gentle, Powerful, And Effective
-                        </h2>
-                        <img
-                            src="/assets/images/star_image.png"
-                            alt=""
-                            aria-hidden
-                            className="w-8 h-8 md:w-10 md:h-10"
+                            src="/assets/images/owner_fullwidth.png"
+                            alt="Our team on site"
+                            className="w-full h-auto object-cover"
                         />
                     </div>
 
-                    {/* Description text */}
-                    <p className="text-[#1D1D1D] text-center max-w-[1000px] mx-auto" style={{ fontFamily: 'Inter', fontWeight: 400, fontSize: '17px', lineHeight: '26px', letterSpacing: '0%' }}>
-                        From your family&apos;s favourite sofa to large-scale commercial seating, our upholstery cleaning service revives fabrics deeply and safely. Our advanced cleaning systems gently yet powerfully lift away embedded dirt, grime, and odours, restoring your furniture&apos;s freshness and appearance.
-                    </p>
+                    {/* Integrated Star Section */}
+                    <div
+                        data-aos="fade-up"
+                        className="max-w-[1200px] mx-auto flex flex-col items-center pb-12"
+                    >
+                        <div className="flex items-center justify-center gap-4 md:gap-6 mb-6">
+                            <img src="/assets/images/star_2.png" alt="" className="w-6 h-6 md:w-8 md:h-8" />
+                            <h2 className="text-[#304462] font-['Nebulas'] font-[400] text-[24px] md:text-[36px] lg:text-[48px] leading-tight">
+                                Gentle, Powerful, And Effective
+                            </h2>
+                            <img src="/assets/images/star_1.png" alt="" className="w-6 h-6 md:w-8 md:h-8" />
+                        </div>
+                        <p className="text-[#1D1D1D] text-center max-w-[950px] mx-auto font-medium text-[14px] md:text-[16px] lg:text-[14px] leading-[1.7] opacity-70">
+                            From your family's favourite sofa to large-scale commercial seating, our upholstery cleaning service revives fabrics deeply and safely. Our advanced cleaning systems gently yet powerfully lift away embedded dirt, grime, and odours, restoring your furniture's freshness and appearance.
+                        </p>
+                    </div>
                 </div>
+
             </section>
-        </>
+        </div>
     );
 };
 
