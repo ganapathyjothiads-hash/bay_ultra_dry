@@ -39,16 +39,16 @@ const FloodRestorationSection = () => {
                 >
                     <div>
                         <div className="mb-8 lg:mb-12">
-                            <h2 className="text-[#0a0a0a] text-[22px] md:text-[54px] lg:text-[49px] font-[500] lg:font-bold leading-[1.05] mb-4 lg:mb-8 tracking-tight flex items-center lg:block">
-                                <span className="text-[#1A4299] lg:text-[#1A42C1] mr-1.5 lg:mr-4">24/7</span>
+                            <h2 className="font-family:'nebula2' text-[#1D1D1D] text-[22px] md:text-[54px] lg:text-[49px] font-[400]  leading-[1.05] mb-4 lg:mb-8 tracking-tight flex items-center lg:block">
+                                <span className="text-[#1A4299] lg:text-[#1A4299] font-[400] mr-1.5 lg:mr-4">24/7</span>
                                 Flood Restoration
                             </h2>
 
                             <div className="space-y-4 lg:space-y-5 mb-8 lg:mb-12">
-                                <p className="text-[#1A1A1A]/90 text-[16px] md:text-[15px] font-medium leading-[1.6] max-w-[650px]">
+                                <p className="text-[#2C2C2C] text-[16px] md:text-[15px] font-medium leading-[1.6] max-w-[650px]">
                                     When flooding strikes, every minute counts. Your quick action and our immediate response are critical to preventing long-term damage and mould.
                                 </p>
-                                <p className="text-[#1A1A1A]/90 text-[16px] md:text-[15px] font-medium leading-[1.6] max-w-[650px]">
+                                <p className="text-[#2C2C2C] text-[16px] md:text-[15px] font-medium leading-[1.6] max-w-[650px]">
                                     Our Tauranga-based emergency team is on call 24/7—including weekends and public holidays. We arrive fast to extract water, thoroughly dry all affected areas, and restore your property.
                                 </p>
                             </div>

@@ -66,7 +66,7 @@ const ServicesSection = () => {
     }, [isHovered]);
 
     return (
-        <section className="relative w-full bg-[#FFF5C3] overflow-hidden py-16 md:py-24 px-6 md:px-12 lg:px-20 min-h-screen flex items-center">
+        <section className="relative w-full bg-[#FFF1A4] overflow-hidden py-16 md:py-24 px-6 md:px-12 lg:px-20 min-h-screen flex items-center">
             {/* Background Wavy Lines */}
             <div className="absolute top-0 right-0 w-[50%] h-[400px] md:w-[43%] md:h-[600px] opacity-20 pointer-events-none">
                 <Image
@@ -98,9 +98,9 @@ const ServicesSection = () => {
                             <div className="text-[#F5A51C]">
                                 <Sparkles size={20} strokeWidth={1.5} />
                             </div>
-                            <span className="text-[#1E3A8A] font-bold text-[15px]">Services</span>
+                            <span className="font-family:'' text-[#1A4299] font-[600] text-[15px] ">Services</span>
                         </div>
-                        <h2 className="text-[36px] md:text-5xl lg:text-[56px] font-[600] text-[#1E3A8A] tracking-tight leading-tight">
+                        <h2 className="text-[36px] md:text-5xl lg:text-[56px] font-[400] text-[#304462] tracking-tight leading-tight">
                             Our Services
                         </h2>
                     </div>
@@ -169,10 +169,10 @@ const ServicesSection = () => {
                                         </div>
                                     </div>
 
-                                    <h3 className="text-[24px] md:text-[26px] font-bold text-[#1E3A8A] mb-4 pr-16 tracking-tight leading-tight mt-1 transition-colors">
+                                    <h3 className="text-[24px] md:text-[26px] font-bold text-[#1A4299] mb-4 pr-16 tracking-tight leading-tight mt-1 transition-colors">
                                         {service.title}
                                     </h3>
-                                    <p className="text-[#555555] leading-[1.65] text-[15px] md:text-[15px] font-medium border-t border-transparent transition-all">
+                                    <p className="text-[#2C2C2C] leading-[1.65] text-[15px] md:text-[15px] font-medium border-t border-transparent transition-all">
                                         {service.description}
                                     </p>
                                 </div>

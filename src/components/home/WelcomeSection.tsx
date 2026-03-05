@@ -61,9 +61,9 @@ const WelcomeSection = () => {
                                     className="object-contain"
                                 />
                             </div>
-                            <span className="text-[#1A4299] font-bold text-[17px]">About Us</span>
+                            <span className="text-[#1A4299] font-bold text-[18px]">About Us</span>
                         </div>
-                        <h2 className="text-[26px] md:text-[42px] lg:text-[49px] font-[700] leading-[1.3] text-[#1E293B] tracking-tight max-w-[280px] lg:max-w-none mx-auto lg:mx-0">
+                        <h2 className="font-family:'nebula-2' md:text-[50px] lg:text-[50px] font-[400] leading-[1.3] text-[#304462] tracking-tight max-w-[280px] lg:max-w-none mx-auto lg:mx-0">
                             Where Quality Cleaning<br className="hidden lg:block" /> Meets Genuine Care
                         </h2>
                     </div>
@@ -85,8 +85,8 @@ const WelcomeSection = () => {
                                 priority
                             />
                             <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
-                                <span className="text-[44px] md:text-[46px] font-serif italic text-[#1E40AF] leading-none mb-1">100%</span>
-                                <span className="text-[12px] md:text-[12px] font-[800] text-[#1E40AF] tracking-[0.05em] leading-[1.3] mt-1">Better Cleaning<br />Services</span>
+                                <span className="text-[44px] md:text-[46px] font-serif italic text-[#1E40AF] leading-none mb-1 font-family:'Jomolhari'">100%</span>
+                                <span className="text-[12px] md:text-[12px] font-[800] text-[#1E40AF] tracking-[0.05em] leading-[1.3] mt-1 font-family:'Jomolhari'">Better Cleaning<br />Services</span>
                             </div>
                         </div>
                     </div>
@@ -98,12 +98,11 @@ const WelcomeSection = () => {
                         data-aos-delay="400"
                         className="order-7 flex flex-col items-start lg:order-none lg:col-span-4 bg-[#FBBF24] p-8 md:p-8 rounded-[16px] shadow-lg mt-2 lg:mt-0"
                     >
-                        <p className="text-[12px] md:text-[15px] leading-[1.6] text-[#1e293b] font-[500] mb-6">
-                            <span className="font-bold">Bay Ultra Dry</span> is committed to exceptional results, clear communication, and a rapid response. Whether you need a deep carpet clean, an upholstery refresh, or emergency flood restoration, we deliver a thorough job with minimal disruption and the utmost care.
+                        <p className="text-[12px] md:text-[15px] leading-[1.6] text-[#1e293b] mb-6">
+                            <span className="font-bold font-family:'inter' font-weight:600">Bay Ultra Dry</span> is committed to exceptional results, clear communication, and a rapid response. Whether you need a deep carpet clean, an upholstery refresh, or emergency flood restoration, we deliver a thorough job with minimal disruption and the utmost care.
                         </p>
                         <Button
-                            variant="primary"
-                            className="bg-[#1E40AF] text-white px-7 py-2.5 rounded-full text-[13px] font-bold shadow-md hover:bg-[#1e3a8a] transition-colors"
+                            className="bg-[#1A4299] font-family:'inter' font-weight:600 text-white px-7 py-2.5 rounded-full text-[13px] font-bold shadow-md hover:bg-[#FFF1A4] hover:text-[#1A4299] transition-colors"
                         >
                             Contact Us
                         </Button>

@@ -100,7 +100,7 @@ const HeroSection = () => {
                 <h1
                     data-aos="fade-up"
                     data-aos-duration="1000"
-                    className="text-white font-[600] lg:font-medium text-[24px] xs:text-[38px] md:text-[48px] lg:text-[60px] leading-[1.3] lg:leading-[1.15] mb-6 lg:mb-5 tracking-wide lg:tracking-tight"
+                    className="text-white font-[600] font-family: 'nebula' lg:font-medium text-[24px] xs:text-[38px] md:text-[48px] lg:text-[60px] leading-[1.3] lg:leading-[1.15] mb-6 lg:mb-5 tracking-wide lg:tracking-tight"
                 >
                     <span className="lg:hidden">
                         Professional Carpet,<br />

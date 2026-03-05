@@ -7,7 +7,7 @@ const TopBanner = () => {
         <div className="hidden md:flex w-full justify-center" style={{ position: 'relative', zIndex: 70 }}>
             <div
                 style={{
-                    background: '#FEF9C3',
+                    background: '#FFF1A4',
                     borderRadius: '0 0 28px 28px',
                     padding: '7px 32px',
                     display: 'inline-flex',
@@ -23,10 +23,11 @@ const TopBanner = () => {
                         color: '#1e293b',
                         fontSize: '13px',
                         fontWeight: 500,
-                        lineHeight: '1.4',
+                        lineHeight: '1.5',
                         textAlign: 'center',
                         margin: 0,
                         letterSpacing: '0.01em',
+                        fontFamily: "Nunito Sans"
                     }}
                 >
                     Carpet &amp; upholstery cleaning and flood restoration across Tauranga, Mt Maunganui and the wider Bay of Plenty

@@ -37,7 +37,7 @@ const ServiceFeatureCard: React.FC<ServiceFeatureCardProps> = ({
                         {title}
                     </span>
                     {description && (
-                        <span className="text-[#1A1A1A] font-medium text-[15px] md:text-[15px]">
+                        <span className="text-[#1D1D1D] font-[600] text-[15px] md:text-[15px]">
                             {description}
                         </span>
                     )}

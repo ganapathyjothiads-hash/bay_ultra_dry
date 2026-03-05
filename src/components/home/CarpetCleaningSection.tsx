@@ -39,12 +39,12 @@ const CarpetCleaningSection = () => {
                 >
                     <div>
                         <div className="mb-8 lg:mb-10">
-                            <h2 className="text-[#2B426E] text-[26px] md:text-[54px] lg:text-[49px] font-[600] lg:font-bold leading-[1.05] mb-4 lg:mb-6 tracking-tight">
+                            <h2 className="text-[#304462] text-[26px] md:text-[54px] lg:text-[49px] font-[400]  leading-[1.05] mb-4 lg:mb-6 tracking-tight">
                                 Carpet Cleaning
                             </h2>
 
                             <div className="space-y-4 mb-8">
-                                <p className="text-[#1A1A1A]/90 text-[16px] md:text-[15px] font-medium leading-[1.6] max-w-[650px]">
+                                <p className="text-[#2C2C2C] text-[16px] md:text-[15px] font-medium leading-[1.6] max-w-[650px]">
                                     Experience a deeper, faster-drying carpet clean with our powerful industrial-grade equipment. Get back to your routine in hours, not days. Perfect for protecting your home's air quality, refreshing rental properties, and maintaining professional business environments.
                                 </p>
                                 <p className="text-[#1A1A1A]/90 text-[16px] md:text-[15px] font-medium leading-[1.6] max-w-[650px]">

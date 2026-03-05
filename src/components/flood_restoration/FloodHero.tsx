@@ -63,7 +63,7 @@ const FloodHero = () => {
                     <div
                         data-aos="zoom-in"
                         data-aos-delay="400"
-                        className="w-full max-w-[1200px] mx-auto mb-16 rounded-[20px] overflow-hidden shadow-2xl"
+                        className="w-full max-w-[1200px] mx-auto mb-16 rounded-[20px] overflow-hidden"
                     >
                         <img
                             src="/assets/images/owner_fullwidth.png"

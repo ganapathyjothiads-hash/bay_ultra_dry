@@ -88,14 +88,16 @@ const Navbar = () => {
                                     key={link.label}
                                     href={link.href}
                                     style={{
-                                        fontSize: '14px',
-                                        fontWeight: isActive(link.href) ? 700 : 500,
-                                        color: isActive(link.href) ? '#2563EB' : '#374151',
+                                        fontFamily: "Nunito Sans",
+                                        fontSize: 'medium',
+                                        fontWeight: isActive(link.href) ? 500 : 500,
+                                        color: isActive(link.href) ? '#1A4299' : '#333333',
                                         textDecoration: isActive(link.href) ? 'underline' : 'none',
-                                        textUnderlineOffset: '8px',
-                                        textDecorationThickness: '2px',
+                                        textUnderlineOffset: '2px',
+                                        textDecorationThickness: '1px',
                                         whiteSpace: 'nowrap',
-                                        letterSpacing: '0.01em',
+                                        letterSpacing: '0%',
+                                        lineHeight: '1.5',
                                         padding: '0 2px',
                                     }}
                                 >

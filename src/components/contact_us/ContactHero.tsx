@@ -26,14 +26,14 @@ const ContactHero = () => {
 
             <div className="relative z-10 max-w-[1200px] mx-auto px-6 text-center pt-[80px] pb-[120px]">
                 <h1
-                    className="text-white font-['Nebula_2',sans-serif] text-[48px] font-[500] tracking-[1%] md:text-[64px] lg:text-[78px] leading-[1.1] mb-8"
+                    className="text-white font-['Nebula_2',sans-serif] text-[48px] font-[500] tracking-[1%] md:text-[64px] lg:text-[78px] leading-[1.1] mb-8 letter-spacing: 1% line-height: 100px"
                     data-aos="fade-up"
                 >
                     Get In Touch For A Sparkling <br className="hidden md:block" /> Clean Space!
                 </h1>
                 <p
-                    className="text-white text-[18px] md:text-[19px] lg:text-[20px] font-medium max-w-[700px] mx-auto leading-relaxed opacity-90"
-                    data-aos="fade-up"
+                    className="text-[#E8E8E8] font-family:'inter' font-weight:500 text-white text-[18px] md:text-[19px] lg:text-[20px] font-medium max-w-[700px] mx-auto leading-relaxed opacity-90 line-height: 25px"
+                    data-aos="fde-up"
                     data-aos-delay="200"
                 >
                     Let our professional cleaning team make your home or business shine. <br className="hidden md:block" />
