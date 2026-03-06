@@ -8,7 +8,6 @@ import Navbar from "../global_layout/Navbar";
 import Footer from "../global_layout/Footer";
 import FloodHero from "./FloodHero";
 import FloodServicesSlider from "./FloodServicesSlider";
-import EnquireNowButton from "../ui/EnquireNowButton";
 import FloodRestorationProcess from "./FloodRestorationProcess";
 import CTASection from "../global_layout/CTASection";
 import FloodTrustBadges from "./FloodTrustBadges";
@@ -57,9 +56,6 @@ const FloodContent = () => {
 
                 {/* Footer */}
                 <Footer />
-
-                {/* Sticky Enquire Now button */}
-                <EnquireNowButton />
             </main>
         </SmoothScroll>
     );

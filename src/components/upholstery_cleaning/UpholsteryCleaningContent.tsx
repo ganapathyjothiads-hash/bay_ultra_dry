@@ -13,7 +13,6 @@ import UpholsteryIntro from "./UpholsteryIntro";
 import UpholsteryCleaningSlider from "./UpholsteryCleaningSlider";
 import UpholsteryWhyChoose from "./UpholsteryWhyChoose";
 import UpholsteryHowItWorks from "./UpholsteryHowItWorks";
-import EnquireNowButton from "../ui/EnquireNowButton";
 
 const UpholsteryCleaningContent = () => {
     useEffect(() => {
@@ -59,9 +58,6 @@ const UpholsteryCleaningContent = () => {
 
             {/* Footer */}
             <Footer />
-
-            {/* Sticky Enquire Now button */}
-            <EnquireNowButton />
         </main>
     );
 };

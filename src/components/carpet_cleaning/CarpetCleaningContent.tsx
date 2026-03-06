@@ -13,7 +13,6 @@ import CarpetWhyChoose from "./CarpetWhyChoose";
 import CTASection from "../global_layout/CTASection";
 import ServiceAreas from "../global_layout/ServiceAreas";
 import QuoteSection from "../global_layout/QuoteSection";
-import EnquireNowButton from "../ui/EnquireNowButton";
 
 const CarpetCleaningContent = () => {
     useEffect(() => {
@@ -59,9 +58,6 @@ const CarpetCleaningContent = () => {
 
             {/* Footer */}
             <Footer />
-
-            {/* Sticky Enquire Now button */}
-            <EnquireNowButton />
         </main>
     );
 };

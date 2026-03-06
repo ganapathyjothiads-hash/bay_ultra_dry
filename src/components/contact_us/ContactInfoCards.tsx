@@ -13,14 +13,14 @@ const ContactInfoCards = () => {
             color: "#005D38"
         },
         {
-            icon: <img src="/assets/icons/Mail.png" alt="Mail" width={"20px"} height={"20px"}/>,
+            icon: <img src="/assets/icons/Mail.png" alt="Mail" width={"20px"} height={"20px"} />,
             label: "Email ID",
             value: "info@gmail.com",
             href: "mailto:info@gmail.com",
             color: "#005D38"
         },
         {
-            icon: <img src="/assets/icons/Location.png" alt="Location" width={"20px"} height={"20px"}/>,
+            icon: <img src="/assets/icons/Location.png" alt="Location" width={"20px"} height={"20px"} />,
             label: "Address",
             value: "162 Durham Street Tauranga Bay of Plenty",
             href: "https://maps.google.com/?q=162+Durham+Street+Tauranga+Bay+of+Plenty",
@@ -29,7 +29,7 @@ const ContactInfoCards = () => {
     ];
 
     return (
-        <div className="relative z-20 -mt-[100px] max-w-[1240px] mx-auto px-6">
+        <div className="relative z-20 -mt-[100px] max-w-[1140px] mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {contactInfo.map((info, index) => (
                     <div

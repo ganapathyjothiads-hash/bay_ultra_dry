@@ -31,9 +31,9 @@ const UpholsteryHero = () => {
 
                 <div className="relative z-[10] max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 w-full flex flex-col items-start pt-[15%] pb-[15%]">
                     {/* Left: Content */}
-                    <div className="w-full lg:w-2/3 text-left">
+                    <div className="w-full lg:w-3/4 text-left">
                         <h1
-                            className="text-white font-['Nebulas'] font-normal text-[48px] md:text-[60px] lg:text-[61px] leading-[1.05] mb-8"
+                            className="text-white font-['Nebulas'] font-semibold text-[48px] md:text-[60px] lg:text-[61px] leading-[1.05] mb-8"
                             data-aos="fade-right"
                             data-aos-delay="200"
                         >
@@ -42,7 +42,7 @@ const UpholsteryHero = () => {
                         </h1>
 
                         <p
-                            className="text-white text-[18px] md:text-[18px] lg:text-[18px] font-medium max-w-[650px] mb-10 leading-relaxed opacity-90"
+                            className="text-white text-[16px] md:text-[18px] lg:text-[18px] font-semibold max-w-[650px] mb-10 leading-relaxed opacity-90"
                             data-aos="fade-right"
                             data-aos-delay="400"
                         >
@@ -50,25 +50,22 @@ const UpholsteryHero = () => {
                         </p>
                     </div>
                 </div>
-            </section>
 
-            {/* Bottom Transition Assets & Waves */}
-            <div className="absolute bottom-0 left-0 w-full h-[300px] z-[20] pointer-events-none overflow-hidden xl:h-[400px]">
-
-                {/* Yellow Frame - Positioned on the left slant */}
+                {/* Bottom Transition Assets (Inside Section to be clipped perfectly) */}
+                {/* Yellow Frame */}
                 <img
                     src="/assets/images/upholsteryCleaning/Upholstery_frame2.png"
                     alt="Yellow Frame"
-                    className="absolute bottom-[6%] left-[0%] w-[10%] lg:w-[10%] h-auto z-[25] object-contain -rotate-[350deg]"
+                    className="absolute bottom-[-2%] left-[-2%] w-[70%] sm:w-[65%] lg:w-[58%] h-auto z-[3] rotate-[353deg] object-contain"
                 />
 
-                {/* Blue Frame - Positioned on the right slant */}
+                {/* Blue Frame */}
                 <img
                     src="/assets/images/upholsteryCleaning/Upholstery_frame.png"
                     alt="Blue Frame"
-                    className="absolute bottom-[5%] right-[36%] w-[100%] h-[50%] lg:w-[100%] h-auto z-[24] object-contain rotate-[204deg]"
+                    className="absolute bottom-[-3%] left-[25%] sm:left-[30%] lg:left-[33%] w-[50%] sm:w-[45%] lg:w-[38%] h-auto z-[2] rotate-[0deg] object-contain"
                 />
-            </div>
+            </section>
         </div>
     );
 };

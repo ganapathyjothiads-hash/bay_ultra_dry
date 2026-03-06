@@ -3,17 +3,18 @@
 import React from "react";
 import Image from "next/image";
 import { Star, ArrowUpRight } from "lucide-react";
+import EnquireNowButton from "../ui/EnquireNowButton";
 
 const AboutOurStory: React.FC = () => {
     return (
         <section className="relative w-full bg-white pb-24 items-center flex flex-col pt-10 lg:pt-0">
             {/* Transitional Row: Disk and Cards bridging the sections */}
-            <div className="relative z-[50] w-full max-w-[1400px] mx-auto px-6 -mt-[180px] lg:-mt-[240px] mb-12 lg:mb-20">
-                <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between gap-10">
+            <div className="relative z-[50] w-full max-w-[1400px] mx-auto px-6 -mt-[180px] lg:-mt-[220px] mb-12 lg:mb-20">
+                <div className="flex flex-col lg:flex-row items-center lg:items-center justify-between gap-10">
 
                     {/* Rotating Disk Item - Positioned to exactly match the reference overlap */}
                     <div
-                        className="relative w-[340px] lg:w-[450px] h-[340px] lg:h-[450px] flex items-center justify-center pointer-events-none flex-shrink-0 lg:ml-[20px] "
+                        className="relative w-[340px] lg:w-[400px] h-[340px] lg:h-[400px] flex items-center justify-center pointer-events-none flex-shrink-0 lg:ml-[20px] "
                         data-aos="zoom-in"
                         data-aos-duration="1000"
                     >
@@ -39,62 +40,32 @@ const AboutOurStory: React.FC = () => {
                     </div>
 
                     {/* Trust Cards row - Aligned to the top right of the story area */}
-                    <div className="flex flex-col md:flex-row items-center gap-4 lg:gap-6 w-full justify-end lg:mb-[130px]">
+                    <div className="flex flex-col md:flex-row items-center gap-4 lg:gap-5 w-full justify-end lg:mb-0">
                         {/* Card 1: Trusted By */}
                         <div
-                            className="w-full max-w-[260px] bg-white pt-10 pb-8 px-9 rounded-[20px] shadow-[0_15px_50px_rgba(0,0,0,0.06)] border border-gray-100 flex flex-col items-start h-[195px] justify-between transition-all duration-300 hover:shadow-xl"
+                            className="w-full max-w-[240px] h-[160px] relative transition-all duration-300  rounded-[12px] overflow-hidden"
                             data-aos="fade-up"
-                            data-aos-delay="100"
+                            data-aos-delay="200"
                         >
-                            <span className="text-[#626881] text-[15px] font-semibold">Trusted by,</span>
-                            <div className="flex items-baseline gap-0.5 my-1">
-                                <h3 className="text-[58px] font-[900] text-[#111111] leading-none tracking-tighter">1000</h3>
-                                <span className="text-[44px] font-[900] text-[#111111] leading-none">+</span>
-                            </div>
-                            <p className="text-[#626881] text-[10px] font-semibold">of locals across Tauranga.</p>
+                            <Image src="/assets/images/Trust.png" alt="Google Review" fill className="object-contain" />
                         </div>
 
                         {/* Card 2: Google Review */}
                         <div
-                            className="w-full max-w-[295px] bg-white pt-10 pb-8 px-9 rounded-[20px] shadow-[0_15px_50px_rgba(0,0,0,0.06)] border border-gray-100 flex flex-col items-start h-[195px] justify-between transition-all duration-300 hover:shadow-xl"
+                            className="w-full max-w-[240px] h-[160px] relative transition-all duration-300  rounded-[12px] overflow-hidden"
                             data-aos="fade-up"
                             data-aos-delay="200"
                         >
-                            <div className="flex gap-[4px]">
-                                {[1, 2, 3, 4, 5].map((s) => (
-                                    <Star key={s} size={15} fill="#F9AB00" color="#F9AB00" strokeWidth={0} />
-                                ))}
-                            </div>
-                            <div className="my-1">
-                                <span className="text-[52px] font-bold tracking-tighter inline-flex items-center leading-none">
-                                    <span className="text-[#4285F4]">G</span>
-                                    <span className="text-[#EA4335]">o</span>
-                                    <span className="text-[#FBBC05]">o</span>
-                                    <span className="text-[#4285F4]">g</span>
-                                    <span className="text-[#34A853]">l</span>
-                                    <span className="text-[#EA4335]">e</span>
-                                </span>
-                            </div>
-                            <p className="text-[#111111] text-[10px] font-[900]">Fully Insured & Safety Certified</p>
+                            <Image src="/assets/images/google1.png" alt="Google Review" fill className="object-contain" />
                         </div>
 
                         {/* Card 3: IICRC */}
                         <div
-                            className="w-full max-w-[395px] bg-white pt-10 pb-8 px-9 rounded-[20px] shadow-[0_15px_50px_rgba(0,0,0,0.06)] border border-gray-100 flex items-center h-[195px] overflow-hidden transition-all duration-300 hover:shadow-xl"
+                            className="w-full max-w-[340px] h-[160px] relative transition-all duration-300 rounded-[12px] overflow-hidden"
                             data-aos="fade-up"
                             data-aos-delay="300"
                         >
-                            <div className="flex items-center gap-6">
-                                <div className="flex-shrink-0">
-                                    <div className="relative w-[80px] h-[80px]">
-                                        <Image src="/assets/icons/image 2.png" alt="IICRC" fill className="object-contain" />
-                                    </div>
-                                </div>
-                                <div className="flex flex-col gap-1.5">
-                                    <h4 className="text-[17px] font-[900] text-[#111111] leading-tight uppercase tracking-tight">Fully Insured & Safety Certified</h4>
-                                    <p className="text-[13px] text-[#888888] font-extrabold uppercase tracking-[0.15em]">IICRC Certified</p>
-                                </div>
-                            </div>
+                            <Image src="/assets/images/IICR.png" alt="IICRC" fill className="object-contain" />
                         </div>
                     </div>
                 </div>
@@ -102,7 +73,7 @@ const AboutOurStory: React.FC = () => {
 
             {/* Main Content Area (Story) */}
             {/* Main Content Area (Story) - Positioned behind the disk and perfectly contained */}
-            <div className="relative z-[10] w-full max-w-[1400px] mx-auto px-6 flex flex-col lg:flex-row items-stretch justify-between gap-10  -mt-[80px] lg:-mt-[185px]">
+            <div className="relative z-[10] w-full max-w-[1400px] mx-auto px-6 flex flex-col lg:flex-row items-stretch justify-between gap-10  -mt-[80px] lg:-mt-[150px]">
 
                 {/* Left Side: Image Content - Placed behind the disk with exact overlap */}
                 <div
@@ -117,16 +88,16 @@ const AboutOurStory: React.FC = () => {
 
                 {/* Right Side: Our Story Text - Exactly contained within the 680px image height */}
                 <div
-                    className="w-full lg:flex-1 flex flex-col text-left text-[#303030] lg:h-[460px] justify-between lg:pl-4 py-2"
+                    className="w-full lg:flex-1 flex flex-col text-left text-[#303030] lg:h-[460px] justify-between lg:pl-10 py-2"
                     data-aos="fade-left"
                     data-aos-duration="1000"
                 >
                     <div className="flex flex-col">
-                        <h2 className="text-[#324B6E] text-[52px] md:text-[60px] lg:text-[40px] font-[500] tracking-tight mb-4 leading-[1]">
+                        <h2 className="text-[#304462] text-[52px] md:text-[60px] lg:text-[40px] font-['Nebulas'] tracking-tight mb-4 leading-[1]">
                             Our Story
                         </h2>
 
-                        <div className="text-[15px] md:text-[15px] lg:text-[15px] leading-[1.8] space-y-[26px] font-[500] text-[#303030]/80 tracking-normal mb-4 max-w-[620px]">
+                        <div className="text-[14px] md:text-[14px] lg:text-[14px] leading-[1.8] space-y-[24px] font-[400] text-[#2C2C2C] tracking-normal mb-8 max-w-[620px]">
                             <p>
                                 Since 2022, our mission at Bay Ultra Dry has been straightforward—to set the standard for reliable, high-quality cleaning and restoration in Tauranga.
                             </p>
@@ -139,7 +110,7 @@ const AboutOurStory: React.FC = () => {
                         </div>
 
                         <div>
-                            <button className="bg-[#1C4195] text-white px-11 py-4 rounded-full font-bold text-[12px] shadow-[0_10px_35px_rgba(28,65,149,0.3)] hover:bg-[#133170] transition-all transform hover:scale-105">
+                            <button className="bg-[#1C4195] text-white px-9 py-3 rounded-full font-bold text-[13px] shadow-[0_10px_35px_rgba(28,65,149,0.3)] hover:bg-[#133170] transition-all transform hover:scale-105">
                                 Contact Us
                             </button>
                         </div>
@@ -147,7 +118,7 @@ const AboutOurStory: React.FC = () => {
 
                     {/* This quote is pushed to the absolute bottom of the 680px box by justify-between */}
                     <div
-                        className="text-[#0A6CFF] font-[700] italic text-[19px] lg:text-[19px] leading-[1.5] max-w-[600px] lg:mt-0 mt-10"
+                        className="text-[#0082FB] font-[600] italic text-[16px] lg:text-[16px] leading-[1.6] max-w-[550px] lg:mt-0 mt-10"
                         data-aos="fade-up"
                         data-aos-delay="200"
                     >
@@ -158,6 +129,9 @@ const AboutOurStory: React.FC = () => {
             </div>
 
 
+
+            {/* Enquire Now — bottom-right of this section */}
+            <EnquireNowButton variant="section" />
 
             <style>{`
                 @keyframes heroRingSpin {

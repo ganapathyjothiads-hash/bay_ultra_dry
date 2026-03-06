@@ -4,8 +4,8 @@ import React from "react";
 
 const AboutUsHero: React.FC = () => {
     const title = (
-        <span className="text-[#324b6e]">
-            About ✨ <span className="text-[#134391]">Bay Ultra Dry,</span> Your Local <br className="hidden lg:block" />
+        <span className="text-[#304462] font-[400] font-family: 'Nebula'">
+            About  <span className="text-[#134391]">Bay Ultra Dry,</span> Your Local <br className="hidden lg:block" />
             Tauranga Cleaning Experts
         </span>
     );
@@ -17,7 +17,7 @@ const AboutUsHero: React.FC = () => {
     const verticalText = "About Us";
 
     return (
-        <section className="relative w-full min-h-[100vh] lg:min-h-[820px] overflow-hidden bg-white pt-32 lg:pt-0">
+        <section className="relative w-full min-h-[90vh] lg:min-h-[100vh] overflow-hidden bg-white pt-32 lg:pt-0">
             {/* background image (man cleaning) positioned on the right */}
             <div
                 className="absolute right-0 top-0 w-full h-full z-0 overflow-hidden"
@@ -100,17 +100,17 @@ const AboutUsHero: React.FC = () => {
             {/* textual content */}
             <div className="absolute inset-x-0 top-0 h-full z-[30] flex flex-col justify-center px-6 md:px-12 lg:pl-[min(8%,120px)] max-w-[1440px] mx-auto pb-20 lg:pb-32">
                 <h1
-                    className="text-[42px] md:text-[52px] lg:text-[60px] font-medium leading-[1.05] mb-8 tracking-[-0.03em] max-w-[1100px] text-[#2C4674]"
+                    className="font-['Nebulas'] text-[55px] md:text-[55px] lg:text-[60px] font-semibold leading-[1.05] mb-8 tracking-[-0.03em] max-w-[1100px] text-[#304462]"
                     data-aos="fade-up"
                     data-aos-delay="200"
                 >
-                    About <img src="/assets/images/star 1.png" alt="star" className="inline-block w-[35px] md:w-[45px] lg:w-[50px] h-auto align-middle mx-1 lg:mx-2 -mt-2 lg:-mt-4" /> <span className="text-[#1C4195]">Bay Ultra Dry,</span> Your Local <br className="hidden lg:block" />
+                    About <img src="/assets/images/star 1.png" alt="star" className="inline-block w-[35px] md:w-[45px] lg:w-[45px] h-auto align-middle mx-1 lg:mx-2 -mt-2 lg:-mt-3" /> <span className="text-[#1C4195]">Bay Ultra Dry,</span> Your Local <br className="hidden lg:block" />
                     Tauranga Cleaning Experts
                 </h1>
 
                 {subtitle && (
                     <p
-                        className="text-[17px] md:text-[19px] lg:text-[20px] mb-4 font-medium text-[#303030]/90 max-w-[750px] leading-relaxed"
+                        className="text-[15px] md:text-[17px] lg:text-[18px] mb-4 font-medium text-[#303030]/90 max-w-[750px] leading-relaxed"
                         data-aos="fade-up"
                         data-aos-delay="400"
                     >

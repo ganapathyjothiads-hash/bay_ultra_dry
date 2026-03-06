@@ -149,17 +149,18 @@ const Navbar = () => {
                                 alignItems: 'center',
                                 justifyContent: 'center',
                                 background: '#F59E0B',
-                                color: 'white',
+                                color: '#1D1D1D',
                                 fontSize: '14px',
-                                fontWeight: 700,
+                                fontWeight: 600,
                                 padding: '10px 24px',
                                 borderRadius: '100px',
                                 whiteSpace: 'nowrap',
                                 textDecoration: 'none',
                                 flexShrink: 0,
-                                letterSpacing: '0.02em',
+                                letterSpacing: '0%',
                                 boxShadow: '0 2px 8px rgba(245, 158, 11, 0.3)',
                                 transition: 'background 0.2s ease',
+                                lineHeight:"25px"
                             }}
                         >
                             Enquire Now

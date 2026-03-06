@@ -27,7 +27,7 @@ const AboutOurPromise: React.FC = () => {
 
                     {/* Left Side: Text Content */}
                     <div
-                        className="w-full lg:w-[55%] flex flex-col items-start text-left z-20"
+                        className="w-full lg:w-[65%] flex flex-col items-start text-left z-20 ml-[5%]"
                         data-aos="fade-right"
                         data-aos-duration="1000"
                     >
@@ -35,16 +35,16 @@ const AboutOurPromise: React.FC = () => {
                             Our Promise
                         </h2>
 
-                        <p className="text-[#333333] text-[14px] md:text-[15px] font-normal leading-[1.65] max-w-[480px] mb-8 opacity-85">
+                        <p className="text-[#333333] text-[14px] md:text-[15px] font-normal leading-[1.65] max-w-[600px] mb-8 opacity-85">
                             We treat every job like it's our own home or business, with respect, reliability, and care.
                         </p>
 
-                        <div className="w-full flex flex-col items-start mt-0">
+                        <div className="w-full flex flex-col items-start mb-[10%]">
                             <h4 className="text-[#2563EB] text-[12px] md:text-[13px] font-[600] mb-5 uppercase tracking-[0.1em]">
                                 Our Values:
                             </h4>
 
-                            <div className="w-full max-w-[460px]">
+                            <div className="w-full max-w-[500px]">
                                 {values.map((value, index) => (
                                     <React.Fragment key={index}>
                                         <div
@@ -85,30 +85,24 @@ const AboutOurPromise: React.FC = () => {
                             <div className="absolute top-[-20%] right-[-20%] w-[140%] h-[140%] z-0 pointer-events-none overflow-visible">
                                 {/* Large Top-Right Sun Glow effect */}
                                 <div
-                                    className="absolute top-0 right-0 w-full h-full opacity-70"
-                                    data-aos="zoom-in-up"
-                                    data-aos-delay="200"
+                                    className="absolute top-0 right-0 opacity-70"
                                 >
                                     <Image
                                         src="/assets/images/About_BG1.png"
                                         alt=""
                                         fill
                                         className="object-contain object-right-top scale-[1.3]"
-                                        priority
                                     />
                                 </div>
                                 {/* Soft localized glow directly behind circle */}
                                 <div
-                                    className="absolute inset-0 opacity-50 scale-[1.2]"
-                                    data-aos="zoom-in"
-                                    data-aos-delay="400"
+                                    className="absolute inset-0 opacity-70 scale-[1.2]"
                                 >
                                     <Image
                                         src="/assets/images/About_BG2.png"
                                         alt=""
                                         fill
-                                        className="object-contain"
-                                        priority
+                                        className="object-contain scale-[1.2]"
                                     />
                                 </div>
                             </div>

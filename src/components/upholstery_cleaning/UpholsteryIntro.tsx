@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import EnquireNowButton from "../ui/EnquireNowButton";
 
 const UpholsteryIntro = () => {
     return (
@@ -39,6 +40,9 @@ const UpholsteryIntro = () => {
                     </p>
                 </div>
             </div>
+
+            {/* Enquire Now — bottom-right of this section */}
+            <EnquireNowButton variant="section" />
         </section>
     );
 };

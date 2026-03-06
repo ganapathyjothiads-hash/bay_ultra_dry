@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import EnquireNowButton from "../ui/EnquireNowButton";
 
 const CarpetServicesSlider = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -74,14 +75,8 @@ const CarpetServicesSlider = () => {
                 />
             </div>
 
-            {/* Sticky Enquire Now Button */}
-            <div className="fixed right-0 top-[60%] -translate-y-1/2 z-[100] hidden lg:flex">
-                <div className="bg-[#1e44a3] text-white py-8 px-4 rounded-l-[15px] shadow-2xl flex items-center justify-center cursor-pointer hover:bg-[#163075] transition-all group">
-                    <span className="[writing-mode:vertical-rl] font-bold text-[16px] tracking-wider uppercase">
-                        Enquire Now
-                    </span>
-                </div>
-            </div>
+            {/* Enquire Now — bottom-right of this section */}
+            <EnquireNowButton variant="section" />
 
             <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
                 {/* Top Descriptive Content (Exactly like the image) */}

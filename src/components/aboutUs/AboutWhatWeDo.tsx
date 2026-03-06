@@ -54,14 +54,14 @@ const AboutWhatWeDo: React.FC = () => {
             <div className="relative z-20 w-full max-w-[1440px] mx-auto px-6 flex flex-col items-center text-center">
                 {/* Title and Subtitle */}
                 <h2
-                    className="text-[#324B6E] text-[38px] md:text-[48px] lg:text-[56px] font-[500] tracking-tight mb-6 leading-tight"
+                    className="text-[#304462] text-[38px] md:text-[48px] lg:text-[56px] font-[400] tracking-tight mb-6 leading-tight"
                     data-aos="fade-down"
                 >
                     What We Do
                 </h2>
 
                 <p
-                    className="text-[#303030] text-[15px] md:text-[16px] lg:text-[17px] font-[500] max-w-[650px] mb-12 leading-relaxed opacity-90"
+                    className="text-[#1D1D1D] text-[15px] md:text-[16px] lg:text-[17px] font-[500] max-w-[650px] mb-12 leading-relaxed opacity-90"
                     data-aos="fade-up"
                     data-aos-delay="200"
                 >
@@ -69,7 +69,7 @@ const AboutWhatWeDo: React.FC = () => {
                 </p>
 
                 {/* Services Grid (Cards) - Constrained width to avoid overlap with side images */}
-                <div className="w-full max-w-[1100px] px-4 md:px-10">
+                <div className="w-full max-w-[1100px] px-4 md:px-20">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-14 w-full mb-16">
                         {services.map((service, index) => (
                             <div

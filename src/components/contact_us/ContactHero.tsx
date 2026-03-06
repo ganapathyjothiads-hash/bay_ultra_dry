@@ -5,7 +5,7 @@ import React from "react";
 const ContactHero = () => {
     return (
         <section
-            className="relative w-full min-h-[500px] lg:min-h-[720px] overflow-hidden flex items-center justify-center"
+            className="relative w-full min-h-[500px] lg:min-h-[650px] overflow-hidden flex items-center justify-center"
             style={{
                 clipPath: "polygon(0% 0%, 100% 0%, 100% 85%, 50% 100%, 0% 85%)",
                 WebkitClipPath: "polygon(0% 0%, 100% 0%, 100% 85%, 50% 100%, 0% 85%)"
@@ -16,7 +16,7 @@ const ContactHero = () => {
                 <img
                     src="/assets/images/contact_us/Contact_bg.png"
                     alt="Contact Background"
-                    className="w-full h-full object-cover"
+                    className="w-full h-[590px] object-cover"
                 />
                 <div
                     className="absolute inset-0"

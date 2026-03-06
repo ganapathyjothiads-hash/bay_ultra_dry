@@ -14,7 +14,6 @@ import WhyChooseUsSection from "./WhyChooseUsSection";
 import CTASection from "../global_layout/CTASection";
 import QuoteSection from "../global_layout/QuoteSection";
 import Footer from "../global_layout/Footer";
-import EnquireNowButton from "../ui/EnquireNowButton";
 
 const HomeContent = () => {
     useEffect(() => {
@@ -62,9 +61,6 @@ const HomeContent = () => {
 
             {/* Footer */}
             <Footer />
-
-            {/* Sticky Enquire Now button */}
-            <EnquireNowButton />
         </main>
     );
 };

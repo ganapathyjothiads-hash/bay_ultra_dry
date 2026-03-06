@@ -10,7 +10,6 @@ import ContactHero from "./ContactHero";
 import ContactInfoCards from "./ContactInfoCards";
 import ContactForm from "./ContactForm";
 import ContactMap from "./ContactMap";
-import EnquireNowButton from "../ui/EnquireNowButton";
 
 const ContactUsContent = () => {
     useEffect(() => {
@@ -47,9 +46,6 @@ const ContactUsContent = () => {
 
             {/* Footer */}
             <Footer />
-
-            {/* Sticky Enquire Now button */}
-            <EnquireNowButton />
         </main>
     );
 };

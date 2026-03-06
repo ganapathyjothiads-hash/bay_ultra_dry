@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Button from "../ui/Button";
 import { Check, Star } from "lucide-react";
+import EnquireNowButton from "../ui/EnquireNowButton";
 
 const testimonials = [
     {
@@ -259,6 +260,9 @@ const WelcomeSection = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Enquire Now — bottom-right of this section */}
+            <EnquireNowButton variant="section" />
         </section>
     );
 };
