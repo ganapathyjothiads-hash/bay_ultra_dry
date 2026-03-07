@@ -7,6 +7,7 @@ import TopBanner from "../global_layout/TopBanner";
 import Navbar from "../global_layout/Navbar";
 import HeroSection from "./HeroSection";
 import Marquee from "./Marquee";
+import EnquireNowButton from "../ui/EnquireNowButton";
 import WelcomeSection from "./WelcomeSection";
 import ServicesSection from "./ServicesSection";
 import HomeSectionsContainer from "./HomeSectionsContainer";
@@ -39,7 +40,10 @@ const HomeContent = () => {
             <HeroSection />
 
             {/* Scrolling Marquee */}
-            <Marquee />
+            <div className="relative">
+                <Marquee />
+                <EnquireNowButton variant="section" className="bottom-[-160px] md:bottom-[-240px]" />
+            </div>
 
             {/* Welcome Section */}
             <WelcomeSection />

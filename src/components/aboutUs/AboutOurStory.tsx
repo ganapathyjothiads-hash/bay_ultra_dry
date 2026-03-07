@@ -3,8 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import { Star, ArrowUpRight } from "lucide-react";
-import EnquireNowButton from "../ui/EnquireNowButton";
-
 const AboutOurStory: React.FC = () => {
     return (
         <section className="relative w-full bg-white pb-10 lg:pb-24 items-center flex flex-col pt-10 lg:pt-0">
@@ -123,11 +121,6 @@ const AboutOurStory: React.FC = () => {
                 </div>
 
             </div>
-
-
-
-            {/* Enquire Now — bottom-right of this section */}
-            <EnquireNowButton variant="section" />
 
             <style>{`
                 @keyframes heroRingSpin {

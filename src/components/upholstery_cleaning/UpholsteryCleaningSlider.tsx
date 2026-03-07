@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const UpholsteryCleaningSlider = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [visibleCards, setVisibleCards] = useState(3);
 
     const services = [
         {
@@ -25,74 +26,127 @@ const UpholsteryCleaningSlider = () => {
         }
     ];
 
-    const handlePrev = () => {
-        setCurrentIndex((prev) => (prev === 0 ? services.length - 1 : prev - 1));
-    };
+    const updateVisibleCards = useCallback(() => {
+        if (typeof window !== "undefined") {
+            if (window.innerWidth >= 1024) {
+                setVisibleCards(3);
+            } else if (window.innerWidth >= 768) {
+                setVisibleCards(2);
+            } else {
+                setVisibleCards(1);
+            }
+        }
+    }, []);
 
-    const handleNext = () => {
-        setCurrentIndex((prev) => (prev === services.length - 1 ? 0 : prev + 1));
-    };
+    useEffect(() => {
+        updateVisibleCards();
+        window.addEventListener("resize", updateVisibleCards);
+        return () => window.removeEventListener("resize", updateVisibleCards);
+    }, [updateVisibleCards]);
+
+    const handlePrev = useCallback(() => {
+        setCurrentIndex((prev) => {
+            const maxIndex = Math.max(0, services.length - visibleCards);
+            return prev === 0 ? maxIndex : prev - 1;
+        });
+    }, [visibleCards, services.length]);
+
+    const handleNext = useCallback(() => {
+        setCurrentIndex((prev) => {
+            const maxIndex = Math.max(0, services.length - visibleCards);
+            return prev >= maxIndex ? 0 : prev + 1;
+        });
+    }, [visibleCards, services.length]);
 
     return (
-        <section className="relative w-full py-16 md:py-20 bg-white overflow-hidden">
+        /* Removed bg-white and overflow-hidden to treat this and the sections above as a single, seamless page */
+        <section className="relative w-full pt-0 pb-16 md:pb-24">
+
+            {/* Green glow — positioned behind the "What We Clean" text and bleeding into the intro section's frame area */}
+            <div
+                className="absolute pointer-events-none z-[0]
+                    top-[-25%] left-1/2 -translate-x-1/2 md:left-[10%] md:translate-x-0
+                    w-[500px] h-[350px] md:h-[500px]
+                    bg-[#00FF26] opacity-[18%] md:opacity-[25%]
+                    blur-[120px] md:blur-[160px] rounded-full"
+            />
+
+            {/* Blue glow — positioned behind the arrows and bleeding into the intro section's frame area */}
+            <div
+                className="absolute pointer-events-none z-[0]
+                    top-[-15%] right-[-10%] md:right-[5%]
+                    w-[350px] h-[400px]  md:h-[600px]
+                    bg-[#006FFF] opacity-[15%] md:opacity-[22%]
+                    blur-[110px] md:blur-[150px] rounded-full"
+            />
+
             <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
-                {/* Header with Nav */}
-                <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-12 gap-6">
-                    <div className="flex items-center gap-4">
+
+                {/* Header: "What We Clean" + arrows */}
+                <div className="flex flex-col md:flex-row items-center justify-between mb-8 md:mb-12 gap-4">
+
+                    <div className="flex items-center gap-3 md:gap-4 w-full justify-center md:justify-start">
                         <img
                             src="/assets/icons/Star_3.png"
                             alt="Star Icon"
-                            className="w-[32px] md:w-[42px] h-auto object-contain"
+                            className="w-[28px] md:w-[42px] h-auto object-contain"
                         />
                         <h2 className="text-[#304462] font-display font-normal text-[32px] md:text-[48px] lg:text-[52px] tracking-tight">
                             What We Clean
                         </h2>
                     </div>
 
-                    <div className="flex gap-4">
+                    {/* Desktop Arrows */}
+                    <div className="hidden md:flex gap-4 flex-shrink-0">
                         <button
                             onClick={handlePrev}
                             aria-label="Previous"
-                            className="w-[50px] md:w-[60px] h-[50px] md:h-[60px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] transition-all shadow-lg active:scale-95"
+                            className="w-[50px] lg:w-[56px] h-[50px] lg:h-[56px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] hover:scale-105 transition-all duration-300 shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
                         >
-                            <ArrowLeft size={30} strokeWidth={2.5} />
+                            <ArrowLeft size={24} strokeWidth={2.5} className="group-hover:-translate-x-1 transition-transform" />
                         </button>
                         <button
                             onClick={handleNext}
                             aria-label="Next"
-                            className="w-[50px] md:w-[60px] h-[50px] md:h-[60px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] transition-all shadow-lg active:scale-95"
+                            className="w-[50px] lg:w-[56px] h-[50px] lg:h-[56px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] hover:scale-105 transition-all duration-300 shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
                         >
-                            <ArrowRight size={30} strokeWidth={2.5} />
+                            <ArrowRight size={24} strokeWidth={2.5} className="group-hover:translate-x-1 transition-transform" />
                         </button>
                     </div>
                 </div>
 
-                {/* Slider Content */}
-                <div className="relative overflow-visible">
+                {/* Slider track */}
+                <div className="relative overflow-hidden w-full">
                     <div
-                        className="flex gap-6 md:gap-8 lg:gap-10 transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]"
-                        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                        className="flex transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]"
+                        style={{ transform: `translateX(calc(-${currentIndex * (100 / visibleCards)}%))` }}
                     >
-                        {/* We'll use a simpler 1-at-a-time transition for mobile, and adjust for desktop if needed. 
-                            Actually, a better way for a 3-up slider is to just show them or use a library, 
-                            but I will stick to a clean grid-like slider that works for the current needs. */}
                         {services.map((service, index) => (
                             <div
                                 key={index}
-                                className="flex-shrink-0 w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-2rem)] flex flex-col group cursor-pointer"
+                                className="w-full md:w-1/2 lg:w-1/3 px-3 md:px-4 lg:px-5 flex-shrink-0 flex flex-col group cursor-pointer"
                             >
-                                {/* Image Container */}
-                                <div className="relative w-full aspect-square mb-6 overflow-hidden rounded-[25px] group-hover:rounded-full group-hover:scale-[0.92] transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] shadow-md group-hover:shadow-2xl">
+                                {/* Image — square, smooth circular hover */}
+                                <div className="relative w-full aspect-square mb-5 overflow-hidden
+                                    rounded-[24px] md:rounded-[28px]
+                                    transition-all duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)]
+                                    group-hover:rounded-[50%]
+                                    shadow-[0_6px_18px_rgba(0,0,0,0.08)]
+                                    group-hover:shadow-[0_16px_36px_rgba(0,0,0,0.16)]
+                                    group-hover:-translate-y-1
+                                    bg-gray-100 z-10 mt-[5]">
                                     <img
                                         src={service.image}
                                         alt={service.title}
-                                        className="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-110"
+                                        className="w-full h-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
                                     />
+                                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-[900ms] pointer-events-none" />
                                 </div>
 
-                                <div className="flex items-start gap-3 px-1">
-                                    <div className="w-[8px] h-[8px] rounded-full bg-[#3B82F6] mt-[10px] flex-shrink-0" />
-                                    <h3 className="text-[#3B82F6] font-semibold text-[17px] md:text-[19px] leading-[1.3] font-sans">
+                                {/* Card title */}
+                                <div className="flex items-start px-1 gap-3 mt-1">
+                                    <div className="w-[5px] h-[5px] md:w-[6px] md:h-[6px] rounded-full bg-[#3B82F6] flex-shrink-0 mt-[9px] md:mt-[10px]" />
+                                    <h3 className="font-display text-[#3780FF] font-[500] text-[16px] md:text-[18px] leading-[1.4] tracking-tight">
                                         {service.title}
                                     </h3>
                                 </div>
@@ -100,11 +154,28 @@ const UpholsteryCleaningSlider = () => {
                         ))}
                     </div>
                 </div>
+
+                {/* Mobile Arrows */}
+                <div className="flex md:hidden justify-center gap-6 mt-10">
+                    <button
+                        onClick={handlePrev}
+                        aria-label="Previous"
+                        className="w-[52px] h-[52px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] transition-all shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
+                    >
+                        <ArrowLeft size={24} strokeWidth={2.5} className="group-hover:-translate-x-1 transition-transform" />
+                    </button>
+                    <button
+                        onClick={handleNext}
+                        aria-label="Next"
+                        className="w-[52px] h-[52px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] transition-all shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
+                    >
+                        <ArrowRight size={24} strokeWidth={2.5} className="group-hover:translate-x-1 transition-transform" />
+                    </button>
+                </div>
+
             </div>
         </section>
     );
 };
 
 export default UpholsteryCleaningSlider;
-
-

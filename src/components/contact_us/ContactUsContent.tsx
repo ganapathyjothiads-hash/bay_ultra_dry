@@ -36,7 +36,7 @@ const ContactUsContent = () => {
             <ContactHero />
 
             {/* Info Cards */}
-            <ContactInfoCards />
+                <ContactInfoCards />
 
             {/* Main Contact Form Section */}
             <ContactForm />

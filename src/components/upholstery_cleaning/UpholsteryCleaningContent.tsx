@@ -10,6 +10,7 @@ import CTASection from "../global_layout/CTASection";
 import ServiceAreas from "../global_layout/ServiceAreas";
 import UpholsteryHero from "./UpholsteryHero";
 import UpholsteryIntro from "./UpholsteryIntro";
+import EnquireNowButton from "../ui/EnquireNowButton";
 import UpholsteryCleaningSlider from "./UpholsteryCleaningSlider";
 import UpholsteryWhyChoose from "./UpholsteryWhyChoose";
 import UpholsteryHowItWorks from "./UpholsteryHowItWorks";
@@ -26,7 +27,7 @@ const UpholsteryCleaningContent = () => {
     }, []);
 
     return (
-        <main className="min-h-screen relative bg-white">
+        <main className="min-h-screen relative bg-white overflow-x-hidden">
             {/* Header + hero area */}
             <header className="absolute top-0 left-0 w-full z-[100]">
                 <TopBanner />
@@ -39,7 +40,10 @@ const UpholsteryCleaningContent = () => {
             <UpholsteryHero />
 
             {/* Intro Section */}
-            <UpholsteryIntro />
+            <div className="relative">
+                <UpholsteryIntro />
+                <EnquireNowButton variant="section" className="bottom-[-160px] md:bottom-[-380px]" />
+            </div>
 
             {/* What We Clean Section */}
             <UpholsteryCleaningSlider />

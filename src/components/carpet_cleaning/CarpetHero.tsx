@@ -50,7 +50,7 @@ const CarpetHero = () => {
                 <div className="absolute inset-x-0 top-0 h-full z-[30] flex flex-col justify-center items-end px-6 md:px-8 xl:px-12 max-w-[1440px] mx-auto lg:pb-32 lg:mt-[-22px]">
                     <div className="w-full lg:w-[72%]">
                         <h1
-                            className="text-[32px] md:text-[38px] lg:text-[48px] xl:text-[58px] font-[500] leading-[1.3] mb-[8] tracking-[-0.03em] max-w-[1100px] text-[#2C4674]"
+                            className="text-[32px] md:text-[38px] lg:text-[48px] xl:text-[58px] font-[500] leading-[1.3] mb-[8] tracking-[-0.03em] max-w-[1100px] text-[#304462]"
                             data-aos="fade-up"
                             data-aos-delay="200"
                         >
@@ -60,7 +60,7 @@ const CarpetHero = () => {
                         </h1>
 
                         <p
-                            className="text-[17px] md:text-[19px] lg:text-[20px] mb-4 font-medium text-[#303030]/90 max-w-[750px] leading-relaxed"
+                            className="text-[17px] md:text-[19px] lg:text-[20px] mb-4 font-medium text-[#2C2C2C]/90 max-w-[750px] leading-relaxed"
                             data-aos="fade-up"
                             data-aos-delay="400"
                         >

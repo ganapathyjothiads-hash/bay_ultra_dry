@@ -5,39 +5,34 @@ import React from "react";
 const ContactHero = () => {
     return (
         <section
-            className="relative w-full min-h-[500px] lg:min-h-[650px] overflow-hidden flex items-center justify-center"
-            style={{
-                clipPath: "polygon(0% 0%, 100% 0%, 100% 85%, 50% 100%, 0% 85%)",
-                WebkitClipPath: "polygon(0% 0%, 100% 0%, 100% 85%, 50% 100%, 0% 85%)"
-            }}
+            className="relative w-full overflow-hidden flex items-center justify-center pt-[150px] pb-[120px] md:pt-[180px] md:pb-[160px] [clip-path:polygon(0%_0%,100%_0%,100%_95%,50%_100%,0%_95%)] md:[clip-path:polygon(0%_0%,100%_0%,100%_85%,50%_100%,0%_85%)]"
         >
             {/* Background Image & Overlay */}
             <div className="absolute inset-0 z-0">
                 <img
                     src="/assets/images/contact_us/Contact_bg.png"
                     alt="Contact Background"
-                    className="w-full h-[590px] object-cover"
+                    className="w-full h-full object-cover object-center"
                 />
                 <div
-                    className="absolute inset-0"
-                    style={{ backgroundColor: "#151515D6" }}
+                    className="absolute inset-0 bg-[#151515]/80"
                 />
             </div>
 
-            <div className="relative z-10 max-w-[1200px] mx-auto px-6 text-center pt-[80px] pb-[120px]">
+            <div className="relative z-10 max-w-[1240px] xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h1
-                    className="text-white font-['Nebula_2',sans-serif] text-[48px] font-[500] tracking-[1%] md:text-[64px] lg:text-[78px] leading-[1.1] mb-8 letter-spacing: 1% line-height: 100px"
+                    className="text-white font-display text-[33px] font-[500] tracking-[0.01em] md:text-[64px] lg:text-[78px] leading-[1.2] md:leading-[100px] mb-8"
                     data-aos="fade-up"
                 >
-                    Get In Touch For A Sparkling <br className="hidden md:block" /> Clean Space!
+                    Get In Touch For A <br /> Sparkling Clean <br className="block md:hidden" /> Space!
                 </h1>
                 <p
-                    className="text-[#E8E8E8] font-family:'inter' font-weight:500 text-white text-[18px] md:text-[19px] lg:text-[20px] font-medium max-w-[700px] mx-auto leading-relaxed opacity-90 line-height: 25px"
-                    data-aos="fde-up"
+                    className="text-[#E8E8E8] font-['Inter',sans-serif] text-[16px] md:text-[19px] lg:text-[20px] font-medium max-w-[700px] mx-auto leading-[25px] opacity-90"
+                    data-aos="fade-up"
                     data-aos-delay="200"
                 >
-                    Let our professional cleaning team make your home or business shine. <br className="hidden md:block" />
-                    Contact us today for a free quote—fast, friendly, and hassle-free!
+                    Let our professional cleaning team <br className="block md:hidden" /> make your home or business shine. <br />
+                    Contact us today for a free quote— <br className="block md:hidden" /> fast, friendly, and hassle-free!
                 </p>
             </div>
         </section>

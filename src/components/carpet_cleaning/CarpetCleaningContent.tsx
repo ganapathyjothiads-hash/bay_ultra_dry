@@ -8,6 +8,7 @@ import Navbar from "../global_layout/Navbar";
 import Footer from "../global_layout/Footer";
 import CarpetHero from "./CarpetHero";
 import CarpetServicesSlider from "./CarpetServicesSlider";
+import EnquireNowButton from "../ui/EnquireNowButton";
 import CarpetCleaningBenefits from "./CarpetCleaningBenefits";
 import CarpetWhyChoose from "./CarpetWhyChoose";
 import CTASection from "../global_layout/CTASection";
@@ -39,7 +40,10 @@ const CarpetCleaningContent = () => {
             <CarpetHero />
 
             {/* Services Slider */}
-            <CarpetServicesSlider />
+            <div className="relative">
+                <CarpetServicesSlider />
+                <EnquireNowButton variant="section" className="bottom-[-160px] md:bottom-[260px]" />
+            </div>
 
             {/* Carpet Cleaning Benefits */}
             <CarpetCleaningBenefits />

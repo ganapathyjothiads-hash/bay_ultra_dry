@@ -2,8 +2,6 @@
 
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import EnquireNowButton from "../ui/EnquireNowButton";
-
 const FloodServicesSlider = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -186,8 +184,6 @@ const FloodServicesSlider = () => {
 
             </div>
 
-            {/* Enquire Now — bottom-right of this section */}
-            <EnquireNowButton variant="section" />
         </section>
     );
 };

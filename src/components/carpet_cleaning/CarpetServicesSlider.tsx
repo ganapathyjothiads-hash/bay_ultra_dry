@@ -2,8 +2,6 @@
 
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import EnquireNowButton from "../ui/EnquireNowButton";
-
 const CarpetServicesSlider = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -121,8 +119,6 @@ React.useEffect(() => {
                 />
             </div>
 
-            {/* Enquire Now — bottom-right of this section */}
-            <EnquireNowButton variant="section" />
 
             <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
                 {/* Top Descriptive Content (Exactly like the image) */}

@@ -17,7 +17,8 @@ const CarpetWhyChoose = () => {
         <section className="relative w-full py-16 md:py-24 bg-white overflow-hidden">
             <div className="max-w-[1440px] mx-auto px-6 md:px-12 relative z-10 w-full">
                 {/* Title */}
-                <h2 className="text-[#304462] font-display font-[400] text-[36px] md:text-[48px] lg:text-[54px] text-center mb-12">
+
+                <h2 className="text-[#304462] font-display font-regular text-[36px] md:text-[48px] lg:text-[54px] text-center mb-12">
                     Why Choose Bay Ultra Dry
                 </h2>
 

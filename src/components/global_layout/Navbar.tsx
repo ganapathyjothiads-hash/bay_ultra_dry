@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, Phone, Mail, MapPin } from "lucide-react";
 import { usePathname } from "next/navigation";
+import ActionButton from "../ui/ActionButton";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -88,7 +89,7 @@ const Navbar = () => {
                                     key={link.label}
                                     href={link.href}
                                     style={{
-                                        fontFamily: "Nunito Sans",
+                                        fontFamily: "alt",
                                         fontSize: 'medium',
                                         fontWeight: isActive(link.href) ? 500 : 500,
                                         color: isActive(link.href) ? '#1A4299' : '#333333',
@@ -160,7 +161,7 @@ const Navbar = () => {
                                 letterSpacing: '0%',
                                 boxShadow: '0 2px 8px rgba(245, 158, 11, 0.3)',
                                 transition: 'background 0.2s ease',
-                                lineHeight:"25px"
+                                lineHeight: "25px"
                             }}
                         >
                             Enquire Now
@@ -293,13 +294,14 @@ const Navbar = () => {
                             </div>
                         </div>
 
-                        <Link
+                        <ActionButton
                             href="/contact"
                             onClick={() => setIsMenuOpen(false)}
-                            className="w-full h-14 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-lg font-bold shadow-lg shadow-amber-500/20 active:scale-95 transition-transform"
+                            variant="amber"
+                            className="w-full h-14 !text-white text-lg font-bold"
                         >
                             Enquire Now
-                        </Link>
+                        </ActionButton>
                     </div>
                 </div>
             </div>

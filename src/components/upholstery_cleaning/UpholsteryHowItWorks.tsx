@@ -33,25 +33,25 @@ const UpholsteryHowItWorks = () => {
                     How It Works
                 </h2>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 lg:gap-10">
                     {steps.map((step, index) => (
                         <div key={index} className="flex flex-col items-start group" data-aos="fade-up" data-aos-delay={index * 150}>
                             {/* Icon Box */}
-                            <div className="w-[72px] h-[72px] rounded-[12px] bg-[#FDFF9E] flex items-center justify-center mb-10 shadow-[0_4px_10px_rgba(0,0,0,0.1)] transition-transform duration-300 group-hover:scale-105">
+                            <div className="w-[70px] h-[70px] md:w-[85px] md:h-[85px] rounded-[16px] bg-[#FEF9C3] flex items-center justify-center mb-6 md:mb-10 transition-transform duration-300 group-hover:scale-105 shadow-sm">
                                 <img
                                     src={step.image}
                                     alt={step.title}
-                                    className="w-[100%] h-[100%] object-contain"
+                                    className="w-[60%] h-[60%] object-contain"
                                 />
                             </div>
 
                             {/* Text Content */}
                             <div className="w-full">
-                                <p className="text-[#304462] text-[15px] md:text-[18px] leading-relaxed mb-4">
-                                    <span className="font-bold">{step.title} —</span> {step.description}
+                                <p className="text-[#304462] text-[16px] md:text-[18px] leading-snug md:leading-relaxed mb-4">
+                                    <span className="font-bold underline md:no-underline">{step.title} —</span> {step.description}
                                 </p>
                                 {/* Bottom Line */}
-                                <div className="w-full h-[1.5px] bg-[#304462] opacity-40" />
+                                <div className="w-full h-[1.5px] bg-[#304462] opacity-[0.15] md:opacity-40" />
                             </div>
                         </div>
                     ))}
@@ -62,4 +62,3 @@ const UpholsteryHowItWorks = () => {
 };
 
 export default UpholsteryHowItWorks;
-

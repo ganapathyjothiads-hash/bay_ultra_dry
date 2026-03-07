@@ -8,6 +8,7 @@ import Navbar from "../global_layout/Navbar";
 import Footer from "../global_layout/Footer";
 import AboutUsHero from "./AboutUsHero";
 import AboutOurStory from "./AboutOurStory";
+import EnquireNowButton from "../ui/EnquireNowButton";
 import AboutWhatWeDo from "./AboutWhatWeDo";
 import AboutOurPromise from "./AboutOurPromise";
 import CTASection from "../global_layout/CTASection";
@@ -37,7 +38,10 @@ const AboutContent = () => {
             <AboutUsHero />
 
             {/* Content for About page */}
-            <AboutOurStory />
+            <div className="relative">
+                <AboutOurStory />
+                <EnquireNowButton variant="section" className="bottom-[-100px] md:bottom-[92px]" />
+            </div>
 
             {/* What We Do section */}
             <AboutWhatWeDo />
