@@ -33,7 +33,7 @@ const UpholsteryHero = () => {
                     {/* Left: Content */}
                     <div className="w-full lg:w-3/4 text-left">
                         <h1
-                            className="text-white font-['Nebulas'] font-semibold text-[48px] md:text-[60px] lg:text-[61px] leading-[1.05] mb-8"
+                            className="text-white font-display font-semibold text-[48px] md:text-[60px] lg:text-[61px] leading-[1.05] mb-8"
                             data-aos="fade-right"
                             data-aos-delay="200"
                         >

@@ -20,11 +20,11 @@ const AboutWhatWeDo: React.FC = () => {
     ];
 
     return (
-        <section className="relative w-full bg-[#FFE4B7] h-[650px] min-h-[700px] overflow-hidden flex flex-col items-center justify-center py-20">
+        <section className="relative w-full bg-[#FFE4B7] lg:h-[650px] lg:min-h-[700px] overflow-hidden flex flex-col items-center justify-center pt-10  md:py-20">
 
             {/* Background Images - Positioned directly on the beige background */}
             <div
-                className="absolute top-0 right-0 w-[400px] md:w-[600px] lg:w-[550px] h-[60%] md:h-[80%] z-10 pointer-events-none translate-x-[15%] -translate-y-[15%] lg:translate-x-[10%] lg:-translate-y-[10%] opacity-80 lg:opacity-100"
+                className="absolute top-0 right-0 w-[400px] md:w-[600px] lg:w-[550px] h-[60%] md:h-[80%] z-10 pointer-events-none translate-x-[15%] -translate-y-[15%] lg:translate-x-[10%] lg:-translate-y-[10%] opacity-80 lg:opacity-100 hidden lg:block"
                 data-aos="fade-left"
                 data-aos-duration="1200"
             >
@@ -38,7 +38,7 @@ const AboutWhatWeDo: React.FC = () => {
             </div>
 
             <div
-                className="absolute bottom-0 left-0 w-[400px] md:w-[600px] lg:w-[550px] h-[60%] md:h-[80%] z-10 pointer-events-none -translate-x-[15%] translate-y-[15%] lg:-translate-x-[10%] lg:translate-y-[10%] opacity-80 lg:opacity-100"
+                className="order-1 lg:order-0 h-[250px] lg:absolute bottom-0 left-0 w-[400px] md:w-[600px] lg:w-[550px] lg:h-[60%] md:h-[80%] z-10 pointer-events-none -translate-x-[15%] translate-y-[15%] lg:-translate-x-[10%] lg:translate-y-[10%] opacity-80 lg:opacity-100"
                 data-aos="fade-right"
                 data-aos-duration="1200"
             >
@@ -54,14 +54,14 @@ const AboutWhatWeDo: React.FC = () => {
             <div className="relative z-20 w-full max-w-[1440px] mx-auto px-6 flex flex-col items-center text-center">
                 {/* Title and Subtitle */}
                 <h2
-                    className="text-[#304462] text-[38px] md:text-[48px] lg:text-[56px] font-[400] tracking-tight mb-6 leading-tight"
+                    className="text-[#304462] text-[24px] md:text-[48px] lg:text-[55px] font-[400] tracking-tight mb-6 leading-tight"
                     data-aos="fade-down"
                 >
                     What We Do
                 </h2>
 
                 <p
-                    className="text-[#1D1D1D] text-[15px] md:text-[16px] lg:text-[17px] font-[500] max-w-[650px] mb-12 leading-relaxed opacity-90"
+                    className="text-[#1D1D1D] text-[15px] md:text-[16px] lg:text-[17px] font-[500] max-w-[650px] mb-2 lg:mb-12 leading-relaxed opacity-90"
                     data-aos="fade-up"
                     data-aos-delay="200"
                 >
@@ -70,7 +70,7 @@ const AboutWhatWeDo: React.FC = () => {
 
                 {/* Services Grid (Cards) - Constrained width to avoid overlap with side images */}
                 <div className="w-full max-w-[1100px] px-4 md:px-20">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-14 w-full mb-16">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-14 w-full mb-8 lg:mb-16">
                         {services.map((service, index) => (
                             <div
                                 key={index}
@@ -87,7 +87,7 @@ const AboutWhatWeDo: React.FC = () => {
                                         className="object-contain"
                                     />
                                 </div>
-                                <h3 className="text-[#111111] text-[16px] md:text-[17px] lg:text-[18px] font-[600] leading-[1.3] mb-5 min-h-[48px] max-w-[200px]">
+                                <h3 className="text-[#111111] text-[16px] md:text-[17px] lg:text-[18px] font-[600] leading-[1.3] mb-5 lg:min-h-[48px] lg:max-w-[200px]">
                                     {service.title}
                                 </h3>
                                 <div className="w-[100%] h-[1px] bg-black opacity-30" />

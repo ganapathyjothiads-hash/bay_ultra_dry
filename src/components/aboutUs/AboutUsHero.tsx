@@ -17,7 +17,7 @@ const AboutUsHero: React.FC = () => {
     const verticalText = "About Us";
 
     return (
-        <section className="relative w-full min-h-[90vh] lg:min-h-[100vh] overflow-hidden bg-white pt-32 lg:pt-0">
+        <section className="relative w-full min-h-[550px] lg:min-h-[900px] overflow-hidden bg-white pt-32 lg:pt-0">
             {/* background image (man cleaning) positioned on the right */}
             <div
                 className="absolute right-0 top-0 w-full h-full z-0 overflow-hidden"
@@ -47,7 +47,7 @@ const AboutUsHero: React.FC = () => {
                 aria-hidden
                 data-aos="fade-right"
                 data-aos-duration="1200"
-                className="absolute top-0 -left-[2%] w-[93%] h-[85%] object-cover z-[10] pointer-events-none opacity-100"
+                className="absolute top-[80px] lg:top-0 min-w-[430px] lg:min-w-none -left-[2%] w-[100%] xl:w-[93%] h-[75%] lg:h-[85%] xl:object-cover z-[10] pointer-events-none opacity-100"
                 style={{
                     objectPosition: 'left center',
                 }}
@@ -98,9 +98,9 @@ const AboutUsHero: React.FC = () => {
             </div>
 
             {/* textual content */}
-            <div className="absolute inset-x-0 top-0 h-full z-[30] flex flex-col justify-center px-6 md:px-12 lg:pl-[min(8%,120px)] max-w-[1440px] mx-auto pb-20 lg:pb-32">
+            <div className="absolute inset-x-0 top-0 h-full z-[30] flex flex-col justify-center px-6 md:px-12 max-w-[1440px] mx-auto pb-20 lg:pb-32">
                 <h1
-                    className="font-['Nebulas'] text-[55px] md:text-[55px] lg:text-[60px] font-semibold leading-[1.05] mb-8 tracking-[-0.03em] max-w-[1100px] text-[#304462]"
+                    className="font-display text-[24px] md:text-[45px] lg:text-[50px] xl:text-[60px] font-semibold leading-[1.3] mb-8 tracking-[-0.03em] max-w-[80%] sm:max-w-[90%] lg:max-w-[80%] xl:max-w-[1100px] text-[#304462]"
                     data-aos="fade-up"
                     data-aos-delay="200"
                 >
@@ -110,7 +110,7 @@ const AboutUsHero: React.FC = () => {
 
                 {subtitle && (
                     <p
-                        className="text-[15px] md:text-[17px] lg:text-[18px] mb-4 font-medium text-[#303030]/90 max-w-[750px] leading-relaxed"
+                        className="text-[15px] md:text-[17px] lg:text-[18px] mb-4 font-medium text-[#303030]/90 max-w-[280px] lg:max-w-[750px] leading-relaxed"
                         data-aos="fade-up"
                         data-aos-delay="400"
                     >

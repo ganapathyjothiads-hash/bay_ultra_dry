@@ -17,10 +17,10 @@ const ServiceFeatureCard: React.FC<ServiceFeatureCardProps> = ({
 }) => {
     return (
         <div
-            className={`bg-white rounded-[8px] px-5 py-5 md:px-[5px] w-full flex items-start gap-4 transition-all duration-300 hover:-translate-y-1 ${className}`}
+            className={`bg-white rounded-[8px] p-3 w-full flex items-start gap-2 transition-all duration-300 hover:-translate-y-1 ${className}`}
             style={{ boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.05)" }}
         >
-            <div className="flex-shrink-0 ml-3 mt-0.5">
+            <div className="flex-shrink-0 mt-0.5">
                 {icon ? (
                     icon
                 ) : (
@@ -31,7 +31,7 @@ const ServiceFeatureCard: React.FC<ServiceFeatureCardProps> = ({
                     />
                 )}
             </div>
-            <div className="flex flex-col flex-1 pl-1">
+            <div className="flex flex-col flex-1">
                 <p className="text-left leading-[1.6]">
                     <span className="text-[#1A1A1A] font-semibold text-[15px] md:text-[15px] mr-[4px]">
                         {title}

@@ -21,11 +21,20 @@ const UpholsteryCleaningSection = () => {
                     data-aos-duration="1200"
                     className={`w-full lg:w-[46%] h-[400px] lg:h-[591px] relative lg:shadow-2xl rounded-r-[20px]`}
                 >
-                    <img
+                    {/* <img
                         src="/assets/video/Upholstery_Cleaning.gif"
                         alt="Upholstery Cleaning"
                         className="w-full h-full object-cover rounded-r-[20px]"
-                    />
+                    /> */}
+                    <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover lg:rounded-r-[20px]"
+                    >
+                        <source src="/assets/video/Upholstery-Cleaning-section.mp4" type="video/mp4" />
+                    </video>
                     <div className="absolute inset-0 bg-black/5 pointer-events-none"></div>
                 </div>
 
@@ -34,7 +43,7 @@ const UpholsteryCleaningSection = () => {
                     data-aos="fade-left"
                     data-aos-duration="1200"
                     data-aos-delay="200"
-                    className={`w-full lg:w-[54%] flex flex-col justify-center px-6 md:px-12 lg:px-[60px] xl:px-[80px] pt-8 lg:pt-0 mb-10 lg:mb-0`}
+                    className={`w-full lg:w-[54%] flex flex-col justify-center px-6 md:px-12 lg:px-[60px] xl:px-[80px] pt-8 lg:pt-0 lg:mb-0`}
                 >
                     <div>
                         <div className="mb-8 lg:mb-12">

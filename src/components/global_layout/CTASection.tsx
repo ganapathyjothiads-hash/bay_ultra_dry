@@ -34,13 +34,7 @@ const CTASection = () => {
             >
                 <div className="space-y-2 max-w-5xl mx-auto">
                     <h2
-                        className="font-normal text-white capitalize text-center"
-                        style={{
-                            fontFamily: 'Nebulas, sans-serif',
-                            fontSize: '52px',
-                            lineHeight: '76px',
-                            letterSpacing: '0.01em',
-                        }}
+                        className="font-normal text-white capitalize text-center text-[26px] md:text-[40px] lg:text-[52px]"
                     >
                         Ready For A Fresher, Cleaner Space?
                     </h2>

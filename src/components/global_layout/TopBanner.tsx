@@ -4,32 +4,9 @@ import React from "react";
 
 const TopBanner = () => {
     return (
-        <div className="hidden md:flex w-full justify-center" style={{ position: 'relative', zIndex: 70 }}>
-            <div
-                style={{
-                    background: '#FFF1A4',
-                    borderRadius: '0 0 28px 28px',
-                    padding: '7px 32px',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    minWidth: '520px',
-                    maxWidth: '780px',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
-                }}
-            >
-                <p
-                    style={{
-                        color: '#1e293b',
-                        fontSize: '13px',
-                        fontWeight: 500,
-                        lineHeight: '1.5',
-                        textAlign: 'center',
-                        margin: 0,
-                        letterSpacing: '0.01em',
-                        fontFamily: "Nunito Sans"
-                    }}
-                >
+        <div className="hidden lg:flex w-full justify-center relative z-[70]">
+            <div className="bg-[#FFF1A4] rounded-b-[28px] px-8 py-[7px] inline-flex items-center justify-center min-w-[520px] max-w-[780px] shadow-[0_2px_8px_rgba(0,0,0,0.08)]">
+                <p className="text-slate-800 text-[13px] font-medium leading-[1.5] text-center m-0 tracking-[0.01em] font-alt">
                     Carpet &amp; upholstery cleaning and flood restoration across Tauranga, Mt Maunganui and the wider Bay of Plenty
                 </p>
             </div>

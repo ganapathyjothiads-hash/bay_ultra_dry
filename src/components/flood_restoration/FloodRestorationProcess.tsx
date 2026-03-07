@@ -75,7 +75,7 @@ const FloodRestorationProcess = () => {
                         data-aos="fade-left"
                         className="w-full lg:w-[52%] flex flex-col gap-4 md:gap-6"
                     >
-                        <h2 className="text-[#304462] font-['Nebulas'] font-medium text-[32px] md:text-[42px] lg:text-[46px] leading-[1.2] tracking-tight">
+                        <h2 className="text-[#304462] font-display font-medium text-[32px] md:text-[42px] lg:text-[46px] leading-[1.2] tracking-tight">
                             Our Flood Restoration<br />Process
                         </h2>
 

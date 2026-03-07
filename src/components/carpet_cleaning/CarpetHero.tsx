@@ -5,7 +5,7 @@ import React from "react";
 const CarpetHero = () => {
     return (
         <div className="w-full flex flex-col items-center bg-white">
-            <section className="relative w-full min-h-[90vh] lg:min-h-[820px] overflow-hidden bg-white pt-32 lg:pt-0">
+            <section className="relative w-full min-h-[450px] lg:min-h-[750px] overflow-hidden bg-white pt-32 lg:pt-0">
                 <div className="absolute inset-0 z-0 overflow-hidden">
                     <img
                         src="/assets/images/carpet/Carpet_Cleaning_bg.png"
@@ -23,7 +23,7 @@ const CarpetHero = () => {
                     />
                 </div>
 
-                <img
+                {/* <img
                     src="/assets/images/carpet/Carpet_Cleaning.png"
                     alt=""
                     aria-hidden
@@ -37,12 +37,20 @@ const CarpetHero = () => {
                         height: '80%',
                         objectFit: 'fill',
                     }}
+                /> */}
+                <img
+                    src="/assets/images/carpet/Carpet_Cleaning.png"
+                    alt=""
+                    aria-hidden
+                    data-aos="fade-left"
+                    data-aos-duration="1200"
+                    className="absolute top-0 right-0 w-full h-[480px] lg:h-[80%] object-cover lg:object-fill z-[10] pointer-events-none opacity-80 lg:opacity-100"
                 />
 
-                <div className="absolute inset-x-0 top-0 h-full z-[30] flex flex-col justify-center items-end px-6 md:px-12 lg:pr-[min(8%,120px)] max-w-[1440px] mx-auto pb-20 lg:pb-32 mt-[-22px]">
+                <div className="absolute inset-x-0 top-0 h-full z-[30] flex flex-col justify-center items-end px-6 md:px-8 xl:px-12 max-w-[1440px] mx-auto lg:pb-32 lg:mt-[-22px]">
                     <div className="w-full lg:w-[72%]">
                         <h1
-                            className="text-[42px] md:text-[52px] lg:text-[60px] font-[500] leading-[1.05] mb-[8] tracking-[-0.03em] max-w-[1100px] text-[#2C4674]"
+                            className="text-[32px] md:text-[38px] lg:text-[48px] xl:text-[58px] font-[500] leading-[1.3] mb-[8] tracking-[-0.03em] max-w-[1100px] text-[#2C4674]"
                             data-aos="fade-up"
                             data-aos-delay="200"
                         >

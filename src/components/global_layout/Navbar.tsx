@@ -26,7 +26,7 @@ const Navbar = () => {
 
     return (
         <>
-            <div
+            {/* <div
                 className="hidden lg:block w-full pt-10"
                 style={{ padding: '0 16px', position: 'relative', zIndex: 50 }}
             >
@@ -167,6 +167,66 @@ const Navbar = () => {
                         </Link>
                     </div>
                 </div>
+            </div> */}
+
+            <div className="hidden lg:block w-full px-4 relative z-50">
+                <div className="max-w-[1380px] mx-auto relative h-[62px]">
+
+                    <Link
+                        href="/"
+                        className="absolute left-[40px] -top-[50px] w-[120px] h-[100px] xl:w-[160px] block z-10"
+                    >
+                        <Image
+                            src="/assets/images/logo.png"
+                            alt="Bay Ultra Dry"
+                            fill
+                            priority
+                            className="object-contain object-left"
+                        />
+                    </Link>
+
+                    <div className="absolute inset-0 bg-white rounded-[100px] shadow-[0_4px_24px_rgba(0,0,0,0.10)] flex items-center pl-[174px] pr-2">
+
+                        <nav className="flex items-center justify-evenly flex-1 flex-wrap flex-row content-end pr-6">
+                            {navLinks.map((link) => (
+                                <Link
+                                    key={link.label}
+                                    href={link.href}
+                                    className={`font-alt text-[13px] xl:text-[16px] font-medium whitespace-nowrap leading-[1.5] px-[2px] tracking-normal
+            ${isActive(link.href)
+                                            ? "text-[#1A4299] underline underline-offset-[2px] decoration-[1px]"
+                                            : "text-[#333333]"
+                                        }`}
+                                >
+                                    {link.label}
+                                </Link>
+                            ))}
+                        </nav>
+
+                        <div className="flex items-center gap-3 shrink-0 mr-5">
+                            <div className="w-[33px] xl:w-[42px] h-[33px] xl:h-[42px] relative">
+                                <Image
+                                    src="/assets/images/Contact_icon.png"
+                                    alt="Contact"
+                                    fill
+                                    priority
+                                    className="object-contain"
+                                />
+                            </div>
+                            <span className="text-[13px] xl:text-[16px] font-semibold text-slate-800 tracking-[0.01em] whitespace-nowrap">
+                                07 571 2279
+                            </span>
+                        </div>
+
+                        <Link
+                            href="/contact"
+                            className="inline-flex items-center justify-center bg-amber-500 text-[#1D1D1D] text-[13px] xl:text-[14px] font-semibold px-4 py-[8px] xl:px-6 xl:py-[10px] rounded-[100px] whitespace-nowrap shrink-0 tracking-normal shadow-[0_2px_8px_rgba(245,158,11,0.3)] hover:bg-amber-600 transition leading-[25px]"
+                        >
+                            Enquire Now
+                        </Link>
+
+                    </div>
+                </div>
             </div>
 
             <div
@@ -188,7 +248,18 @@ const Navbar = () => {
                     className="p-2 -mr-2 text-gray-700 transition-colors hover:text-blue-600"
                     aria-label="Toggle Menu"
                 >
-                    {isMenuOpen ? <X size={32} /> : <Menu size={32} />}
+                    {/* {isMenuOpen ? <X size={32} /> : <Menu size={32} />} */}
+                    {isMenuOpen ? (
+                        <X size={32} />
+                    ) : (
+                        <Image
+                            src="/assets/images/menu.svg"
+                            alt="Menu"
+                            width={32}
+                            height={32}
+                            className="object-contain"
+                        />
+                    )}
                 </button>
             </div>
 

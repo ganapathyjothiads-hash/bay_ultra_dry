@@ -20,13 +20,22 @@ const CarpetCleaningSection = () => {
                 <div
                     data-aos="fade-left"
                     data-aos-duration="1200"
-                    className={`w-full lg:w-[40%] h-[380px] md:h-[480px] lg:h-[591px] relative lg:shadow-2xl lg:rounded-l-[20px]`}
+                    className={`w-full lg:w-[42%] h-[380px] md:h-[480px] lg:h-[591px] relative lg:shadow-2xl lg:rounded-l-[20px]`}
                 >
-                    <img
+                    {/* <img
                         src="/assets/video/Carpet_Cleaning.gif"
                         alt="Carpet Cleaning"
                         className="w-full h-full object-cover rounded-l-[20px]"
-                    />
+                    /> */}
+                    <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover lg:rounded-l-[20px]"
+                    >
+                        <source src="/assets/video/Carpet-Cleaning-section-video.mp4" type="video/mp4" />
+                    </video>
                     <div className="absolute inset-0 bg-black/5 pointer-events-none"></div>
                 </div>
 
@@ -35,7 +44,7 @@ const CarpetCleaningSection = () => {
                     data-aos="fade-right"
                     data-aos-duration="1200"
                     data-aos-delay="200"
-                    className={`w-full lg:w-[60%] flex flex-col justify-center px-6 md:px-16 lg:px-24 xl:px-32 pt-8 lg:pt-0`}
+                    className={`w-full lg:w-[58%] flex flex-col justify-center px-6 md:px-16 lg:px-24 pt-8 lg:pt-0`}
                 >
                     <div>
                         <div className="mb-8 lg:mb-10">

@@ -29,7 +29,7 @@ const UpholsteryHowItWorks = () => {
     return (
         <section className="w-full py-16 md:py-24 bg-white">
             <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
-                <h2 className="text-[#304462] font-['Nebulas'] font-[400] text-[36px] md:text-[52px] text-center mb-16 md:mb-24">
+                <h2 className="text-[#304462] font-display font-[400] text-[36px] md:text-[52px] text-center mb-16 md:mb-24">
                     How It Works
                 </h2>
 

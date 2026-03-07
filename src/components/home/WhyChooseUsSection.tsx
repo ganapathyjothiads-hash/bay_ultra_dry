@@ -4,19 +4,14 @@ import React from "react";
 import Image from "next/image";
 import { Star } from "lucide-react";
 
-/**
- * WhyChooseUsSection component
- * Recreates the "Why Choose Bay Ultra Dry" section based on the reference image with custom icons.
- * Refined for bigger cards and single-line text where possible.
- */
 const WhyChooseUsSection = () => {
     return (
-        <section className="relative w-full h-auto lg:h-[100vh] lg:min-h-[750px] bg-white flex flex-col items-center justify-start overflow-hidden py-12 lg:py-16">
+        <section className="relative w-full h-auto lg:h-[100vh] lg:min-h-[800px] bg-white flex flex-col items-center justify-start overflow-hidden py-12 lg:py-16">
             {/* 1. Section Title */}
             <h2
                 data-aos="fade-up"
                 data-aos-duration="1000"
-                className="text-[26px] md:text-5xl lg:text-[56px] font-[600] lg:font-[400] text-[#0a0a0a] lg:text-[#1e2b58] text-center px-6 z-20 max-w-[280px] md:max-w-none mx-auto leading-[1.3] lg:leading-tight"
+                className="text-[26px] md:text-5xl lg:text-[56px] font-[600] lg:font-[400] text-[#0a0a0a] lg:text-[#1e2b58] text-center px-6 z-20 max-w-[280px] md:max-w-none mx-auto leading-[1.3] lg:leading-tight pb-5 lg:pb-0"
             >
                 Why Choose Bay<br className="lg:hidden" /> Ultra Dry
             </h2>
@@ -199,14 +194,14 @@ const WhyChooseUsSection = () => {
                             data-aos="zoom-in"
                             data-aos-duration="800"
                             data-aos-delay="200"
-                            className="absolute top-[10%] left-[16%] xl:left-[22%] w-[190px] bg-white p-6 rounded-[18px] shadow-[0_12px_45px_rgba(0,0,0,0.06)] border border-gray-100/50 flex flex-col gap-1 pointer-events-auto transition-all duration-300 hover:scale-105 z-20"
+                            className="absolute top-[10%] left-[16%] xl:left-[22%] w-[190px] bg-white p-6 rounded-[18px] shadow-[0px_8px_24px_rgba(0,0,0,0.12)] border border-gray-100/50 flex flex-col gap-1 pointer-events-auto transition-all duration-300 hover:scale-105 z-20"
                         >
                             <span className="text-gray-500 text-xs font-medium leading-none">Trusted by,</span>
                             <div className="flex items-end gap-1 my-1">
                                 <h3 className="text-4xl font-extrabold text-[#1a1a1a] tracking-tight leading-none">1000</h3>
                                 <span className="text-2xl font-bold text-[#1a1a1a] leading-none mb-1">+</span>
                             </div>
-                            <p className="text-gray-500 text-[11px] font-medium leading-tight whitespace-nowrap">of locals across Tauranga.</p>
+                            <p className="text-gray-500 text-[11px] font-medium leading-tight">of locals across Tauranga.</p>
                         </div>
 
                         {/* Card 2: Top Right - Google Review */}
@@ -214,7 +209,7 @@ const WhyChooseUsSection = () => {
                             data-aos="zoom-in"
                             data-aos-duration="800"
                             data-aos-delay="400"
-                            className="absolute top-[10%] right-[16%] xl:right-[22%] w-[235px] bg-white p-6 rounded-[18px] shadow-[0_12px_45px_rgba(0,0,0,0.06)] border border-gray-100/50 flex flex-col gap-3 pointer-events-auto transition-all duration-300 hover:scale-105 z-20"
+                            className="absolute top-[10%] right-[16%] xl:right-[22%] w-[275px] bg-white p-6 rounded-[18px] shadow-[0px_8px_24px_rgba(0,0,0,0.12)] border border-gray-100/50 flex flex-col gap-3 pointer-events-auto transition-all duration-300 hover:scale-105 z-20"
                         >
                             <div className="flex gap-1">
                                 {[1, 2, 3, 4, 5].map((s) => (
@@ -231,7 +226,7 @@ const WhyChooseUsSection = () => {
                                     <span className="text-[#EA4335]">e</span>
                                 </span>
                             </div>
-                            <p className="text-[#1a1a1a] text-[10px] font-bold leading-tight uppercase tracking-wider opacity-80 whitespace-nowrap">Fully Insured & Safety Certified</p>
+                            <p className="text-[#1a1a1a] text-[10px] font-bold leading-tight uppercase tracking-wider opacity-80">Fully Insured & Safety Certified</p>
                         </div>
 
                         {/* Card 3: Middle Left - Fast Communication */}
@@ -239,7 +234,7 @@ const WhyChooseUsSection = () => {
                             data-aos="fade-right"
                             data-aos-duration="800"
                             data-aos-delay="600"
-                            className="absolute top-[30%] left-[4%] xl:left-[8%] w-[250px] bg-white p-6 rounded-[22px] shadow-[0_15px_50px_rgba(0,0,0,0.07)] border border-gray-100/50 flex flex-col gap-4 pointer-events-auto transition-all duration-300 hover:scale-105 z-20"
+                            className="absolute top-[30%] left-[4%] xl:left-[8%] w-[275px] bg-white p-6 rounded-[22px] shadow-[0px_8px_24px_rgba(0,0,0,0.12)] border border-gray-100/50 flex flex-col gap-4 pointer-events-auto transition-all duration-300 hover:scale-105 z-20"
                         >
                             <div className="w-12 h-12 relative">
                                 <Image
@@ -260,7 +255,7 @@ const WhyChooseUsSection = () => {
                             data-aos="fade-left"
                             data-aos-duration="800"
                             data-aos-delay="800"
-                            className="absolute top-[30%] right-[2%] xl:right-[4%] w-[330px] bg-white p-6 rounded-[22px] shadow-[0_15px_50px_rgba(0,0,0,0.07)] border border-gray-100/50 flex flex-col gap-4 pointer-events-auto transition-all duration-300 hover:scale-105 z-20"
+                            className="absolute top-[30%] right-[2%] xl:right-[4%] w-[340px] bg-white p-6 rounded-[22px] shadow-[0px_8px_24px_rgba(0,0,0,0.12)] border border-gray-100/50 flex flex-col gap-4 pointer-events-auto transition-all duration-300 hover:scale-105 z-20"
                         >
                             <div className="flex items-center gap-3">
                                 <div className="w-11 h-11 relative shrink-0">
@@ -284,7 +279,7 @@ const WhyChooseUsSection = () => {
                             data-aos="fade-right"
                             data-aos-duration="800"
                             data-aos-delay="1000"
-                            className="absolute bottom-[25%] left-[4%] xl:left-[8%] w-[280px] bg-white p-7 rounded-[22px] shadow-[0_15px_50px_rgba(0,0,0,0.07)] border border-gray-100/50 flex flex-col gap-4 pointer-events-auto transition-all duration-300 hover:scale-105 z-20"
+                            className="absolute bottom-[25%] left-[4%] xl:left-[8%] w-[320px] bg-white p-7 rounded-[22px] shadow-[0px_8px_24px_rgba(0,0,0,0.12)] border border-gray-100/50 flex flex-col gap-4 pointer-events-auto transition-all duration-300 hover:scale-105 z-20"
                         >
                             <div className="w-12 h-12 relative">
                                 <Image
@@ -305,7 +300,7 @@ const WhyChooseUsSection = () => {
                             data-aos="fade-left"
                             data-aos-duration="800"
                             data-aos-delay="1200"
-                            className="absolute bottom-[25%] right-[4%] xl:right-[8%] w-[285px] bg-white p-7 rounded-[22px] shadow-[0_15px_50px_rgba(0,0,0,0.07)] border border-gray-100/50 flex flex-col gap-4 pointer-events-auto transition-all duration-300 hover:scale-105 z-20"
+                            className="absolute bottom-[25%] right-[4%] xl:right-[8%] w-[320px] bg-white p-7 rounded-[22px] shadow-[0px_8px_24px_rgba(0,0,0,0.12)] border border-gray-100/50 flex flex-col gap-4 pointer-events-auto transition-all duration-300 hover:scale-105 z-20"
                         >
                             <div className="w-12 h-12 relative">
                                 <Image

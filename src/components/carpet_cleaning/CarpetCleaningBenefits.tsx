@@ -39,7 +39,7 @@ const CarpetCleaningBenefits = () => {
 
                     {/* Right Column - Benefits */}
                     <div className="w-full lg:w-[52%] flex flex-col justify-start pt-2">
-                        <h2 className="text-[#304462] font-['Nebulas'] font-medium text-[32px] md:text-[42px] lg:text-[48px] leading-[1.1] tracking-tight mb-8">
+                        <h2 className="text-[#304462] font-display font-medium text-[32px] md:text-[42px] lg:text-[48px] leading-[1.1] tracking-tight mb-8">
                             Benefits Of Our<br />Carpet Cleaning
                         </h2>
 
@@ -55,7 +55,7 @@ const CarpetCleaningBenefits = () => {
                                                     className="w-full h-full object-contain"
                                                 />
                                             </div>
-                                            <h3 className="text-[#000000] font-['Nebulas'] font-medium text-[18px] leading-[25px] flex items-center">
+                                            <h3 className="text-[#000000] font-display font-medium text-[18px] leading-[25px] flex items-center">
                                                 {benefit.title}
                                             </h3>
                                         </div>

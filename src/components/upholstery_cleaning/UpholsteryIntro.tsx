@@ -22,7 +22,7 @@ const UpholsteryIntro = () => {
 
             <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 text-center pb-10">
                 <h2
-                    className="text-[#304462] font-['Nebulas'] font-normal text-[30px] md:text-[40px] lg:text-[40px] mb-8 leading-tight"
+                    className="text-[#304462] font-display font-normal text-[30px] md:text-[40px] lg:text-[40px] mb-8 leading-tight"
                     data-aos="fade-up"
                     data-aos-duration="1000"
                 >

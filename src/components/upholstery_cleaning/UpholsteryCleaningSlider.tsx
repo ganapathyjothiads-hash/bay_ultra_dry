@@ -44,7 +44,7 @@ const UpholsteryCleaningSlider = () => {
                             alt="Star Icon"
                             className="w-[32px] md:w-[42px] h-auto object-contain"
                         />
-                        <h2 className="text-[#304462] font-['Nebulas'] font-normal text-[32px] md:text-[48px] lg:text-[52px] tracking-tight">
+                        <h2 className="text-[#304462] font-display font-normal text-[32px] md:text-[48px] lg:text-[52px] tracking-tight">
                             What We Clean
                         </h2>
                     </div>

@@ -16,9 +16,9 @@ const Footer = () => {
                 <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-8 mb-16">
 
                     {/* Column 1: Logo & Socials */}
-                    <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 lg:max-w-[350px]">
+                    <div className="flex flex-col items-start text-left space-y-6 lg:max-w-[350px]">
                         <Link href="/">
-                            <div className="relative w-[180px] h-[60px]">
+                            <div className="relative w-[100px] h-[80px]">
                                 <Image
                                     src="/assets/images/logo.png"
                                     alt="Bay Ultra Dry Logo"
@@ -61,7 +61,7 @@ const Footer = () => {
                     </div>
 
                     {/* Column 2: Quick Links */}
-                    <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
+                    <div className="flex flex-col items-start text-left space-y-6">
                         <h4 className="text-[#1E3A8A] font-bold text-[16px] uppercase tracking-wide">Quick Link</h4>
                         <nav className="flex flex-col space-y-3">
                             {[
@@ -84,10 +84,10 @@ const Footer = () => {
                     </div>
 
                     {/* Column 3: Get In Touch */}
-                    <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
+                    <div className="flex flex-col items-start text-left space-y-6">
                         <h4 className="text-[#1E3A8A] font-bold text-[16px] uppercase tracking-wide">Get In Touch</h4>
                         <div className="flex flex-col space-y-6">
-                            <div className="flex flex-col lg:flex-row items-center lg:items-start gap-3">
+                            <div className="flex flex-row items-start gap-3">
                                 <div className="text-[#1E3A8A] mt-1">
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
@@ -98,7 +98,7 @@ const Footer = () => {
                                     Tauranga Bay of Plenty
                                 </p>
                             </div>
-                            <div className="flex flex-col lg:flex-row items-center lg:items-start gap-3">
+                            <div className="flex flex-row items-start gap-3">
                                 <div className="text-[#1E3A8A] mt-1">
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                         <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />

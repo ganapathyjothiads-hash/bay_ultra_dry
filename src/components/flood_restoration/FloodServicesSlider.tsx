@@ -33,9 +33,27 @@ const FloodServicesSlider = () => {
             image: "/assets/images/drying_equipement.png",
         },
     ];
+    
+    const [itemsPerView, setItemsPerView] = useState(3.5);
 
-    const itemsPerView = 5;
-    const maxIndex = Math.max(0, services.length - itemsPerView);
+    React.useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 640) {
+                setItemsPerView(1);
+            } else if (window.innerWidth < 1024) {
+                setItemsPerView(2);
+            } else {
+                setItemsPerView(3.5);
+            }
+        };
+
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+    // const itemsPerView = 5;
+    // const maxIndex = Math.max(0, services.length - itemsPerView);
+    const maxIndex = Math.max(0, services.length - Math.ceil(itemsPerView));
 
     const handlePrev = () => {
         setCurrentIndex((prev) => {
@@ -77,13 +95,13 @@ const FloodServicesSlider = () => {
                             aria-hidden
                             className="w-6 h-6 md:w-8 md:h-8"
                         />
-                        <h2 className="text-[#304462] font-['Nebulas'] font-normal text-[32px] md:text-[50px] lg:text-[62px] leading-tight lg:leading-[76px] tracking-[0.01em] capitalize">
+                        <h2 className="text-[#304462] font-display font-normal text-[24px] md:text-[50px] lg:text-[62px] leading-tight lg:leading-[76px] tracking-[0.01em] capitalize">
                             Our Flood Restoration Services
                         </h2>
                     </div>
 
                     {/* Navigation Arrows */}
-                    <div className="flex gap-3 md:gap-4">
+                    <div className="gap-3 md:gap-4 hidden md:flex">
                         <button
                             onClick={handlePrev}
                             aria-label="Previous services"
@@ -107,18 +125,24 @@ const FloodServicesSlider = () => {
                     data-aos-delay="200"
                     className="overflow-hidden"
                 >
-                    <div
+                    {/* <div
                         className="flex gap-6 transition-transform duration-300 ease-out"
                         style={{
                             transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
                             width: `${(services.length / itemsPerView) * 100}%`,
+                        }}
+                    > */}
+                    <div
+                        className="flex gap-6 transition-transform duration-500 ease-out"
+                        style={{
+                            transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
                         }}
                     >
                         {services.map((service, index) => (
                             <div
                                 key={index}
                                 className="flex-shrink-0"
-                                style={{ width: `${125 / itemsPerView}%` }}
+                                style={{ width: `${100 / itemsPerView}%` }}
                             >
                                 <div className="flex flex-col h-full hover:transform hover:scale-105 transition-transform duration-300">
                                     {/* Service Image */}
@@ -133,7 +157,7 @@ const FloodServicesSlider = () => {
                                     {/* Service Title */}
                                     <div className="flex items-start gap-4">
                                         <div className="w-1.5 h-1.5 rounded-full bg-[#3780FF] mt-3.5 flex-shrink-0"></div>
-                                        <h3 className="text-[#3780FF] font-['Nebulas'] font-medium text-[16px] md:text-[18px] lg:text-[22px] leading-[1.4] lg:leading-[36px] tracking-[0.02em] capitalize">
+                                        <h3 className="text-[#3780FF] font-display font-medium text-[16px] md:text-[18px] lg:text-[22px] leading-[1.4] lg:leading-[36px] tracking-[0.02em] capitalize">
                                             {service.title}
                                         </h3>
                                     </div>
@@ -141,6 +165,23 @@ const FloodServicesSlider = () => {
                             </div>
                         ))}
                     </div>
+                </div>
+
+                <div className="gap-10 justify-center mt-3 flex md:hidden">
+                    <button
+                        onClick={handlePrev}
+                        aria-label="Previous services"
+                        className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#2B59C3] hover:bg-[#1E3A8A] flex items-center justify-center text-white transition-colors shadow-lg"
+                    >
+                        <ChevronLeft size={24} strokeWidth={3} />
+                    </button>
+                    <button
+                        onClick={handleNext}
+                        aria-label="Next services"
+                        className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#2B59C3] hover:bg-[#1E3A8A] flex items-center justify-center text-white transition-colors shadow-lg"
+                    >
+                        <ChevronRight size={24} strokeWidth={3} />
+                    </button>
                 </div>
 
             </div>

@@ -20,7 +20,7 @@ const AboutOurPromise: React.FC = () => {
     ];
 
     return (
-        <section className="relative w-full bg-white overflow-hidden pb-40">
+        <section className="relative w-full bg-white overflow-hidden pb-24">
             {/* Top Section: Our Promise */}
             <div className="max-w-[1400px] mx-auto px-6 py-16 lg:py-20 relative z-20">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-12">
@@ -155,12 +155,12 @@ const AboutOurPromise: React.FC = () => {
             </div>
 
             {/* Service Areas Section */}
-            <div className="w-full relative mt-0 pb-60">
+            <div className="w-full relative mt-0 lg:pb-60">
                 {/* Background Waves Assets framing the section */}
                 <div className="absolute inset-0 z-0 pointer-events-none overflow-visible">
                     {/* Left wave pattern flowing from bottom-left up */}
                     <div
-                        className="absolute bottom-[-30%] left-[-12%] w-[65%] h-[200%] opacity-90 transform rotate-[-5deg]"
+                        className="absolute bottom-[-10%] lg:bottom-[-30%] left-[-12%] w-[65%] h-[200%] opacity-90 transform rotate-[-5deg]"
                         data-aos="fade-up-right"
                         data-aos-duration="2000"
                     >
@@ -174,7 +174,7 @@ const AboutOurPromise: React.FC = () => {
                     </div>
                     {/* Right wave pattern flowing from bottom-right up */}
                     <div
-                        className="absolute bottom-[-50%] right-[-12%] w-[65%] h-[200%] opacity-90 transform rotate-[5deg]"
+                        className="absolute bottom-[-100%] lg:bottom-[-50%] right-[-12%] w-[65%] h-[200%] opacity-90 transform rotate-[5deg]"
                         data-aos="fade-up-left"
                         data-aos-duration="2000"
                     >
@@ -191,14 +191,14 @@ const AboutOurPromise: React.FC = () => {
                 {/* Centered Text Content */}
                 <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-[1240px] mx-auto pt-24 pb-12">
                     <h2
-                        className="text-[#324B6E] text-[52px] md:text-[52px] lg:text-[52px] font-[500] tracking-tight mb-10 leading-none"
+                        className="text-[#324B6E] text-[24px] md:text-[44px] lg:text-[55px] font-[500] tracking-tight mb-10 leading-none"
                         data-aos="fade-up"
                     >
                         Service Areas
                     </h2>
 
                     <p
-                        className="text-[#303030] text-[17px] md:text-[17px] lg:text-[17px] font-[500] leading-[1.8] opacity-80 max-w-[950px]"
+                        className="text-[#303030] text-[15px] lg:text-[17px] font-[500] leading-[1.8] opacity-80 max-w-[950px]"
                         data-aos="fade-up"
                         data-aos-delay="200"
                     >

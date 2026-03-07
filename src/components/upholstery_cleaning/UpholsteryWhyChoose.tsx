@@ -36,7 +36,7 @@ const UpholsteryWhyChoose = () => {
             <div className="w-full md:w-1/2 bg-[#E6E6E6] flex items-center p-8 md:p-16 lg:p-24 relative">
                 <div className="max-w-[600px] relative z-10 w-full">
                     <h2
-                        className="text-[#304462] font-['Nebulas'] font-normal text-[42px] md:text-[52px] lg:text-[64px] mb-12 leading-[1.1]"
+                        className="text-[#304462] font-display font-normal text-[42px] md:text-[52px] lg:text-[64px] mb-12 leading-[1.1]"
                         data-aos="fade-up"
                     >
                         Why Tauranga Trusts <br />

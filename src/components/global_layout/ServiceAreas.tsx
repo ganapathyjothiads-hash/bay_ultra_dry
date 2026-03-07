@@ -13,7 +13,7 @@ const ServiceAreas = () => {
                 <h2 className="text-[36px] md:text-[52px] font-medium text-[#000000] mb-6 leading-tight">
                     Service Areas
                 </h2>
-                <p className="text-[#374151] text-[15px] md:text-[17px] leading-relaxed max-w-[1000px] mx-auto font-normal">
+                <p className="text-[#374151] text-[15px] md:text-[17px] leading-relaxed max-w-[700px] mx-auto font-normal">
                     We proudly serve all of Tauranga and the wider Bay of Plenty, including Papamoa | Mount Maunganui | Omokoroa | Katikati | Omanawa | Ohauiti | Te Puna | Te Puke | BOP
                 </p>
             </div>

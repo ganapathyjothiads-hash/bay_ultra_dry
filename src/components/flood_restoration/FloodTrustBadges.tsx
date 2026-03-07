@@ -13,13 +13,13 @@ export default function FloodTrustBadges() {
   ];
 
   return (
-    <section className="py-16 md:py-18 bg-white">
+    <section className="py-12 md:py-18 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Fixed Heading */}
         <h2
           data-aos="fade-up"
-          className="text-[#304462] font-medium text-[32px] md:text-[40px] lg:text-[50px] leading-tight mb-6 text-center"
+          className="text-[#304462] font-medium text-[24px] md:text-[40px] lg:text-[50px] leading-tight mb-6 text-center"
         >
           Why Choose Bay Ultra Dry
         </h2>
