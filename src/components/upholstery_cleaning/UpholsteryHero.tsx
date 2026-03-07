@@ -24,13 +24,13 @@ const UpholsteryHero = () => {
                     />
                 </div>
                 {/* Hero Text Content */}
-                <div className="relative z-[10] max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 w-full flex flex-col items-center md:items-start pt-[30%] pb-[25%] lg:pt-0 lg:pb-0">
-                    <div className="w-full lg:w-3/4 text-center md:text-left">
-                        <h1 className="text-white font-medium text-[23px] sm:text-[48px] md:text-[60px] lg:text-[67px] leading-[1.1] md:leading-[1.05] mb-6 lg:mb-10 tracking-tight">
+                <div className="relative z-[10] max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 w-full flex flex-col items-center md:items-start pt-[30%] pb-[45%] sm:pt-[20%] sm:pb-[30%] lg:pt-0 lg:pb-0">
+                    <div className="w-full text-left">
+                        <h1 className="text-white font-medium text-[23px] sm:text-[38px] md:text-[42px] lg:text-[60px] leading-[1.1] md:leading-[1.3] mb-6 lg:mb-10 tracking-tight">
                             Professional Upholstery Cleaning <br className="hidden md:block" />
                             In Tauranga Sofas, Chairs & More
                         </h1>
-                        <p className="text-white text-[16px] md:text-[22px] lg:text-[24px] font-medium max-w-[875px] leading-relaxed opacity-90 mx-auto md:mx-0">
+                        <p className="text-white text-[16px] font-medium max-w-[875px] leading-relaxed opacity-90 mx-auto md:mx-0">
                             Breathe new life into your furniture for a fresher, cleaner, and allergen-free home.
                         </p>
                     </div>

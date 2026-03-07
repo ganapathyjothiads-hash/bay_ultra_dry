@@ -21,13 +21,13 @@ const ContactHero = () => {
 
             <div className="relative z-10 max-w-[1240px] xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h1
-                    className="text-white font-display text-[33px] font-[500] tracking-[0.01em] md:text-[64px] lg:text-[78px] leading-[1.2] md:leading-[100px] mb-8"
+                    className="text-white font-display text-[33px] font-medium tracking-[0.01em] md:text-[64px] lg:text-[68px] leading-[1.2] md:leading-[100px] mb-8"
                     data-aos="fade-up"
                 >
                     Get In Touch For A <br /> Sparkling Clean <br className="block md:hidden" /> Space!
                 </h1>
                 <p
-                    className="text-[#E8E8E8] font-['Inter',sans-serif] text-[16px] md:text-[19px] lg:text-[20px] font-medium max-w-[700px] mx-auto leading-[25px] opacity-90"
+                    className="text-[#E8E8E8] font-sans text-[16px] md:text-[19px] lg:text-[20px] font-medium max-w-[700px] mx-auto leading-[25px] opacity-90"
                     data-aos="fade-up"
                     data-aos-delay="200"
                 >

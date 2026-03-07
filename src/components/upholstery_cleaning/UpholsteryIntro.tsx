@@ -8,29 +8,27 @@ const UpholsteryIntro = () => {
 
 
             {/* Left wavy S-Frame */}
-            <div className="absolute left-0 top-[50%] -translate-y-1/2 z-[2] pointer-events-none
-                            w-[40%] sm:w-[46%] md:w-[40%] lg:w-[45%]">
+            <div className="absolute left-0 top-[5%] lg:top-[50%] -translate-y-1/2 z-[2] pointer-events-none w-[40%] sm:w-[46%] md:w-[40%] lg:w-[45%]">
                 <img
                     src="/assets/images/upholsteryCleaning/Upholstery_SFrame.png"
                     alt=""
-                    className="w-full h-auto object-contain opacity-60 md:opacity-100"
+                    className="w-full h-auto object-contain"
                 />
             </div>
 
             {/* Right wavy S-Frame */}
-            <div className="absolute right-0 top-[50%] -translate-y-1/2 z-[2] pointer-events-none
-                            w-[40%] sm:w-[46%] md:w-[40%] lg:w-[45%]">
+            <div className="absolute right-0 top-[5%] lg:top-[50%] -translate-y-1/2 z-[2] pointer-events-none w-[40%] sm:w-[46%] md:w-[40%] lg:w-[45%]">
                 <img
                     src="/assets/images/upholsteryCleaning/Upholstery_SFrame2.png"
                     alt=""
-                    className="w-full h-auto object-contain opacity-60 md:opacity-100"
+                    className="w-full h-auto object-contain"
                 />
             </div>
 
             {/* ── Text content: z-[10] — always above everything ── */}
             <div className="relative z-[10] max-w-[860px] lg:max-w-[960px] mx-auto px-6 md:px-12 text-center">
                 <h2
-                    className="text-[#304462] font-display font-normal text-[28px] sm:text-[30px] md:text-[38px] lg:text-[40px] mb-5 md:mb-7 leading-tight"
+                    className="text-[#304462] font-display font-normal text-[24px] sm:text-[30px] md:text-[38px] lg:text-[50px] mb-5 md:mb-7 leading-tight"
                     data-aos="fade-up"
                     data-aos-duration="1000"
                 >

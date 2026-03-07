@@ -85,8 +85,8 @@ const WelcomeSection = () => {
                                 priority
                             />
                             <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
-                                <span className="text-[44px] md:text-[46px] font-serif italic text-[#1E40AF] leading-none mb-1 font-family:'Jomolhari'">100%</span>
-                                <span className="text-[12px] md:text-[12px] font-[800] text-[#1E40AF] tracking-[0.05em] leading-[1.3] mt-1 font-family:'Jomolhari'">Better Cleaning<br />Services</span>
+                                <span className="text-[44px] md:text-[46px] text-[#1E40AF] font-regular leading-none mb-1 font-jomolhari">100%</span>
+                                <span className="text-[12px] md:text-[12px] font-medium text-[#1E40AF] tracking-[0.05em] leading-[1.3] mt-1 font-jomolhari">Better Cleaning<br />Services</span>
                             </div>
                         </div>
                     </div>

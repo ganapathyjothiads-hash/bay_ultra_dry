@@ -98,7 +98,7 @@ const ContactForm = () => {
 
             <div className="max-w-[1240px] mx-auto relative z-10">
                 <div className="text-center mb-10 md:mb-16 relative z-10 pt-2 md:pt-10 mt-[-10px] md:mt-0">
-                    <p className="text-[#304462] font-sans italic font-medium text-[16px] md:text-[18px] max-w-[800px] mx-auto mb-[30px] md:mb-[60px] px-4" data-aos="fade-up">
+                    <p className="text-[#304462] font-sans italic font-medium text-[16px] md:text-[18px] max-w-[800px] mx-auto mb-[30px] md:mb-[80px] px-4" data-aos="fade-up">
                         "Let our professional cleaning team <br className="block md:hidden" /> make your home or business shine. <br className="hidden md:block" />
                         Contact us today for a free quote— <br className="block md:hidden" /> fast, friendly, and hassle-free!"
                     </p>
@@ -114,7 +114,7 @@ const ContactForm = () => {
                     </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="max-w-[900px] mx-auto bg-transparent mt-[130px] md:mt-0 relative z-10">
+                <form onSubmit={handleSubmit} className="max-w-[1000px] mx-auto bg-transparent mt-[130px] md:mt-0 relative z-10">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
                         {/* Full Name */}
                         <div className="flex flex-col gap-3">
@@ -258,14 +258,14 @@ const ContactForm = () => {
                                 type="button"
                                 onClick={handleClear}
                                 variant="amber"
-                                className="w-full md:w-[160px] py-3 md:py-4 text-[16px]"
+                                className="w-full md:w-[160px] py-3 text-[16px]"
                             >
                                 Clear
                             </ActionButton>
                             <ActionButton
                                 type="submit"
                                 variant="primary"
-                                className="w-full md:w-[180px] py-3 md:py-4 text-[16px]"
+                                className="w-full md:w-[180px] py-3 text-[16px]"
                             >
                                 Enquiry Now
                             </ActionButton>

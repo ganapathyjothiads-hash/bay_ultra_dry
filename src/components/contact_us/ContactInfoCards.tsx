@@ -33,11 +33,11 @@ const ContactInfoCards = () => {
                 {contactInfo.map((info, index) => (
                     <div
                         key={index}
-                        className="bg-white rounded-[20px] p-8 shadow-[0px_2px_15px_0px_#00000040] flex flex-col items-center text-center transition-transform hover:-translate-y-1 w-full"
+                        className="bg-white rounded-[20px] p-8 shadow-[0px_2px_15px_0px_#00000040] flex flex-col justify-between items-center text-center transition-transform hover:-translate-y-1 w-full"
                         data-aos="fade-up"
                         data-aos-delay={index * 100}
                     >
-                        <h3 className="font-display text-[#304462] text-[18px] lg:text-[24px] font-medium mb-4 font-['Nebula_2',sans-serif] leading-[1.2]">{info.label}</h3>
+                        <h3 className="font-display text-[#304462] text-[18px] lg:text-[24px] font-medium mb-4 font-display leading-[1.2]">{info.label}</h3>
                         <div className="flex items-center gap-3">
                             {info.icon}
                             <a

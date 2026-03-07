@@ -27,9 +27,9 @@ const UpholsteryHowItWorks = () => {
     ];
 
     return (
-        <section className="w-full py-16 md:py-24 bg-white">
+        <section className="w-full py-12 md:py-24 bg-white">
             <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
-                <h2 className="text-[#304462] font-display font-[400] text-[36px] md:text-[52px] text-center mb-16 md:mb-24">
+                <h2 className="text-[#304462] font-display font-[400] text-[36px] md:text-[52px] text-center mb-12 md:mb-24">
                     How It Works
                 </h2>
 
@@ -47,8 +47,8 @@ const UpholsteryHowItWorks = () => {
 
                             {/* Text Content */}
                             <div className="w-full">
-                                <p className="text-[#304462] text-[16px] md:text-[18px] leading-snug md:leading-relaxed mb-4">
-                                    <span className="font-bold underline md:no-underline">{step.title} —</span> {step.description}
+                                <p className="text-[#304462] text-[18px] leading-snug md:leading-relaxed mb-4">
+                                    <span className="font-bold">{step.title} —</span> {step.description}
                                 </p>
                                 {/* Bottom Line */}
                                 <div className="w-full h-[1.5px] bg-[#304462] opacity-[0.15] md:opacity-40" />
