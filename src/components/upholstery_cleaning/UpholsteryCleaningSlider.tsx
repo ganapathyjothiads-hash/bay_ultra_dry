@@ -67,16 +67,16 @@ const UpholsteryCleaningSlider = () => {
                 className="absolute pointer-events-none z-[0]
                     top-[-25%] left-1/2 -translate-x-1/2 md:left-[10%] md:translate-x-0
                     w-[500px] h-[350px] md:h-[500px]
-                    bg-[#00FF26] opacity-[18%] md:opacity-[25%]
+                    bg-[#A4D9FF] md:bg-[#00FF26] opacity-[18%] md:opacity-[25%]
                     blur-[120px] md:blur-[160px] rounded-full"
             />
 
             {/* Blue glow — positioned behind the arrows and bleeding into the intro section's frame area */}
             <div
                 className="absolute pointer-events-none z-[0]
-                    top-[-15%] right-[-10%] md:right-[5%]
+                    top-[-34%] right-[-34%] md:right-[5%]
                     w-[350px] h-[400px]  md:h-[600px]
-                    bg-[#006FFF] opacity-[15%] md:opacity-[22%]
+                    bg-[#A4D9FF] md:bg-[#006FFF] opacity-[15%] md:opacity-[22%]
                     blur-[110px] md:blur-[150px] rounded-full"
             />
 
@@ -89,9 +89,9 @@ const UpholsteryCleaningSlider = () => {
                         <img
                             src="/assets/icons/Star_3.png"
                             alt="Star Icon"
-                            className="w-[28px] md:w-[42px] h-auto object-contain"
+                            className="w-[35px] md:w-[42px] h-auto object-contain"
                         />
-                        <h2 className="text-[#304462] font-display font-normal text-[32px] md:text-[48px] lg:text-[52px] tracking-tight">
+                        <h2 className="text-[#304462] font-display font-regular text-[32px] md:text-[48px] lg:text-[52px] tracking-tight">
                             What We Clean
                         </h2>
                     </div>
@@ -146,7 +146,7 @@ const UpholsteryCleaningSlider = () => {
                                 {/* Card title */}
                                 <div className="flex items-start px-1 gap-3 mt-1">
                                     <div className="w-[5px] h-[5px] md:w-[6px] md:h-[6px] rounded-full bg-[#3B82F6] flex-shrink-0 mt-[9px] md:mt-[10px]" />
-                                    <h3 className="font-display text-[#3780FF] font-[500] text-[16px] md:text-[18px] leading-[1.4] tracking-tight">
+                                    <h3 className="font-display text-[#3780FF] font-medium text-[16px] md:text-[18px] leading-[1.4] tracking-tight">
                                         {service.title}
                                     </h3>
                                 </div>

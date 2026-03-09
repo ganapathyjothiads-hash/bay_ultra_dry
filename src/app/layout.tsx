@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono ,Jomolhari} from "next/font/google";
+import { Geist, Geist_Mono, Jomolhari } from "next/font/google";
+import { nebulas } from "./fonts";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -25,10 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link href="https://fonts.cdnfonts.com/css/nebula-2" rel="stylesheet" />
-      </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${nebulas.variable} antialiased`}>
         {children}
       </body>
     </html>

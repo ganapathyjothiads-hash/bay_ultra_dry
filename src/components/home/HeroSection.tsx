@@ -4,7 +4,7 @@ import React from "react";
 const HeroSection = () => {
     return (
         <section
-            className="relative w-full h-[850px] sm:h-[700px] md:h-[850px] lg:h-[720px] xl:h-[920px] overflow-hidden bg-[#1C2A45]"
+            className="relative w-full h-[850px] sm:h-[700px] md:h-[850px] lg:h-[720px] xl:h-[730px] overflow-hidden bg-[#1C2A45]"
         >
             {/* Background Video */}
             <video

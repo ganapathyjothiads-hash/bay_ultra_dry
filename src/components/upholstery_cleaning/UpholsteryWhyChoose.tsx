@@ -33,14 +33,13 @@ const UpholsteryWhyChoose = () => {
             </div>
 
             {/* Right Content Section */}
-            <div className="w-full md:w-1/2 bg-[#E6E6E6] flex items-center p-6 sm:p-10 md:p-16 lg:p-24 relative">
+            <div className="w-full md:w-1/2  max-w-[1440px] mx-auto bg-[#E6E6E6] flex items-center p-[44px] sm:p-10 md:p-16 lg:p-24 relative">
                 <div className="max-w-[600px] relative z-10 w-full">
                     <h2
-                        className="text-[#304462] font-alt font-normal text-[36px] sm:text-[42px] md:text-[52px] lg:text-[51px] mb-8 md:mb-12 leading-[1.2] md:leading-[1.1]"
+                        className="text-[#304462] font-alt font-regular text-[20px] sm:text-[42px] md:text-[52px] lg:text-[51px] mb-[8px] md:mb-[12px] mt-[10px] md:mt-[15px] leading-[1.2] md:leading-[1.1]"
                         data-aos="fade-up"
                     >
-                        Why Tauranga Trusts <br />
-                        Bay Ultra Dry
+                        Why Tauranga Trusts Bay Ultra Dry
                     </h2>
 
                     <div className="space-y-0">
@@ -58,14 +57,14 @@ const UpholsteryWhyChoose = () => {
                                         className="w-full h-full object-contain"
                                     />
                                 </div>
-                                <p className="text-[#304462] font-semibold md:font-medium text-[15px] md:text-[18px]">
+                                <p className="text-[#304462] font-medium md:font-medium text-[12px] md:text-[18px]">
                                     {feature.title}
                                 </p>
                             </div>
                         ))}
                     </div>
 
-                    <p className="mt-10 md:mt-12 text-[#4b5563] text-[14px] md:text-[15px] italic opacity-90 max-w-[500px] leading-relaxed">
+                    <p className="md:mt-12 text-[#304462] text-[12px] md:text-[15px] italic opacity-90 max-w-[500px] leading-relaxed">
                         "From family furniture to full commercial seating — we've got the tools and know-how to get it clean."
                     </p>
                 </div>

@@ -8,7 +8,7 @@ const UpholsteryIntro = () => {
 
 
             {/* Left wavy S-Frame */}
-            <div className="absolute left-0 top-[5%] lg:top-[50%] -translate-y-1/2 z-[2] pointer-events-none w-[40%] sm:w-[46%] md:w-[40%] lg:w-[45%]">
+            <div className="absolute left-[-149%] sm:left-0 top-[35%] sm:top-[5%] lg:top-[50%] -translate-y-1/2 z-[2] pointer-events-none w-[190%] sm:w-[46%] md:w-[40%] lg:w-[45%]">
                 <img
                     src="/assets/images/upholsteryCleaning/Upholstery_SFrame.png"
                     alt=""
@@ -17,7 +17,7 @@ const UpholsteryIntro = () => {
             </div>
 
             {/* Right wavy S-Frame */}
-            <div className="absolute right-0 top-[5%] lg:top-[50%] -translate-y-1/2 z-[2] pointer-events-none w-[40%] sm:w-[46%] md:w-[40%] lg:w-[45%]">
+            <div className="absolute right-[-149%] sm:right-0 top-[35%] sm:top-[5%] lg:top-[50%] -translate-y-1/2 z-[2] pointer-events-none w-[190%] sm:w-[46%] md:w-[40%] lg:w-[45%]">
                 <img
                     src="/assets/images/upholsteryCleaning/Upholstery_SFrame2.png"
                     alt=""
@@ -28,7 +28,7 @@ const UpholsteryIntro = () => {
             {/* ── Text content: z-[10] — always above everything ── */}
             <div className="relative z-[10] max-w-[860px] lg:max-w-[960px] mx-auto px-6 md:px-12 text-center">
                 <h2
-                    className="text-[#304462] font-display font-normal text-[24px] sm:text-[30px] md:text-[38px] lg:text-[50px] mb-5 md:mb-7 leading-tight"
+                    className="text-[#304462] font-display font-regular text-[24px] sm:text-[30px] md:text-[38px] lg:text-[50px] mb-5 mt-[7] md:mb-7 leading-tight"
                     data-aos="fade-up"
                     data-aos-duration="1000"
                 >
@@ -36,7 +36,7 @@ const UpholsteryIntro = () => {
                 </h2>
 
                 <p
-                    className="text-[#4b5563] text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed px-2 md:px-4"
+                    className="text-[#4b5563] text-[16px] sm:text-[15px] md:text-[16px] leading-relaxed px-2 md:px-4"
                     data-aos="fade-up"
                     data-aos-delay="200"
                     data-aos-duration="1000"

@@ -6,7 +6,7 @@ const UpholsteryHero = () => {
             {/* The dark hero section with V clip-path */}
             <section
                 className="relative w-full min-h-[85vh] lg:min-h-[700px] bg-[#1B1D33] flex items-center
-                   [clip-path:polygon(0%_0%,100%_0%,100%_65%,50%_100%,0%_65%)]
+                   [clip-path:polygon(0%_0%,100%_0%,100%_75%,50%_100%,0%_75%)]
                    lg:[clip-path:polygon(0%_0%,100%_0%,100%_80%,50%_100%,0%_80%)]"
             >
                 {/* Background Image & Overlays */}
@@ -24,13 +24,13 @@ const UpholsteryHero = () => {
                     />
                 </div>
                 {/* Hero Text Content */}
-                <div className="relative z-[10] max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 w-full flex flex-col items-center md:items-start pt-[30%] pb-[45%] sm:pt-[20%] sm:pb-[30%] lg:pt-0 lg:pb-0">
+                <div className="relative z-[10] max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 w-full flex flex-col items-center md:items-start pt-[40%] pb-[55%] sm:pt-[20%] sm:pb-[30%] lg:pt-0 lg:pb-0">
                     <div className="w-full text-left">
-                        <h1 className="text-white font-medium text-[23px] sm:text-[38px] md:text-[42px] lg:text-[60px] leading-[1.1] md:leading-[1.3] mb-6 lg:mb-10 tracking-tight">
+                        <h1 className="text-white font-medium text-[25px] sm:text-[38px] md:text-[42px] lg:text-[60px] leading-[1.5] md:leading-[1.3] mb-6 lg:mb-10 tracking-tight ">
                             Professional Upholstery Cleaning <br className="hidden md:block" />
                             In Tauranga Sofas, Chairs & More
                         </h1>
-                        <p className="text-white text-[16px] font-medium max-w-[875px] leading-relaxed opacity-90 mx-auto md:mx-0">
+                        <p className="text-[E8E8E8] text-[16px] font-semibold max-w-[875px] leading-relaxed opacity-90 mx-auto md:mx-0">
                             Breathe new life into your furniture for a fresher, cleaner, and allergen-free home.
                         </p>
                     </div>
@@ -42,7 +42,7 @@ const UpholsteryHero = () => {
                     src="/assets/images/upholsteryCleaning/Rectangle 8992.png"
                     alt="Yellow Decorative Shape"
                     className="absolute z-[3] pointer-events-none lg:hidden
-                        bottom-[-2%] -left-[-3%] w-[60%] h-[37%] object-fill rotate-[357deg]"
+                        bottom-[-12%] -left-[-2%] w-[75%] h-[40%] object-fill rotate-[353deg]"
                     referrerPolicy="no-referrer"
                 />
                 {/* Desktop Version */}
@@ -59,7 +59,7 @@ const UpholsteryHero = () => {
                     src="/assets/images/upholsteryCleaning/Upholstery_frame.png"
                     alt="Blue Decorative Shape"
                     className="absolute z-[4] pointer-events-none
-                        bottom-[-4%] left-[-12%] w-[100%] h-[18%] object-fill
+                        bottom-[-8%] left-[-20%] w-[100%] h-[18%] object-fill
                         lg:bottom-[-12%] lg:left-auto lg:right-[24%] lg:w-[80%] lg:h-[18%]"
                     referrerPolicy="no-referrer"
                 />
