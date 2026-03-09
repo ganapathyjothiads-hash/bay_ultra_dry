@@ -8,7 +8,7 @@ const UpholsteryIntro = () => {
 
 
             {/* Left wavy S-Frame */}
-            <div className="absolute left-[-149%] sm:left-0 top-[35%] sm:top-[5%] lg:top-[50%] -translate-y-1/2 z-[2] pointer-events-none w-[190%] sm:w-[46%] md:w-[40%] lg:w-[45%]">
+            <div className="absolute left-[-149%] sm:left-0 top-[30%] sm:top-[20%] md:top-[25%]  lg:top-[50%] -translate-y-1/2 z-[2] pointer-events-none w-[190%] sm:w-[46%] md:w-[40%] lg:w-[45%]">
                 <img
                     src="/assets/images/upholsteryCleaning/Upholstery_SFrame.png"
                     alt=""
@@ -17,7 +17,7 @@ const UpholsteryIntro = () => {
             </div>
 
             {/* Right wavy S-Frame */}
-            <div className="absolute right-[-149%] sm:right-0 top-[35%] sm:top-[5%] lg:top-[50%] -translate-y-1/2 z-[2] pointer-events-none w-[190%] sm:w-[46%] md:w-[40%] lg:w-[45%]">
+            <div className="absolute right-[-149%] sm:right-0 top-[30%] sm:top-[20%] md:top-[25%] lg:top-[50%] -translate-y-1/2 z-[2] pointer-events-none w-[190%] sm:w-[46%] md:w-[40%] lg:w-[45%]">
                 <img
                     src="/assets/images/upholsteryCleaning/Upholstery_SFrame2.png"
                     alt=""

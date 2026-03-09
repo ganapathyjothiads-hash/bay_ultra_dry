@@ -4,9 +4,6 @@ import React, { useState, useEffect, useCallback } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const UpholsteryCleaningSlider = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [visibleCards, setVisibleCards] = useState(3);
-
     const services = [
         {
             title: "Commercial Carpet & Upholstery Cleaning",
@@ -25,6 +22,14 @@ const UpholsteryCleaningSlider = () => {
             image: "/assets/images/upholsteryCleaning/Upholstery_Slider4.png",
         }
     ];
+
+    const [currentIndex, setCurrentIndex] = useState(services.length);
+    const [visibleCards, setVisibleCards] = useState(3);
+    const [isAnimating, setIsAnimating] = useState(false);
+    const [useTransition, setUseTransition] = useState(true);
+
+    // Triple the items to ensure a seamless infinite loop in both directions
+    const displayServices = [...services, ...services, ...services];
 
     const updateVisibleCards = useCallback(() => {
         if (typeof window !== "undefined") {
@@ -45,24 +50,52 @@ const UpholsteryCleaningSlider = () => {
     }, [updateVisibleCards]);
 
     const handlePrev = useCallback(() => {
-        setCurrentIndex((prev) => {
-            const maxIndex = Math.max(0, services.length - visibleCards);
-            return prev === 0 ? maxIndex : prev - 1;
-        });
-    }, [visibleCards, services.length]);
+        if (isAnimating) return;
+        setIsAnimating(true);
+        setCurrentIndex((prev) => prev - 1);
+    }, [isAnimating]);
 
     const handleNext = useCallback(() => {
-        setCurrentIndex((prev) => {
-            const maxIndex = Math.max(0, services.length - visibleCards);
-            return prev >= maxIndex ? 0 : prev + 1;
-        });
-    }, [visibleCards, services.length]);
+        if (isAnimating) return;
+        setIsAnimating(true);
+        setCurrentIndex((prev) => prev + 1);
+    }, [isAnimating]);
+
+    // Handle seamless cyclic jumping
+    useEffect(() => {
+        const animationDuration = 800;
+
+        const timer = setTimeout(() => {
+            if (isAnimating) {
+                setIsAnimating(false);
+
+                // Wrap around logic
+                if (currentIndex >= services.length * 2) {
+                    setUseTransition(false);
+                    setCurrentIndex(currentIndex - services.length);
+                } else if (currentIndex < services.length) {
+                    setUseTransition(false);
+                    setCurrentIndex(currentIndex + services.length);
+                }
+            }
+        }, animationDuration);
+
+        return () => clearTimeout(timer);
+    }, [currentIndex, isAnimating, services.length]);
+
+    // Restore transition after the jump
+    useEffect(() => {
+        if (!useTransition) {
+            const timer = setTimeout(() => {
+                setUseTransition(true);
+            }, 20);
+            return () => clearTimeout(timer);
+        }
+    }, [useTransition]);
 
     return (
-        /* Removed bg-white and overflow-hidden to treat this and the sections above as a single, seamless page */
         <section className="relative w-full pt-0 pb-16 md:pb-24">
-
-            {/* Green glow — positioned behind the "What We Clean" text and bleeding into the intro section's frame area */}
+            {/* Green glow */}
             <div
                 className="absolute pointer-events-none z-[0]
                     top-[-25%] left-1/2 -translate-x-1/2 md:left-[10%] md:translate-x-0
@@ -71,20 +104,18 @@ const UpholsteryCleaningSlider = () => {
                     blur-[120px] md:blur-[160px] rounded-full"
             />
 
-            {/* Blue glow — positioned behind the arrows and bleeding into the intro section's frame area */}
+            {/* Blue glow */}
             <div
                 className="absolute pointer-events-none z-[0]
                     top-[-34%] right-[-34%] md:right-[5%]
-                    w-[350px] h-[400px]  md:h-[600px]
+                    w-[350px] h-[400px] md:h-[600px]
                     bg-[#A4D9FF] md:bg-[#006FFF] opacity-[15%] md:opacity-[22%]
                     blur-[110px] md:blur-[150px] rounded-full"
             />
 
             <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
-
-                {/* Header: "What We Clean" + arrows */}
+                {/* Header */}
                 <div className="flex flex-col md:flex-row items-center justify-between mb-8 md:mb-12 gap-4">
-
                     <div className="flex items-center gap-3 md:gap-4 w-full justify-center md:justify-start">
                         <img
                             src="/assets/icons/Star_3.png"
@@ -118,15 +149,14 @@ const UpholsteryCleaningSlider = () => {
                 {/* Slider track */}
                 <div className="relative overflow-hidden w-full">
                     <div
-                        className="flex transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]"
+                        className={`flex ${useTransition ? "transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]" : ""}`}
                         style={{ transform: `translateX(calc(-${currentIndex * (100 / visibleCards)}%))` }}
                     >
-                        {services.map((service, index) => (
+                        {displayServices.map((service, index) => (
                             <div
                                 key={index}
                                 className="w-full md:w-1/2 lg:w-1/3 px-3 md:px-4 lg:px-5 flex-shrink-0 flex flex-col group cursor-pointer"
                             >
-                                {/* Image — square, smooth circular hover */}
                                 <div className="relative w-full aspect-square mb-5 overflow-hidden
                                     rounded-[24px] md:rounded-[28px]
                                     transition-all duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)]
@@ -134,7 +164,7 @@ const UpholsteryCleaningSlider = () => {
                                     shadow-[0_6px_18px_rgba(0,0,0,0.08)]
                                     group-hover:shadow-[0_16px_36px_rgba(0,0,0,0.16)]
                                     group-hover:-translate-y-1
-                                    bg-gray-100 z-10 mt-[5]">
+                                    bg-gray-100 z-10 mt-1">
                                     <img
                                         src={service.image}
                                         alt={service.title}
@@ -143,10 +173,9 @@ const UpholsteryCleaningSlider = () => {
                                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-[900ms] pointer-events-none" />
                                 </div>
 
-                                {/* Card title */}
                                 <div className="flex items-start px-1 gap-3 mt-1">
                                     <div className="w-[5px] h-[5px] md:w-[6px] md:h-[6px] rounded-full bg-[#3B82F6] flex-shrink-0 mt-[9px] md:mt-[10px]" />
-                                    <h3 className="font-display text-[#3780FF] font-medium text-[16px] md:text-[18px] leading-[1.4] tracking-tight">
+                                    <h3 className="font-display text-[#3780FF] font-medium text-[16px] md:text-[18px] leading-[1.4] tracking-wide">
                                         {service.title}
                                     </h3>
                                 </div>
@@ -172,7 +201,6 @@ const UpholsteryCleaningSlider = () => {
                         <ArrowRight size={24} strokeWidth={2.5} className="group-hover:translate-x-1 transition-transform" />
                     </button>
                 </div>
-
             </div>
         </section>
     );

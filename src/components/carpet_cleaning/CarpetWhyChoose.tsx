@@ -58,7 +58,7 @@ const CarpetWhyChoose = () => {
                             <img
                                 src="/assets/images/carpet/Carpet_Why_1.png"
                                 alt=""
-                                className="w-[45%] h-auto object-contain"
+                                className="w-[55%] mt-[10%] ml-[10%]  h-auto object-contain"
                             />
                             <img
                                 src="/assets/images/carpet/Carpet_Why_2.png"

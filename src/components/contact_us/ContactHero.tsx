@@ -19,12 +19,12 @@ const ContactHero = () => {
                 />
             </div>
 
-            <div className="relative z-10 max-w-[1240px] xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="relative z-10 max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-[40px] text-center">
                 <h1
-                    className="text-white font-display text-[33px] font-medium tracking-[0.01em] md:text-[64px] lg:text-[68px] leading-[1.2] md:leading-[100px] mb-8"
+                    className="text-white font-display text-[33px] font-medium tracking-[0.01em] md:text-[64px] lg:text-[81px] leading-[1.2] md:leading-[100px] mb-8"
                     data-aos="fade-up"
                 >
-                    Get In Touch For A <br /> Sparkling Clean <br className="block md:hidden" /> Space!
+                    Get In Touch For A Sparkling Clean  Space!
                 </h1>
                 <p
                     className="text-[#E8E8E8] font-sans text-[16px] md:text-[19px] lg:text-[20px] font-medium max-w-[700px] mx-auto leading-[25px] opacity-90"

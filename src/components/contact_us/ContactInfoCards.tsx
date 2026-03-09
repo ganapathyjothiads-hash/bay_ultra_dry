@@ -19,7 +19,7 @@ const ContactInfoCards = () => {
             color: "#005D38"
         },
         {
-            icon: <img src="/assets/icons/Location.png" alt="Location"  />,
+            icon: <img src="/assets/icons/Location.png" alt="Location" />,
             label: "Address",
             value: "162 Durham Street Tauranga Bay of Plenty",
             href: "https://maps.google.com/?q=162+Durham+Street+Tauranga+Bay+of+Plenty",
@@ -37,7 +37,7 @@ const ContactInfoCards = () => {
                         data-aos="fade-up"
                         data-aos-delay={index * 100}
                     >
-                        <h3 className="font-display text-[#304462] text-[18px] lg:text-[24px] font-medium mb-4 font-display leading-[1.2]">{info.label}</h3>
+                        <h3 className="font-nebulas text-[#304462] text-[18px] lg:text-[24px] font-medium mb-4 leading-[1.2]">{info.label}</h3>
                         <div className="flex items-center gap-3">
                             {info.icon}
                             <a

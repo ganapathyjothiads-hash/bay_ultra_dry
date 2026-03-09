@@ -1,10 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-const FloodServicesSlider = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
 
+const FloodServicesSlider = () => {
     const services = [
         {
             title: "Emergency Water Extraction",
@@ -31,10 +30,15 @@ const FloodServicesSlider = () => {
             image: "/assets/images/drying_equipement.png",
         },
     ];
-    
-    const [itemsPerView, setItemsPerView] = useState(3.5);
 
-    React.useEffect(() => {
+    const [itemsPerView, setItemsPerView] = useState(3.5);
+    const [currentIndex, setCurrentIndex] = useState(services.length);
+    const [isAnimating, setIsAnimating] = useState(false);
+    const [useTransition, setUseTransition] = useState(true);
+
+    const displayServices = [...services, ...services, ...services];
+
+    useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth < 640) {
                 setItemsPerView(1);
@@ -49,34 +53,58 @@ const FloodServicesSlider = () => {
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
-    // const itemsPerView = 5;
-    // const maxIndex = Math.max(0, services.length - itemsPerView);
-    const maxIndex = Math.max(0, services.length - Math.ceil(itemsPerView));
 
-    const handlePrev = () => {
-        setCurrentIndex((prev) => {
-            if (prev === 0) {
-                return maxIndex;
+    const handleNext = useCallback(() => {
+        if (isAnimating) return;
+        setIsAnimating(true);
+        setCurrentIndex((prev) => prev + 1);
+    }, [isAnimating]);
+
+    const handlePrev = useCallback(() => {
+        if (isAnimating) return;
+        setIsAnimating(true);
+        setCurrentIndex((prev) => prev - 1);
+    }, [isAnimating]);
+
+    // Handle seamless cyclic jumping
+    useEffect(() => {
+        const animationDuration = 500; // Matches transition-transform duration-500
+
+        const timer = setTimeout(() => {
+            if (isAnimating) {
+                setIsAnimating(false);
+
+                // Wrap around logic
+                if (currentIndex >= services.length * 2) {
+                    setUseTransition(false);
+                    setCurrentIndex(currentIndex - services.length);
+                } else if (currentIndex < services.length) {
+                    setUseTransition(false);
+                    setCurrentIndex(currentIndex + services.length);
+                }
             }
-            return prev - 1;
-        });
-    };
+        }, animationDuration);
 
-    const handleNext = () => {
-        setCurrentIndex((prev) => {
-            if (prev === maxIndex) {
-                return 0;
-            }
-            return prev + 1;
-        });
-    };
+        return () => clearTimeout(timer);
+    }, [currentIndex, isAnimating, services.length]);
 
-    React.useEffect(() => {
+    // Restore transition after the jump
+    useEffect(() => {
+        if (!useTransition) {
+            const timer = setTimeout(() => {
+                setUseTransition(true);
+            }, 20);
+            return () => clearTimeout(timer);
+        }
+    }, [useTransition]);
+
+    // Autoplay logic
+    useEffect(() => {
         const interval = setInterval(() => {
             handleNext();
-        }, 3000);
+        }, 4000);
         return () => clearInterval(interval);
-    }, [currentIndex, maxIndex]);
+    }, [handleNext]);
 
     return (
         <section className="w-full py-8 md:py-12 lg:py-16 bg-white px-6 md:px-12 lg:px-24">
@@ -103,14 +131,14 @@ const FloodServicesSlider = () => {
                         <button
                             onClick={handlePrev}
                             aria-label="Previous services"
-                            className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#2B59C3] hover:bg-[#1E3A8A] flex items-center justify-center text-white transition-colors shadow-lg"
+                            className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#2B59C3] hover:bg-[#1E3A8A] flex items-center justify-center text-white transition-colors shadow-lg active:scale-95"
                         >
                             <ChevronLeft size={24} strokeWidth={3} />
                         </button>
                         <button
                             onClick={handleNext}
                             aria-label="Next services"
-                            className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#2B59C3] hover:bg-[#1E3A8A] flex items-center justify-center text-white transition-colors shadow-lg"
+                            className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#2B59C3] hover:bg-[#1E3A8A] flex items-center justify-center text-white transition-colors shadow-lg active:scale-95"
                         >
                             <ChevronRight size={24} strokeWidth={3} />
                         </button>
@@ -123,28 +151,21 @@ const FloodServicesSlider = () => {
                     data-aos-delay="200"
                     className="overflow-hidden"
                 >
-                    {/* <div
-                        className="flex gap-6 transition-transform duration-300 ease-out"
-                        style={{
-                            transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
-                            width: `${(services.length / itemsPerView) * 100}%`,
-                        }}
-                    > */}
                     <div
-                        className="flex gap-6 transition-transform duration-500 ease-out"
+                        className={`flex gap-6 ${useTransition ? "transition-transform duration-500 ease-out" : ""}`}
                         style={{
-                            transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
+                            transform: `translateX(calc(-${currentIndex * (100 / itemsPerView)}%))`,
                         }}
                     >
-                        {services.map((service, index) => (
+                        {displayServices.map((service, index) => (
                             <div
                                 key={index}
                                 className="flex-shrink-0"
-                                style={{ width: `${100 / itemsPerView}%` }}
+                                style={{ width: `calc(${100 / itemsPerView}% - 24px)` }}
                             >
                                 <div className="flex flex-col h-full hover:transform hover:scale-105 transition-transform duration-300">
                                     {/* Service Image */}
-                                    <div className="relative w-full h-[280px] md:h-[300px] lg:h-[310px] rounded-[20] overflow-hidden mb-4 shadow-md">
+                                    <div className="relative w-full h-[280px] md:h-[300px] lg:h-[310px] rounded-[20px] overflow-hidden mb-4 shadow-md">
                                         <img
                                             src={service.image}
                                             alt={service.title}
@@ -169,23 +190,22 @@ const FloodServicesSlider = () => {
                     <button
                         onClick={handlePrev}
                         aria-label="Previous services"
-                        className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#2B59C3] hover:bg-[#1E3A8A] flex items-center justify-center text-white transition-colors shadow-lg"
+                        className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#2B59C3] hover:bg-[#1E3A8A] flex items-center justify-center text-white transition-colors shadow-lg active:scale-95"
                     >
                         <ChevronLeft size={24} strokeWidth={3} />
                     </button>
                     <button
                         onClick={handleNext}
                         aria-label="Next services"
-                        className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#2B59C3] hover:bg-[#1E3A8A] flex items-center justify-center text-white transition-colors shadow-lg"
+                        className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#2B59C3] hover:bg-[#1E3A8A] flex items-center justify-center text-white transition-colors shadow-lg active:scale-95"
                     >
                         <ChevronRight size={24} strokeWidth={3} />
                     </button>
                 </div>
-
             </div>
-
         </section>
     );
 };
 
 export default FloodServicesSlider;
+

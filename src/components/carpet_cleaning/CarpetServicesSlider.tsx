@@ -1,10 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-const CarpetServicesSlider = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
 
+const CarpetServicesSlider = () => {
     const baseServices = [
         {
             title: "Residential Carpet & Upholstery Cleaning",
@@ -28,12 +27,14 @@ const CarpetServicesSlider = () => {
         },
     ];
 
-    // const itemsPerView = 3.6;
-    // const maxIndex = services.length - 1;
-
     const [itemsPerView, setItemsPerView] = useState(3);
+    const [currentIndex, setCurrentIndex] = useState(baseServices.length);
+    const [isAnimating, setIsAnimating] = useState(false);
+    const [useTransition, setUseTransition] = useState(true);
 
-    React.useEffect(() => {
+    const displayServices = [...baseServices, ...baseServices, ...baseServices];
+
+    useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth < 640) {
                 setItemsPerView(1);
@@ -46,51 +47,61 @@ const CarpetServicesSlider = () => {
 
         handleResize();
         window.addEventListener("resize", handleResize);
-
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    // const maxIndex = Math.max(0, baseServices.length - Math.ceil(itemsPerView));
-    const maxIndex = baseServices.length - Math.ceil(itemsPerView);
+    const handleNext = useCallback(() => {
+        if (isAnimating) return;
+        setIsAnimating(true);
+        setCurrentIndex((prev) => prev + 1);
+    }, [isAnimating]);
 
-    // const handlePrev = () => {
-    //     setCurrentIndex((prev) => (prev === 0 ? maxIndex : prev - 1));
-    // };
+    const handlePrev = useCallback(() => {
+        if (isAnimating) return;
+        setIsAnimating(true);
+        setCurrentIndex((prev) => prev - 1);
+    }, [isAnimating]);
 
-    // const handleNext = () => {
-    //     setCurrentIndex((prev) => (prev === baseServices.length - 1 ? 0 : prev + 1));
-    // };
-    const handleNext = () => {
-  setCurrentIndex((prev) =>
-    prev >= maxIndex ? 0 : prev + 1
-  );
-};
+    // Handle seamless cyclic jumping
+    useEffect(() => {
+        const animationDuration = 1000; // Matches transition-transform duration-1000
 
-const handlePrev = () => {
-  setCurrentIndex((prev) =>
-    prev <= 0 ? maxIndex : prev - 1
-  );
-};
+        const timer = setTimeout(() => {
+            if (isAnimating) {
+                setIsAnimating(false);
 
-//     React.useEffect(() => {
-//         const interval = setInterval(() => {
-//             handleNext();
-//         }, 5000);
-//         return () => clearInterval(interval);
-//     }, [currentIndex]);
-    
+                // Wrap around logic
+                if (currentIndex >= baseServices.length * 2) {
+                    setUseTransition(false);
+                    setCurrentIndex(currentIndex - baseServices.length);
+                } else if (currentIndex < baseServices.length) {
+                    setUseTransition(false);
+                    setCurrentIndex(currentIndex + baseServices.length);
+                }
+            }
+        }, animationDuration);
 
-//   return () => clearInterval(interval);
-// }, [maxIndex]);
-React.useEffect(() => {
-  const slider = setInterval(() => {
-    setCurrentIndex((prev) =>
-      prev >= maxIndex ? 0 : prev + 1
-    );
-  }, 4000);
+        return () => clearTimeout(timer);
+    }, [currentIndex, isAnimating, baseServices.length]);
 
-  return () => clearInterval(slider);
-}, [maxIndex]);
+    // Restore transition after the jump
+    useEffect(() => {
+        if (!useTransition) {
+            const timer = setTimeout(() => {
+                setUseTransition(true);
+            }, 20);
+            return () => clearTimeout(timer);
+        }
+    }, [useTransition]);
+
+    // Autoplay logic
+    useEffect(() => {
+        const slider = setInterval(() => {
+            handleNext();
+        }, 5000);
+
+        return () => clearInterval(slider);
+    }, [handleNext]);
 
     return (
         <section className="relative w-full py-16 md:py-24 bg-white overflow-hidden">
@@ -119,16 +130,12 @@ React.useEffect(() => {
                 />
             </div>
 
-
             <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
-                {/* Top Descriptive Content (Exactly like the image) */}
+                {/* Top Descriptive Content */}
                 <div className="text-center max-w-[900px] mx-auto mb-16 md:mb-24">
                     <h1 className="text-[#304462] font-display font-normal text-[24px] md:text-[45px] lg:text-[58px] mb-8 leading-tight">
                         Deep Cleaning That Lasts
                     </h1>
-                    {/* <p className="text-[#304462] text-[14px] md:text-[20px]">
-                        Your carpets put up with a lot daily. We restore them to look, feel, and smell like new again.
-                    </p> */}
                     <div className="space-y-6 text-[#304462] text-[14px] md:text-[16px] leading-relaxed max-w-[800px] mx-auto opacity-90">
                         <p>
                             Your carpets put up with a lot daily. We restore them to look, feel, and smell like new again.
@@ -143,8 +150,7 @@ React.useEffect(() => {
                 </div>
 
                 {/* Slider Header Section */}
-
-                <div className="flex flex-col md:flex-row items-center md:items-center justify-between mb-16 gap-8">
+                <div className="flex flex-col md:flex-row items-center justify-between mb-16 gap-8">
                     <div className="flex items-center gap-6 flex-1">
                         <h2 className="text-[#304462] font-display font-normal text-[24px] md:text-[44px] lg:text-[55px] leading-[1.1] whitespace-nowrap">
                             Deep Cleaning That Lasts
@@ -153,7 +159,7 @@ React.useEffect(() => {
                     </div>
 
                     {/* Navigation Arrows */}
-                    <div className="hidden lg:flex gap-4 self-end md:self-auto">
+                    <div className="hidden lg:flex gap-4">
                         <button
                             onClick={handlePrev}
                             aria-label="Previous services"
@@ -174,21 +180,18 @@ React.useEffect(() => {
                 {/* Slider Content */}
                 <div className="relative overflow-visible pb-12">
                     <div
-                        className="flex transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] gap-10"
+                        className={`flex ${useTransition ? "transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]" : ""} gap-10`}
                         style={{
-                            transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
-                            // width: `${(services.length / itemsPerView) * 100}%`,
+                            transform: `translateX(calc(-${currentIndex * (100 / itemsPerView)}%))`,
                         }}
                     >
-                        {baseServices.map((service, index) => (
+                        {displayServices.map((service, index) => (
                             <div
                                 key={index}
                                 className="flex-shrink-0 flex justify-center items-center"
-                                // style={{ width: `${100 / baseServices.length}%` }}
-                                style={{ width: `${100 / itemsPerView}%` }}
+                                style={{ width: `calc(${100 / itemsPerView}% - 40px)` }}
                             >
                                 <div className="relative w-[380px] h-[380px] rounded-full overflow-hidden z-20 group">
-                                    {/* Main Service Image - Behind */}
                                     <img
                                         src={service.image}
                                         alt={service.title}
@@ -223,7 +226,7 @@ React.useEffect(() => {
                     </div>
                 </div>
 
-                {/* Navigation Arrows */}
+                {/* Mobile Navigation Arrows */}
                 <div className="flex lg:hidden gap-10 justify-center mt-3">
                     <button
                         onClick={handlePrev}
@@ -246,4 +249,5 @@ React.useEffect(() => {
 };
 
 export default CarpetServicesSlider;
+
 

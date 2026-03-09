@@ -7,7 +7,7 @@ import { MapPin, Phone } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="w-full bg-white font-sans">
+        <footer className="w-full bg-white font-nunito">
 
             <div className="max-w-7xl mx-auto px-6 py-12 md:py-16">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
@@ -25,7 +25,7 @@ const Footer = () => {
                             </div>
                         </Link>
 
-                        <p className="text-[#374151] text-[13px] leading-relaxed max-w-sm">
+                        <p className="text-[#000000] text-[15px] font-regular leading-relaxed max-w-sm">
                             Professional cleaning and restoration services you can trust — delivered with care, speed, and precision.
                         </p>
 
@@ -78,8 +78,8 @@ const Footer = () => {
                         <div className="space-y-6">
                             <div className="flex items-start gap-3">
                                 <MapPin className="text-[#1E3A8A] w-5 h-5 mt-1 shrink-0" />
-                                <p className="text-[#1D1D1D] text-[15px] leading-snug">
-                                    162 Durham Street<br />
+                                <p className="text-[#1D1D1D] text-[16px] leading-snug">
+                                    162 Durham Street
                                     Tauranga Bay of Plenty
                                 </p>
                             </div>
@@ -97,7 +97,7 @@ const Footer = () => {
                 {/* Bottom Section */}
                 <div className="text-center">
                     <p className="text-[#1D1D1D] text-[13px] md:text-[14px] leading-relaxed max-w-5xl mx-auto">
-                        Tauranga | Papamoa | Mount Maunganui | Omokoroa | Katikati | Omanawa | Ohauiti | Te Puna | Te Puke | BOP | Bay of Plenty © 2018 - 2025 Bay Ultra Dry. 162 Durham Street, Tauranga, Bay of Plenty 07 571 2279. Powered by Web Genius. Page: Carpet Cleaning Tauranga, Mt Maunganui, Papamoa, Bay of Plenty - Last updated: 9th November, 2025 Site Map | Links to other quality businesses.
+                        Tauranga | Papamoa | Mount Maunganui | Omokoroa | Katikati | Omanawa | Ohauiti | Te Puna | Te Puke | BOP | Bay of Plenty © 2018 - 2026 Bay Ultra Dry. 162 Durham Street, Tauranga, Bay of Plenty 07 571 2279. Powered by Web Genius. Page: Carpet Cleaning Tauranga, Mt Maunganui, Papamoa, Bay of Plenty - Last updated: 9th November, 2025 Site Map | Links to other quality businesses.
                     </p>
                 </div>
             </div>

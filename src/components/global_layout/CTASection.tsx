@@ -6,62 +6,67 @@ import ActionButton from "../ui/ActionButton";
 
 const CTASection = () => {
     return (
-        <section className="w-full py-18 bg-[#1A449A] relative overflow-hidden">
-            {/* Background images */}
-            <div className="absolute inset-0 pointer-events-none z-0">
-                <Image
-                    src="/assets/images/clean_banner.png"
-                    alt="Clean background banner"
-                    fill
-                    className="object-cover"
-                    priority
-                />
-                <div className="absolute inset-0">
-                    <Image
-                        src="/assets/images/Ellipse 8.png"
-                        alt="Ellipse background"
-                        fill
-                        className="object-cover opacity-100"
-                        priority
-                    />
-                </div>
-            </div>
+        <section className="relative w-full overflow-hidden bg-[#1A449A] py-20">
 
-            <div
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                className="max-w-[1440px] mx-auto px-4 md:px-16 text-center relative z-10 space-y-6 md:space-y-4"
-            >
-                <div className="space-y-4 md:space-y-2 max-w-5xl mx-auto">
-                    <h2
-                        className="font-normal text-white capitalize text-center text-[26px] md:text-[40px] lg:text-[52px]"
-                    >
-                        Ready For A Fresher,<br className="block md:hidden" /> Cleaner Space?
+            {/* Pattern Background */}
+            {/* Desktop Pattern Background */}
+            <Image
+                src="/assets/images/clean_banner.png"
+                alt="Cleaning pattern"
+                fill
+                priority
+                className="hidden object-cover md:block"
+            />
+
+            {/* Mobile Pattern Background */}
+            <Image
+                src="/assets/images/mobile_ready.png"
+                alt="Cleaning pattern mobile"
+                fill
+                priority
+                className="block object-cover md:hidden"
+            />
+
+            {/* Blue Overlay */}
+            <div className="absolute inset-0 bg-[#1A449A]/60"></div>
+
+            {/* Ellipse Gradient */}
+            <Image
+                src="/assets/images/Ellipse 8.png"
+                alt="Gradient ellipse"
+                fill
+                priority
+                className="object-cover opacity-10"
+            />
+
+            {/* Content */}
+            <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-16 text-center">
+
+                <div className="max-w-[850px] mx-auto space-y-6">
+
+                    <h2 className="font-instrument font-medium text-white capitalize text-[28px] md:text-[42px] lg:text-[52px] leading-tight">
+                        Ready For A Fresher,
+                        <br className="block md:hidden" />
+                        Cleaner Space?
                     </h2>
+
                     <p
-                        className="text-white md:text-white/80 font-normal max-w-[850px] mx-auto text-center text-[17px] leading-[28px] md:text-[17px] md:leading-[20px] px-2 md:px-0"
-                        style={{
-                            fontFamily: 'Nebulas, sans-serif',
-                        }}
+                        className="text-white/85 text-[16px] md:text-[17px] leading-[28px]"
+                        style={{ fontFamily: "Nebulas, sans-serif" }}
                     >
-                        Experience the Bay Ultra Dry difference today. Whether it&apos;s a routine deep clean or an
-                        urgent restoration, our expert team is just a call away — ensuring your home or business
-                        looks its best with minimal disruption and maximum care.
+                        Experience the Bay Ultra Dry difference today. Whether it’s a routine deep clean
+                        or an urgent restoration, our expert team is just a call away — ensuring your home
+                        or business looks its best with minimal disruption and maximum care.
                     </p>
+
+                    <div className="pt-4 flex justify-center">
+                        <ActionButton variant="accent" href="/contact">
+                            Enquire Now
+                        </ActionButton>
+                    </div>
+
                 </div>
 
-                <div
-                    data-aos="zoom-in"
-                    data-aos-delay="200"
-                    data-aos-duration="800"
-                    className="flex flex-col sm:flex-row items-center justify-center pt-4 md:pt-2"
-                >
-                    <ActionButton
-                        variant="accent"
-                    >
-                        Enquire Now
-                    </ActionButton>
-                </div>
             </div>
         </section>
     );

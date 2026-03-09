@@ -1,31 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nunito+Sans:wght@200..1000&family=Jomolhari&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nunito:wght@200..1000&family=Jomolhari&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
 @import "tailwindcss";
 
-/* Import Google Fonts */
+@theme inline {
+  /* Font Family Mappings */
+  --font-display: var(--font-nebulas-local), "Nebulas", sans-serif;
+  --font-nebulas: var(--font-nebulas-local), "Nebulas", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-nunito: "Nunito Sans", sans-serif;
+  --font-jomolhari: "Jomolhari", serif;
+  --font-instrument: "Instrument Sans", sans-serif;
+
+  /* Standard Tailwind Utility Overrides */
+  --font-sans: var(--font-inter);
+
+  /* Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
-
-  --font-nebulas: var(--font-nebulas-local), "Nebulas", sans-serif;
-  --font-inter: "Inter", sans-serif;
-  --font-nunito: "Nunito Sans", sans-serif;
-
-  --font-jomolhari: "Jomolhari";
-  --font-instrument: "Instrument Sans", sans-serif;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-nebulas);
-  --font-alt: var(--font-nunito);
-
-  /* secondary text */
-  --font-jomolhari: var(--font-jomolhari);
-  --font-instrument: var(--font-instrument);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -44,4 +39,6 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
