@@ -68,7 +68,7 @@ const ServicesSection = () => {
     return (
         <section className="relative w-full bg-[#FFF1A4] overflow-hidden py-12 md:py-24 px-6 md:px-12 lg:px-20 min-h-screen flex items-center">
             {/* Background Wavy Lines */}
-            <div className="absolute top-0 right-0 w-[50%] h-[400px] md:w-[43%] md:h-[600px] opacity-20 pointer-events-none">
+            <div className="absolute top-0 right-0 w-[50%] h-[400px] md:w-[43%] md:h-[600px] opacity-80 pointer-events-none">
                 <Image
                     src="/assets/images/Service_Frame.png"
                     alt="Background wavy lines"
@@ -77,7 +77,7 @@ const ServicesSection = () => {
                     priority
                 />
             </div>
-            <div className="absolute bottom-0 left-0 w-[50%] h-[400px] md:w-[43%] md:h-[600px] opacity-20 pointer-events-none rotate-180">
+            <div className="absolute bottom-0 left-0 w-[50%] h-[400px] md:w-[43%] md:h-[600px] opacity-80 pointer-events-none rotate-180">
                 <Image
                     src="/assets/images/Service_Frame.png"
                     alt="Background wavy lines"
@@ -93,17 +93,19 @@ const ServicesSection = () => {
                     data-aos-duration="1000"
                     className="flex flex-row items-end justify-between mb-10 md:mb-14"
                 >
-                    <div className="flex flex-col items-center sm:items-start justify-center sm:justify-start w-100">
-                        <div className="flex items-center gap-2 mb-3">
-                            <div className="text-[#F5A51C]">
-                                <Sparkles size={20} strokeWidth={1.5} />
+                    <div className="flex flex-col items-start justify-start w-full">
+                        <div className="flex items-center gap-3 mb-3">
+                            <div className="relative w-[36px] h-[36px]">
+                                <Image  
+                                    src="/assets/icons/Star_3.png"
+                                    alt="Services Icon"
+                                    fill
+                                    className="object-contain"
+                                />
                             </div>
                             <span className="text-[#1A4299] font-semibold text-[18px]">Services</span>
                         </div>
-                        {/* <h2 className="text-[36px] md:text-5xl lg:text-[56px] font-[400] text-[#304462] tracking-tight leading-tight">
-                            Our Services
-                        </h2> */}
-                        <h2 className="text-[24px] md:text-[35px] xl:text-[50px] font-[400] leading-[1.3] text-[#304462] tracking-tight">
+                        <h2 className="text-[28px] md:text-[42px] xl:text-[52px] font-[400] leading-[1.2] text-[#304462] tracking-tight">
                             Our Services
                         </h2>
                     </div>
@@ -221,7 +223,7 @@ const ServicesSection = () => {
                                         {service.title}
                                     </h3>
 
-                                    <p className="text-[#2C2C2C] leading-[1.65] text-[15px] font-medium">
+                                    <p className="text-[#2C2C2C] leading-[1.65] text-[13px] font-medium">
                                         {service.description}
                                     </p>
                                 </div>

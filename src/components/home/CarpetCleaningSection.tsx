@@ -15,12 +15,12 @@ const CarpetCleaningSection = () => {
         <section
             className={`w-full overflow-hidden relative bg-white`}
         >
-            <div className={`w-full flex flex-col lg:flex-row-reverse items-stretch lg:items-center pt-0 pb-12 lg:py-20`}>
+            <div className={`w-full flex flex-col lg:flex-row-reverse items-stretch lg:items-center pt-0 pb-12 lg:py-10`}>
                 {/* Image side */}
                 <div
                     data-aos="fade-left"
                     data-aos-duration="1200"
-                    className={`w-full lg:w-[42%] h-[380px] md:h-[480px] lg:h-[591px] relative lg:shadow-2xl lg:rounded-l-[20px]`}
+                    className={`w-full lg:w-[42%] h-[380px] md:h-[480px] lg:h-[591px] relative lg:shadow-4xl lg:rounded-l-[20px]`}
                 >
                     {/* <img
                         src="/assets/video/Carpet_Cleaning.gif"
@@ -48,7 +48,7 @@ const CarpetCleaningSection = () => {
                 >
                     <div>
                         <div className="mb-8 lg:mb-10">
-                            <h2 className="text-[#304462] text-[26px] md:text-[54px] lg:text-[49px] font-[400]  leading-[1.05] mb-4 lg:mb-6 tracking-tight">
+                            <h2 className="text-[#304462] text-[36px] md:text-[54px] lg:text-[49px] font-[400]  leading-[1.05] mb-3 lg:mb-4 tracking-tight">
                                 Carpet Cleaning
                             </h2>
 

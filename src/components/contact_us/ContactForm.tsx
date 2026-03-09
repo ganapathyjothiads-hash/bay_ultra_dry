@@ -8,7 +8,7 @@ const ContactForm = () => {
         fullName: "",
         emailId: "",
         phoneNumber: "",
-        service: "",
+        service: "CARPET_CLEANING",
         requiredDate: "",
         address: "",
         message: "",
@@ -30,7 +30,7 @@ const ContactForm = () => {
             fullName: "",
             emailId: "",
             phoneNumber: "",
-            service: "",
+            service: "CARPET_CLEANING",
             requiredDate: "",
             address: "",
             message: "",
@@ -38,14 +38,39 @@ const ContactForm = () => {
         });
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!formData.confirmed) {
             alert("Please confirm the information is accurate.");
             return;
         }
-        console.log("Form submitted:", formData);
-        // Handle form submission logic here
+
+        setIsSubmitting(true);
+        try {
+            const response = await fetch("/api/enquiry", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                alert("Thank you! Your enquiry has been submitted successfully. We will contact you shortly.");
+                handleClear();
+            } else {
+                alert(data.error || "Something went wrong. Please try again.");
+            }
+        } catch (error) {
+            console.error("Submission error:", error);
+            alert("Failed to send enquiry. Please check your connection and try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -170,10 +195,10 @@ const ContactForm = () => {
                                     required
                                 >
                                     <option value="" disabled className="text-[#9ca3af]">Select your service</option>
-                                    <option value="Carpet Cleaning">Carpet Cleaning</option>
-                                    <option value="Upholstery Cleaning">Upholstery Cleaning</option>
-                                    <option value="Flood Restoration">Flood Restoration</option>
-                                    <option value="Commercial Cleaning">Commercial Cleaning</option>
+                                    <option value="CARPET_CLEANING">Carpet Cleaning</option>
+                                    <option value="UPHOLSTERY_CLEANING">Upholstery Cleaning</option>
+                                    <option value="FLOOD_RESTORATION">Flood Restoration</option>
+                                    <option value="COMMERCIAL_CLEANING">Commercial Cleaning</option>
                                 </select>
                                 <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none">
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e3a8a" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
@@ -266,8 +291,9 @@ const ContactForm = () => {
                                 type="submit"
                                 variant="primary"
                                 className="w-full md:w-[180px] py-3 text-[16px]"
+                                disabled={isSubmitting}
                             >
-                                Enquiry Now
+                                {isSubmitting ? "Sending..." : "Enquiry Now"}
                             </ActionButton>
                         </div>
                     </div>

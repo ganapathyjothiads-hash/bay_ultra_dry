@@ -8,6 +8,7 @@ interface ActionButtonProps {
     type?: "button" | "submit" | "reset";
     className?: string;
     variant?: "primary" | "amber" | "outline" | "accent";
+    disabled?: boolean;
 }
 
 const ActionButton: React.FC<ActionButtonProps> = ({
@@ -16,10 +17,11 @@ const ActionButton: React.FC<ActionButtonProps> = ({
     onClick,
     type = "button",
     className = "",
-    variant = "primary"
+    variant = "primary",
+    disabled = false
 }) => {
     // Shared base styles matching the requested button
-    const baseClasses = "font-alt font-semibold rounded-[30px] shadow-lg transition-all active:scale-95 text-center flex items-center justify-center cursor-pointer";
+    const baseClasses = `font-alt font-semibold rounded-[30px] shadow-lg transition-all text-center flex items-center justify-center ${disabled ? 'opacity-70 cursor-not-allowed' : 'active:scale-95 cursor-pointer'}`;
 
     // Variant specific styles
     let variantClasses = "";
@@ -43,7 +45,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({
     }
 
     return (
-        <button type={type} onClick={onClick} className={combinedClasses}>
+        <button type={type} onClick={onClick} className={combinedClasses} disabled={disabled}>
             {children}
         </button>
     );

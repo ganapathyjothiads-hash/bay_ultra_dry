@@ -4,7 +4,7 @@ import React from "react";
 
 const AboutUsHero: React.FC = () => {
     const title = (
-        <span className="text-[#304462] font-[400] font-family: 'Nebula'">
+        <span className="text-[#304462] font-[400] font-display">
             About  <span className="text-[#134391]">Bay Ultra Dry,</span> Your Local <br className="hidden lg:block" />
             Tauranga Cleaning Experts
         </span>
@@ -17,7 +17,7 @@ const AboutUsHero: React.FC = () => {
     const verticalText = "About Us";
 
     return (
-        <section className="relative w-full min-h-[550px] lg:min-h-[900px] overflow-hidden bg-white pt-32 lg:pt-0">
+        <section className="relative w-full min-h-[550px] lg:min-h-[900px] overflow-hidden bg-white pt-30 lg:pt-0">
             {/* background image (man cleaning) positioned on the right */}
             <div
                 className="absolute right-0 top-0 w-full h-full z-0 overflow-hidden"
@@ -110,7 +110,7 @@ const AboutUsHero: React.FC = () => {
 
                 {subtitle && (
                     <p
-                        className="text-[15px] md:text-[17px] lg:text-[18px] mb-4 font-medium text-[#303030]/90 max-w-[280px] lg:max-w-[750px] leading-relaxed"
+                        className="text-[15px] md:text-[15px] lg:text-[16px] mb-4 font-semibold text-[#303030]/90 max-w-[280px] lg:max-w-[750px] leading-relaxed"
                         data-aos="fade-up"
                         data-aos-delay="400"
                     >

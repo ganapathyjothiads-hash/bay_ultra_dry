@@ -31,44 +31,60 @@ const AboutOurPromise: React.FC = () => {
                         data-aos="fade-right"
                         data-aos-duration="1000"
                     >
-                        <h2 className="text-[#324B6E] text-[34px] md:text-[38px] lg:text-[42px] font-[500] tracking-tight mb-5 leading-tight">
+                        <h2 className="text-[#324B6E] text-[34px] md:text-[38px] lg:text-[46px] font-[500] tracking-tight mb-5 leading-tight">
                             Our Promise
                         </h2>
 
-                        <p className="text-[#333333] text-[14px] md:text-[15px] font-normal leading-[1.65] max-w-[600px] mb-8 opacity-85">
+                        <p className="text-[#333333] text-[13px] md:text-[15px] font-medium leading-[1.65] max-w-[600px] mb-8 opacity-85">
                             We treat every job like it's our own home or business, with respect, reliability, and care.
                         </p>
 
                         <div className="w-full flex flex-col items-start mb-[10%]">
-                            <h4 className="text-[#2563EB] text-[12px] md:text-[13px] font-[600] mb-5 uppercase tracking-[0.1em]">
+                            <h4 className="text-[#1A449A] text-[14px] md:text-[15px] font-[600] mb-5 uppercase tracking-[0.1em]">
                                 Our Values:
                             </h4>
 
-                            <div className="w-full max-w-[500px]">
+                            <div className="w-full max-w-[750px] space-y-0">
                                 {values.map((value, index) => (
-                                    <React.Fragment key={index}>
-                                        <div
-                                            className="flex items-center gap-4 py-3.5 border-t border-[#E5E5E5]/60 first:border-0"
-                                            data-aos="fade-up"
-                                            data-aos-delay={index * 150}
-                                        >
-                                            <div className="flex-shrink-0 w-4 h-4 flex items-center justify-center">
-                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#EA4335" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                                                </svg>
-                                            </div>
-                                            <div className="flex items-center flex-wrap gap-x-2">
-                                                <span className="text-[#111111] text-[14px] md:text-[15px] font-[600]">
+                                    <div
+                                        key={index}
+                                        className="flex items-start gap-4 py-4 md:py-5 border-b border-[#E5E5E5]/80 first:border-t"
+                                        data-aos="fade-up"
+                                        data-aos-delay={index * 150}
+                                    >
+                                        <div className="flex-shrink-0 mt-1 md:mt-1.5">
+                                            <Image
+                                                src="/assets/icons/upgrade.png"
+                                                alt="value icon"
+                                                width={24}
+                                                height={24}
+                                                className="object-contain"
+                                            />
+                                        </div>
+                                        <div className="flex flex-col gap-1">
+                                            <div className="flex flex-wrap items-baseline gap-x-2">
+                                                <span className="text-[#333333] text-[16px] md:text-[18px] font-normal">
                                                     {value.title}
                                                 </span>
-                                                <span className="text-[#333333] text-[14px] md:text-[15px] font-normal opacity-75">
-                                                    — {value.description}
+                                                <span className="text-[#333333]/70 text-[15px] md:text-[16px] font-normal hidden md:inline">
+                                                    —
+                                                </span>
+                                                <span className="text-[#333333]/85 text-[15px] md:text-[16px] font-normal leading-relaxed hidden md:inline">
+                                                    {value.description}
+                                                </span>
+                                            </div>
+                                            {/* Mobile/Tablet Description (always below title for better flow) */}
+                                            <div className="md:hidden flex items-start gap-2">
+                                                <span className="text-[#333333]/70 text-[14px]">
+                                                    —
+                                                </span>
+                                                <span className="text-[#333333]/85 text-[14px] font-normal leading-relaxed">
+                                                    {value.description}
                                                 </span>
                                             </div>
                                         </div>
-                                    </React.Fragment>
+                                    </div>
                                 ))}
-                                <div className="border-t border-[#E5E5E5]/60" />
                             </div>
                         </div>
                     </div>
@@ -142,7 +158,7 @@ const AboutOurPromise: React.FC = () => {
                                         10k+ Happy Customer
                                     </span>
                                     <div className="flex items-center gap-1.5 mt-1.5">
-                                        <Image src="/assets/icons/About_star.png" alt="star" width={14} height={14} className="object-contain" />
+                                        <Image src="/assets/icons/Star 13.png" alt="star" width={14} height={14} className="object-contain" />
                                         <span className="text-[#333333] text-[12px] md:text-[14px] font-[600]">
                                             4.9 (6,540)
                                         </span>

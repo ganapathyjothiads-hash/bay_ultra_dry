@@ -13,7 +13,7 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
         fullName: "",
         emailId: "",
         phoneNumber: "",
-        service: "",
+        service: "CARPET_CLEANING",
         requiredDate: "",
         address: "",
         message: "",
@@ -50,7 +50,7 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
             fullName: "",
             emailId: "",
             phoneNumber: "",
-            service: "",
+            service: "CARPET_CLEANING",
             requiredDate: "",
             address: "",
             message: "",
@@ -58,15 +58,40 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
         });
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!formData.confirmed) {
             alert("Please confirm the information is accurate.");
             return;
         }
-        console.log("Form submitted:", formData);
-        // Handle form submission logic here
-        onClose();
+        
+        setIsSubmitting(true);
+        try {
+            const response = await fetch("/api/enquiry", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                alert("Thank you! Your enquiry has been submitted successfully.");
+                handleClear();
+                onClose();
+            } else {
+                alert(data.error || "Something went wrong. Please try again.");
+            }
+        } catch (error) {
+            console.error("Submission error:", error);
+            alert("Failed to send enquiry. Please check your connection and try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -157,10 +182,10 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
                                         required
                                     >
                                         <option value="" disabled>Select your service</option>
-                                        <option value="Carpet Cleaning">Carpet Cleaning</option>
-                                        <option value="Upholstery Cleaning">Upholstery Cleaning</option>
-                                        <option value="Flood Restoration">Flood Restoration</option>
-                                        <option value="Commercial Cleaning">Commercial Cleaning</option>
+                                        <option value="CARPET_CLEANING">Carpet Cleaning</option>
+                                        <option value="UPHOLSTERY_CLEANING">Upholstery Cleaning</option>
+                                        <option value="FLOOD_RESTORATION">Flood Restoration</option>
+                                        <option value="COMMERCIAL_CLEANING">Commercial Cleaning</option>
                                     </select>
                                     <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none opacity-40">
                                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6" /></svg>
@@ -240,9 +265,10 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
                                 </button>
                                 <button
                                     type="submit"
-                                    className="flex-1 md:flex-none md:w-[180px] lg:w-[200px] bg-[#002F74] text-white font-sans font-bold py-2.5 sm:py-3.5 rounded-full hover:bg-[#001d4a] transition-all shadow-md active:scale-95 text-[14px] sm:text-[16px]"
+                                    disabled={isSubmitting}
+                                    className="flex-1 md:flex-none md:w-[180px] lg:w-[200px] bg-[#002F74] text-white font-sans font-bold py-2.5 sm:py-3.5 rounded-full hover:bg-[#001d4a] transition-all shadow-md active:scale-95 text-[14px] sm:text-[16px] disabled:opacity-70 disabled:cursor-not-allowed"
                                 >
-                                    Enquire Now
+                                    {isSubmitting ? "Sending..." : "Enquire Now"}
                                 </button>
                             </div>
                         </div>

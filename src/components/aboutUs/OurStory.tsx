@@ -6,8 +6,8 @@ import Button from '@/components/ui/Button';
 export default function OurStory() {
   return (
     <section className="py-16 md:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Left Image with Circle Badge */}
           <div className="relative">
             <div className="relative h-96 rounded-3xl overflow-hidden shadow-lg">
@@ -55,7 +55,7 @@ export default function OurStory() {
               Contact Us
             </Button>
 
-            <blockquote className="mt-8 text-lg italic text-blue-600 font-medium border-l-4 border-blue-600 pl-6">
+            <blockquote className="mt-6 text-lg italic text-[#1A449A] font-medium border-l-[3px] border-[#1A449A] pl-5">
               "A cleaner space creates a sharper mind. Let us transform your place so you can focus on what truly matters."
             </blockquote>
           </div>
