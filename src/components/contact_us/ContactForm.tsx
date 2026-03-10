@@ -79,7 +79,7 @@ const ContactForm = () => {
             <div className="absolute inset-0 pointer-events-none">
                 <div className="relative max-w-[1300px] mx-auto h-full w-full">
                     {/* Water Splash Decoration - Center Right */}
-                    <div className="absolute w-[30%] md:w-[12%] top-[16%] md:top-[30%] lg:top-[33%] right-[2%] md:right-[-50px] z-[2]">
+                    <div className="absolute w-[30%] md:w-[12%] top-[14%] md:top-[35%] lg:top-[30%] right-[2%] md:right-[-30px] z-[2]">
                         <img
                             src="/assets/images/contact_us/Water_Splash_top.png"
                             alt=""
@@ -97,7 +97,7 @@ const ContactForm = () => {
                     </div>
 
                     {/* Left S-Frame Decoration */}
-                    <div className="absolute top-[17%]  md:top-[10%] lg:top-[8%] left-[-22%] md:left-[-15%] w-[75%] md:w-[37%] lg:w-[50%] z-0">
+                    <div className="absolute top-[14%]  md:top-[1%] lg:top-[1%] left-[-18%] md:left-[-22%] w-[75%] md:w-[37%] lg:w-[50%] z-0">
                         <img
                             src="/assets/images/upholsteryCleaning/Upholstery_SFrame.png"
                             alt=""
@@ -106,7 +106,7 @@ const ContactForm = () => {
                     </div>
 
                     {/* Right S-Frame Decoration */}
-                    <div className="absolute bottom-[-7%] md:bottom-[-10%] lg:bottom-[-17%] md:top-[10%] lg:top-[8%] right-[-69%] md:right-[-15%] w-[150%] md:w-[37%] lg:w-[50%] z-0">
+                    <div className="absolute bottom-[-7%] md:bottom-[-1%] lg:bottom-[-1%] md:top-[10%] lg:top-[1%] right-[-60%] md:right-[-22%] w-[150%] md:w-[37%] lg:w-[50%] z-0">
                         <img
                             src="/assets/images/upholsteryCleaning/Upholstery_SFrame2.png"
                             alt=""
@@ -116,19 +116,19 @@ const ContactForm = () => {
 
                     {/* Color Glow - Green */}
                     <div
-                        className="absolute z-[1] w-[300px] h-[300px] top-[0%] left-[50%] md:w-[250px] md:h-[250px] md:top-[6%] md:left-[68%] -translate-x-1/2 bg-[#00FF26] opacity-[25%] md:opacity-50 blur-[120px] md:blur-[160px] rounded-full"
+                        className="absolute z-[1] w-[300px] h-[300px] top-[0%] left-[50%] md:w-[250px] md:h-[250px] md:top-[6%] md:left-[68%] -translate-x-1/2 bg-[#00FF26] opacity-[45%] md:opacity-50 blur-[80px] md:blur-[80px] rounded-full"
                     />
 
                     {/* Color Glow - Blue */}
                     <div
-                        className="absolute z-[1] w-[250px] h-[300px] top-[50%] left-[0%] md:w-[300px] md:top-[350px] md:left-[9%] bg-[#006FFF] opacity-[20%] md:opacity-[30%] blur-[120px] md:blur-[160px] rounded-full"
+                        className="absolute z-[1] w-[250px] h-[300px] top-[50%] left-[0%] md:w-[300px] md:top-[350px] md:left-[9%] bg-[#006FFF] opacity-[20%] md:opacity-[30%] blur-[80px] md:blur-[80px] rounded-full"
                     />
                 </div>
             </div>
 
             <div className="max-w-[1240px] mx-auto relative z-10 px-0 sm:px-4">
-                <div className="text-center mb-10 md:mb-16 relative z-10 pt-2 md:pt-10 mt-[-10px] md:mt-0">
-                    <p className="text-[#304462] font-sans italic font-medium text-[16px] md:text-[18px] max-w-[800px] mx-auto mb-[30px] md:mb-[80px] px-4" data-aos="fade-up">
+                <div className="text-center mb-14 md:mb-20 relative z-10 pt-1 md:pt-1 mt-[-20px] md:mt-0">
+                    <p className="text-[#304462] font-sans italic font-medium text-[14px] md:text-[16px] max-w-[800px] mx-auto mb-[30px] md:mb-[80px] px-4" data-aos="fade-up">
                         "Let our professional cleaning team <br className="block md:hidden" /> make your home or business shine. <br className="hidden md:block" />
                         Contact us today for a free quote— <br className="block md:hidden" /> fast, friendly, and hassle-free!"
                     </p>
@@ -139,67 +139,67 @@ const ContactForm = () => {
                     >
                         Tell Us What You Need!
                     </h2>
-                    <p className="text-[#1D1D1D] font-sans text-[14px] md:text-[16px] px-4 md:px-8 mb-4 md:mb-8" data-aos="fade-up" data-aos-delay="100">
+                    <p className="text-[#1D1D1D] font-sans text-[10px] md:text-[12px] px-4 md:px-8 mb-4 md:mb-8" data-aos="fade-up" data-aos-delay="100">
                         Fill out the form below and our team will <br className="block md:hidden" /> reach out within <span className="text-[#005D38] font-medium">24 hours</span>.
                     </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="max-w-[1000px] mx-auto bg-transparent mt-[60px] sm:mt-[80px] md:mt-0 relative z-10">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-x-6 sm:gap-x-8 md:gap-x-12 gap-y-6">
+                <form onSubmit={handleSubmit} className="max-w-[1000px] mx-auto bg-transparent mt-[40px] sm:mt-[60px] md:mt-0 relative z-10">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-x-4 sm:gap-x-4 md:gap-x-6 gap-y-2">
                         {/* Full Name */}
                         <div className="flex flex-col gap-3">
-                            <label className="text-[#1D1D1D] font-sans font-medium text-[16px] sm:text-[17px] md:text-[18px]">Full Name</label>
+                            <label className="text-[#1D1D1D] font-sans font-medium text-[14px] sm:text-[15px] md:text-[16px]">Full Name</label>
                             <input
                                 type="text"
                                 name="fullName"
                                 placeholder="Enter your full name"
                                 value={formData.fullName}
                                 onChange={handleChange}
-                                className="w-full border border-[#7687A1] rounded-[10px] px-4 py-3 sm:px-5 sm:py-3.5 md:px-6 md:py-4 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-[#1e3a8a] transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] text-[16px]"
+                                className="w-full border border-[#7687A1] rounded-[10px] px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-[#1e3a8a] transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] placeholder:text-[14px] text-[16px]"
                                 required
                             />
                         </div>
 
                         {/* Email ID */}
                         <div className="flex flex-col gap-3">
-                            <label className="text-[#1D1D1D] font-sans font-medium text-[16px] sm:text-[17px] md:text-[18px]">Email ID</label>
+                            <label className="text-[#1D1D1D] font-sans font-medium text-[14px] sm:text-[15px] md:text-[16px]">Email ID</label>
                             <input
                                 type="email"
                                 name="emailId"
                                 placeholder="Enter your email id."
                                 value={formData.emailId}
                                 onChange={handleChange}
-                                className="w-full border border-[#7687A1] rounded-[10px] px-4 py-3 sm:px-5 sm:py-3.5 md:px-6 md:py-4 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-[#1e3a8a] transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] text-[16px]"
+                                className="w-full border border-[#7687A1] rounded-[10px] px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-[#1e3a8a] transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] placeholder:text-[14px] text-[16px]"
                                 required
                             />
                         </div>
 
                         {/* Phone Number */}
                         <div className="flex flex-col gap-3">
-                            <label className="text-[#1D1D1D] font-sans font-medium text-[16px] sm:text-[17px] md:text-[18px]">Phone Number</label>
+                            <label className="text-[#1D1D1D] font-sans font-medium text-[14px] sm:text-[15px] md:text-[16px]">Phone Number</label>
                             <input
                                 type="tel"
                                 name="phoneNumber"
                                 placeholder="0000 000 000"
                                 value={formData.phoneNumber}
                                 onChange={handleChange}
-                                className="w-full border border-[#7687A1] rounded-[10px] px-4 py-3 sm:px-5 sm:py-3.5 md:px-6 md:py-4 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-[#1e3a8a] transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] text-[16px]"
+                                className="w-full border border-[#7687A1] rounded-[10px] px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-[#1e3a8a] transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] placeholder:text-[14px] text-[16px]"
                                 required
                             />
                         </div>
 
                         {/* Service Selection */}
                         <div className="flex flex-col gap-3">
-                            <label className="text-[#1D1D1D] font-sans font-medium text-[16px] sm:text-[17px] md:text-[18px]">Service</label>
+                            <label className="text-[#1D1D1D] font-sans font-medium text-[14px] sm:text-[15px] md:text-[16px]">Service</label>
                             <div className="relative">
                                 <select
                                     name="service"
                                     value={formData.service}
                                     onChange={handleChange}
-                                    className="w-full border border-[#7687A1] rounded-[10px] px-4 py-3 sm:px-5 sm:py-3.5 md:px-6 md:py-4 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-[#1e3a8a] transition-all appearance-none bg-white text-[#374151] text-[16px]"
+                                    className="w-full border border-[#7687A1] rounded-[10px] px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-[#1e3a8a] transition-all appearance-none bg-white text-[#374151] text-[16px]"
                                     required
                                 >
-                                    <option value="" disabled className="text-[#9ca3af]">Select your service</option>
+                                    <option value="" disabled className="text-[#9ca3af] text-[14px]">Select your service</option>
                                     <option value="CARPET_CLEANING">Carpet Cleaning</option>
                                     <option value="UPHOLSTERY_CLEANING">Upholstery Cleaning</option>
                                     <option value="FLOOD_RESTORATION">Flood Restoration</option>
@@ -215,7 +215,7 @@ const ContactForm = () => {
 
                         {/* Required Date */}
                         <div className="flex flex-col gap-3">
-                            <label className="text-[#1D1D1D] font-sans font-medium text-[16px] sm:text-[17px] md:text-[18px]">Your Required Date</label>
+                            <label className="text-[#1D1D1D] font-sans font-medium text-[14px] sm:text-[15px] md:text-[16px]">Your Required Date</label>
                             <div className="relative">
                                 <input
                                     type="text"
@@ -225,7 +225,7 @@ const ContactForm = () => {
                                     onChange={handleChange}
                                     onFocus={(e) => (e.target.type = "date")}
                                     onBlur={(e) => (e.target.type = "text")}
-                                    className="w-full border border-[#7687A1] rounded-[10px] px-4 py-3 sm:px-5 sm:py-3.5 md:px-6 md:py-4 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-[#1e3a8a] transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] text-[16px]"
+                                    className="w-full border border-[#7687A1] rounded-[10px] px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-[#1e3a8a] transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] placeholder:text-[14px] text-[16px]"
                                     required
                                 />
                                 <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none">
@@ -238,28 +238,28 @@ const ContactForm = () => {
 
                         {/* Address */}
                         <div className="flex flex-col gap-3">
-                            <label className="text-[#1D1D1D] font-sans font-medium text-[16px] sm:text-[17px] md:text-[18px]">Address</label>
+                            <label className="text-[#1D1D1D] font-sans font-medium text-[14px] sm:text-[15px] md:text-[16px]">Address</label>
                             <input
                                 type="text"
                                 name="address"
                                 placeholder="Enter your address"
                                 value={formData.address}
                                 onChange={handleChange}
-                                className="w-full border border-[#7687A1] rounded-[10px] px-4 py-3 sm:px-5 sm:py-3.5 md:px-6 md:py-4 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-[#1e3a8a] transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] text-[16px]"
+                                className="w-full border border-[#7687A1] rounded-[10px] px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-[#1e3a8a] transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] placeholder:text-[14px] text-[16px]"
                                 required
                             />
                         </div>
 
                         {/* Message */}
                         <div className="flex flex-col gap-3 sm:col-span-2 md:col-span-2 mt-4">
-                            <label className="text-[#1D1D1D] font-sans font-medium text-[16px] sm:text-[17px] md:text-[18px]">Message</label>
+                            <label className="text-[#1D1D1D] font-sans font-medium text-[14px] sm:text-[15px] md:text-[16px]">Message</label>
                             <textarea
                                 name="message"
                                 placeholder="Write your message..."
                                 value={formData.message}
                                 onChange={handleChange}
-                                rows={8}
-                                className="w-full border border-[#7687A1] rounded-[10px] px-4 py-4 sm:px-5 sm:py-5 md:px-6 md:py-6 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-[#1e3a8a] transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] text-[16px] resize-none"
+                                rows={5}
+                                className="w-full border border-[#7687A1] rounded-[10px] px-4 py-3 sm:px-5 sm:py-5 md:px-6 md:py-6 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-[#1e3a8a] transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] placeholder:text-[14px] text-[16px] resize-none"
                                 required
                             />
                         </div>
@@ -275,10 +275,10 @@ const ContactForm = () => {
                                     name="confirmed"
                                     checked={formData.confirmed}
                                     onChange={(e) => setFormData(prev => ({ ...prev, confirmed: e.target.checked }))}
-                                    className="w-5 h-5 md:w-6 md:h-6 rounded border-[#D1D5DB] text-[#1e3a8a] focus:ring-[#1e3a8a] cursor-pointer"
+                                    className="w-3 h-3 md:w-4 md:h-4 rounded border-[#D1D5DB] text-[#1e3a8a] focus:ring-[#1e3a8a] cursor-pointer"
                                 />
                             </div>
-                            <label htmlFor="confirmed" className="text-[#1D1D1D] text-[14px] sm:text-[15px] font-sans font-medium cursor-pointer opacity-90">
+                            <label htmlFor="confirmed" className="text-[#1D1D1D] text-[13px] sm:text-[14px] font-sans font-medium cursor-pointer opacity-90">
                                 I confirm that all the information provided is accurate and complete.
                             </label>
                         </div>

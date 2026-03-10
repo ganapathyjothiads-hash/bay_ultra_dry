@@ -28,7 +28,7 @@ const ContactInfoCards = () => {
     ];
 
     return (
-        <div className="relative z-20 mt-[20px] sm:mt-[30px] md:-mt-[100px] max-w-[1140px] px-4 md:px-6 mx-auto">
+        <div className="relative z-20 mt-[18px] sm:mt-[25px] md:-mt-[70px] max-w-[1100px] px-4 md:px-6 mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {contactInfo.map((info, index) => (
                     <div
@@ -37,7 +37,7 @@ const ContactInfoCards = () => {
                         data-aos="fade-up"
                         data-aos-delay={index * 100}
                     >
-                        <h3 className="font-nebulas text-[#304462] text-[18px] lg:text-[24px] font-medium mb-4 leading-[1.2]">{info.label}</h3>
+                        <h3 className="font-display text-[#304462] text-[16px] lg:text-[20px] font-medium mb-4 leading-[1.2]">{info.label}</h3>
                         <div className="flex items-center gap-3">
                             {info.icon}
                             <a

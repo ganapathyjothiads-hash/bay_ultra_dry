@@ -14,8 +14,26 @@ export async function POST(request: Request) {
             );
         }
 
+        // For multi-tenancy, we need to associate this enquiry with a tenant.
+        const tenantSlug = request.headers.get("x-tenant-slug") || "bay-ultra-dry";
+
+        let tenant = await prisma.tenant.findUnique({
+            where: { slug: tenantSlug },
+        });
+
+        // If tenant doesn't exist, create it (for initial setup/seeding)
+        if (!tenant) {
+            tenant = await prisma.tenant.create({
+                data: {
+                    name: "Bay Ultra Dry",
+                    slug: tenantSlug,
+                },
+            });
+        }
+
         const enquiry = await prisma.enquiry.create({
             data: {
+                tenantId: tenant.id,
                 fullName,
                 emailId,
                 phoneNumber,
