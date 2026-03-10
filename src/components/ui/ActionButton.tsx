@@ -21,7 +21,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({
     disabled = false
 }) => {
     // Shared base styles matching the requested button
-    const baseClasses = `font-alt font-semibold rounded-[30px] shadow-lg transition-all text-center flex items-center justify-center ${disabled ? 'opacity-70 cursor-not-allowed' : 'active:scale-95 cursor-pointer'}`;
+    const baseClasses = `font-alt font-medium rounded-[30px] shadow-lg transition-all text-center flex items-center justify-center ${disabled ? 'opacity-70 cursor-not-allowed' : 'active:scale-95 cursor-pointer'}`;
 
     // Variant specific styles
     let variantClasses = "";

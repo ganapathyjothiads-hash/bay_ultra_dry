@@ -10,10 +10,13 @@ const ContactForm = () => {
         phoneNumber: "",
         service: "CARPET_CLEANING",
         requiredDate: "",
+        requiredTime: "",
         address: "",
         message: "",
         confirmed: false
     });
+
+    const [errors, setErrors] = useState<Record<string, string>>({});
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value, type } = e.target;
@@ -23,6 +26,32 @@ const ContactForm = () => {
         } else {
             setFormData(prev => ({ ...prev, [name]: value }));
         }
+        if (errors[name]) {
+            setErrors(prev => {
+                const updated = { ...prev };
+                delete updated[name];
+                return updated;
+            });
+        }
+    };
+
+    const validate = () => {
+        const newErrors: Record<string, string> = {};
+        if (!formData.fullName.trim()) newErrors.fullName = "Full name is required";
+        if (!formData.emailId.trim()) {
+            newErrors.emailId = "Email is required";
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.emailId)) {
+            newErrors.emailId = "Invalid email format";
+        }
+        if (!formData.phoneNumber.trim()) {
+            newErrors.phoneNumber = "Phone number is required";
+        }
+        if (!formData.address.trim()) newErrors.address = "Address is required";
+        if (!formData.requiredDate) newErrors.requiredDate = "Date is required";
+        if (!formData.requiredTime) newErrors.requiredTime = "Time is required";
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
     };
 
     const handleClear = () => {
@@ -32,6 +61,7 @@ const ContactForm = () => {
             phoneNumber: "",
             service: "CARPET_CLEANING",
             requiredDate: "",
+            requiredTime: "",
             address: "",
             message: "",
             confirmed: false
@@ -42,6 +72,7 @@ const ContactForm = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        if (!validate()) return;
         if (!formData.confirmed) {
             alert("Please confirm the information is accurate.");
             return;
@@ -49,12 +80,16 @@ const ContactForm = () => {
 
         setIsSubmitting(true);
         try {
+            const dateTime = new Date(`${formData.requiredDate}T${formData.requiredTime}`);
             const response = await fetch("/api/enquiry", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({
+                    ...formData,
+                    requiredDate: dateTime.toISOString(),
+                }),
             });
 
             const data = await response.json();
@@ -155,9 +190,10 @@ const ContactForm = () => {
                                 placeholder="Enter your full name"
                                 value={formData.fullName}
                                 onChange={handleChange}
-                                className="w-full border border-[#7687A1] rounded-[10px] px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-[#1e3a8a] transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] placeholder:text-[14px] text-[16px]"
+                                className={`w-full border rounded-[10px] px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/10 transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] placeholder:text-[14px] text-[16px] ${errors.fullName ? "border-red-500" : "border-[#7687A1] focus:border-[#1e3a8a]"}`}
                                 required
                             />
+                            {errors.fullName && <p className="text-red-500 text-[12px]">{errors.fullName}</p>}
                         </div>
 
                         {/* Email ID */}
@@ -169,9 +205,10 @@ const ContactForm = () => {
                                 placeholder="Enter your email id."
                                 value={formData.emailId}
                                 onChange={handleChange}
-                                className="w-full border border-[#7687A1] rounded-[10px] px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-[#1e3a8a] transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] placeholder:text-[14px] text-[16px]"
+                                className={`w-full border rounded-[10px] px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/10 transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] placeholder:text-[14px] text-[16px] ${errors.emailId ? "border-red-500" : "border-[#7687A1] focus:border-[#1e3a8a]"}`}
                                 required
                             />
+                            {errors.emailId && <p className="text-red-500 text-[12px]">{errors.emailId}</p>}
                         </div>
 
                         {/* Phone Number */}
@@ -183,9 +220,10 @@ const ContactForm = () => {
                                 placeholder="0000 000 000"
                                 value={formData.phoneNumber}
                                 onChange={handleChange}
-                                className="w-full border border-[#7687A1] rounded-[10px] px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-[#1e3a8a] transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] placeholder:text-[14px] text-[16px]"
+                                className={`w-full border rounded-[10px] px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/10 transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] placeholder:text-[14px] text-[16px] ${errors.phoneNumber ? "border-red-500" : "border-[#7687A1] focus:border-[#1e3a8a]"}`}
                                 required
                             />
+                            {errors.phoneNumber && <p className="text-red-500 text-[12px]">{errors.phoneNumber}</p>}
                         </div>
 
                         {/* Service Selection */}
@@ -213,27 +251,49 @@ const ContactForm = () => {
                             </div>
                         </div>
 
-                        {/* Required Date */}
+                        {/* Required Date & Time */}
                         <div className="flex flex-col gap-3">
                             <label className="text-[#1D1D1D] font-sans font-medium text-[14px] sm:text-[15px] md:text-[16px]">Your Required Date</label>
-                            <div className="relative">
+                            <div className={`relative flex items-center group rounded-[10px] overflow-hidden border transition-all ${errors.requiredDate ? "border-red-500" : "border-[#7687A1] focus-within:border-[#1e3a8a]"}`}>
                                 <input
-                                    type="text"
+                                    type="date"
                                     name="requiredDate"
-                                    placeholder="00.00.0000"
                                     value={formData.requiredDate}
                                     onChange={handleChange}
-                                    onFocus={(e) => (e.target.type = "date")}
-                                    onBlur={(e) => (e.target.type = "text")}
-                                    className="w-full border border-[#7687A1] rounded-[10px] px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-[#1e3a8a] transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] placeholder:text-[14px] text-[16px]"
+                                    className="flex-1 px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 focus:outline-none bg-white text-[#374151] text-[16px] cursor-pointer"
                                     required
                                 />
-                                <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#334155">
-                                        <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5v-5z" />
-                                    </svg>
+                                <div className="absolute right-0 top-0 bottom-0 w-[52px] bg-[#1e3a8a] flex items-center justify-center pointer-events-none">
+                                    <img
+                                        src="/assets/icons/Calendar.png"
+                                        alt=""
+                                        className="w-6 h-6 object-contain brightness-0 invert"
+                                    />
                                 </div>
                             </div>
+                            {errors.requiredDate && <p className="text-red-500 text-[12px]">{errors.requiredDate}</p>}
+                        </div>
+
+                        <div className="flex flex-col gap-3">
+                            <label className="text-[#1D1D1D] font-sans font-medium text-[14px] sm:text-[15px] md:text-[16px]">Your Required Time</label>
+                            <div className={`relative flex items-center group rounded-[10px] overflow-hidden border transition-all ${errors.requiredTime ? "border-red-500" : "border-[#7687A1] focus-within:border-[#1e3a8a]"}`}>
+                                <input
+                                    type="time"
+                                    name="requiredTime"
+                                    value={formData.requiredTime}
+                                    onChange={handleChange}
+                                    className="flex-1 px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 focus:outline-none bg-white text-[#374151] text-[16px] cursor-pointer"
+                                    required
+                                />
+                                <div className="absolute right-0 top-0 bottom-0 w-[52px] bg-[#1e3a8a] flex items-center justify-center pointer-events-none">
+                                    <img
+                                        src="/assets/icons/Clock.png"
+                                        alt=""
+                                        className="w-6 h-6 object-contain brightness-0 invert"
+                                    />
+                                </div>
+                            </div>
+                            {errors.requiredTime && <p className="text-red-500 text-[12px]">{errors.requiredTime}</p>}
                         </div>
 
                         {/* Address */}
@@ -245,9 +305,10 @@ const ContactForm = () => {
                                 placeholder="Enter your address"
                                 value={formData.address}
                                 onChange={handleChange}
-                                className="w-full border border-[#7687A1] rounded-[10px] px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-[#1e3a8a] transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] placeholder:text-[14px] text-[16px]"
+                                className={`w-full border rounded-[10px] px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/10 transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] placeholder:text-[14px] text-[16px] ${errors.address ? "border-red-500" : "border-[#7687A1] focus:border-[#1e3a8a]"}`}
                                 required
                             />
+                            {errors.address && <p className="text-red-500 text-[12px]">{errors.address}</p>}
                         </div>
 
                         {/* Message */}

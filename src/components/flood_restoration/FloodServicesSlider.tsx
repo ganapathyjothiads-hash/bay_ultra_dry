@@ -145,11 +145,10 @@ const FloodServicesSlider = () => {
                     </div>
                 </div>
 
-                {/* Services Grid/Slider */}
                 <div
                     data-aos="fade-up"
                     data-aos-delay="200"
-                    className="overflow-hidden"
+                    className="overflow-hidden pt-10 -mt-10 pb-5"
                 >
                     <div
                         className={`flex gap-6 ${useTransition ? "transition-transform duration-500 ease-out" : ""}`}
@@ -160,22 +159,22 @@ const FloodServicesSlider = () => {
                         {displayServices.map((service, index) => (
                             <div
                                 key={index}
-                                className="flex-shrink-0"
+                                className="flex-shrink-0 group"
                                 style={{ width: `calc(${100 / itemsPerView}% - 24px)` }}
                             >
-                                <div className="flex flex-col h-full hover:transform hover:scale-105 transition-transform duration-300">
+                                <div className="flex flex-col h-full transition-all duration-300 ease-out hover:-translate-y-2">
                                     {/* Service Image */}
-                                    <div className="relative w-full h-[280px] md:h-[300px] lg:h-[310px] rounded-[20px] overflow-hidden mb-4 shadow-md">
+                                    <div className="relative w-full h-[280px] md:h-[300px] lg:h-[310px] rounded-[20px] overflow-hidden mb-6 shadow-md transition-shadow duration-300 group-hover:shadow-[0_10px_30px_rgba(43,89,195,0.2)]">
                                         <img
                                             src={service.image}
                                             alt={service.title}
-                                            className="w-full h-full object-cover"
+                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                         />
                                     </div>
 
                                     {/* Service Title */}
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-[#3780FF] mt-3.5 flex-shrink-0"></div>
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-[#3780FF] flex-shrink-0"></div>
                                         <h3 className="text-[#3780FF] font-display font-medium text-[16px] md:text-[18px] lg:text-[22px] leading-[1.4] lg:leading-[36px] tracking-[0.02em] capitalize">
                                             {service.title}
                                         </h3>

@@ -22,11 +22,6 @@ const FloodRestorationSection = () => {
                     data-aos-duration="1200"
                     className={`w-full lg:w-[48%] h-[320px] md:h-[400px] lg:h-[480px] relative lg:shadow-2xl lg:rounded-r-[20px]`}
                 >
-                    {/* <img
-                        src="/assets/video/Flood_Restoration.gif"
-                        alt="Flood Restoration"
-                        className="w-full h-full object-cover rounded-r-[20px]"
-                    /> */}
                     <video
                         autoPlay
                         loop

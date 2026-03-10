@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const CarpetServicesSlider = () => {
     const baseServices = [
@@ -142,7 +142,7 @@ const CarpetServicesSlider = () => {
                     <h1 className="text-[#304462] font-display font-regular text-[28px] md:text-[45px] lg:text-[58px] mb-8 leading-tight">
                         Deep Cleaning That Lasts
                     </h1>
-                    <div className="space-y-6 text-[#2C2C2C] font-inter font-regular text-[14px] md:text-[16px] leading-relaxed max-w-[80%] mx-auto opacity-90">
+                    <div className="space-y-6 text-[#2C2C2C] font-inter font-regular text-[14px] md:text-[16px] leading-relaxed max-w-[100%] mx-auto opacity-90">
                         <p>
                             Your carpets put up with a lot daily. We restore them to look, feel, and smell like new again.
                         </p>
@@ -156,7 +156,7 @@ const CarpetServicesSlider = () => {
                 </div>
 
                 {/* Slider Header Section */}
-                <div className="hidden md:flex flex-col md:flex-row items-center justify-between mb-16 gap-8">
+                <div className="md:flex flex-col md:flex-row items-center justify-between mb-16 gap-8">
                     <div className="flex items-center gap-6 flex-1">
                         <h2 className="text-[#304462] font-display font-normal text-[24px] md:text-[44px] lg:text-[55px] leading-[1.1] whitespace-nowrap">
                             Deep Cleaning That Lasts
@@ -164,27 +164,45 @@ const CarpetServicesSlider = () => {
                         <div className="hidden md:block h-[1.5px] bg-[#304462] opacity-20 flex-grow mt-2 max-w-[280px]"></div>
                     </div>
 
-                    {/* Navigation Arrows */}
-                    <div className="hidden lg:flex gap-4">
+                    {/* Desktop Arrows */}
+                    <div className="hidden md:flex gap-4 flex-shrink-0">
                         <button
                             onClick={handlePrev}
-                            aria-label="Previous services"
-                            className="w-14 h-14 rounded-full bg-[#1e44a3] hover:bg-[#163075] flex items-center justify-center text-white transition-all shadow-lg active:scale-95"
+                            aria-label="Previous"
+                            className="md:w-[44px] md:h-[44px] lg:w-[56px] lg:h-[56px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] hover:scale-105 transition-all duration-300 shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
                         >
-                            <ChevronLeft size={28} strokeWidth={2.5} />
+                            <ArrowLeft strokeWidth={2} className="w-5 h-5 lg:w-6 lg:h-6 group-hover:-translate-x-1 transition-transform" />
                         </button>
                         <button
                             onClick={handleNext}
-                            aria-label="Next services"
-                            className="w-14 h-14 rounded-full bg-[#1e44a3] hover:bg-[#163075] flex items-center justify-center text-white transition-all shadow-lg active:scale-95"
+                            aria-label="Next"
+                            className="md:w-[44px] md:h-[44px] lg:w-[56px] lg:h-[56px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] hover:scale-105 transition-all duration-300 shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
                         >
-                            <ChevronRight size={28} strokeWidth={2.5} />
+                            <ArrowRight strokeWidth={2} className="w-5 h-5 lg:w-6 lg:h-6 group-hover:translate-x-1 transition-transform" />
                         </button>
                     </div>
                 </div>
 
+                {/* Mobile Arrows */}
+                <div className="flex md:hidden justify-center gap-8 mt-6">
+                    <button
+                        onClick={handlePrev}
+                        aria-label="Previous"
+                        className="w-[34px] h-[34px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] transition-all shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
+                    >
+                        <ArrowLeft strokeWidth={2} className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+                    </button>
+                    <button
+                        onClick={handleNext}
+                        aria-label="Next"
+                        className="w-[34px] h-[34px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] transition-all shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
+                    >
+                        <ArrowRight strokeWidth={2} className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </button>
+                </div>
+
                 {/* Slider Content */}
-                <div className="relative overflow-visible pb-12 mt-8 md:mt-0">
+                <div className=" relative overflow-visible pb-12 mt-8 md:mt-0 max-w-[1240px] mx-auto">
                     <div
                         className={`flex ${useTransition ? "transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]" : ""}`}
                         style={{
@@ -218,9 +236,9 @@ const CarpetServicesSlider = () => {
                                             className="w-full h-full object-contain absolute inset-0 opacity-[0.92]"
                                         />
                                         <div className="relative h-full flex items-center justify-center pt-[15%] pl-[15%]">
-                                            <div className="flex items-center gap-[1] md:gap-3 text-center px-6 mt-[-55px] ml-[-75px] lg:mt-[-100px] lg:ml-[-100px]">
-                                                <div className="w-1.5 md:w-2 h-1.5 md:h-2 rounded-full bg-[#006341] flex-shrink-0"></div>
-                                                <h3 className="text-[#006341] font-sans font-bold text-[11px] md:text-[17px] leading-[1.2] max-w-[140px] md:max-w-[190px] ">
+                                            <div className="flex items-start gap-2 md:gap-3 text-left px-6 mt-[-55px] ml-[-75px] lg:mt-[-100px] lg:ml-[-80px]">
+                                                <div className="w-1.5 md:w-2 h-1.5 md:h-2 rounded-full bg-[#006341] flex-shrink-0 mt-[3px] md:mt-[6px]"></div>
+                                                <h3 className="text-[#006341] font-sans font-bold text-[11px] md:text-[17px] leading-[1.2] max-w-[140px] md:max-w-[190px]">
                                                     {service.title}
                                                 </h3>
                                             </div>
@@ -232,23 +250,7 @@ const CarpetServicesSlider = () => {
                     </div>
                 </div>
 
-                {/* Mobile Navigation Arrows */}
-                <div className="flex lg:hidden gap-10 justify-center mt-3">
-                    <button
-                        onClick={handlePrev}
-                        aria-label="Previous services"
-                        className="w-14 h-14 rounded-full bg-[#1e44a3] hover:bg-[#163075] flex items-center justify-center text-white transition-all shadow-lg active:scale-95"
-                    >
-                        <ChevronLeft size={28} strokeWidth={2.5} />
-                    </button>
-                    <button
-                        onClick={handleNext}
-                        aria-label="Next services"
-                        className="w-14 h-14 rounded-full bg-[#1e44a3] hover:bg-[#163075] flex items-center justify-center text-white transition-all shadow-lg active:scale-95"
-                    >
-                        <ChevronRight size={28} strokeWidth={2.5} />
-                    </button>
-                </div>
+
             </div>
         </section>
     );

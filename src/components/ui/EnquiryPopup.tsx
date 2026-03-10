@@ -15,12 +15,15 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
         phoneNumber: "",
         service: "CARPET_CLEANING",
         requiredDate: "",
+        requiredTime: "",
         address: "",
         message: "",
         confirmed: false
     });
 
+    const [errors, setErrors] = useState<Record<string, string>>({});
     const [isVisible, setIsVisible] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     useEffect(() => {
         if (isOpen) {
@@ -43,6 +46,32 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
         } else {
             setFormData(prev => ({ ...prev, [name]: value }));
         }
+        if (errors[name]) {
+            setErrors(prev => {
+                const updated = { ...prev };
+                delete updated[name];
+                return updated;
+            });
+        }
+    };
+
+    const validate = () => {
+        const newErrors: Record<string, string> = {};
+        if (!formData.fullName.trim()) newErrors.fullName = "Full name is required";
+        if (!formData.emailId.trim()) {
+            newErrors.emailId = "Email is required";
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.emailId)) {
+            newErrors.emailId = "Invalid email format";
+        }
+        if (!formData.phoneNumber.trim()) {
+            newErrors.phoneNumber = "Phone number is required";
+        }
+        if (!formData.address.trim()) newErrors.address = "Address is required";
+        if (!formData.requiredDate) newErrors.requiredDate = "Date is required";
+        if (!formData.requiredTime) newErrors.requiredTime = "Time is required";
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
     };
 
     const handleClear = () => {
@@ -52,29 +81,34 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
             phoneNumber: "",
             service: "CARPET_CLEANING",
             requiredDate: "",
+            requiredTime: "",
             address: "",
             message: "",
             confirmed: false
         });
+        setErrors({});
     };
-
-    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        if (!validate()) return;
         if (!formData.confirmed) {
             alert("Please confirm the information is accurate.");
             return;
         }
-        
+
         setIsSubmitting(true);
         try {
+            const dateTime = new Date(`${formData.requiredDate}T${formData.requiredTime}`);
             const response = await fetch("/api/enquiry", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({
+                    ...formData,
+                    requiredDate: dateTime.toISOString(),
+                }),
             });
 
             const data = await response.json();
@@ -133,15 +167,16 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 sm:gap-x-10 gap-y-3 sm:gap-y-4">
                             {/* Full Name */}
                             <div className="flex flex-col gap-1.5 sm:gap-2">
-                                <label className="text-[#1D1D1D] font-alt font-medium text-[15px] sm:text-[16px] leading-tight">Full Name</label>
+                                <label className="text-[#1D1D1D] font-sans font-medium text-[15px] sm:text-[16px] leading-tight">Full Name</label>
                                 <input
                                     type="text"
                                     name="fullName"
                                     value={formData.fullName}
                                     onChange={handleChange}
-                                    className="w-full bg-[#E3E3E3] rounded-[8px] sm:rounded-[10px] px-4 py-3 sm:px-5 sm:py-3 focus:outline-none focus:ring-1 focus:ring-blue-500/20 transition-all text-[#1D1D1D] text-[14px] sm:text-[15px]"
+                                    className={`w-full bg-[#E3E3E3] rounded-[8px] sm:rounded-[10px] px-4 py-3 sm:px-5 sm:py-3 focus:outline-none focus:ring-1 transition-all text-[#1D1D1D] text-[14px] sm:text-[15px] ${errors.fullName ? "ring-red-500 ring-1" : "focus:ring-blue-500/20"}`}
                                     required
                                 />
+                                {errors.fullName && <p className="text-red-500 text-[12px] mt-1">{errors.fullName}</p>}
                             </div>
 
                             {/* Email ID */}
@@ -152,9 +187,10 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
                                     name="emailId"
                                     value={formData.emailId}
                                     onChange={handleChange}
-                                    className="w-full bg-[#E3E3E3] rounded-[8px] sm:rounded-[10px] px-4 py-3 sm:px-5 sm:py-3 focus:outline-none focus:ring-1 focus:ring-blue-500/20 transition-all text-[#1D1D1D] text-[14px] sm:text-[15px]"
+                                    className={`w-full bg-[#E3E3E3] rounded-[8px] sm:rounded-[10px] px-4 py-3 sm:px-5 sm:py-3 focus:outline-none focus:ring-1 transition-all text-[#1D1D1D] text-[14px] sm:text-[15px] ${errors.emailId ? "ring-red-500 ring-1" : "focus:ring-blue-500/20"}`}
                                     required
                                 />
+                                {errors.emailId && <p className="text-red-500 text-[12px] mt-1">{errors.emailId}</p>}
                             </div>
 
                             {/* Phone Number */}
@@ -165,9 +201,10 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
                                     name="phoneNumber"
                                     value={formData.phoneNumber}
                                     onChange={handleChange}
-                                    className="w-full bg-[#E3E3E3] rounded-[8px] sm:rounded-[10px] px-4 py-3 sm:px-5 sm:py-3 focus:outline-none focus:ring-1 focus:ring-blue-500/20 transition-all text-[#1D1D1D] text-[14px] sm:text-[15px]"
+                                    className={`w-full bg-[#E3E3E3] rounded-[8px] sm:rounded-[10px] px-4 py-3 sm:px-5 sm:py-3 focus:outline-none focus:ring-1 transition-all text-[#1D1D1D] text-[14px] sm:text-[15px] ${errors.phoneNumber ? "ring-red-500 ring-1" : "focus:ring-blue-500/20"}`}
                                     required
                                 />
+                                {errors.phoneNumber && <p className="text-red-500 text-[12px] mt-1">{errors.phoneNumber}</p>}
                             </div>
 
                             {/* Service */}
@@ -193,19 +230,49 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
                                 </div>
                             </div>
 
-                            {/* Your Required Date */}
+                            {/* Your Required Date & Time */}
                             <div className="flex flex-col gap-1.5 sm:gap-2">
                                 <label className="text-[#1D1D1D] font-sans font-medium text-[15px] sm:text-[16px] leading-tight">Your Required Date</label>
-                                <input
-                                    type="text"
-                                    name="requiredDate"
-                                    value={formData.requiredDate}
-                                    onChange={handleChange}
-                                    onFocus={(e) => (e.target.type = "date")}
-                                    onBlur={(e) => (e.target.type = "text")}
-                                    className="w-full bg-[#E3E3E3] rounded-[8px] sm:rounded-[10px] px-4 py-3 sm:px-5 sm:py-3 focus:outline-none focus:ring-1 focus:ring-blue-500/20 transition-all text-[#1D1D1D] text-[14px] sm:text-[15px]"
-                                    required
-                                />
+                                <div className={`relative flex items-center group rounded-[8px] sm:rounded-[10px] overflow-hidden border transition-all ${errors.requiredDate ? "border-red-500" : "border-[#E5E7EB]"}`}>
+                                    <input
+                                        type="date"
+                                        name="requiredDate"
+                                        value={formData.requiredDate}
+                                        onChange={handleChange}
+                                        className="flex-1 bg-[#E3E3E3] px-4 py-3 sm:px-5 sm:py-3 focus:outline-none text-[#1D1D1D] text-[14px] sm:text-[15px] cursor-pointer"
+                                        required
+                                    />
+                                    <div className="absolute right-0 top-0 bottom-0 w-[52px] bg-[#002F74] flex items-center justify-center pointer-events-none">
+                                        <img
+                                            src="/assets/icons/Calendar.png"
+                                            alt=""
+                                            className="w-6 h-6 object-contain brightness-0 invert"
+                                        />
+                                    </div>
+                                </div>
+                                {errors.requiredDate && <p className="text-red-500 text-[12px]">{errors.requiredDate}</p>}
+                            </div>
+
+                            <div className="flex flex-col gap-1.5 sm:gap-2">
+                                <label className="text-[#1D1D1D] font-sans font-medium text-[15px] sm:text-[16px] leading-tight">Your Required Time</label>
+                                <div className={`relative flex items-center group rounded-[8px] sm:rounded-[10px] overflow-hidden border transition-all ${errors.requiredTime ? "border-red-500" : "border-[#E5E7EB]"}`}>
+                                    <input
+                                        type="time"
+                                        name="requiredTime"
+                                        value={formData.requiredTime}
+                                        onChange={handleChange}
+                                        className="flex-1 bg-[#E3E3E3] px-4 py-3 sm:px-5 sm:py-3 focus:outline-none text-[#1D1D1D] text-[14px] sm:text-[15px] cursor-pointer"
+                                        required
+                                    />
+                                    <div className="absolute right-0 top-0 bottom-0 w-[52px] bg-[#002F74] flex items-center justify-center pointer-events-none">
+                                        <img
+                                            src="/assets/icons/Clock.png"
+                                            alt=""
+                                            className="w-6 h-6 object-contain brightness-0 invert"
+                                        />
+                                    </div>
+                                </div>
+                                {errors.requiredTime && <p className="text-red-500 text-[12px]">{errors.requiredTime}</p>}
                             </div>
 
                             {/* Address */}
@@ -216,9 +283,10 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
                                     name="address"
                                     value={formData.address}
                                     onChange={handleChange}
-                                    className="w-full bg-[#E3E3E3] rounded-[8px] sm:rounded-[10px] px-4 py-3 sm:px-5 sm:py-3 focus:outline-none focus:ring-1 focus:ring-blue-500/20 transition-all text-[#1D1D1D] text-[14px] sm:text-[15px]"
+                                    className={`w-full bg-[#E3E3E3] rounded-[8px] sm:rounded-[10px] px-4 py-3 sm:px-5 sm:py-3 focus:outline-none focus:ring-1 transition-all text-[#1D1D1D] text-[14px] sm:text-[15px] ${errors.address ? "ring-red-500 ring-1" : "focus:ring-blue-500/20"}`}
                                     required
                                 />
+                                {errors.address && <p className="text-red-500 text-[12px] mt-1">{errors.address}</p>}
                             </div>
 
                             {/* Message */}

@@ -20,7 +20,10 @@ const HeroSection = () => {
             {/* Gradient Overlay */}
             <div
                 aria-hidden
-                className="absolute inset-0 z-[1] bg-gradient-to-b from-[#142038]/95 via-[#142038]/70 to-transparent lg:bg-gradient-to-r lg:from-[#142038]/95 lg:via-[#142038]/90 lg:to-[#142038]/20"
+                className="absolute inset-0 z-[1] pointer-events-none"
+                style={{
+                    background: "linear-gradient(249.93deg, rgba(9, 18, 36, 0) -33.16%, #091224 95.99%)",
+                }}
             />
 
             {/* Frame - Reposition for mobile */}
