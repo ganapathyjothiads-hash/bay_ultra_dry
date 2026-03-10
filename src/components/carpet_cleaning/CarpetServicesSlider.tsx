@@ -107,36 +107,42 @@ const CarpetServicesSlider = () => {
         <section className="relative w-full py-16 md:py-24 bg-white overflow-hidden">
             {/* Background Decorations */}
             <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-                {/* Yellow Glow - Left Side */}
+                {/* Yellow Glow - Behind Mobile Description / Desktop Heading */}
                 <img
                     src="/assets/images/carpet/Carpet_DeepY.png"
                     alt=""
-                    className="absolute -left-[15%] top-[20%] w-[55%] md:w-[45%] h-auto opacity-70"
+                    className="absolute z-0 pointer-events-none
+                        left-[-15%] top-[12%] w-[80%] 
+                        md:left-[-12%] md:top-[35%] md:w-[45%] 
+                        transition-all duration-700 h-auto"
                 />
 
-                {/* Blue Glow - Right Side */}
+                {/* Blue Glow - Top of Mobile Slider / Desktop Arrows */}
                 <img
                     src="/assets/images/carpet/Carpet_DeepB.png"
                     alt=""
-                    className="absolute -right-[15%] top-[-5%] w-[65%] md:w-[55%] h-auto opacity-60"
+                    className="absolute z-0 pointer-events-none
+                        right-[-10%] top-[38%] 
+                        md:right-[-8%] md:top-[32%] 
+                        transition-all duration-700 h-auto"
                 />
 
                 {/* Wavy lines */}
                 <img
                     src="/assets/images/carpet/Carpet_wave_Slider.png"
                     alt=""
-                    className="absolute w-full h-auto top-[50%] left-0 z-0 opacity-100"
+                    className="absolute w-full h-auto top-[62%] md:top-[50%] left-0 z-0 opacity-100 scale-[2.5] md:scale-100"
                     style={{ transform: 'translateY(-10%)' }}
                 />
             </div>
 
             <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
                 {/* Top Descriptive Content */}
-                <div className="text-center max-w-[900px] mx-auto mb-16 md:mb-24">
-                    <h1 className="text-[#304462] font-display font-normal text-[24px] md:text-[45px] lg:text-[58px] mb-8 leading-tight">
+                <div className="text-center max-w-[1000px] mx-auto mb-16 md:mb-24">
+                    <h1 className="text-[#304462] font-display font-regular text-[28px] md:text-[45px] lg:text-[58px] mb-8 leading-tight">
                         Deep Cleaning That Lasts
                     </h1>
-                    <div className="space-y-6 text-[#304462] text-[14px] md:text-[16px] leading-relaxed max-w-[800px] mx-auto opacity-90">
+                    <div className="space-y-6 text-[#2C2C2C] font-inter font-regular text-[14px] md:text-[16px] leading-relaxed max-w-[80%] mx-auto opacity-90">
                         <p>
                             Your carpets put up with a lot daily. We restore them to look, feel, and smell like new again.
                         </p>
@@ -150,7 +156,7 @@ const CarpetServicesSlider = () => {
                 </div>
 
                 {/* Slider Header Section */}
-                <div className="flex flex-col md:flex-row items-center justify-between mb-16 gap-8">
+                <div className="hidden md:flex flex-col md:flex-row items-center justify-between mb-16 gap-8">
                     <div className="flex items-center gap-6 flex-1">
                         <h2 className="text-[#304462] font-display font-normal text-[24px] md:text-[44px] lg:text-[55px] leading-[1.1] whitespace-nowrap">
                             Deep Cleaning That Lasts
@@ -178,9 +184,9 @@ const CarpetServicesSlider = () => {
                 </div>
 
                 {/* Slider Content */}
-                <div className="relative overflow-visible pb-12">
+                <div className="relative overflow-visible pb-12 mt-8 md:mt-0">
                     <div
-                        className={`flex ${useTransition ? "transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]" : ""} gap-10`}
+                        className={`flex ${useTransition ? "transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]" : ""}`}
                         style={{
                             transform: `translateX(calc(-${currentIndex * (100 / itemsPerView)}%))`,
                         }}
@@ -188,10 +194,10 @@ const CarpetServicesSlider = () => {
                         {displayServices.map((service, index) => (
                             <div
                                 key={index}
-                                className="flex-shrink-0 flex justify-center items-center"
-                                style={{ width: `calc(${100 / itemsPerView}% - 40px)` }}
+                                className="flex-shrink-0 flex justify-center items-center px-4 md:px-5"
+                                style={{ width: `${100 / itemsPerView}%` }}
                             >
-                                <div className="relative w-[380px] h-[380px] rounded-full overflow-hidden z-20 group">
+                                <div className="relative w-[250px] h-[250px] md:w-[280px] md:h-[280px] lg:w-[320px] lg:h-[320px] xl:w-[350px] xl:h-[350px] 2xl:w-[380px] 2xl:h-[380px] rounded-full overflow-hidden z-20 group border-none shadow-xl md:shadow-none">
                                     <img
                                         src={service.image}
                                         alt={service.title}
@@ -200,21 +206,21 @@ const CarpetServicesSlider = () => {
                                     <div
                                         className="absolute z-30 pointer-events-none"
                                         style={{
-                                            width: '78%',
-                                            height: '100%',
-                                            top: '65px',
-                                            left: '82px',
+                                            width: '90%',
+                                            height: '133%',
+                                            top: '14%',
+                                            left: '24%',
                                         }}
                                     >
                                         <img
                                             src="/assets/images/carpet/Carpet_Slider_Frame.png"
                                             alt=""
-                                            className="w-full h-full object-contain absolute inset-0 opacity-[0.88]"
+                                            className="w-full h-full object-contain absolute inset-0 opacity-[0.92]"
                                         />
-                                        <div className="relative h-full flex items-center justify-start pl-[55px] pt-[20px]">
-                                            <div className="flex items-start gap-4">
-                                                <div className="w-2.5 h-2.5 rounded-full bg-[#006341] flex-shrink-0 mt-2.5"></div>
-                                                <h3 className="text-[#006341] font-sans font-bold text-[15px] md:text-[18px] leading-[1.2] max-w-[210px]">
+                                        <div className="relative h-full flex items-center justify-center pt-[15%] pl-[15%]">
+                                            <div className="flex items-center gap-[1] md:gap-3 text-center px-6 mt-[-55px] ml-[-75px] lg:mt-[-100px] lg:ml-[-100px]">
+                                                <div className="w-1.5 md:w-2 h-1.5 md:h-2 rounded-full bg-[#006341] flex-shrink-0"></div>
+                                                <h3 className="text-[#006341] font-sans font-bold text-[11px] md:text-[17px] leading-[1.2] max-w-[140px] md:max-w-[190px] ">
                                                     {service.title}
                                                 </h3>
                                             </div>

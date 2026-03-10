@@ -12,8 +12,15 @@ const CarpetHero = () => {
                         src="/assets/images/carpet/Carpet_Cleaning_bg.png"
                         alt=""
                         aria-hidden
-                        className="absolute inset-0 w-[90%] h-full object-cover opacity-10"
+                        className="absolute inset-0 w-[90%] h-full object-cover"
                         style={{ objectPosition: 'left center' }}
+                    />
+                    <div
+                        aria-hidden
+                        className="absolute inset-0 z-[1]"
+                        style={{
+                            background: "linear-gradient(124.88deg, rgba(9, 18, 36, 0) -2.84%, #091224 61.16%)",
+                        }}
                     />
                 </div>
 

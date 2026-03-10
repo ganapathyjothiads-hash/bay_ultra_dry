@@ -39,8 +39,8 @@ const CarpetCleaningBenefits = () => {
 
                     {/* Right Column - Benefits */}
                     <div className="w-full lg:w-[52%] flex flex-col justify-start pt-2">
-                        <h2 className="text-[#304462] font-display font-medium text-[32px] md:text-[42px] lg:text-[48px] leading-[1.1] tracking-tight mb-8">
-                            Benefits Of Our<br />Carpet Cleaning
+                        <h2 className="text-[#304462] font-display font-regular text-[32px] md:text-[42px] lg:text-[48px] leading-[1.1] tracking-tight mb-8">
+                            Benefits Of Our Carpet Cleaning
                         </h2>
 
                         <div className="flex flex-col w-full max-w-[550px]">

@@ -19,7 +19,7 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
                 background: backgroundStyle,
             }}>
             {/* Background Wavy Lines - Top Right */}
-            <div className="absolute top-0 right-0 w-[500px] lg:w-[720px] h-[300px] lg:h-[400px] opacity-40 pointer-events-none translate-x-1/4 -translate-y-1/4">
+            <div className="absolute top-[10%] right-[10%] w-[500px] lg:w-[720px] h-[300px] lg:h-[400px]  pointer-events-none translate-x-1/4 -translate-y-1/4">
                 <Image
                     src="/assets/images/Service_Frame.png"
                     alt=""
@@ -29,7 +29,7 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
             </div>
 
             {/* Background Wavy Lines - Bottom Left */}
-            <div className="absolute bottom-0 left-0 w-[400px] lg:w-[600px] h-[500px] lg:h-[700px] opacity-40 pointer-events-none -translate-x-1/4 translate-y-1/4 rotate-180">
+            <div className="absolute bottom-[10%] left-[10%] w-[400px] lg:w-[600px] h-[500px] lg:h-[700px] pointer-events-none -translate-x-1/4 translate-y-1/4 rotate-180">
                 <Image
                     src="/assets/images/Service_Frame.png"
                     alt=""
@@ -48,14 +48,14 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
                         className="flex flex-col space-y-8 lg:sticky lg:top-24"
                     >
                         <div className="space-y-6">
-                            <h2 className="text-[32px] md:text-[48px] font-bold text-[#1E3A8A] leading-tight tracking-tight">
+                            <h2 className="font-display text-[32px] md:text-[48px] font-regular text-[#304462] leading-tight tracking-tight">
                                 Request A Fast Quote
                             </h2>
-                            <div className="space-y-5 max-w-[500px]">
-                                <p className="text-[14px] md:text-[16px] text-[#1a1a1a] font-medium leading-[1.6]">
+                            <div className="space-y-5 max-w-[600px]">
+                                <p className="text-[14px] md:text-[17px] text-[#1D1D1D] font-medium leading-[1.6]">
                                     Need urgent flood assistance or want to refresh your carpets and upholstery? Simply fill out the form below — our team will get back to you within the hour.
                                 </p>
-                                <p className="text-[14px] md:text-[16px] text-[#1a1a1a] font-medium leading-[1.6]">
+                                <p className="text-[14px] md:text-[17px] text-[#1D1D1D] font-medium leading-[1.6]">
                                     For urgent flood emergencies, please call us directly at
                                 </p>
                             </div>
@@ -69,7 +69,7 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
                                         className="object-contain" // Or object-cover if it matches better
                                     />
                                 </div>
-                                <span className="text-[22px] md:text-[26px] font-bold text-[#1a1a1a] tracking-tight">07 571 2279</span>
+                                <span className="text-[22px] md:text-[26px] font-semibold text-[#1D1D1D] tracking-tight">07 571 2279</span>
                             </div>
                         </div>
 
@@ -102,7 +102,7 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
                         <form className="space-y-5">
                             {/* Full Name */}
                             <div className="space-y-1.5">
-                                <label className="text-[14px] md:text-[15px] font-semibold text-[#333333]">Full Name</label>
+                                <label className="font-inter text-[14px] md:text-[15px] font-medium text-[#1D1D1D]">Full Name</label>
                                 <input
                                     type="text"
                                     placeholder="Enter Your Name"
@@ -112,7 +112,7 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
 
                             {/* Email Address */}
                             <div className="space-y-1.5">
-                                <label className="text-[14px] md:text-[15px] font-semibold text-[#333333]">Email Address</label>
+                                <label className="font-inter text-[14px] md:text-[15px] font-medium text-[#1D1D1D]">Email Address</label>
                                 <input
                                     type="email"
                                     placeholder="Enter Your Email ID"
@@ -122,7 +122,7 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
 
                             {/* Phone Number */}
                             <div className="space-y-1.5">
-                                <label className="text-[14px] md:text-[15px] font-semibold text-[#333333]">Phone Number</label>
+                                <label className="font-inter text-[14px] md:text-[15px] font-medium text-[#1D1D1D]">Phone Number</label>
                                 <div className="flex h-[52px] w-full rounded-[8px] border border-[#CCCCCC] bg-white overflow-hidden focus-within:border-[#F5A51C] transition-all">
                                     <div className="w-[56px] h-full flex items-center justify-center border-r border-[#CCCCCC] text-[#333333] font-semibold text-[14px] shrink-0 bg-white">
                                         +91
@@ -137,7 +137,7 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
 
                             {/* Service Type */}
                             <div className="space-y-1.5">
-                                <label className="text-[14px] md:text-[15px] font-semibold text-[#333333]">Service Type</label>
+                                <label className="font-inter text-[14px] md:text-[15px] font-medium text-[#1D1D1D]">Service Type</label>
                                 <div className="relative group">
                                     <select className="w-full h-[52px] px-4 rounded-[8px] border border-[#CCCCCC] outline-none appearance-none focus:border-[#F5A51C] transition-all text-[#333333] font-medium bg-white cursor-pointer pr-12 text-[14px]">
                                         <option>Carpet Cleaning</option>
@@ -152,7 +152,7 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
                             {/* Preferred Date & Time */}
                             <div className="flex flex-col sm:grid sm:grid-cols-2 gap-5">
                                 <div className="space-y-1.5">
-                                    <label className="text-[14px] md:text-[15px] font-semibold text-[#333333]">Preferred Date</label>
+                                    <label className="font-inter text-[14px] md:text-[15px] font-medium text-[#1D1D1D]">Preferred Date</label>
                                     <div className="relative flex items-center h-[52px] group">
                                         <input
                                             type="text"
@@ -165,7 +165,7 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
                                     </div>
                                 </div>
                                 <div className="space-y-1.5">
-                                    <label className="text-[14px] md:text-[15px] font-semibold text-[#333333]">Preferred Time</label>
+                                    <label className="font-inter text-[14px] md:text-[15px] font-medium text-[#1D1D1D]">Preferred Time</label>
                                     <div className="relative flex items-center h-[52px] group">
                                         <input
                                             type="text"
@@ -181,7 +181,7 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
 
                             {/* Your Message */}
                             <div className="space-y-1.5">
-                                <label className="text-[14px] md:text-[15px] font-semibold text-[#333333]">Your Message</label>
+                                <label className="font-inter text-[14px] md:text-[15px] font-medium text-[#1D1D1D]">Your Message</label>
                                 <textarea
                                     rows={4}
                                     placeholder="Enter Your Query's..."
@@ -192,7 +192,7 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
                             {/* Submit Button */}
                             <button
                                 type="button"
-                                className="w-full bg-[#1E3A8A] hover:bg-[#1e40af] text-white h-[52px] rounded-full font-semibold text-[15px] transition-all duration-300 shadow-md mt-2 flex items-center justify-center"
+                                className="w-full bg-[#1A4299] hover:bg-[#1e40af] text-white h-[52px] rounded-full font-semibold text-[15px] transition-all duration-300 shadow-md mt-2 flex items-center justify-center"
                             >
                                 Submit
                             </button>
