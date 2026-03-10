@@ -62,10 +62,14 @@ const CarpetWhyChoose = () => {
     };
 
     return (
-        <section className="relative w-full py-16 md:py-24 bg-white overflow-hidden">
+        <section className="relative w-full py-12 md:py-16 bg-white overflow-hidden">
             <div className="max-w-[1440px] mx-auto px-6 md:px-12 relative z-10 w-full">
                 {/* Title */}
-                <h2 className="text-[#304462] font-display font-regular text-[32px] md:text-[48px] lg:text-[54px] text-center mb-12 md:mb-16">
+                <h2 
+                    className="text-[#304462] font-display font-regular text-[24px] md:text-[42px] lg:text-[52px] text-center mb-12 md:mb-16"
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                >
                     Why Choose Bay Ultra Dry
                 </h2>
 
@@ -115,6 +119,9 @@ const CarpetWhyChoose = () => {
                         <div
                             key={index}
                             className="flex justify-center transition-all duration-300 hover:scale-105 hover:-translate-y-2"
+                            data-aos="fade-up"
+                            data-aos-delay={index * 100}
+                            data-aos-duration="800"
                         >
                             <img
                                 src={card.src}
@@ -126,7 +133,7 @@ const CarpetWhyChoose = () => {
                 </div>
 
                 {/* Bottom Illustration Section */}
-                <div className="relative w-full flex justify-center items-center mt-8 md:mt-2 h-[350px] md:h-[500px]">
+                <div className="relative w-full flex justify-center items-center mt-[-75px] md:mt-8 h-[250px] md:h-[500px]">
                     {/* Blue Glow behind basket */}
                     <img
                         src="/assets/images/Ellipse 7.png"
@@ -148,6 +155,8 @@ const CarpetWhyChoose = () => {
                         <img
                             src="/assets/images/carpet/Carpet_Why_1.png"
                             alt=""
+                            data-aos="fade-right"
+                            data-aos-duration="1200"
                             className="absolute opacity-80 md:opacity-90 z-0
                                 w-[220%] max-w-none left-[-180%] top-[40%]
                                 md:w-[70%] md:max-w-[750px] md:left-[-10%] md:top-[50%]
@@ -158,6 +167,8 @@ const CarpetWhyChoose = () => {
                         <img
                             src="/assets/images/carpet/Carpet_Why_2.png"
                             alt=""
+                            data-aos="fade-left"
+                            data-aos-duration="1200"
                             className="absolute opacity-80 md:opacity-90 z-0
                                 w-[220%] max-w-none right-[-180%] top-[40%]
                                 md:w-[70%] md:max-w-[750px] md:right-[-10%] md:top-[50%]
@@ -167,7 +178,11 @@ const CarpetWhyChoose = () => {
                     </div>
 
                     {/* Main Basket Image */}
-                    <div className="relative z-[2] max-w-[400px] md:max-w-[550px] lg:max-w-[650px] w-full px-6 flex justify-center">
+                    <div 
+                        className="relative z-[2] max-w-[400px] md:max-w-[550px] lg:max-w-[650px] w-full px-6 flex justify-center"
+                        data-aos="zoom-in"
+                        data-aos-duration="1000"
+                    >
                         <img
                             src="/assets/images/carpet/Carpet_Why_Choose.png"
                             alt="Cleaning supplies"

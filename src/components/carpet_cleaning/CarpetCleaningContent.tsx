@@ -51,11 +51,11 @@ const CarpetCleaningContent = () => {
             {/* Why Choose Section */}
             <CarpetWhyChoose />
 
-            {/* CTA Section */}
-            <CTASection />
-
             {/* Service Areas Section */}
             <ServiceAreas />
+
+            {/* CTA Section */}
+            <CTASection />
 
             {/* Quote Section */}
             <QuoteSection variant="home" />

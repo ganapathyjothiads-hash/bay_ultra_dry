@@ -94,7 +94,7 @@ const UpholsteryCleaningSlider = () => {
     }, [useTransition]);
 
     return (
-        <section className="relative w-full pt-0 pb-16 md:pb-24">
+        <section className="relative w-full pt-0 pb-10 md:pb-24">
             {/* Green glow */}
             <div
                 className="absolute pointer-events-none z-[0]
@@ -115,14 +115,14 @@ const UpholsteryCleaningSlider = () => {
 
             <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
                 {/* Header */}
-                <div className="flex flex-col md:flex-row items-center justify-between mb-8 md:mb-12 gap-4">
+                <div className="flex flex-col md:flex-row items-center justify-between mb-5 md:mb-10 gap-2">
                     <div className="flex items-center gap-3 md:gap-4 w-full justify-center md:justify-start">
                         <img
                             src="/assets/icons/Star_3.png"
                             alt="Star Icon"
-                            className="w-[35px] md:w-[42px] h-auto object-contain"
+                            className="w-[30px] md:w-[35px] h-auto object-contain"
                         />
-                        <h2 className="text-[#304462] font-display font-regular text-[32px] md:text-[48px] lg:text-[52px] tracking-tight">
+                        <h2 className="text-[#304462] font-display font-regular text-[24px] md:text-[36px] lg:text-[44px] tracking-tight">
                             What We Clean
                         </h2>
                     </div>
@@ -132,16 +132,16 @@ const UpholsteryCleaningSlider = () => {
                         <button
                             onClick={handlePrev}
                             aria-label="Previous"
-                            className="w-[50px] lg:w-[56px] h-[50px] lg:h-[56px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] hover:scale-105 transition-all duration-300 shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
+                            className="md:w-[44px] md:h-[44px] lg:w-[56px] lg:h-[56px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] hover:scale-105 transition-all duration-300 shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
                         >
-                            <ArrowLeft size={24} strokeWidth={2.5} className="group-hover:-translate-x-1 transition-transform" />
+                            <ArrowLeft strokeWidth={2} className="w-5 h-5 lg:w-6 lg:h-6 group-hover:-translate-x-1 transition-transform" />
                         </button>
                         <button
                             onClick={handleNext}
                             aria-label="Next"
-                            className="w-[50px] lg:w-[56px] h-[50px] lg:h-[56px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] hover:scale-105 transition-all duration-300 shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
+                            className="md:w-[44px] md:h-[44px] lg:w-[56px] lg:h-[56px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] hover:scale-105 transition-all duration-300 shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
                         >
-                            <ArrowRight size={24} strokeWidth={2.5} className="group-hover:translate-x-1 transition-transform" />
+                            <ArrowRight strokeWidth={2} className="w-5 h-5 lg:w-6 lg:h-6 group-hover:translate-x-1 transition-transform" />
                         </button>
                     </div>
                 </div>
@@ -175,7 +175,7 @@ const UpholsteryCleaningSlider = () => {
 
                                 <div className="flex items-start px-1 gap-3 mt-1">
                                     <div className="w-[5px] h-[5px] md:w-[6px] md:h-[6px] rounded-full bg-[#3B82F6] flex-shrink-0 mt-[9px] md:mt-[10px]" />
-                                    <h3 className="font-display text-[#3780FF] font-medium text-[16px] md:text-[18px] leading-[1.4] tracking-wide">
+                                    <h3 className="font-display text-[#3780FF] font-medium text-[12px] md:text-[16px] leading-[1.4] tracking-wide">
                                         {service.title}
                                     </h3>
                                 </div>
@@ -185,20 +185,20 @@ const UpholsteryCleaningSlider = () => {
                 </div>
 
                 {/* Mobile Arrows */}
-                <div className="flex md:hidden justify-center gap-6 mt-10">
+                <div className="flex md:hidden justify-center gap-8 mt-6">
                     <button
                         onClick={handlePrev}
                         aria-label="Previous"
-                        className="w-[52px] h-[52px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] transition-all shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
+                        className="w-[34px] h-[34px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] transition-all shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
                     >
-                        <ArrowLeft size={24} strokeWidth={2.5} className="group-hover:-translate-x-1 transition-transform" />
+                        <ArrowLeft strokeWidth={2} className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
                     </button>
                     <button
                         onClick={handleNext}
                         aria-label="Next"
-                        className="w-[52px] h-[52px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] transition-all shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
+                        className="w-[34px] h-[34px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] transition-all shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
                     >
-                        <ArrowRight size={24} strokeWidth={2.5} className="group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight strokeWidth={2} className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </button>
                 </div>
             </div>
