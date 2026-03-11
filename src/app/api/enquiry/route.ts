@@ -53,7 +53,7 @@ export async function POST(request: Request) {
     } catch (error: any) {
         console.error("Error submitting enquiry:", error);
         return NextResponse.json(
-            { error: "Failed to submit enquiry. Please try again later." },
+            { error: "Failed to submit enquiry. Please try again later.", details: error.message },
             { status: 500 }
         );
     }

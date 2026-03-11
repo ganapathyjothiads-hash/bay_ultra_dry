@@ -2,6 +2,10 @@
 
 import React, { useState, useEffect } from "react";
 import { X } from "lucide-react";
+import PhoneInput from "./PhoneInput";
+import TimePicker from "./TimePicker";
+import DatePicker from "./DatePicker";
+import Toast from "./Toast";
 
 interface EnquiryPopupProps {
     isOpen: boolean;
@@ -12,7 +16,7 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
     const [formData, setFormData] = useState({
         fullName: "",
         emailId: "",
-        phoneNumber: "",
+        phoneNumber: "+64",
         service: "CARPET_CLEANING",
         requiredDate: "",
         requiredTime: "",
@@ -24,6 +28,7 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [isVisible, setIsVisible] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [toastMessage, setToastMessage] = useState<{ text: string; type: "success" | "error" } | null>(null);
 
     useEffect(() => {
         if (isOpen) {
@@ -63,9 +68,19 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
         } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.emailId)) {
             newErrors.emailId = "Invalid email format";
         }
-        if (!formData.phoneNumber.trim()) {
+
+        // Phone number validation
+        const countryCode = formData.phoneNumber.startsWith("+91") ? "+91" : "+64";
+        const pureNumber = formData.phoneNumber.slice(countryCode.length).replace(/\D/g, "");
+
+        if (!pureNumber) {
             newErrors.phoneNumber = "Phone number is required";
+        } else if (countryCode === "+91" && pureNumber.length !== 10) {
+            newErrors.phoneNumber = "Indian phone number must be exactly 10 digits";
+        } else if (countryCode === "+64" && (pureNumber.length < 8 || pureNumber.length > 11)) {
+            newErrors.phoneNumber = "NZ phone number must be between 8 and 11 digits";
         }
+
         if (!formData.address.trim()) newErrors.address = "Address is required";
         if (!formData.requiredDate) newErrors.requiredDate = "Date is required";
 
@@ -77,7 +92,7 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
         setFormData({
             fullName: "",
             emailId: "",
-            phoneNumber: "",
+            phoneNumber: "+64",
             service: "CARPET_CLEANING",
             requiredDate: "",
             requiredTime: "",
@@ -92,7 +107,7 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
         e.preventDefault();
         if (!validate()) return;
         if (!formData.confirmed) {
-            alert("Please confirm the information is accurate.");
+            setToastMessage({ text: "Please confirm the information is accurate.", type: "error" });
             return;
         }
 
@@ -114,15 +129,15 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
             const data = await response.json();
 
             if (response.ok) {
-                alert("Thank you! Your enquiry has been submitted successfully.");
+                setToastMessage({ text: "Thank you! Your enquiry has been submitted successfully.", type: "success" });
                 handleClear();
-                onClose();
+                setTimeout(onClose, 2000);
             } else {
-                alert(data.error || "Something went wrong. Please try again.");
+                setToastMessage({ text: data.error || "Something went wrong. Please try again.", type: "error" });
             }
         } catch (error) {
             console.error("Submission error:", error);
-            alert("Failed to send enquiry. Please check your connection and try again.");
+            setToastMessage({ text: "Failed to send enquiry. Please try again.", type: "error" });
         } finally {
             setIsSubmitting(false);
         }
@@ -173,7 +188,8 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
                                     name="fullName"
                                     value={formData.fullName}
                                     onChange={handleChange}
-                                    className={`w-full bg-[#E3E3E3] rounded-[8px] sm:rounded-[10px] px-4 py-3 sm:px-5 sm:py-3 focus:outline-none focus:ring-1 transition-all text-[#1D1D1D] text-[14px] sm:text-[15px] ${errors.fullName ? "ring-red-500 ring-1" : "focus:ring-blue-500/20"}`}
+                                    placeholder="Enter your full name"
+                                    className={`w-full bg-white border rounded-[8px] sm:rounded-[10px] px-4 py-3 sm:px-5 sm:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/10 transition-all text-[#1D1D1D] text-[14px] sm:text-[15px] ${errors.fullName ? "border-red-500" : "border-[#7687A1] focus:border-[#1e3a8a]"}`}
                                     required
                                 />
                                 {errors.fullName && <p className="text-red-500 text-[12px] mt-1">{errors.fullName}</p>}
@@ -187,25 +203,20 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
                                     name="emailId"
                                     value={formData.emailId}
                                     onChange={handleChange}
-                                    className={`w-full bg-[#E3E3E3] rounded-[8px] sm:rounded-[10px] px-4 py-3 sm:px-5 sm:py-3 focus:outline-none focus:ring-1 transition-all text-[#1D1D1D] text-[14px] sm:text-[15px] ${errors.emailId ? "ring-red-500 ring-1" : "focus:ring-blue-500/20"}`}
+                                    placeholder="Enter your email id"
+                                    className={`w-full bg-white border rounded-[8px] sm:rounded-[10px] px-4 py-3 sm:px-5 sm:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/10 transition-all text-[#1D1D1D] text-[14px] sm:text-[15px] ${errors.emailId ? "border-red-500" : "border-[#7687A1] focus:border-[#1e3a8a]"}`}
                                     required
                                 />
                                 {errors.emailId && <p className="text-red-500 text-[12px] mt-1">{errors.emailId}</p>}
                             </div>
 
                             {/* Phone Number */}
-                            <div className="flex flex-col gap-1.5 sm:gap-2">
-                                <label className="text-[#1D1D1D] font-sans font-medium text-[15px] sm:text-[16px] leading-tight">Phone Number</label>
-                                <input
-                                    type="tel"
-                                    name="phoneNumber"
-                                    value={formData.phoneNumber}
-                                    onChange={handleChange}
-                                    className={`w-full bg-[#E3E3E3] rounded-[8px] sm:rounded-[10px] px-4 py-3 sm:px-5 sm:py-3 focus:outline-none focus:ring-1 transition-all text-[#1D1D1D] text-[14px] sm:text-[15px] ${errors.phoneNumber ? "ring-red-500 ring-1" : "focus:ring-blue-500/20"}`}
-                                    required
-                                />
-                                {errors.phoneNumber && <p className="text-red-500 text-[12px] mt-1">{errors.phoneNumber}</p>}
-                            </div>
+                            <PhoneInput
+                                label="Phone Number"
+                                value={formData.phoneNumber}
+                                onChange={(val) => setFormData(prev => ({ ...prev, phoneNumber: val }))}
+                                error={errors.phoneNumber}
+                            />
 
                             {/* Service */}
                             <div className="flex flex-col gap-1.5 sm:gap-2 text-[#1D1D1D]">
@@ -215,7 +226,7 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
                                         name="service"
                                         value={formData.service}
                                         onChange={handleChange}
-                                        className="w-full bg-[#E3E3E3] rounded-[8px] sm:rounded-[10px] px-4 py-3 sm:px-5 sm:py-3 outline-none appearance-none cursor-pointer text-[14px] sm:text-[15px]"
+                                        className="w-full bg-white border border-[#7687A1] rounded-[8px] sm:rounded-[10px] px-4 py-3 sm:px-5 sm:py-3 outline-none appearance-none cursor-pointer text-[14px] sm:text-[15px] focus:ring-2 focus:ring-blue-500/10 focus:border-[#1e3a8a] transition-all"
                                         required
                                     >
                                         <option value="" disabled>Select your service</option>
@@ -231,48 +242,18 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
                             </div>
 
                             {/* Your Required Date & Time */}
-                            <div className="flex flex-col gap-1.5 sm:gap-2">
-                                <label className="text-[#1D1D1D] font-sans font-medium text-[15px] sm:text-[16px] leading-tight">Your Required Date</label>
-                                <div className={`relative flex items-center group rounded-[8px] sm:rounded-[10px] overflow-hidden border transition-all ${errors.requiredDate ? "border-red-500" : "border-[#E5E7EB]"}`}>
-                                    <input
-                                        type="date"
-                                        name="requiredDate"
-                                        value={formData.requiredDate}
-                                        onChange={handleChange}
-                                        className="flex-1 bg-[#E3E3E3] px-4 py-3 sm:px-5 sm:py-3 focus:outline-none text-[#1D1D1D] text-[14px] sm:text-[15px] cursor-pointer"
-                                        required
-                                    />
-                                    <div className="absolute right-0 top-0 bottom-0 w-[52px] bg-[#002F74] flex items-center justify-center pointer-events-none">
-                                        <img
-                                            src="/assets/icons/Calendar.png"
-                                            alt=""
-                                            className="w-6 h-6 object-contain brightness-0 invert"
-                                        />
-                                    </div>
-                                </div>
-                                {errors.requiredDate && <p className="text-red-500 text-[12px]">{errors.requiredDate}</p>}
-                            </div>
+                            <DatePicker
+                                label="Your Required Date"
+                                value={formData.requiredDate}
+                                onChange={(val: string) => setFormData(prev => ({ ...prev, requiredDate: val }))}
+                                error={errors.requiredDate}
+                            />
 
-                            <div className="flex flex-col gap-1.5 sm:gap-2">
-                                <label className="text-[#1D1D1D] font-sans font-medium text-[15px] sm:text-[16px] leading-tight">Your Required Time</label>
-                                <div className={`relative flex items-center group rounded-[8px] sm:rounded-[10px] overflow-hidden border transition-all ${errors.requiredTime ? "border-red-500" : "border-[#E5E7EB]"}`}>
-                                    <input
-                                        type="time"
-                                        name="requiredTime"
-                                        value={formData.requiredTime}
-                                        onChange={handleChange}
-                                        className="flex-1 bg-[#E3E3E3] px-4 py-3 sm:px-5 sm:py-3 focus:outline-none text-[#1D1D1D] text-[14px] sm:text-[15px] cursor-pointer"
-                                    />
-                                    <div className="absolute right-0 top-0 bottom-0 w-[52px] bg-[#002F74] flex items-center justify-center pointer-events-none">
-                                        <img
-                                            src="/assets/icons/Clock.png"
-                                            alt=""
-                                            className="w-6 h-6 object-contain brightness-0 invert"
-                                        />
-                                    </div>
-                                </div>
-                                {errors.requiredTime && <p className="text-red-500 text-[12px]">{errors.requiredTime}</p>}
-                            </div>
+                            <TimePicker
+                                value={formData.requiredTime}
+                                onChange={(val: string) => setFormData(prev => ({ ...prev, requiredTime: val }))}
+                                error={errors.requiredTime}
+                            />
 
                             {/* Address */}
                             <div className="flex flex-col gap-1.5 sm:gap-2">
@@ -282,7 +263,8 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
                                     name="address"
                                     value={formData.address}
                                     onChange={handleChange}
-                                    className={`w-full bg-[#E3E3E3] rounded-[8px] sm:rounded-[10px] px-4 py-3 sm:px-5 sm:py-3 focus:outline-none focus:ring-1 transition-all text-[#1D1D1D] text-[14px] sm:text-[15px] ${errors.address ? "ring-red-500 ring-1" : "focus:ring-blue-500/20"}`}
+                                    placeholder="Enter your address"
+                                    className={`w-full bg-white border rounded-[8px] sm:rounded-[10px] px-4 py-3 sm:px-5 sm:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/10 transition-all text-[#1D1D1D] text-[14px] sm:text-[15px] ${errors.address ? "border-red-500" : "border-[#7687A1] focus:border-[#1e3a8a]"}`}
                                     required
                                 />
                                 {errors.address && <p className="text-red-500 text-[12px] mt-1">{errors.address}</p>}
@@ -297,7 +279,7 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
                                     value={formData.message}
                                     onChange={handleChange}
                                     rows={3}
-                                    className="w-full bg-[#E3E3E3] rounded-[10px] sm:rounded-[12px] px-4 py-3 sm:px-6 sm:py-4 focus:outline-none focus:ring-1 focus:ring-blue-500/20 transition-all text-[#1D1D1D] text-[14px] sm:text-[15px] resize-none"
+                                    className="w-full bg-white border border-[#7687A1] rounded-[10px] sm:rounded-[12px] px-4 py-3 sm:px-6 sm:py-4 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-[#1e3a8a] transition-all text-[#1D1D1D] text-[14px] sm:text-[15px] resize-none"
                                     required
                                 />
                             </div>
@@ -341,6 +323,13 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
                         </div>
                     </form>
                 </div>
+                {toastMessage && (
+                    <Toast
+                        message={toastMessage.text}
+                        type={toastMessage.type}
+                        onClose={() => setToastMessage(null)}
+                    />
+                )}
             </div>
         </div>
     );

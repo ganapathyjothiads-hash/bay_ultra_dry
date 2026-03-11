@@ -3,6 +3,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { ChevronDown } from "lucide-react";
+import PhoneInput from "../ui/PhoneInput";
+import TimePicker from "../ui/TimePicker";
+import DatePicker from "../ui/DatePicker";
+import Toast from "../ui/Toast";
 
 interface QuoteSectionProps {
     variant?: "home" | "about";
@@ -12,7 +16,7 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
     const [formData, setFormData] = useState({
         fullName: "",
         emailId: "",
-        phoneNumber: "",
+        phoneNumber: "+64",
         service: "CARPET_CLEANING",
         requiredDate: "",
         requiredTime: "",
@@ -23,6 +27,7 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
 
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [toastMessage, setToastMessage] = useState<{ text: string; type: "success" | "error" } | null>(null);
 
     const validate = () => {
         const newErrors: Record<string, string> = {};
@@ -32,11 +37,19 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
         } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.emailId)) {
             newErrors.emailId = "Invalid email format";
         }
-        if (!formData.phoneNumber.trim()) {
+
+        // Phone number validation
+        const countryCode = formData.phoneNumber.startsWith("+91") ? "+91" : "+64";
+        const pureNumber = formData.phoneNumber.slice(countryCode.length).replace(/\D/g, "");
+
+        if (!pureNumber) {
             newErrors.phoneNumber = "Phone number is required";
-        } else if (!/^\d{7,15}$/.test(formData.phoneNumber.replace(/\s+/g, ""))) {
-            newErrors.phoneNumber = "Invalid phone number";
+        } else if (countryCode === "+91" && pureNumber.length !== 10) {
+            newErrors.phoneNumber = "Indian phone number must be exactly 10 digits";
+        } else if (countryCode === "+64" && (pureNumber.length < 8 || pureNumber.length > 11)) {
+            newErrors.phoneNumber = "NZ phone number must be between 8 and 11 digits";
         }
+
         if (!formData.address.trim()) newErrors.address = "Address is required";
         if (!formData.requiredDate) newErrors.requiredDate = "Date is required";
 
@@ -76,11 +89,11 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
             });
 
             if (response.ok) {
-                alert("Thank you! Your quote request has been sent successfully.");
+                setToastMessage({ text: "Thank you! Your quote request has been sent successfully.", type: "success" });
                 setFormData({
                     fullName: "",
                     emailId: "",
-                    phoneNumber: "",
+                    phoneNumber: "+64",
                     service: "CARPET_CLEANING",
                     requiredDate: "",
                     requiredTime: "",
@@ -90,11 +103,11 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
                 });
             } else {
                 const data = await response.json();
-                alert(data.error || "Something went wrong. Please try again.");
+                setToastMessage({ text: data.error || "Something went wrong. Please try again.", type: "error" });
             }
         } catch (error) {
             console.error("Submission error:", error);
-            alert("Failed to send request. Please try again.");
+            setToastMessage({ text: "Failed to send request. Please try again.", type: "error" });
         } finally {
             setIsSubmitting(false);
         }
@@ -154,13 +167,13 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
                             <div className="flex items-center gap-4 pt-2">
                                 <div className="relative w-[30px] h-[30px] md:w-[40px] md:h-[40px] shrink-0">
                                     <Image
-                                        src="/assets/images/Contact_icon.png"
+                                        src="/assets/icons/Quote_Phone.png"
                                         alt="Call 24/7"
                                         fill
                                         className="object-contain" // Or object-cover if it matches better
                                     />
                                 </div>
-                                <span className="text-[22px] md:text-[26px] font-semibold text-[#1D1D1D] tracking-tight">07 571 2279</span>
+                                <span className="font-nunito text-[22px] md:text-[26px] font-medium text-[#1D1D1D] tracking-tight">07 571 2279</span>
                             </div>
                         </div>
 
@@ -199,7 +212,7 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
                                     value={formData.fullName}
                                     onChange={handleChange}
                                     placeholder="Enter Your Name"
-                                    className={`w-full h-[52px] px-4 rounded-[8px] border outline-none transition-all text-[#333333] font-medium placeholder:text-[#999999] bg-white text-[14px] ${errors.fullName ? "border-red-500" : "border-[#CCCCCC] focus:border-[#F5A51C]"}`}
+                                    className={`w-full h-[52px] px-4 rounded-[8px] border outline-none transition-all text-[#333333] font-medium placeholder:text-[#999999] bg-white text-[14px] ${errors.fullName ? "border-red-500" : "border-[#7687A1] focus:border-[#1e3a8a] focus:ring-2 focus:ring-blue-500/10"}`}
                                 />
                                 {errors.fullName && <p className="text-red-500 text-[12px]">{errors.fullName}</p>}
                             </div>
@@ -213,28 +226,19 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
                                     value={formData.emailId}
                                     onChange={handleChange}
                                     placeholder="Enter Your Email ID"
-                                    className={`w-full h-[52px] px-4 rounded-[8px] border outline-none transition-all text-[#333333] font-medium placeholder:text-[#999999] bg-white text-[14px] ${errors.emailId ? "border-red-500" : "border-[#CCCCCC] focus:border-[#F5A51C]"}`}
+                                    className={`w-full h-[52px] px-4 rounded-[8px] border outline-none transition-all text-[#333333] font-medium placeholder:text-[#999999] bg-white text-[14px] ${errors.emailId ? "border-red-500" : "border-[#7687A1] focus:border-[#1e3a8a] focus:ring-2 focus:ring-blue-500/10"}`}
                                 />
                                 {errors.emailId && <p className="text-red-500 text-[12px]">{errors.emailId}</p>}
                             </div>
 
                             {/* Phone Number */}
                             <div className="space-y-1">
-                                <label className="font-inter text-[14px] md:text-[15px] font-medium text-[#1D1D1D]">Phone Number</label>
-                                <div className={`flex h-[52px] w-full rounded-[8px] border bg-white overflow-hidden transition-all focus-within:border-[#F5A51C] ${errors.phoneNumber ? "border-red-500" : "border-[#CCCCCC]"}`}>
-                                    <div className="w-[56px] h-full flex items-center justify-center border-r border-[#CCCCCC] text-[#333333] font-semibold text-[14px] shrink-0 bg-white">
-                                        +91
-                                    </div>
-                                    <input
-                                        type="tel"
-                                        name="phoneNumber"
-                                        value={formData.phoneNumber}
-                                        onChange={handleChange}
-                                        placeholder="0000 000 000"
-                                        className="flex-1 h-full px-4 outline-none text-[#333333] font-medium placeholder:text-[#999999] bg-transparent text-[14px]"
-                                    />
-                                </div>
-                                {errors.phoneNumber && <p className="text-red-500 text-[12px]">{errors.phoneNumber}</p>}
+                                <PhoneInput
+                                    label="Phone Number"
+                                    value={formData.phoneNumber}
+                                    onChange={(val) => setFormData(prev => ({ ...prev, phoneNumber: val }))}
+                                    error={errors.phoneNumber}
+                                />
                             </div>
 
                             {/* Address Field - Added to match schema */}
@@ -246,7 +250,7 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
                                     value={formData.address}
                                     onChange={handleChange}
                                     placeholder="Enter Your Address"
-                                    className={`w-full h-[52px] px-4 rounded-[8px] border outline-none transition-all text-[#333333] font-medium placeholder:text-[#999999] bg-white text-[14px] ${errors.address ? "border-red-500" : "border-[#CCCCCC] focus:border-[#F5A51C]"}`}
+                                    className={`w-full h-[52px] px-4 rounded-[8px] border outline-none transition-all text-[#333333] font-medium placeholder:text-[#999999] bg-white text-[14px] ${errors.address ? "border-red-500" : "border-[#7687A1] focus:border-[#1e3a8a] focus:ring-2 focus:ring-blue-500/10"}`}
                                 />
                                 {errors.address && <p className="text-red-500 text-[12px]">{errors.address}</p>}
                             </div>
@@ -259,7 +263,7 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
                                         name="service"
                                         value={formData.service}
                                         onChange={handleChange}
-                                        className="w-full h-[52px] px-4 rounded-[8px] border border-[#CCCCCC] outline-none appearance-none focus:border-[#F5A51C] transition-all text-[#333333] font-medium bg-white cursor-pointer pr-12 text-[14px]"
+                                        className="w-full h-[52px] px-4 rounded-[8px] border border-[#7687A1] outline-none appearance-none focus:border-[#1e3a8a] focus:ring-2 focus:ring-blue-500/10 transition-all text-[#333333] font-medium bg-white cursor-pointer pr-12 text-[14px]"
                                     >
                                         <option value="CARPET_CLEANING">Carpet Cleaning</option>
                                         <option value="UPHOLSTERY_CLEANING">Upholstery Cleaning</option>
@@ -273,49 +277,20 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
                             {/* Preferred Date & Time */}
                             <div className="flex flex-col sm:grid sm:grid-cols-2 gap-4">
                                 <div className="space-y-1">
-                                    <label className="font-inter text-[14px] md:text-[15px] font-medium text-[#1D1D1D]">Preferred Date</label>
-                                    <div className={`relative flex items-center h-[52px] group rounded-[8px] border overflow-hidden ${errors.requiredDate ? "border-red-500" : "border-[#CCCCCC]"}`}>
-                                        <input
-                                            type="date"
-                                            name="requiredDate"
-                                            value={formData.requiredDate}
-                                            onChange={handleChange}
-                                            className="w-full h-full px-4 outline-none transition-all text-[#333333] font-medium bg-white text-[14px] cursor-pointer"
-                                        />
-                                        <div className="absolute right-0 top-0 bottom-0 w-[52px] bg-[#1A4299] flex items-center justify-center pointer-events-none">
-                                            <div className="relative w-6 h-6">
-                                                <Image
-                                                    src="/assets/icons/Calendar.png"
-                                                    alt="Date"
-                                                    fill
-                                                    className="object-contain brightness-0 invert"
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {errors.requiredDate && <p className="text-red-500 text-[12px]">{errors.requiredDate}</p>}
+                                    <DatePicker
+                                        label="Preferred Date"
+                                        value={formData.requiredDate}
+                                        onChange={(val: string) => setFormData(prev => ({ ...prev, requiredDate: val }))}
+                                        error={errors.requiredDate}
+                                    />
                                 </div>
                                 <div className="space-y-1">
                                     <label className="font-inter text-[14px] md:text-[15px] font-medium text-[#1D1D1D]">Preferred Time</label>
-                                    <div className={`relative flex items-center h-[52px] group rounded-[8px] border overflow-hidden ${errors.requiredTime ? "border-red-500" : "border-[#CCCCCC]"}`}>
-                                        <input
-                                            type="time"
-                                            name="requiredTime"
-                                            value={formData.requiredTime}
-                                            onChange={handleChange}
-                                            className="w-full h-full px-4 outline-none transition-all text-[#333333] font-medium bg-white text-[14px] cursor-pointer"
-                                        />
-                                        <div className="absolute right-0 top-0 bottom-0 w-[52px] bg-[#1A4299] flex items-center justify-center pointer-events-none">
-                                            <div className="relative w-6 h-6">
-                                                <Image
-                                                    src="/assets/icons/Clock.png"
-                                                    alt="Time"
-                                                    fill
-                                                    className="object-contain brightness-0 invert"
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <TimePicker
+                                        value={formData.requiredTime}
+                                        onChange={(val) => setFormData(prev => ({ ...prev, requiredTime: val }))}
+                                        error={errors.requiredTime}
+                                    />
                                     {errors.requiredTime && <p className="text-red-500 text-[12px]">{errors.requiredTime}</p>}
                                 </div>
                             </div>
@@ -329,7 +304,7 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
                                     onChange={handleChange}
                                     rows={3}
                                     placeholder="Enter Your Query..."
-                                    className="w-full px-4 py-3 rounded-[8px] border border-[#CCCCCC] outline-none focus:border-[#F5A51C] transition-all text-[#333333] font-medium resize-none placeholder:text-[#999999] min-h-[80px] bg-white text-[14px]"
+                                    className="w-full px-4 py-3 rounded-[8px] border border-[#7687A1] outline-none focus:border-[#1e3a8a] focus:ring-2 focus:ring-blue-500/10 transition-all text-[#333333] font-medium resize-none placeholder:text-[#999999] min-h-[80px] bg-white text-[14px]"
                                 />
                             </div>
 
@@ -346,6 +321,13 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
 
                 </div>
             </div>
+            {toastMessage && (
+                <Toast
+                    message={toastMessage.text}
+                    type={toastMessage.type}
+                    onClose={() => setToastMessage(null)}
+                />
+            )}
         </section>
     );
 };

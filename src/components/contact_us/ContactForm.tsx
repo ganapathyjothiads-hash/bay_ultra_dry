@@ -2,12 +2,16 @@
 
 import React, { useState } from "react";
 import ActionButton from "../ui/ActionButton";
+import PhoneInput from "../ui/PhoneInput";
+import TimePicker from "../ui/TimePicker";
+import DatePicker from "../ui/DatePicker";
+import Toast from "../ui/Toast";
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({
         fullName: "",
         emailId: "",
-        phoneNumber: "",
+        phoneNumber: "+64", // Default starting with NZ code
         service: "CARPET_CLEANING",
         requiredDate: "",
         requiredTime: "",
@@ -17,6 +21,7 @@ const ContactForm = () => {
     });
 
     const [errors, setErrors] = useState<Record<string, string>>({});
+    const [toastMessage, setToastMessage] = useState<{ text: string; type: "success" | "error" } | null>(null);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value, type } = e.target;
@@ -43,9 +48,19 @@ const ContactForm = () => {
         } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.emailId)) {
             newErrors.emailId = "Invalid email format";
         }
-        if (!formData.phoneNumber.trim()) {
+
+        // Phone number validation
+        const countryCode = formData.phoneNumber.startsWith("+91") ? "+91" : "+64";
+        const pureNumber = formData.phoneNumber.slice(countryCode.length).replace(/\D/g, "");
+
+        if (!pureNumber) {
             newErrors.phoneNumber = "Phone number is required";
+        } else if (countryCode === "+91" && pureNumber.length !== 10) {
+            newErrors.phoneNumber = "Indian phone number must be exactly 10 digits";
+        } else if (countryCode === "+64" && (pureNumber.length < 8 || pureNumber.length > 11)) {
+            newErrors.phoneNumber = "NZ phone number must be between 8 and 11 digits";
         }
+
         if (!formData.address.trim()) newErrors.address = "Address is required";
         if (!formData.requiredDate) newErrors.requiredDate = "Date is required";
 
@@ -57,7 +72,7 @@ const ContactForm = () => {
         setFormData({
             fullName: "",
             emailId: "",
-            phoneNumber: "",
+            phoneNumber: "+64",
             service: "CARPET_CLEANING",
             requiredDate: "",
             requiredTime: "",
@@ -65,6 +80,7 @@ const ContactForm = () => {
             message: "",
             confirmed: false
         });
+        setErrors({});
     };
 
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -73,7 +89,7 @@ const ContactForm = () => {
         e.preventDefault();
         if (!validate()) return;
         if (!formData.confirmed) {
-            alert("Please confirm the information is accurate.");
+            setToastMessage({ text: "Please confirm the information is accurate.", type: "error" });
             return;
         }
 
@@ -95,14 +111,14 @@ const ContactForm = () => {
             const data = await response.json();
 
             if (response.ok) {
-                alert("Thank you! Your enquiry has been submitted successfully. We will contact you shortly.");
+                setToastMessage({ text: "Thank you! Your enquiry has been submitted successfully.", type: "success" });
                 handleClear();
             } else {
-                alert(data.error || "Something went wrong. Please try again.");
+                setToastMessage({ text: data.error || "Something went wrong. Please try again.", type: "error" });
             }
         } catch (error) {
             console.error("Submission error:", error);
-            alert("Failed to send enquiry. Please check your connection and try again.");
+            setToastMessage({ text: "Failed to send enquiry. Please check your connection and try again.", type: "error" });
         } finally {
             setIsSubmitting(false);
         }
@@ -212,19 +228,12 @@ const ContactForm = () => {
                         </div>
 
                         {/* Phone Number */}
-                        <div className="flex flex-col gap-3">
-                            <label className="text-[#1D1D1D] font-sans font-medium text-[14px] sm:text-[15px] md:text-[16px]">Phone Number</label>
-                            <input
-                                type="tel"
-                                name="phoneNumber"
-                                placeholder="0000 000 000"
-                                value={formData.phoneNumber}
-                                onChange={handleChange}
-                                className={`w-full border rounded-[10px] px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/10 transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] placeholder:text-[14px] text-[16px] ${errors.phoneNumber ? "border-red-500" : "border-[#7687A1] focus:border-[#1e3a8a]"}`}
-                                required
-                            />
-                            {errors.phoneNumber && <p className="text-red-500 text-[12px]">{errors.phoneNumber}</p>}
-                        </div>
+                        <PhoneInput
+                            label="Phone Number"
+                            value={formData.phoneNumber}
+                            onChange={(val) => setFormData(prev => ({ ...prev, phoneNumber: val }))}
+                            error={errors.phoneNumber}
+                        />
 
                         {/* Service Selection */}
                         <div className="flex flex-col gap-3">
@@ -252,48 +261,13 @@ const ContactForm = () => {
                         </div>
 
                         {/* Required Date & Time */}
-                        <div className="flex flex-col gap-3">
-                            <label className="text-[#1D1D1D] font-sans font-medium text-[14px] sm:text-[15px] md:text-[16px]">Your Required Date</label>
-                            <div className={`relative flex items-center group rounded-[10px] overflow-hidden border transition-all ${errors.requiredDate ? "border-red-500" : "border-[#7687A1] focus-within:border-[#1e3a8a]"}`}>
-                                <input
-                                    type="date"
-                                    name="requiredDate"
-                                    value={formData.requiredDate}
-                                    onChange={handleChange}
-                                    className="flex-1 px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 focus:outline-none bg-white text-[#374151] text-[16px] cursor-pointer"
-                                    required
-                                />
-                                <div className="absolute right-0 top-0 bottom-0 w-[52px] bg-[#1e3a8a] flex items-center justify-center pointer-events-none">
-                                    <img
-                                        src="/assets/icons/Calendar.png"
-                                        alt=""
-                                        className="w-6 h-6 object-contain brightness-0 invert"
-                                    />
-                                </div>
-                            </div>
-                            {errors.requiredDate && <p className="text-red-500 text-[12px]">{errors.requiredDate}</p>}
-                        </div>
+                        <DatePicker
+                            label="Your Required Date"
+                            value={formData.requiredDate}
+                            onChange={(val: string) => setFormData(prev => ({ ...prev, requiredDate: val }))}
+                            error={errors.requiredDate}
+                        />
 
-                        <div className="flex flex-col gap-3">
-                            <label className="text-[#1D1D1D] font-sans font-medium text-[14px] sm:text-[15px] md:text-[16px]">Your Required Time</label>
-                            <div className={`relative flex items-center group rounded-[10px] overflow-hidden border transition-all ${errors.requiredTime ? "border-red-500" : "border-[#7687A1] focus-within:border-[#1e3a8a]"}`}>
-                                <input
-                                    type="time"
-                                    name="requiredTime"
-                                    value={formData.requiredTime}
-                                    onChange={handleChange}
-                                    className="flex-1 px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 focus:outline-none bg-white text-[#374151] text-[16px] cursor-pointer"
-                                />
-                                <div className="absolute right-0 top-0 bottom-0 w-[52px] bg-[#1e3a8a] flex items-center justify-center pointer-events-none">
-                                    <img
-                                        src="/assets/icons/Clock.png"
-                                        alt=""
-                                        className="w-6 h-6 object-contain brightness-0 invert"
-                                    />
-                                </div>
-                            </div>
-                            {errors.requiredTime && <p className="text-red-500 text-[12px]">{errors.requiredTime}</p>}
-                        </div>
 
                         {/* Address */}
                         <div className="flex flex-col gap-3">
@@ -363,6 +337,14 @@ const ContactForm = () => {
                         </div>
                     </div>
                 </form>
+
+                {toastMessage && (
+                    <Toast
+                        message={toastMessage.text}
+                        type={toastMessage.type}
+                        onClose={() => setToastMessage(null)}
+                    />
+                )}
             </div>
         </section>
     );
