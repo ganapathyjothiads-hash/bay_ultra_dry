@@ -285,13 +285,12 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
                                     />
                                 </div>
                                 <div className="space-y-1">
-                                    <label className="font-inter text-[14px] md:text-[15px] font-medium text-[#1D1D1D]">Preferred Time</label>
                                     <TimePicker
+                                        label="Preferred Time"
                                         value={formData.requiredTime}
                                         onChange={(val) => setFormData(prev => ({ ...prev, requiredTime: val }))}
                                         error={errors.requiredTime}
                                     />
-                                    {errors.requiredTime && <p className="text-red-500 text-[12px]">{errors.requiredTime}</p>}
                                 </div>
                             </div>
 

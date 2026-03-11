@@ -7,9 +7,10 @@ interface TimePickerProps {
     value: string;
     onChange: (time: string) => void;
     error?: string;
+    label?: string;
 }
 
-const TimePicker = ({ value, onChange, error }: TimePickerProps) => {
+const TimePicker = ({ value, onChange, error, label }: TimePickerProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -48,15 +49,22 @@ const TimePicker = ({ value, onChange, error }: TimePickerProps) => {
     };
 
     return (
-        <div className="flex flex-col gap-1.5 sm:gap-2 relative" ref={containerRef}>
+        <div className="flex flex-col space-y-1 relative" ref={containerRef}>
+            {label && (
+                <label className="font-inter text-[14px] md:text-[15px] font-medium text-[#1D1D1D]">
+                    {label}
+                </label>
+            )}
             <div
-                className={`relative flex items-center group rounded-[8px] sm:rounded-[10px] overflow-hidden border transition-all cursor-pointer h-[52px] ${error ? "border-red-500" : "border-[#7687A1] hover:border-[#1e3a8a] focus-within:ring-2 focus-within:ring-blue-500/10"
+                className={`relative flex items-center group rounded-[8px] overflow-hidden border transition-all cursor-pointer h-[52px] ${error ? "border-red-500" : "border-[#7687A1] hover:border-[#1e3a8a] focus-within:ring-2 focus-within:ring-blue-500/10"
                     }`}
                 onClick={() => setIsOpen(!isOpen)}
             >
-                <div className="flex-1 px-4 py-3 sm:px-5 sm:py-3 bg-white text-[#1D1D1D] text-[14px] sm:text-[15px] font-medium flex justify-between items-center group-hover:bg-gray-50 transition-colors">
-                    <span>{value ? formatTo12h(value) : "Select Time"}</span>
-                    <ChevronDown className={`text-gray-400 transition-transform ${isOpen ? "rotate-180" : ""}`} size={18} />
+                <div className="flex-1 h-full px-4 bg-white text-[#1D1D1D] text-[14px] font-medium flex justify-between items-center group-hover:bg-gray-50 transition-colors">
+                    <span className={value ? "" : "text-[#999999]"}>
+                        {value ? formatTo12h(value) : "Select Time"}
+                    </span>
+                    {/* Chevron removed to match image */}
                 </div>
                 <div className="absolute right-0 top-0 bottom-0 w-[52px] bg-[#1A4299] flex items-center justify-center pointer-events-none group-hover:bg-[#1e40af] transition-colors">
                     <Clock className="text-white" size={20} />
@@ -83,6 +91,7 @@ const TimePicker = ({ value, onChange, error }: TimePickerProps) => {
                     ))}
                 </div>
             )}
+            {error && <p className="text-red-500 text-[12px]">{error}</p>}
         </div>
     );
 };
