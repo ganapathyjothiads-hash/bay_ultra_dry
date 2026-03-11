@@ -4,34 +4,40 @@ import React from "react";
 const HeroSection = () => {
     return (
         <section
-            className="relative w-full min-h-[600px] h-[90vh] lg:h-screen overflow-hidden bg-[#1C2A45]"
+            className="relative w-full h-[850px] sm:h-[700px] md:h-[850px] lg:h-[720px] xl:h-[730px] overflow-hidden bg-[#1C2A45]"
         >
-            {/* Background GIF */}
-            <img
-                src="/assets/video/hero_section.gif"
-                alt=""
-                aria-hidden
-                className="absolute inset-0 w-full h-full object-cover opacity-50 z-0 brightness-[1.1]"
-            />
+            {/* Background Video */}
+            <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover z-0 opacity-60 lg:opacity-50 brightness-[1.1]"
+            >
+                <source src="/assets/video/Carpet-Cleaning-section-video.mp4" type="video/mp4" />
+            </video>
 
             {/* Gradient Overlay */}
             <div
                 aria-hidden
-                className="absolute inset-0 z-[1] bg-gradient-to-r from-[#142038]/95 via-[#142038]/90 to-[#142038]/20 lg:from-[#142038]/92 lg:via-[#142038]/85 lg:to-[#142038]/05"
+                className="absolute inset-0 z-[1] pointer-events-none"
+                style={{
+                    background: "linear-gradient(249.93deg, rgba(9, 18, 36, 0) -33.16%, #091224 95.99%)",
+                }}
             />
 
             {/* Frame - Reposition for mobile */}
             <img
-                src="/assets/images/Hero_Section%20frame.png"
+                src="/assets/images/hero_section_frame.png"
                 alt=""
                 aria-hidden
-                className="absolute top-0 right-0 h-full w-auto object-cover object-right z-[2] pointer-events-none opacity-40 lg:opacity-100"
+                className="absolute bottom-0 right-0 w-full h-[45%] xs:h-[50%] lg:object-cover lg:top-0 lg:right-0 lg:bottom-auto lg:left-auto lg:h-full lg:w-auto z-[2] pointer-events-none opacity-100 mr-[-8%] lg:mr-0"
             />
 
             {/* Rotating Donut Ring - Hidden or smaller on mobile */}
             <div
                 aria-hidden
-                className="absolute right-[5%] lg:right-[9%] top-[25%] lg:top-[18%] w-[200px] lg:w-[375px] h-[240px] lg:h-[460px] z-[3] pointer-events-none opacity-50 lg:opacity-100"
+                className="absolute right-[3%] bottom-[10%] lg:left-auto lg:right-[9%]  xs:bottom-[15%] lg:bottom-auto lg:top-[22%] w-[235px] h-[340px] xs:w-[370px] xs:h-[370px] lg:w-[300px] lg:h-[400px] xl:w-[375px] xl:h-[460px] z-[3] pointer-events-none opacity-100"
                 style={{
                     animation: 'heroRingSpin 18s linear infinite',
                 }}
@@ -45,46 +51,20 @@ const HeroSection = () => {
 
             {/* Cleaner Girl - Repositioned for mobile overlap */}
             <img
+                data-aos="fade-left"
+                data-aos-duration="1200"
+                data-aos-delay="600"
                 src="/assets/images/clean-girl%203.png"
                 alt="Professional Cleaner"
-                className="absolute right-0 lg:right-[2%] bottom-0 h-[40%] lg:h-[64%] w-auto lg:w-[50%] object-contain object-bottom z-[4] pointer-events-none opacity-60 lg:opacity-100"
+                className="absolute right-[5%] lg:left-auto lg:right-[8%] xl:right-[3%] bottom-0 max-w-[350px] lg:max-w-full w-[100%] xs:h-[53%] lg:h-[64%] lg:w-[43%] xl:w-[50%] object-contain object-bottom z-[4] pointer-events-none opacity-100"
             />
 
-            {/* Z:5  "BayUltraDry" vertical text — far-right edge */}
             <div
                 aria-hidden
-                className="hidden lg:flex"
-                style={{
-                    position: 'absolute',
-                    right: '5px',
-                    top: '170px',
-                    bottom: 0,
-                    width: '100px',
-                    zIndex: 5,
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    pointerEvents: 'none',
-                    overflow: 'visible',
-                }}
+                className="hidden lg:flex absolute right-[5px] top-[170px] bottom-0 w-[100px] z-[5] items-center justify-center pointer-events-none overflow-visible"
             >
                 <div
-                    style={{
-                        width: '800px',
-                        height: '100px',
-                        transform: 'rotate(90deg)',
-                        transformOrigin: 'center center',
-                        fontSize: '90px',
-                        fontFamily: "'Aksara Bali Galang', sans-serif",
-                        fontWeight: 400,
-                        fontStyle: 'normal',
-                        color: " rgba(255, 255, 255, 0.61)",
-                        opacity: 1,
-                        whiteSpace: 'nowrap',
-                        lineHeight: '100px',
-                        textAlign: 'center',
-                        letterSpacing: '0.01em',
-                        marginLeft: '0px',
-                    }}
+                    className="w-[800px] h-[100px] rotate-90 origin-center text-[70px] xl:text-[90px] font-normal text-[rgba(255,255,255,0.61)] whitespace-nowrap leading-[100px] text-center tracking-[0.01em]"
                 >
                     BayUltraDry
                 </div>
@@ -92,27 +72,40 @@ const HeroSection = () => {
 
             {/* Content Container */}
             <div
-                className="absolute inset-0 z-10 flex flex-col justify-center px-6 md:px-12 lg:pl-[max(48px,6vw)] lg:pr-32 py-10 lg:w-[70%]"
+                className="absolute inset-0 z-10 flex flex-col justify-start lg:justify-center items-center lg:items-start text-center lg:text-left px-4 md:px-12 lg:pl-[max(48px,6vw)] lg:pr-32 pt-[120px] lg:pt-10 lg:w-[70%]"
             >
                 <h1
-                    className="text-white font-medium text-[36px] md:text-[48px] lg:text-[60px] leading-[1.1] mb-5 tracking-tight"
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                    className="text-white font-[600] font-display lg:font-medium text-[28px] md:text-[40px] lg:text-[47px] xl:text-[56px] leading-[1.3] lg:leading-[1.15] mb-4 lg:mb-8 tracking-wide lg:tracking-medium"
                 >
-                    Professional Carpet,<br className="inline lg:hidden" />
-                    Upholstery &amp; Flood Restoration<br />
-                    Services In Tauranga
+                    <span >
+                        Professional Carpet, Upholstery &amp; Flood Restoration
+                        Services In Tauranga
+                    </span>
                 </h1>
 
                 <p
-                    className="text-[#FFF1A4] font-semibold text-[18px] md:text-[22px] mb-4 leading-tight"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                    data-aos-duration="1000"
+                    className="text-[#FFF1A4] font-[600] text-[14px] xs:text-[16px] md:text-[16px] mb-5 leading-[1.5] lg:max-w-none"
                 >
-                    Fast, Reliable &amp; Flexible Cleaning for Your Tauranga Home or Business.
+                    <span>
+                        Fast, Reliable &amp; Flexible Cleaning for Your Tauranga Home or Business.
+                    </span>
                 </p>
 
                 <p
-                    className="text-[#CDCDCD] text-[16px] md:text-[18px] max-w-[620px] leading-relaxed"
+                    data-aos="fade-up"
+                    data-aos-delay="400"
+                    data-aos-duration="1000"
+                    className="text-[#CDCDCD] text-[16px] md:text-[12px] lg:max-w-[620px] leading-[1.3] px-2 lg:px-0"
                 >
-                    As Tauranga&apos;s 5-star-rated specialists, we excel in carpet cleaning,
-                    upholstery care, and emergency flood restoration.
+                    <span className="text-[11px] md:text-[13px] leading-relaxed font-sans">
+                        As Tauranga&apos;s 5-star-rated specialists, we excel in carpet cleaning,
+                        upholstery <br />care, and emergency flood restoration.
+                    </span>
                 </p>
             </div>
 
