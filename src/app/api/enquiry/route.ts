@@ -4,7 +4,7 @@ import { prisma } from "@/lib/prisma";
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const { fullName, emailId, phoneNumber, service, requiredDate, address, message, confirmed } = body;
+        const { fullName, emailId, phoneNumber, service, requiredDate, requiredTime, address, message, confirmed } = body;
 
         // Basic validation
         if (!fullName || !emailId || !phoneNumber || !service || !requiredDate || !address || !confirmed) {
@@ -39,6 +39,7 @@ export async function POST(request: Request) {
                 phoneNumber,
                 service,
                 requiredDate: new Date(requiredDate),
+                requiredTime,
                 address,
                 message,
                 confirmed,

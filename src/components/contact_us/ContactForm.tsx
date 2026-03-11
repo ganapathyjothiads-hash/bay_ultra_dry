@@ -48,7 +48,6 @@ const ContactForm = () => {
         }
         if (!formData.address.trim()) newErrors.address = "Address is required";
         if (!formData.requiredDate) newErrors.requiredDate = "Date is required";
-        if (!formData.requiredTime) newErrors.requiredTime = "Time is required";
 
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
@@ -80,7 +79,8 @@ const ContactForm = () => {
 
         setIsSubmitting(true);
         try {
-            const dateTime = new Date(`${formData.requiredDate}T${formData.requiredTime}`);
+            const dateTimeString = formData.requiredTime ? `${formData.requiredDate}T${formData.requiredTime}` : formData.requiredDate;
+            const dateTime = new Date(dateTimeString);
             const response = await fetch("/api/enquiry", {
                 method: "POST",
                 headers: {
@@ -283,7 +283,6 @@ const ContactForm = () => {
                                     value={formData.requiredTime}
                                     onChange={handleChange}
                                     className="flex-1 px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 focus:outline-none bg-white text-[#374151] text-[16px] cursor-pointer"
-                                    required
                                 />
                                 <div className="absolute right-0 top-0 bottom-0 w-[52px] bg-[#1e3a8a] flex items-center justify-center pointer-events-none">
                                     <img

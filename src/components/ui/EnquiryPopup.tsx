@@ -68,7 +68,6 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
         }
         if (!formData.address.trim()) newErrors.address = "Address is required";
         if (!formData.requiredDate) newErrors.requiredDate = "Date is required";
-        if (!formData.requiredTime) newErrors.requiredTime = "Time is required";
 
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
@@ -99,7 +98,8 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
 
         setIsSubmitting(true);
         try {
-            const dateTime = new Date(`${formData.requiredDate}T${formData.requiredTime}`);
+            const dateTimeString = formData.requiredTime ? `${formData.requiredDate}T${formData.requiredTime}` : formData.requiredDate;
+            const dateTime = new Date(dateTimeString);
             const response = await fetch("/api/enquiry", {
                 method: "POST",
                 headers: {
@@ -262,7 +262,6 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
                                         value={formData.requiredTime}
                                         onChange={handleChange}
                                         className="flex-1 bg-[#E3E3E3] px-4 py-3 sm:px-5 sm:py-3 focus:outline-none text-[#1D1D1D] text-[14px] sm:text-[15px] cursor-pointer"
-                                        required
                                     />
                                     <div className="absolute right-0 top-0 bottom-0 w-[52px] bg-[#002F74] flex items-center justify-center pointer-events-none">
                                         <img

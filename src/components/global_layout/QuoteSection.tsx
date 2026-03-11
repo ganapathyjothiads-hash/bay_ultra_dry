@@ -39,7 +39,6 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
         }
         if (!formData.address.trim()) newErrors.address = "Address is required";
         if (!formData.requiredDate) newErrors.requiredDate = "Date is required";
-        if (!formData.requiredTime) newErrors.requiredTime = "Time is required";
 
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
@@ -64,7 +63,8 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
         setIsSubmitting(true);
         try {
             // Combine date and time
-            const dateTime = new Date(`${formData.requiredDate}T${formData.requiredTime}`);
+            const dateTimeString = formData.requiredTime ? `${formData.requiredDate}T${formData.requiredTime}` : formData.requiredDate;
+            const dateTime = new Date(dateTimeString);
 
             const response = await fetch("/api/enquiry", {
                 method: "POST",

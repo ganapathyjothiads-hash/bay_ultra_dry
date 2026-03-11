@@ -32,6 +32,7 @@ model Enquiry {
   phoneNumber  String
   service      ServiceType
   requiredDate DateTime
+  requiredTime String?
   address      String
   message      String      @db.Text
   confirmed    Boolean     @default(false)
