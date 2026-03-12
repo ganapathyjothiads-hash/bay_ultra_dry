@@ -73,7 +73,7 @@ const WelcomeSection = () => {
                         data-aos="zoom-in"
                         data-aos-duration="1000"
                         data-aos-delay="200"
-                        className="order-2 lg:order-none lg:col-span-6 xl:col-span-2 flex justify-center py-4 mt-[-46px] lg:py-0"
+                        className="order-2 lg:order-none lg:col-span-6 xl:col-span-2 flex justify-center py-10 mt-[-46px] lg:py-0"
                     >
                         <div className="relative w-[260px] h-[260px] md:w-[240px] md:h-[240px]">
                             {/* Splash Background Image */}
@@ -142,7 +142,7 @@ const WelcomeSection = () => {
                                         height={15}
                                         className="object-cover mt-[3px]"
                                     />
-                                    <span className="text-[12px] font-semibold text-[#1E293B] leading-tight">{feature}</span>
+                                    <span className="text-[15px] font-semibold text-[#1E293B] leading-tight">{feature}</span>
                                 </div>
                             ))}
                         </div>
@@ -267,7 +267,7 @@ const WelcomeSection = () => {
                     >
                         {/* Right Side Vertical Gradient Stripe */}
                         <div 
-                            className="absolute top-20 right-0 w-[18%] h-full z-20 opacity-30 pointer-events-none"
+                            className="absolute -right-16 top-0 w-[40%] h-full z-20 opacity-40 pointer-events-none blur-[80px] lg:right-0 lg:top-0 lg:w-[18%] lg:opacity-30 lg:blur-none"
                             style={{ 
                                 background: 'linear-gradient(180deg, #FFF8AA -6.72%, #C0E683 28.06%, #2B97FB 73.83%)' 
                             }}

@@ -209,9 +209,9 @@ const ServicesSection = () => {
                                 </div>
 
                                 {/* Content */}
-                                <div className="relative p-7 flex flex-col flex-grow bg-white rounded-b-[28px]">
-                                    <div className="absolute -top-[50px] right-6 w-[90px] h-[90px] bg-white rounded-full flex items-center justify-center z-20">
-                                        <div className="w-[65px] h-[65px] bg-[#F5A51C] rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:bg-[#E8950B] transition-colors">
+                                <div className="relative p-7 flex flex-col flex-grow bg-white rounded-b-[20px]">
+                                    <div className="absolute -top-[50px] md:-top-[50px] right-6 md:right-6 w-[60px] md:w-[90px] h-[60px] md:h-[90px] bg-white rounded-full flex items-center justify-center z-20">
+                                        <div className="w-[40px] md:w-[60px] h-[40px] md:h-[60px] bg-[#F5A51C] rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:bg-[#E8950B] transition-colors">
                                             <ArrowRight
                                                 className="text-white w-8 h-8 transition-transform duration-[600ms] ease-out group-hover:-rotate-45"
                                                 strokeWidth={2.5}
@@ -219,11 +219,11 @@ const ServicesSection = () => {
                                         </div>
                                     </div>
 
-                                    <h3 className="text-[24px] md:text-[26px] font-bold text-[#1A4299] mb-4 pr-16 tracking-tight leading-tight mt-1">
+                                    <h3 className="text-[16px] md:text-[26px] font-bold text-[#1A4299] mb-2 md:mb-4 pr-16 tracking-tight leading-tight mt-1">
                                         {service.title}
                                     </h3>
 
-                                    <p className="text-[#2C2C2C] leading-[1.65] text-[13px] font-medium">
+                                    <p className="text-[#2C2C2C] leading-[1.55] text-[11px] md:text-[13px] font-medium">
                                         {service.description}
                                     </p>
                                 </div>
