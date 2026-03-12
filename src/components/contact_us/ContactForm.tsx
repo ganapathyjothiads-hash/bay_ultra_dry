@@ -125,7 +125,7 @@ const ContactForm = () => {
     };
 
     return (
-        <section className="relative w-full pt-12 pb-[240px] md:py-12 px-6 overflow-hidden">
+        <section className="relative w-full pt-12 pb-[240px] md:py-12 px-6 overflow-x-hidden">
             {/* Decoration Layer - Locked to Content Max-Width */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="relative max-w-[1300px] mx-auto h-full w-full">
@@ -167,7 +167,7 @@ const ContactForm = () => {
 
                     {/* Color Glow - Green */}
                     <div
-                        className="absolute z-[1] w-[300px] h-[300px] top-[0%] left-[50%] md:w-[250px] md:h-[250px] md:top-[6%] md:left-[68%] -translate-x-1/2 bg-[#00FF26] opacity-[45%] md:opacity-50 blur-[80px] md:blur-[80px] rounded-full"
+                        className="absolute z-[1] w-[300px] h-[300px] top-[-220px] left-[50%] md:w-[250px] md:h-[250px] md:top-[6%] md:left-[68%] -translate-x-1/2 bg-[#00FF26] opacity-[60%] md:opacity-50 blur-[100px] md:blur-[80px] rounded-full"
                     />
 
                     {/* Color Glow - Blue */}

@@ -192,72 +192,7 @@ const WelcomeSection = () => {
                         </div>
                     </div>
 
-                    {/* 5. Testimonial Card */}
-                    {/* <div
-                        data-aos="fade-left"
-                        data-aos-duration="1000"
-                        data-aos-delay="400"
-                        className="order-8 lg:order-none lg:col-span-4 p-8 rounded-[16px] relative overflow-hidden flex flex-col shadow-lg lg:mt-0"
-                        style={{ background: 'linear-gradient(241.26deg, #DAF1FF 28.79%, #FFCB71 98.22%)' }}
-                    >
-                        <div
-                            className="absolute bottom-0 left-0 w-full h-[25%] z-0"
-                            style={{ background: 'linear-gradient(91.57deg, #FFF8AA -7.72%, #C0E683 48.06%, #2B97FB 103.83%)' }}
-                        ></div>
-                        <div
-                            className="hidden lg:block absolute top-0 right-0 w-[20%] h-full z-0 bg-gradient-to-b from-transparent to-[#2B97FB]/50"
-                        ></div>
-
-                        <div className="absolute top-8 left-8 w-14 h-12 pointer-events-none select-none z-10 opacity-60">
-                            <Image
-                                src="/assets/images/quote.png"
-                                alt="Quote Icon"
-                                fill
-                                className="object-contain"
-                            />
-                        </div>
-
-                        <div className="absolute top-8 right-8 flex gap-2 z-20">
-                            {testimonials.map((_, idx) => (
-                                <button
-                                    key={idx}
-                                    onClick={() => setActiveTestimonial(idx)}
-                                    className={`w-3 h-3 rounded-full transition-all duration-300 ${activeTestimonial === idx ? "bg-[#1E40AF]" : "bg-[#94A3B8] hover:bg-[#64748B]"}`}
-                                    aria-label={`Go to slide ${idx + 1}`}
-                                />
-                            ))}
-                        </div>
-
-                        <div className="relative z-10 mt-16 flex-grow overflow-hidden">
-                            <div
-                                className="flex h-full transition-transform duration-500 ease-in-out"
-                                style={{ transform: `translateX(-${activeTestimonial * 100}%)` }}
-                            >
-                                {testimonials.map((testimonial, idx) => (
-                                    <div key={idx} className="w-full h-full flex-shrink-0 flex flex-col justify-between">
-                                        <p className="text-[15.5px] font-medium text-[#1E293B] leading-[1.6]">
-                                            {testimonial.text}
-                                        </p>
-
-                                        <div className="flex items-center gap-4 mt-20 pb-1">
-                                            <div className="relative w-[52px] h-[52px] rounded-full overflow-hidden shadow-sm border-2 border-white/50">
-                                                <Image
-                                                    src={testimonial.image}
-                                                    alt={testimonial.author}
-                                                    fill
-                                                    className="object-cover"
-                                                />
-                                            </div>
-                                            <div>
-                                                <h5 className="text-[17px] font-bold text-[#1E293B] leading-none mb-1.5">{testimonial.author}</h5>
-                                                <p className="text-[13.5px] font-medium text-[#334155]">{testimonial.role}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div> */}
+                   
 
                     <div
                         data-aos="fade-left"

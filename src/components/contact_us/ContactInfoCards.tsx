@@ -28,7 +28,7 @@ const ContactInfoCards = () => {
     ];
 
     return (
-        <div className="relative z-20 mt-[18px] sm:mt-[25px] md:-mt-[70px] max-w-[1100px] px-4 md:px-6 mx-auto">
+        <div className="relative z-20 mt-[18px] sm:mt-[25px] md:mt-[40px] max-w-[1100px] px-4 md:px-6 mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {contactInfo.map((info, index) => (
                     <div

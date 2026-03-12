@@ -5,14 +5,21 @@ import React from "react";
 const ContactHero = () => {
     return (
         <section
-            className="relative w-full overflow-hidden flex items-center justify-center pt-[150px] pb-[120px] md:pt-[180px] md:pb-[160px] [clip-path:polygon(0%_0%,100%_0%,100%_95%,50%_100%,0%_95%)] md:[clip-path:polygon(0%_0%,100%_0%,100%_85%,50%_100%,0%_85%)]"
+            className="relative w-full overflow-hidden flex items-center justify-center pt-[150px] pb-[100px] md:pt-[180px] md:pb-[160px] [clip-path:polygon(0%_0%,100%_0%,100%_95%,50%_100%,0%_95%)] md:[clip-path:polygon(0%_0%,100%_0%,100%_85%,50%_100%,0%_85%)]"
         >
             {/* Background Image & Overlay */}
             <div className="absolute inset-0 z-0">
+                {/* Mobile background */}
+                <img
+                    src="/assets/images/contact_us/bg_mobile.png"
+                    alt="Contact Background"
+                    className="w-full h-full lg:hidden"
+                />
+                {/* Desktop background */}
                 <img
                     src="/assets/images/contact_us/Contact_bg.png"
                     alt="Contact Background"
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-full object-cover object-center hidden lg:block"
                 />
                 <div
                     className="absolute inset-0 bg-[#151515]/80"
@@ -21,13 +28,13 @@ const ContactHero = () => {
 
             <div className="relative z-10 max-w-[840px] mx-auto px-4 sm:px-4 lg:px-[40px] text-center">
                 <h1
-                    className="text-white font-display text-[33px] font-medium tracking-[0.1em] md:text-[50px] lg:text-[60px] leading-[1.5] md:leading-[1.1] mb-8"
+                    className="text-white font-display text-[30px] font-medium tracking-[0.1em] md:text-[50px] lg:text-[60px] leading-[1.5] md:leading-[1.1] mb-8"
                     data-aos="fade-up"
                 >
                     Get In Touch For A <br /> Sparkling Clean  Space!
                 </h1>
                 <p
-                    className="text-[#E8E8E8] font-sans text-[13px] md:text-[14px] lg:text-[15px] font-medium max-w-[600px] mx-auto leading-[25px] opacity-90"
+                    className="text-[#E8E8E8] font-sans text-[17px] md:text-[17px] lg:text-[17px] font-medium max-w-[600px] mx-auto leading-[25px] opacity-90"
                     data-aos="fade-up"
                     data-aos-delay="200"
                 >

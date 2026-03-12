@@ -40,7 +40,7 @@ const AboutContent = () => {
             {/* Content for About page */}
             <div className="relative">
                 <AboutOurStory />
-                <EnquireNowButton variant="section" className="bottom-[-100px] md:bottom-[92px]" />
+                <EnquireNowButton variant="section" className="bottom-[-160px] md:bottom-[250px] left-[10%] md:left-[98%]" />
             </div>
 
             {/* What We Do section */}

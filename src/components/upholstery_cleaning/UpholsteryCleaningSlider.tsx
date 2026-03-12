@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import EnquireNowButton from "../ui/EnquireNowButton";
 
 const UpholsteryCleaningSlider = () => {
     const services = [
@@ -113,16 +114,24 @@ const UpholsteryCleaningSlider = () => {
                     blur-[110px] md:blur-[150px] rounded-full"
             />
 
+            {/* Mobile Vertical Enquire Button (Attached to this section) */}
+            <div className="absolute top-[100px] md:top-[120px] right-0 z-40 transform translate-x-0">
+                <div className="md:hidden">
+                    {/* Only show on mobile here if it's meant to be precisely placed */}
+                    <EnquireNowButton variant="section" className="!relative !bottom-auto !right-0 !top-0 !translate-x-0" />
+                </div>
+            </div>
+
             <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
                 {/* Header */}
-                <div className="flex flex-col md:flex-row items-center justify-between mb-5 md:mb-10 gap-2">
+                <div className="flex flex-col md:flex-row items-center justify-between mb-8 md:mb-10 gap-2">
                     <div className="flex items-center gap-3 md:gap-4 w-full justify-center md:justify-start">
                         <img
                             src="/assets/icons/Star_3.png"
                             alt="Star Icon"
-                            className="w-[30px] md:w-[35px] h-auto object-contain"
+                            className="w-[38px] md:w-[35px] lg:w-[45px] h-auto object-contain"
                         />
-                        <h2 className="text-[#304462] font-display font-regular text-[24px] md:text-[36px] lg:text-[44px] tracking-tight">
+                        <h2 className="text-[#304462] font-display font-medium text-[26px] md:text-[36px] lg:text-[44px] tracking-tight">
                             What We Clean
                         </h2>
                     </div>
@@ -173,9 +182,9 @@ const UpholsteryCleaningSlider = () => {
                                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-[900ms] pointer-events-none" />
                                 </div>
 
-                                <div className="flex items-start px-1 gap-3 mt-1">
-                                    <div className="w-[5px] h-[5px] md:w-[6px] md:h-[6px] rounded-full bg-[#3B82F6] flex-shrink-0 mt-[9px] md:mt-[10px]" />
-                                    <h3 className="font-display text-[#3780FF] font-medium text-[12px] md:text-[16px] leading-[1.4] tracking-wide">
+                                <div className="flex items-start px-1 gap-3 mt-1 pr-6 md:pr-0">
+                                    <div className="w-[6px] h-[6px] md:w-[6px] md:h-[6px] rounded-full bg-[#3B82F6] flex-shrink-0 mt-[8px] md:mt-[10px]" />
+                                    <h3 className="font-display text-[#3780FF] font-medium text-[15px] md:text-[16px] leading-[1.4] tracking-wide">
                                         {service.title}
                                     </h3>
                                 </div>
@@ -185,20 +194,20 @@ const UpholsteryCleaningSlider = () => {
                 </div>
 
                 {/* Mobile Arrows */}
-                <div className="flex md:hidden justify-center gap-8 mt-6">
+                <div className="flex md:hidden justify-center gap-10 mt-8">
                     <button
                         onClick={handlePrev}
                         aria-label="Previous"
-                        className="w-[34px] h-[34px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] transition-all shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
+                        className="w-[44px] h-[44px] rounded-full bg-[#1A4299] text-white flex items-center justify-center hover:bg-[#163075] transition-all shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
                     >
-                        <ArrowLeft strokeWidth={2} className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+                        <ArrowLeft strokeWidth={2.5} className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
                     </button>
                     <button
                         onClick={handleNext}
                         aria-label="Next"
-                        className="w-[34px] h-[34px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] transition-all shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
+                        className="w-[44px] h-[44px] rounded-full bg-[#1A4299] text-white flex items-center justify-center hover:bg-[#163075] transition-all shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
                     >
-                        <ArrowRight strokeWidth={2} className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight strokeWidth={2.5} className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </button>
                 </div>
             </div>

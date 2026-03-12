@@ -43,7 +43,7 @@ const FloodContent = () => {
                 {/* Services Slider */}
                 <div className="relative">
                     <FloodServicesSlider />
-                    <EnquireNowButton variant="section" className="bottom-[-160px] md:bottom-[485px]" />
+                    <EnquireNowButton variant="section" className="bottom-[-160px] md:bottom-[650px] left-[10%] md:left-[98%]" />
                 </div>
 
                 {/* Flood Restoration Process */}

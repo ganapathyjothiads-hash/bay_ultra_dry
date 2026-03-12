@@ -32,14 +32,65 @@ const ContactUsContent = () => {
                 </div>
             </header>
 
-            {/* Hero Section */}
-            <ContactHero />
+            {/* Merged Section: Hero + Info + Form */}
+            <div className="relative bg-white overflow-hidden pt-[100px]">
+                {/* Decoration Layer */}
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="relative max-w-[1300px] mx-auto h-full w-full">
+                        {/* Water Splash Decoration - Top Right */}
+                        <div className="absolute w-[30%] md:w-[12%] top-[10%] md:top-[15%] lg:top-[12%] right-[2%] md:right-[-30px] z-[2]">
+                            <img
+                                src="/assets/images/contact_us/Water_Splash_top.png"
+                                alt=""
+                                className="w-full h-full object-contain opacity-70 md:opacity-100"
+                            />
+                        </div>
 
-            {/* Info Cards */}
-                <ContactInfoCards />
+                        {/* Water Splash Decoration - Bottom */}
+                        <div className="hidden md:block absolute w-[300px] h-[300px] bottom-[5%] left-[-150px] z-0">
+                            <img
+                                src="/assets/images/contact_us/Water_Splash_Bottom.png"
+                                alt=""
+                                className="w-full h-full object-contain"
+                            />
+                        </div>
 
-            {/* Main Contact Form Section */}
-            <ContactForm />
+                        {/* Left S-Frame Decoration */}
+                        <div className="absolute top-[8%] md:top-[10%] left-[-18%] md:left-[-22%] w-[75%] md:w-[37%] lg:w-[50%] z-0">
+                            <img
+                                src="/assets/images/upholsteryCleaning/Upholstery_SFrame.png"
+                                alt=""
+                                className="w-full h-auto opacity-80"
+                            />
+                        </div>
+
+                        {/* Right S-Frame Decoration */}
+                        <div className="absolute bottom-[-2%] right-[-60%] md:right-[-22%] w-[150%] md:w-[37%] lg:w-[50%] z-0">
+                            <img
+                                src="/assets/images/upholsteryCleaning/Upholstery_SFrame2.png"
+                                alt=""
+                                className="w-full h-auto opacity-100"
+                            />
+                        </div>
+
+                        {/* Color Glow - Green (Centered behind Cards area) */}
+                        <div
+                            className="absolute z-[1] w-[400px] h-[400px] top-[15%] md:top-[25%] left-[50%] md:w-[500px] md:h-[500px] md:left-[60%] -translate-x-1/2 bg-[#00FF26] opacity-[35%] md:opacity-40 blur-[120px] md:blur-[150px] rounded-full"
+                        />
+
+                        {/* Color Glow - Blue */}
+                        <div
+                            className="absolute z-[1] w-[300px] h-[300px] top-[60%] left-[0%] md:w-[400px] md:top-[50%] md:left-[5%] bg-[#006FFF] opacity-[15%] md:opacity-[25%] blur-[100px] md:blur-[120px] rounded-full"
+                        />
+                    </div>
+                </div>
+
+                <div className="relative z-10">
+                    <ContactHero />
+                    <ContactInfoCards />
+                    <ContactForm />
+                </div>
+            </div>
 
             {/* Map Section */}
             <ContactMap />

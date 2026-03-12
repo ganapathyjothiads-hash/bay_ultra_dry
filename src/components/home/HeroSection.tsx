@@ -77,7 +77,7 @@ const HeroSection = () => {
                 <h1
                     data-aos="fade-up"
                     data-aos-duration="1000"
-                    className="text-white font-[600] font-display lg:font-medium text-[28px] md:text-[40px] lg:text-[47px] xl:text-[56px] leading-[1.3] lg:leading-[1.15] mb-5 lg:mb-8 tracking-wide lg:tracking-medium"
+                    className="text-white font-[600] font-display lg:font-medium text-[28px] md:text-[40px] lg:text-[47px] xl:text-[60px] leading-[1.3] lg:leading-[1.15] mb-4 lg:mb-8 tracking-wide lg:tracking-medium"
                 >
                     <span >
                         Professional Carpet, Upholstery &amp; Flood Restoration

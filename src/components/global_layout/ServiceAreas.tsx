@@ -4,7 +4,7 @@ import React from "react";
 
 const ServiceAreas = () => {
     return (
-        <section className="w-full bg-white py-10 md:py-20 md:pb-24 border-b border-gray-100">
+        <section className="w-full bg-white py-10 md:py-20 md:pb-24 border-b border-gray-400">
             <div
                 className="max-w-[1440px] mx-auto px-4 md:px-16 text-center flex flex-col items-center justify-center"
                 data-aos="fade-up"
@@ -14,7 +14,7 @@ const ServiceAreas = () => {
                     Service Areas
                 </h2>
 
-                <p className="font-inter text-[#1D1D1D] text-[12px] md:text-[20px] leading-relaxed md:leading-normal max-w-[900px] mx-auto font-medium text-center px-4">
+                <p className="font-inter text-[#1D1D1D] text-[14px] md:text-[20px] leading-relaxed md:leading-normal max-w-[900px] mx-auto font-medium text-center px-4">
                     We proudly serve all of Tauranga and the wider Bay of Plenty, including Papamoa |
                     Mount Maunganui | Omokoroa | Katikati | Omanawa | Ohauiti | Te Puna | Te Puke |
                     BOP
