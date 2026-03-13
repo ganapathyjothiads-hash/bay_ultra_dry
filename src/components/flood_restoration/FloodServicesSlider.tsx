@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const FloodServicesSlider = () => {
     const services = [
@@ -131,16 +131,16 @@ const FloodServicesSlider = () => {
                         <button
                             onClick={handlePrev}
                             aria-label="Previous services"
-                            className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#2B59C3] hover:bg-[#1E3A8A] flex items-center justify-center text-white transition-colors shadow-lg active:scale-95"
+                            className="md:w-[44px] md:h-[44px] lg:w-[56px] lg:h-[56px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] hover:scale-105 transition-all duration-300 shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
                         >
-                            <ChevronLeft size={24} strokeWidth={3} />
+                            <ArrowLeft strokeWidth={2} className="w-5 h-5 lg:w-6 lg:h-6 group-hover:-translate-x-1 transition-transform" />
                         </button>
                         <button
                             onClick={handleNext}
                             aria-label="Next services"
-                            className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#2B59C3] hover:bg-[#1E3A8A] flex items-center justify-center text-white transition-colors shadow-lg active:scale-95"
+                            className="md:w-[44px] md:h-[44px] lg:w-[56px] lg:h-[56px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] hover:scale-105 transition-all duration-300 shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
                         >
-                            <ChevronRight size={24} strokeWidth={3} />
+                            <ArrowRight strokeWidth={2} className="w-5 h-5 lg:w-6 lg:h-6 group-hover:translate-x-1 transition-transform" />
                         </button>
                     </div>
                 </div>
@@ -175,7 +175,7 @@ const FloodServicesSlider = () => {
                                     {/* Service Title */}
                                     <div className="flex items-center gap-4">
                                         <div className="w-1.5 h-1.5 rounded-full bg-[#3780FF] flex-shrink-0"></div>
-                                        <h3 className="text-[#3780FF] font-display font-medium text-[16px] md:text-[18px] lg:text-[22px] leading-[1.4] lg:leading-[36px] tracking-[0.02em] capitalize">
+                                        <h3 className="text-[#3780FF] font-display font-medium text-[13px] md:text-[18px] lg:text-[22px] leading-[1.4] lg:leading-[36px] tracking-[0.02em] capitalize">
                                             {service.title}
                                         </h3>
                                     </div>
@@ -185,20 +185,20 @@ const FloodServicesSlider = () => {
                     </div>
                 </div>
 
-                <div className="gap-10 justify-center mt-3 flex md:hidden">
+                <div className="flex md:hidden justify-center gap-8 mt-6">
                     <button
                         onClick={handlePrev}
                         aria-label="Previous services"
-                        className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#2B59C3] hover:bg-[#1E3A8A] flex items-center justify-center text-white transition-colors shadow-lg active:scale-95"
+                        className="w-[34px] h-[34px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] transition-all shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
                     >
-                        <ChevronLeft size={24} strokeWidth={3} />
+                        <ArrowLeft strokeWidth={2} className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
                     </button>
                     <button
                         onClick={handleNext}
                         aria-label="Next services"
-                        className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#2B59C3] hover:bg-[#1E3A8A] flex items-center justify-center text-white transition-colors shadow-lg active:scale-95"
+                        className="w-[34px] h-[34px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] transition-all shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
                     >
-                        <ChevronRight size={24} strokeWidth={3} />
+                        <ArrowRight strokeWidth={2} className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </button>
                 </div>
             </div>

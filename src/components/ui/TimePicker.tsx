@@ -49,19 +49,19 @@ const TimePicker = ({ value, onChange, error, label }: TimePickerProps) => {
     };
 
     return (
-        <div className="flex flex-col space-y-1 relative" ref={containerRef}>
+        <div className="flex flex-col gap-3 relative" ref={containerRef}>
             {label && (
-                <label className="font-inter text-[14px] md:text-[15px] font-medium text-[#1D1D1D]">
+                <label className="text-[#1D1D1D] font-sans font-medium text-[14px] sm:text-[15px] md:text-[16px]">
                     {label}
                 </label>
             )}
             <div
-                className={`relative flex items-center group rounded-[8px] overflow-hidden border transition-all cursor-pointer h-[52px] ${error ? "border-red-500" : "border-[#7687A1] hover:border-[#1e3a8a] focus-within:ring-2 focus-within:ring-blue-500/10"
+                className={`relative flex items-center group rounded-[10px] overflow-hidden border transition-all cursor-pointer h-[46px] sm:h-[48px] md:h-[52px] ${error ? "border-red-500" : "border-[#7687A1] hover:border-[#1e3a8a] focus-within:ring-2 focus-within:ring-blue-500/10"
                     }`}
                 onClick={() => setIsOpen(!isOpen)}
             >
-                <div className="flex-1 h-full px-4 bg-white text-[#1D1D1D] text-[14px] font-medium flex justify-between items-center group-hover:bg-gray-50 transition-colors">
-                    <span className={value ? "" : "text-[#999999]"}>
+                <div className="flex-1 h-full px-4 bg-white text-[#374151] text-[16px] font-medium flex justify-between items-center group-hover:bg-gray-50 transition-colors">
+                    <span className={value ? "" : "text-[#9ca3af] text-[14px]"}>
                         {value ? formatTo12h(value) : "Select Time"}
                     </span>
                     {/* Chevron removed to match image */}

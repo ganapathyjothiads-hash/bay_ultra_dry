@@ -12,7 +12,6 @@ const AboutUsHero: React.FC = () => {
     const subtitle =
         "A locally owned and highly rated Tauranga business committed to reliable, quality service.";
     const description = undefined;
-    const bgImage = "/assets/images/clean_man.png";
     const ringImage = "/assets/images/wavyring.png";
     const verticalText = "About Us";
 
@@ -24,13 +23,16 @@ const AboutUsHero: React.FC = () => {
                 data-aos="fade-left"
                 data-aos-duration="1500"
             >
-                <img
-                    src={bgImage}
-                    alt=""
-                    aria-hidden
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
                     className="absolute right-0 top-0 w-full h-[120%] object-cover z-0"
                     style={{ objectPosition: 'center center' }}
-                />
+                >
+                    <source src="/assets/video/About-us-banner-background.mp4" type="video/mp4" />
+                </video>
                 {/* absolute page background gradient as requested */}
                 <div
                     aria-hidden
@@ -47,10 +49,7 @@ const AboutUsHero: React.FC = () => {
                 aria-hidden
                 data-aos="fade-right"
                 data-aos-duration="1200"
-                className="absolute top-[80px] lg:top-0 min-w-[430px] lg:min-w-none -left-[2%] w-[100%] xl:w-[93%] h-[75%] lg:h-[85%] xl:object-cover z-[10] pointer-events-none opacity-100"
-                style={{
-                    objectPosition: 'left center',
-                }}
+                className="absolute top-[80px] lg:top-0 min-w-[430px] lg:min-w-none -left-[2%] w-[100%] xl:w-[93%] h-[75%] lg:h-[80%] xl:object-cover z-[10] pointer-events-none opacity-100"
             />
 
             {/* Right side 'About Us' vertical text */}
@@ -98,9 +97,9 @@ const AboutUsHero: React.FC = () => {
             </div>
 
             {/* textual content */}
-            <div className="absolute inset-x-0 top-0 h-full z-[30] flex flex-col justify-center px-6 md:px-12 max-w-[1440px] mx-auto pb-20 lg:pb-32">
+            <div className="absolute inset-x-0 top-0 h-full z-[30] flex flex-col justify-center px-6 md:px-12 max-w-[1440px] mx-auto pb-20 lg:pb-32 lg:mt-[-5%] ">
                 <h1
-                    className="font-display text-[24px] md:text-[45px] lg:text-[50px] xl:text-[60px] font-semibold leading-[1.3] mb-8 tracking-[-0.03em] max-w-[80%] sm:max-w-[90%] lg:max-w-[80%] xl:max-w-[1100px] text-[#304462]"
+                    className="font-display text-[24px] md:text-[45px] lg:text-[50px] xl:text-[60px] font-medium leading-[1.3] mb-8 tracking-[-0.03em] max-w-[80%] sm:max-w-[90%] lg:max-w-[80%] xl:max-w-[1100px] text-[#304462]"
                     data-aos="fade-up"
                     data-aos-delay="200"
                 >

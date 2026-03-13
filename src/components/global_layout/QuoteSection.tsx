@@ -7,6 +7,8 @@ import PhoneInput from "../ui/PhoneInput";
 import TimePicker from "../ui/TimePicker";
 import DatePicker from "../ui/DatePicker";
 import Toast from "../ui/Toast";
+import Button from "../ui/Button";
+import SuccessAnimation from "../ui/SuccessAnimation";
 
 interface QuoteSectionProps {
     variant?: "home" | "about";
@@ -28,6 +30,7 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [toastMessage, setToastMessage] = useState<{ text: string; type: "success" | "error" } | null>(null);
+    const [showSuccess, setShowSuccess] = useState(false);
 
     const validate = () => {
         const newErrors: Record<string, string> = {};
@@ -89,7 +92,7 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
             });
 
             if (response.ok) {
-                setToastMessage({ text: "Thank you! Your quote request has been sent successfully.", type: "success" });
+                setShowSuccess(true);
                 setFormData({
                     fullName: "",
                     emailId: "",
@@ -308,13 +311,13 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
                             </div>
 
                             {/* Submit Button */}
-                            <button
+                            <Button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="w-full bg-[#1A4299] hover:bg-[#1e40af] text-white h-[52px] rounded-full font-semibold text-[15px] transition-all duration-300 shadow-md mt-2 flex items-center justify-center disabled:opacity-70"
+                                className="w-full h-[52px] rounded-full mt-2 shadow-md !bg-[#1A4299]"
                             >
                                 {isSubmitting ? "Sending..." : "Submit"}
-                            </button>
+                            </Button>
                         </form>
                     </div>
 
@@ -327,6 +330,11 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
                     onClose={() => setToastMessage(null)}
                 />
             )}
+            <SuccessAnimation 
+                isOpen={showSuccess} 
+                message="Your quote request has been sent successfully." 
+                onClose={() => setShowSuccess(false)} 
+            />
         </section>
     );
 };

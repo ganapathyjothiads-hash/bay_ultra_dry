@@ -57,14 +57,14 @@ const FloodRestorationProcess = () => {
                         <div
                             data-aos="zoom-in"
                             data-aos-delay="500"
-                            className="absolute top-[12%] right-[-5%] md:right-[-8%] z-20 transform scale-90 md:scale-100"
+                            className="absolute top-[5%] right-[-10%] md:right-[-8%] z-20 transform scale-90 md:scale-100"
                         >
                             <div className="relative">
                                 <img
                                     src="/assets/images/cloud.png"
                                     alt=""
                                     aria-hidden
-                                    className="w-[150px] md:w-[180px] lg:w-[220px] h-auto object-contain"
+                                    className="w-[140px] md:w-[180px] lg:w-[220px] h-auto object-contain"
                                 />
                             </div>
                         </div>
@@ -96,7 +96,7 @@ const FloodRestorationProcess = () => {
                                             />
                                         </div>
                                         <div className="flex-1">
-                                            <h3 className="text-[#000000] font-bold text-[16px] md:text-[17px] lg:text-[18px] mb-0.5">
+                                            <h3 className="font-display text-[#304462] font-medium text-[16px] md:text-[17px] lg:text-[18px] mb-0.5">
                                                 {step.title}
                                             </h3>
                                             <p className="text-[#333333] text-[12px] md:text-[13px] lg:text-[14px] font-normal leading-relaxed">
@@ -113,7 +113,7 @@ const FloodRestorationProcess = () => {
                             data-aos-delay="600"
                             className="mt-2"
                         >
-                            <p className="text-[#1D1D1D] italic font-normal text-[13px] md:text-[14px] lg:text-[15px] leading-[1.6] max-w-[500px]">
+                            <p className="font-nunito text-[#1D1D1D] italic font-normal text-[13px] md:text-[14px] lg:text-[15px] leading-[1.6] max-w-[500px]">
                                 "Flooding doesn't wait — and neither do we. We'll be there fast to protect your property."
                             </p>
                         </div>

@@ -1,9 +1,29 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Button from "../ui/Button";
 import { Check, Star } from "lucide-react";
+import { motion, useInView, useSpring, useTransform } from "framer-motion";
+
+const Counter = ({ value }: { value: number }) => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: "-50px" });
+    const spring = useSpring(0, { 
+        stiffness: 30, 
+        damping: 15,
+        restDelta: 0.001
+    });
+    const display = useTransform(spring, (current) => Math.round(current));
+
+    useEffect(() => {
+        if (isInView) {
+            spring.set(value);
+        }
+    }, [isInView, spring, value]);
+
+    return <motion.span ref={ref}>{display}</motion.span>;
+};
 
 const testimonials = [
     {
@@ -73,7 +93,7 @@ const WelcomeSection = () => {
                         data-aos="zoom-in"
                         data-aos-duration="1000"
                         data-aos-delay="200"
-                        className="order-2 lg:order-none lg:col-span-6 xl:col-span-2 flex justify-center py-4 mt-[-46px] lg:py-0"
+                        className="order-2 lg:order-none lg:col-span-6 xl:col-span-2 flex justify-center py-10 mt-[-46px] lg:py-0"
                     >
                         <div className="relative w-[260px] h-[260px] md:w-[240px] md:h-[240px]">
                             {/* Splash Background Image */}
@@ -142,7 +162,7 @@ const WelcomeSection = () => {
                                         height={15}
                                         className="object-cover mt-[3px]"
                                     />
-                                    <span className="text-[12px] font-semibold text-[#1E293B] leading-tight">{feature}</span>
+                                    <span className="text-[15px] font-semibold text-[#1E293B] leading-tight">{feature}</span>
                                 </div>
                             ))}
                         </div>
@@ -172,19 +192,31 @@ const WelcomeSection = () => {
                             </div>
 
                             {/* Experience Card */}
-                            <div className="bg-white border border-slate-100 p-6 pt-5 rounded-[16px] shadow-[0px_8px_24px_rgba(0,0,0,0.12)] flex flex-col justify-between gap-[26px] h-full">
+                            <div className="bg-white border border-slate-100 p-6 pt-5 rounded-[16px] shadow-[0px_8px_24px_rgba(0,0,0,0.12)] flex flex-col justify-between gap-[26px] h-full hover:shadow-[0px_12px_32px_rgba(0,0,0,0.16)] transition-shadow duration-500 group">
                                 <div>
                                     <div className="flex items-center gap-3 pb-2">
-                                        <span className="text-[32px] font-medium text-[#0f172a] leading-none">10+</span>
+                                        <div className="flex items-baseline">
+                                            <span className="text-[32px] font-bold text-[#0f172a] leading-none">
+                                                <Counter value={10} />
+                                            </span>
+                                            <span className="text-[22px] font-bold text-[#1A4299] ml-1">+</span>
+                                        </div>
                                         <p className="text-[12px] font-medium text-[#475569] leading-[1.3]">
                                             Years<br />Experience
                                         </p>
                                     </div>
-                                    <div className="h-[2px] w-full bg-slate-400"></div>
+                                    <div className="h-[2px] w-full bg-slate-200 overflow-hidden relative">
+                                        <motion.div 
+                                            initial={{ scaleX: 0 }}
+                                            whileInView={{ scaleX: 1 }}
+                                            transition={{ duration: 1.5, ease: "easeOut" }}
+                                            className="absolute inset-0 bg-[#FBBF24] origin-left"
+                                        />
+                                    </div>
                                 </div>
                                 <div className="flex flex-col gap-[6px]">
-                                    <h4 className="text-[12px] font-semibold text-[#0f172a] leading-tight">Fast Communication</h4>
-                                    <p className="text-[12px] text-[#475569] font-medium leading-[1.4]">
+                                    <h4 className="text-[12px] font-bold text-[#0f172a] leading-tight group-hover:text-[#1A4299] transition-colors">Fast Communication</h4>
+                                    <p className="text-[12px] text-[#475569] font-medium leading-[1.4] opacity-80">
                                         quick responses<br />and clear updates
                                     </p>
                                 </div>
@@ -267,7 +299,7 @@ const WelcomeSection = () => {
                     >
                         {/* Right Side Vertical Gradient Stripe */}
                         <div 
-                            className="absolute top-20 right-0 w-[18%] h-full z-20 opacity-30 pointer-events-none"
+                            className="absolute -right-16 top-0 w-[40%] h-full z-20 opacity-40 pointer-events-none blur-[80px] lg:right-0 lg:top-0 lg:w-[18%] lg:opacity-30 lg:blur-none"
                             style={{ 
                                 background: 'linear-gradient(180deg, #FFF8AA -6.72%, #C0E683 28.06%, #2B97FB 73.83%)' 
                             }}
@@ -319,7 +351,7 @@ const WelcomeSection = () => {
                         </div>
 
                         {/* Bottom Author Section */}
-                        <div className="flex items-center gap-4 px-8 py-6 bg-[linear-gradient(91.57deg,#FFF8AA_-7.72%,#C0E683_48.06%,#2B97FB_103.83%)] relative z-10">
+                        <div className="flex items-center gap-4 px-8 py-8 bg-[linear-gradient(91.57deg,#FFF8AA_-7.72%,#C0E683_48.06%,#2B97FB_103.83%)] relative z-10">
 
                             <div className="relative w-[54px] h-[54px] rounded-full overflow-hidden border-2 border-white shadow-md">
                                 <Image

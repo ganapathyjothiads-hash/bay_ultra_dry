@@ -33,10 +33,10 @@ const UpholsteryWhyChoose = () => {
             </div>
 
             {/* Right Content Section */}
-            <div className="w-full md:w-1/2  max-w-[1440px] mx-auto bg-[#E6E6E6] flex items-center p-[44px] sm:p-4 md:p-10 lg:p-18 relative">
+            <div className="w-full md:w-1/2  max-w-[1440px] mx-auto bg-[#E6E6E6] flex items-center p-[25px] sm:p-4 md:p-10 lg:p-18 relative">
                 <div className="max-w-[600px] relative z-10 w-full">
                     <h2
-                        className="text-[#304462] font-alt font-regular text-[20px] sm:text-[42px] md:text-[52px] lg:text-[51px] mb-[2px] md:mb-[12px] mt-[8px] md:mt-[15px] leading-[1] md:leading-[1.2]"
+                        className="text-[#304462] font-alt font-regular text-[20px] sm:text-[42px] md:text-[52px] lg:text-[51px] mb-[10px] md:mb-[12px] mt-[8px] md:mt-[15px] leading-[1] md:leading-[1.2]"
                         data-aos="fade-up"
                     >
                         Why Tauranga Trusts Bay Ultra Dry
@@ -57,14 +57,14 @@ const UpholsteryWhyChoose = () => {
                                         className="w-full h-full object-contain"
                                     />
                                 </div>
-                                <p className="text-[#304462] font-medium md:font-medium text-[12px] md:text-[18px]">
+                                <p className="font-display text-[#304462] font-medium md:font-medium text-[15px] md:text-[18px]">
                                     {feature.title}
                                 </p>
                             </div>
                         ))}
                     </div>
 
-                    <p className="md:mt-4 text-[#304462] text-[12px] md:text-[15px] italic opacity-90 max-w-[500px] leading-relaxed">
+                    <p className=" md:mt-4 text-[#304462] text-[15px] md:text-[15px] italic opacity-90 max-w-[500px] leading-relaxed">
                         "From family furniture to full commercial seating — we've got the tools and know-how to get it clean."
                     </p>
                 </div>

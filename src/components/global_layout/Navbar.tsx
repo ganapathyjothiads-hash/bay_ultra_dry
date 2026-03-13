@@ -186,7 +186,7 @@ const Navbar = () => {
                         />
                     </Link>
 
-                    <div className="absolute inset-0 bg-white rounded-[100px] shadow-[0_4px_24px_rgba(0,0,0,0.10)] flex items-center pl-[174px] pr-2">
+                    <div className="absolute inset-0 bg-white rounded-[100px] shadow-[0px_4px_15px_0px_#00000026] flex items-center pl-[174px] pr-2">
 
                         <nav className="flex items-center justify-evenly flex-1 flex-wrap flex-row content-end pr-6">
                             {navLinks.map((link) => (
@@ -221,9 +221,29 @@ const Navbar = () => {
 
                         <Link
                             href="/contact"
-                            className="inline-flex items-center justify-center bg-amber-500 text-[#1D1D1D] text-[13px] xl:text-[14px] font-semibold px-4 py-[8px] xl:px-6 xl:py-[10px] rounded-[100px] whitespace-nowrap shrink-0 tracking-normal shadow-[0_2px_8px_rgba(245,158,11,0.3)] hover:bg-amber-600 transition leading-[25px]"
+                            className="relative overflow-hidden group inline-flex items-center justify-center bg-amber-500 text-[#1D1D1D] text-[13px] xl:text-[14px] font-semibold px-4 py-[8px] xl:px-6 xl:py-[10px] rounded-[100px] whitespace-nowrap shrink-0 tracking-normal shadow-[0_2px_8px_rgba(245,158,11,0.3)] transition leading-[25px]"
                         >
-                            Enquire Now
+                            <span
+                                className="
+                                    absolute
+                                    left-1/2
+                                    bottom-0
+                                    w-[160%]
+                                    h-[220%]
+                                    -translate-x-1/2
+                                    translate-y-[100%]
+                                    rounded-[50%]
+                                    bg-[#FFF1A4]
+                                    transition-transform
+                                    duration-[1000ms]
+                                    ease-[cubic-bezier(0.16,1,0.3,1)]
+                                    group-hover:translate-y-[10%]
+                                    z-0
+                                "
+                            />
+                            <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover:text-[#304462]">
+                                Enquire Now
+                            </span>
                         </Link>
 
                     </div>
@@ -231,7 +251,7 @@ const Navbar = () => {
             </div>
 
             <div
-                className="lg:hidden w-full flex items-center justify-between bg-white px-5 shadow-lg border-b border-gray-100 sticky top-0 z-[100]"
+                className="lg:hidden w-full flex items-center justify-between bg-white px-5 shadow-[0px_4px_15px_0px_#00000026] border-b border-gray-100 sticky top-0 z-[100]"
                 style={{ height: '80px' }}
             >
                 <Link href="/" className="relative block w-[140px] h-[60px]">

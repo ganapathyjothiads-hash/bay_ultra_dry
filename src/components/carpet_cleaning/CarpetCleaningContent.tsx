@@ -42,7 +42,7 @@ const CarpetCleaningContent = () => {
             {/* Services Slider */}
             <div className="relative">
                 <CarpetServicesSlider />
-                <EnquireNowButton variant="section" className="bottom-[-160px] md:bottom-[260px]" />
+                <EnquireNowButton variant="section" className="bottom-[504px] md:bottom-[450px] right-0" />
             </div>
 
             {/* Carpet Cleaning Benefits */}

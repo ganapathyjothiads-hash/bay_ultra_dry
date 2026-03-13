@@ -42,7 +42,7 @@ const HomeContent = () => {
             {/* Scrolling Marquee */}
             <div className="relative">
                 <Marquee />
-                <EnquireNowButton variant="section" className="bottom-[-160px] md:bottom-[-240px]" />
+                <EnquireNowButton variant="section" className="bottom-[-160px] md:bottom-[-240px] right-0" />
             </div>
 
             {/* Welcome Section */}

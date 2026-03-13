@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { Star, ArrowUpRight } from "lucide-react";
+import Button from "../ui/Button";
 const AboutOurStory: React.FC = () => {
     return (
         <section className="relative w-full bg-white pb-10 lg:pb-24 items-center flex flex-col pt-10 lg:pt-0">
@@ -104,9 +105,9 @@ const AboutOurStory: React.FC = () => {
                         </div>
 
                         <div>
-                            <button className="bg-[#1C4195] text-white px-9 py-3 rounded-full font-bold text-[13px] shadow-[0_10px_35px_rgba(28,65,149,0.3)] hover:bg-[#133170] transition-all transform hover:scale-105">
+                            <Button variant="primary">
                                 Contact Us
-                            </button>
+                            </Button>
                         </div>
                     </div>
 

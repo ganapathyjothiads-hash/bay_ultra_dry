@@ -51,7 +51,7 @@ const AboutWhatWeDo: React.FC = () => {
                 />
             </div>
 
-            <div className="relative z-20 w-full max-w-[1440px] mx-auto px-6 flex flex-col items-center text-center">
+            <div className="relative z-20 w-full max-w-[1440px] mx-auto  flex flex-col items-center text-center">
                 {/* Title and Subtitle */}
                 <h2
                     className="text-[#304462] text-[22px] md:text-[44px] lg:text-[50px] font-[400] tracking-tight mb-6 leading-tight"

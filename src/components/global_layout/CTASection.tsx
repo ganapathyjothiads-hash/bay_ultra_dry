@@ -40,12 +40,12 @@ const CTASection = () => {
             />
 
             {/* Content */}
-            <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-16 text-center">
+            <div className="relative z-10 max-w-[1440px] mx-auto px-[6px] md:px-[16px] text-center">
 
                 <div className="max-w-[850px] mx-auto space-y-6">
 
-                    <h2 className="font-instrument font-medium text-white capitalize text-[28px] md:text-[42px] lg:text-[56px] leading-tight">
-                        Ready For A Fresher,Cleaner Space?
+                    <h2 className="font-instrument font-medium text-white capitalize text-[25px] md:text-[42px] lg:text-[56px] leading-tight">
+                        Ready For A Fresher, <br className="md:hidden" /> Cleaner Space?
                     </h2>
 
                     <p

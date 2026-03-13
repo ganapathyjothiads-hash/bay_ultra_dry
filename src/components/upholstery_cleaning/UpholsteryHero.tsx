@@ -30,7 +30,7 @@ const UpholsteryHero = () => {
                             Professional Upholstery Cleaning <br className="hidden md:block" />
                             In Tauranga Sofas, Chairs & More
                         </h1>
-                        <p className="text-[E8E8E8] text-[16px] font-medium max-w-[875px] leading-relaxed opacity-90 mx-auto md:mx-0">
+                        <p className="text-[E8E8E8] text-[17px] font-medium max-w-[875px] leading-relaxed opacity-90 mx-auto md:mx-0">
                             Breathe new life into your furniture for a fresher, cleaner, and allergen-free home.
                         </p>
                     </div>

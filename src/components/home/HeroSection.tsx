@@ -77,7 +77,7 @@ const HeroSection = () => {
                 <h1
                     data-aos="fade-up"
                     data-aos-duration="1000"
-                    className="text-white font-[600] font-display lg:font-medium text-[28px] md:text-[40px] lg:text-[47px] xl:text-[56px] leading-[1.3] lg:leading-[1.15] mb-4 lg:mb-8 tracking-wide lg:tracking-medium"
+                    className="text-white font-[600] font-display lg:font-medium text-[28px] md:text-[40px] lg:text-[47px] xl:text-[60px] leading-[1.3] lg:leading-[1.15] mb-4 lg:mb-8 tracking-wide lg:tracking-medium"
                 >
                     <span >
                         Professional Carpet, Upholstery &amp; Flood Restoration
@@ -89,7 +89,7 @@ const HeroSection = () => {
                     data-aos="fade-up"
                     data-aos-delay="200"
                     data-aos-duration="1000"
-                    className="text-[#FFF1A4] font-[600] text-[14px] xs:text-[16px] md:text-[16px] mb-5 leading-[1.5] lg:max-w-none"
+                    className="text-[#FFF1A4] font-[600] text-[16px] xs:text-[16px] md:text-[16px] mb-5 leading-[1.5] lg:max-w-none"
                 >
                     <span>
                         Fast, Reliable &amp; Flexible Cleaning for Your Tauranga Home or Business.
@@ -102,7 +102,7 @@ const HeroSection = () => {
                     data-aos-duration="1000"
                     className="text-[#CDCDCD] text-[16px] md:text-[12px] lg:max-w-[620px] leading-[1.3] px-2 lg:px-0"
                 >
-                    <span className="text-[11px] md:text-[13px] leading-relaxed font-sans">
+                    <span className="text-[15px] md:text-[13px] leading-relaxed font-sans">
                         As Tauranga&apos;s 5-star-rated specialists, we excel in carpet cleaning,
                         upholstery <br />care, and emergency flood restoration.
                     </span>
