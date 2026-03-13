@@ -124,7 +124,11 @@ const UpholsteryCleaningSlider = () => {
 
             <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 mt-[40px]">
                 {/* Header */}
-                <div className="flex flex-col md:flex-row items-center justify-between mb-8 md:mb-10 gap-2">
+                <div 
+                    className="flex flex-col md:flex-row items-center justify-between mb-8 md:mb-10 gap-2"
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                >
                     <div className="flex items-center gap-3 md:gap-4 w-full justify-center md:justify-start">
                         <img
                             src="/assets/icons/Star_3.png"
@@ -156,7 +160,12 @@ const UpholsteryCleaningSlider = () => {
                 </div>
 
                 {/* Slider track */}
-                <div className="relative overflow-hidden w-full">
+                <div 
+                    className="relative overflow-hidden w-full"
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                    data-aos-delay="200"
+                >
                     <div
                         className={`flex ${useTransition ? "transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]" : ""}`}
                         style={{ transform: `translateX(calc(-${currentIndex * (100 / visibleCards)}%))` }}
