@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono,Nunito_Sans  } from "next/font/google";
 import { nebulas } from "./fonts";
 import "./globals.css";
 
@@ -12,6 +12,10 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+const nunito_sans = Nunito_Sans({
+  variable:"--font-nunito-sans",
+  subsets: ["latin"],
+})
 
 export const metadata: Metadata = {
   title: "Bay Ultra Dry",
@@ -26,7 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${nebulas.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${nebulas.variable} ${nunito_sans.variable}  antialiased`}>
         {children}
       </body>
     </html>

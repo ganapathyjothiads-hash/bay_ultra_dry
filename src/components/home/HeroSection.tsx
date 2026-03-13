@@ -64,7 +64,7 @@ const HeroSection = () => {
                 className="hidden lg:flex absolute right-[5px] top-[170px] bottom-0 w-[100px] z-[5] items-center justify-center pointer-events-none overflow-visible"
             >
                 <div
-                    className="w-[800px] h-[100px] rotate-90 origin-center text-[70px] xl:text-[90px] font-normal text-[rgba(255,255,255,0.61)] whitespace-nowrap leading-[100px] text-center tracking-[0.01em]"
+                    className="font w-[800px] h-[100px] rotate-90 origin-center text-[70px] xl:text-[90px] font-normal text-[rgba(255,255,255,0.61)] whitespace-nowrap leading-[100px] text-center tracking-[0.01em]"
                 >
                     BayUltraDry
                 </div>

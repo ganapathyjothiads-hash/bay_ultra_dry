@@ -136,11 +136,11 @@ const ServicesSection = () => {
 
                                     </div>
 
-                                    <h3 className="text-[19px] md:text-[26px] font-bold text-[#1A4299] mb-2 md:mb-4 pr-16 tracking-tight leading-tight mt-1">
+                                    <h3 className="text-[19px] md:text-[28px] font-bold text-[#1A4299] mb-2 md:mb-4 pr-16 tracking-tight leading-tight mt-1">
                                         {service.title}
                                     </h3>
 
-                                    <p className="text-[#2C2C2C] leading-[1.55] text-[15px] md:text-[13px] font-medium">
+                                    <p className="text-[#2C2C2C] leading-[1.55] text-[15px] md:text-[15px] font-medium">
                                         {service.description}
                                     </p>
 
