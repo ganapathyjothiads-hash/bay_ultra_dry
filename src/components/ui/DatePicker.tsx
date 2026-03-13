@@ -12,19 +12,19 @@ interface DatePickerProps {
 
 const DatePicker = ({ value, onChange, error, label }: DatePickerProps) => {
     return (
-        <div className="flex flex-col space-y-1">
+        <div className="flex flex-col gap-3">
             {label && (
-                <label className="font-inter text-[14px] md:text-[15px] font-medium text-[#1D1D1D]">
+                <label className="text-[#1D1D1D] font-sans font-medium text-[14px] sm:text-[15px] md:text-[16px]">
                     {label}
                 </label>
             )}
-            <div className={`relative flex items-center group rounded-[8px] overflow-hidden border transition-all h-[52px] ${error ? "border-red-500" : "border-[#7687A1] focus-within:border-[#1e3a8a] focus-within:ring-2 focus-within:ring-blue-500/10"
+            <div className={`relative flex items-center group rounded-[10px] overflow-hidden border transition-all h-[46px] sm:h-[48px] md:h-[52px] ${error ? "border-red-500" : "border-[#7687A1] focus-within:border-[#1e3a8a] focus-within:ring-2 focus-within:ring-blue-500/10"
                 }`}>
                 <input
                     type="date"
                     value={value}
                     onChange={(e) => onChange(e.target.value)}
-                    className="w-full h-full bg-white px-4 focus:outline-none text-[#1D1D1D] text-[14px] font-medium cursor-pointer"
+                    className="w-full h-full bg-white px-4 focus:outline-none text-[#374151] text-[16px] font-medium cursor-pointer"
                     placeholder="dd-mm-yyyy"
                     required
                 />

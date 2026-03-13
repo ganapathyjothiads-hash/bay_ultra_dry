@@ -122,7 +122,7 @@ const UpholsteryCleaningSlider = () => {
                 </div>
             </div>
 
-            <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
+            <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 mt-[40px]">
                 {/* Header */}
                 <div className="flex flex-col md:flex-row items-center justify-between mb-8 md:mb-10 gap-2">
                     <div className="flex items-center gap-3 md:gap-4 w-full justify-center md:justify-start">
@@ -131,7 +131,7 @@ const UpholsteryCleaningSlider = () => {
                             alt="Star Icon"
                             className="w-[38px] md:w-[35px] lg:w-[45px] h-auto object-contain"
                         />
-                        <h2 className="text-[#304462] font-display font-medium text-[26px] md:text-[36px] lg:text-[44px] tracking-tight">
+                        <h2 className="text-[#304462] font-display font-regular text-[26px] md:text-[36px] lg:text-[44px] tracking-tight">
                             What We Clean
                         </h2>
                     </div>
@@ -184,7 +184,7 @@ const UpholsteryCleaningSlider = () => {
 
                                 <div className="flex items-start px-1 gap-3 mt-1 pr-6 md:pr-0">
                                     <div className="w-[6px] h-[6px] md:w-[6px] md:h-[6px] rounded-full bg-[#3B82F6] flex-shrink-0 mt-[8px] md:mt-[10px]" />
-                                    <h3 className="font-display text-[#3780FF] font-medium text-[15px] md:text-[16px] leading-[1.4] tracking-wide">
+                                    <h3 className="font-display text-[#3780FF] font-medium text-[13px] md:text-[16px] leading-[1.4] tracking-wide">
                                         {service.title}
                                     </h3>
                                 </div>

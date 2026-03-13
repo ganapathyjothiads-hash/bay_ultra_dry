@@ -42,7 +42,6 @@ const UpholsteryCleaningContent = () => {
             {/* Intro Section */}
             <div className="relative">
                 <UpholsteryIntro />
-                <EnquireNowButton variant="section" className="bottom-[-160px] md:bottom-[-240px] left-[10%] md:left-[98%]" />
             </div>
 
             {/* What We Clean Section */}

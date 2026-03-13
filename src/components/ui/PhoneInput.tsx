@@ -68,23 +68,23 @@ const PhoneInput = ({ value, onChange, error, label }: PhoneInputProps) => {
     };
 
     return (
-        <div className="flex flex-col space-y-1 relative" ref={containerRef}>
+        <div className="flex flex-col gap-3 relative" ref={containerRef}>
             {label && (
-                <label className="font-inter text-[14px] md:text-[15px] font-medium text-[#1D1D1D]">
+                <label className="text-[#1D1D1D] font-sans font-medium text-[14px] sm:text-[15px] md:text-[16px]">
                     {label}
                 </label>
             )}
 
-            <div className={`flex items-center h-[52px] bg-white rounded-[8px] border transition-all ${error ? "border-red-500" : "border-[#7687A1] focus-within:border-[#1e3a8a] focus-within:ring-2 focus-within:ring-blue-500/10"
+            <div className={`flex items-center h-[46px] sm:h-[48px] md:h-[52px] bg-white rounded-[10px] border transition-all ${error ? "border-red-500" : "border-[#7687A1] focus-within:border-[#1e3a8a] focus-within:ring-2 focus-within:ring-blue-500/10"
                 }`}>
                 {/* Country Selector */}
                 <button
                     type="button"
                     onClick={() => setIsOpen(!isOpen)}
-                    className="flex items-center gap-1.5 h-full px-3 border-r border-[#CCCCCC] hover:bg-gray-50 transition-colors rounded-l-[8px]"
+                    className="flex items-center gap-1.5 h-full px-3 border-r border-[#CCCCCC] hover:bg-gray-50 transition-colors rounded-l-[10px] shrink-0"
                 >
-                    <span className="text-[14px] font-semibold text-[#333333]">{selectedCountry.name} {selectedCountry.code}</span>
-                    <ChevronDown size={14} className={`text-gray-500 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+                    <span className="text-[14px] font-semibold text-[#333333] whitespace-nowrap">{selectedCountry.name} {selectedCountry.code}</span>
+                    <ChevronDown size={14} className={`text-gray-500 shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`} />
                 </button>
 
                 {/* Input Field */}
@@ -93,7 +93,7 @@ const PhoneInput = ({ value, onChange, error, label }: PhoneInputProps) => {
                     value={displayNumber}
                     onChange={handleNumberChange}
                     placeholder={`Enter ${selectedCountry.name === 'IN' ? '10 digits' : '8-11 digits'}`}
-                    className="flex-1 h-full px-4 outline-none bg-transparent text-[#1D1D1D] font-medium text-[14px] placeholder:text-[#999999]"
+                    className="flex-1 h-full px-4 outline-none bg-transparent text-[#374151] font-medium text-[16px] placeholder:text-[#9ca3af] placeholder:text-[14px]"
                 />
             </div>
 

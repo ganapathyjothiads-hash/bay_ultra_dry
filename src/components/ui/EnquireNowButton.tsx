@@ -21,7 +21,7 @@ const EnquireNowButton = ({ variant = "fixed", className = "" }: EnquireNowButto
     return (
         <>
             <button
-                className={`${positionClass} ${className} relative overflow-hidden bg-[#1A4299] text-white py-4 px-2 rounded-l-xl flex flex-col items-center gap-2 shadow-2xl transition-all group active:scale-95`}
+                className={`${positionClass} ${className} overflow-hidden bg-[#1A4299] text-white py-4 px-2 rounded-l-xl flex flex-col items-center gap-2 shadow-2xl transition-all group active:scale-95`}
                 onClick={() => setIsPopupOpen(true)}
             >
                 <span

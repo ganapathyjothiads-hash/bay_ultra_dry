@@ -4,7 +4,7 @@ import React from "react";
 
 const UpholsteryIntro = () => {
     return (
-        <section className="relative w-full lg:pt-[80px] pt-[75px] pb-[14px] md:pt-[16px] md:pb-[16px]">
+        <section className="relative w-full lg:pt-[80px] pt-[85px] pb-[14px] md:pt-[16px] md:pb-[16px]">
 
 
             {/* Left wavy S-Frame */}
@@ -28,7 +28,7 @@ const UpholsteryIntro = () => {
             {/* ── Text content: z-[10] — always above everything ── */}
             <div className="relative z-[10] max-w-[1060px] lg:max-w-[1160px] mx-auto px-5 md:px-5 text-center">
                 <h2
-                    className="text-[#304462] font-display font-medium text-[24px] sm:text-[26px] md:text-[30px] lg:text-[40px] mb-4 mt-2 md:mb-8 leading-tight tracking-tight"
+                    className="text-[#304462] font-display font-medium text-[23px] sm:text-[26px] md:text-[30px] lg:text-[40px] mb-4 mt-2 md:mb-8 leading-tight tracking-tight"
                     data-aos="fade-up"
                     data-aos-duration="1000"
                 >
@@ -36,7 +36,7 @@ const UpholsteryIntro = () => {
                 </h2>
 
                 <p
-                    className="text-[#4b5563] text-[14px] md:text-[15px] leading-relaxed px-1 md:px-4 opacity-90 font-sans"
+                    className="text-[#4b5563] text-[17px] md:text-[19px] leading-relaxed px-1 md:px-4 opacity-90 font-sans"
                     data-aos="fade-up"
                     data-aos-delay="200"
                     data-aos-duration="1000"

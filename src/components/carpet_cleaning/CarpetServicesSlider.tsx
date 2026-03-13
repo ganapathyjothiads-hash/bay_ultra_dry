@@ -112,8 +112,8 @@ const CarpetServicesSlider = () => {
                     src="/assets/images/carpet/Carpet_DeepY.png"
                     alt=""
                     className="absolute z-0 pointer-events-none
-                        left-[-15%] top-[12%] w-[80%] 
-                        md:left-[-12%] md:top-[35%] md:w-[45%] 
+                        left-[-2%] top-[8%] 
+                        md:left-[-12%] md:top-[35%]
                         transition-all duration-700 h-auto"
                 />
 
@@ -183,24 +183,6 @@ const CarpetServicesSlider = () => {
                     </div>
                 </div>
 
-                {/* Mobile Arrows */}
-                <div className="flex md:hidden justify-center gap-8 mt-6">
-                    <button
-                        onClick={handlePrev}
-                        aria-label="Previous"
-                        className="w-[34px] h-[34px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] transition-all shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
-                    >
-                        <ArrowLeft strokeWidth={2} className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                    </button>
-                    <button
-                        onClick={handleNext}
-                        aria-label="Next"
-                        className="w-[34px] h-[34px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] transition-all shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
-                    >
-                        <ArrowRight strokeWidth={2} className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </button>
-                </div>
-
                 {/* Slider Content */}
                 <div className=" relative overflow-visible pb-12 mt-8 md:mt-0 max-w-[1240px] mx-auto">
                     <div
@@ -250,6 +232,23 @@ const CarpetServicesSlider = () => {
                     </div>
                 </div>
 
+                {/* Mobile Arrows */}
+                <div className="flex md:hidden justify-center gap-8 mt-6">
+                    <button
+                        onClick={handlePrev}
+                        aria-label="Previous"
+                        className="w-[34px] h-[34px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] transition-all shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
+                    >
+                        <ArrowLeft strokeWidth={2} className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+                    </button>
+                    <button
+                        onClick={handleNext}
+                        aria-label="Next"
+                        className="w-[34px] h-[34px] rounded-full bg-[#1e44a3] text-white flex items-center justify-center hover:bg-[#163075] transition-all shadow-[0_8px_20px_rgba(30,68,163,0.25)] active:scale-95 group"
+                    >
+                        <ArrowRight strokeWidth={2} className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </button>
+                </div>
 
             </div>
         </section>

@@ -6,6 +6,7 @@ import PhoneInput from "../ui/PhoneInput";
 import TimePicker from "../ui/TimePicker";
 import DatePicker from "../ui/DatePicker";
 import Toast from "../ui/Toast";
+import SuccessAnimation from "../ui/SuccessAnimation";
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({
@@ -22,6 +23,7 @@ const ContactForm = () => {
 
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [toastMessage, setToastMessage] = useState<{ text: string; type: "success" | "error" } | null>(null);
+    const [showSuccess, setShowSuccess] = useState(false);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value, type } = e.target;
@@ -111,7 +113,7 @@ const ContactForm = () => {
             const data = await response.json();
 
             if (response.ok) {
-                setToastMessage({ text: "Thank you! Your enquiry has been submitted successfully.", type: "success" });
+                setShowSuccess(true);
                 handleClear();
             } else {
                 setToastMessage({ text: data.error || "Something went wrong. Please try again.", type: "error" });
@@ -125,7 +127,7 @@ const ContactForm = () => {
     };
 
     return (
-        <section className="relative w-full pt-12 pb-[240px] md:py-12 px-6 overflow-x-hidden">
+        <section className="relative w-full pt-0 pb-[240px] md:py-12 px-6 overflow-x-hidden">
             {/* Decoration Layer - Locked to Content Max-Width */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="relative max-w-[1300px] mx-auto h-full w-full">
@@ -165,27 +167,20 @@ const ContactForm = () => {
                         />
                     </div>
 
-                    {/* Color Glow - Green */}
-                    <div
-                        className="absolute z-[1] w-[300px] h-[300px] top-[-220px] left-[50%] md:w-[250px] md:h-[250px] md:top-[6%] md:left-[68%] -translate-x-1/2 bg-[#00FF26] opacity-[60%] md:opacity-50 blur-[100px] md:blur-[80px] rounded-full"
-                    />
-
-                    {/* Color Glow - Blue */}
-                    <div
-                        className="absolute z-[1] w-[250px] h-[300px] top-[50%] left-[0%] md:w-[300px] md:top-[350px] md:left-[9%] bg-[#006FFF] opacity-[20%] md:opacity-[30%] blur-[80px] md:blur-[80px] rounded-full"
-                    />
+                    {/* Color Glow - Green — positioned above the address card */}
+                    
                 </div>
             </div>
 
             <div className="max-w-[1240px] mx-auto relative z-10 px-0 sm:px-4">
-                <div className="text-center mb-14 md:mb-20 relative z-10 pt-1 md:pt-1 mt-[-20px] md:mt-0">
+                <div className="text-center mb-14 md:mb-20 relative z-10 pt-1 md:pt-1 mt-[20px] md:mt-0">
                     <p className="text-[#304462] font-sans italic font-medium text-[14px] md:text-[16px] max-w-[800px] mx-auto mb-[30px] md:mb-[80px] px-4" data-aos="fade-up">
                         "Let our professional cleaning team <br className="block md:hidden" /> make your home or business shine. <br className="hidden md:block" />
                         Contact us today for a free quote— <br className="block md:hidden" /> fast, friendly, and hassle-free!"
                     </p>
 
                     <h2
-                        className="text-[#304462] font-display font-medium md:font-normal leading-tight text-[24px] md:text-[36px] lg:text-[42px] mb-2 md:mb-4 pt-5 md:pt-0"
+                        className="text-[#304462] font-display font-medium md:font-normal leading-tight text-[24px] md:text-[36px] lg:text-[42px] mb-2 md:mb-4"
                         data-aos="fade-up"
                     >
                         Tell Us What You Need!
@@ -195,8 +190,8 @@ const ContactForm = () => {
                     </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="max-w-[1000px] mx-auto bg-transparent mt-[40px] sm:mt-[60px] md:mt-0 relative z-10">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-x-4 sm:gap-x-4 md:gap-x-6 gap-y-2">
+                <form onSubmit={handleSubmit} className="max-w-[1000px] mx-auto bg-transparent mt-[0px] sm:mt-[60px] md:mt-0 relative z-10">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-x-4 sm:gap-x-4 md:gap-x-6 gap-y-6">
                         {/* Full Name */}
                         <div className="flex flex-col gap-3">
                             <label className="text-[#1D1D1D] font-sans font-medium text-[14px] sm:text-[15px] md:text-[16px]">Full Name</label>
@@ -206,7 +201,7 @@ const ContactForm = () => {
                                 placeholder="Enter your full name"
                                 value={formData.fullName}
                                 onChange={handleChange}
-                                className={`w-full border rounded-[10px] px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/10 transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] placeholder:text-[14px] text-[16px] ${errors.fullName ? "border-red-500" : "border-[#7687A1] focus:border-[#1e3a8a]"}`}
+                                className={`w-full border rounded-[10px] px-4 sm:px-5 md:px-6 h-[46px] sm:h-[48px] md:h-[52px] focus:outline-none focus:ring-2 focus:ring-blue-500/10 transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] placeholder:text-[14px] text-[16px] ${errors.fullName ? "border-red-500" : "border-[#7687A1] focus:border-[#1e3a8a]"}`}
                                 required
                             />
                             {errors.fullName && <p className="text-red-500 text-[12px]">{errors.fullName}</p>}
@@ -221,7 +216,7 @@ const ContactForm = () => {
                                 placeholder="Enter your email id."
                                 value={formData.emailId}
                                 onChange={handleChange}
-                                className={`w-full border rounded-[10px] px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/10 transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] placeholder:text-[14px] text-[16px] ${errors.emailId ? "border-red-500" : "border-[#7687A1] focus:border-[#1e3a8a]"}`}
+                                className={`w-full border rounded-[10px] px-4 sm:px-5 md:px-6 h-[46px] sm:h-[48px] md:h-[52px] focus:outline-none focus:ring-2 focus:ring-blue-500/10 transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] placeholder:text-[14px] text-[16px] ${errors.emailId ? "border-red-500" : "border-[#7687A1] focus:border-[#1e3a8a]"}`}
                                 required
                             />
                             {errors.emailId && <p className="text-red-500 text-[12px]">{errors.emailId}</p>}
@@ -243,7 +238,7 @@ const ContactForm = () => {
                                     name="service"
                                     value={formData.service}
                                     onChange={handleChange}
-                                    className="w-full border border-[#7687A1] rounded-[10px] px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-[#1e3a8a] transition-all appearance-none bg-white text-[#374151] text-[16px]"
+                                    className="w-full border border-[#7687A1] rounded-[10px] px-4 sm:px-5 md:px-6 h-[46px] sm:h-[48px] md:h-[52px] focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-[#1e3a8a] transition-all appearance-none bg-white text-[#374151] text-[16px]"
                                     required
                                 >
                                     <option value="" disabled className="text-[#9ca3af] text-[14px]">Select your service</option>
@@ -260,7 +255,7 @@ const ContactForm = () => {
                             </div>
                         </div>
 
-                        {/* Required Date & Time */}
+                        {/* Required Date */}
                         <DatePicker
                             label="Your Required Date"
                             value={formData.requiredDate}
@@ -268,9 +263,17 @@ const ContactForm = () => {
                             error={errors.requiredDate}
                         />
 
+                        {/* Required Time */}
+                        <TimePicker
+                            label="Your Required Time"
+                            value={formData.requiredTime}
+                            onChange={(val: string) => setFormData(prev => ({ ...prev, requiredTime: val }))}
+                            error={errors.requiredTime}
+                        />
+
 
                         {/* Address */}
-                        <div className="flex flex-col gap-3">
+                        <div className="flex flex-col gap-3 sm:col-span-2">
                             <label className="text-[#1D1D1D] font-sans font-medium text-[14px] sm:text-[15px] md:text-[16px]">Address</label>
                             <input
                                 type="text"
@@ -278,14 +281,14 @@ const ContactForm = () => {
                                 placeholder="Enter your address"
                                 value={formData.address}
                                 onChange={handleChange}
-                                className={`w-full border rounded-[10px] px-4 py-2 sm:px-5 sm:py-2 md:px-6 md:py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/10 transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] placeholder:text-[14px] text-[16px] ${errors.address ? "border-red-500" : "border-[#7687A1] focus:border-[#1e3a8a]"}`}
+                                className={`w-full border rounded-[10px] px-4 sm:px-5 md:px-6 h-[46px] sm:h-[48px] md:h-[52px] focus:outline-none focus:ring-2 focus:ring-blue-500/10 transition-all bg-white text-[#374151] placeholder:text-[#9ca3af] placeholder:text-[14px] text-[16px] ${errors.address ? "border-red-500" : "border-[#7687A1] focus:border-[#1e3a8a]"}`}
                                 required
                             />
                             {errors.address && <p className="text-red-500 text-[12px]">{errors.address}</p>}
                         </div>
 
                         {/* Message */}
-                        <div className="flex flex-col gap-3 sm:col-span-2 md:col-span-2 mt-4">
+                        <div className="flex flex-col gap-3 sm:col-span-2 md:col-span-2">
                             <label className="text-[#1D1D1D] font-sans font-medium text-[14px] sm:text-[15px] md:text-[16px]">Message</label>
                             <textarea
                                 name="message"
@@ -345,6 +348,11 @@ const ContactForm = () => {
                         onClose={() => setToastMessage(null)}
                     />
                 )}
+                <SuccessAnimation 
+                    isOpen={showSuccess} 
+                    message="Your enquiry has been submitted successfully." 
+                    onClose={() => setShowSuccess(false)} 
+                />
             </div>
         </section>
     );

@@ -33,8 +33,8 @@ const Button: React.FC<ButtonProps> = ({
       className={`${baseStyles} ${variants[variant]} ${className}`}
       {...props}
     >
-      {/* Curved Hover Background (only for primary) */}
-      {variant === "primary" && (
+      {/* Curved Hover Background (for primary and accent) */}
+      {(variant === "primary" || variant === "accent") && (
         <span
           className="
             absolute
@@ -56,7 +56,7 @@ const Button: React.FC<ButtonProps> = ({
 
       {/* Button Content */}
       <span
-        className={`relative z-10 flex items-center gap-2 transition-colors duration-300 ${variant === "primary" ? "group-hover:text-[#304462]" : ""
+        className={`relative z-10 flex items-center gap-2 transition-colors duration-300 ${(variant === "primary" || variant === "accent") ? "group-hover:text-[#304462]" : ""
           }`}
       >
         {children}

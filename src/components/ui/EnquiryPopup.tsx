@@ -6,6 +6,7 @@ import PhoneInput from "./PhoneInput";
 import TimePicker from "./TimePicker";
 import DatePicker from "./DatePicker";
 import Toast from "./Toast";
+import SuccessAnimation from "./SuccessAnimation";
 
 interface EnquiryPopupProps {
     isOpen: boolean;
@@ -29,6 +30,7 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
     const [isVisible, setIsVisible] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [toastMessage, setToastMessage] = useState<{ text: string; type: "success" | "error" } | null>(null);
+    const [showSuccess, setShowSuccess] = useState(false);
 
     useEffect(() => {
         if (isOpen) {
@@ -129,9 +131,8 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
             const data = await response.json();
 
             if (response.ok) {
-                setToastMessage({ text: "Thank you! Your enquiry has been submitted successfully.", type: "success" });
+                setShowSuccess(true);
                 handleClear();
-                setTimeout(onClose, 2000);
             } else {
                 setToastMessage({ text: data.error || "Something went wrong. Please try again.", type: "error" });
             }
@@ -331,6 +332,14 @@ const EnquiryPopup = ({ isOpen, onClose }: EnquiryPopupProps) => {
                     />
                 )}
             </div>
+            <SuccessAnimation 
+                isOpen={showSuccess} 
+                message="Your enquiry has been submitted successfully." 
+                onClose={() => {
+                    setShowSuccess(false);
+                    onClose();
+                }} 
+            />
         </div>
     );
 };

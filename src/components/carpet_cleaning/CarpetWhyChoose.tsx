@@ -150,15 +150,14 @@ const CarpetWhyChoose = () => {
                     />
 
                     {/* Wavy Lines Decoration */}
-                    <div className="absolute inset-0 z-0 pointer-events-none flex justify-center items-center overflow-visible">
+                    <div className="absolute inset-0 z-0 pointer-events-none hidden md:flex justify-center items-center overflow-visible">
                         {/* Wavy Line Left */}
                         <img
                             src="/assets/images/carpet/Carpet_Why_1.png"
                             alt=""
                             data-aos="fade-right"
                             data-aos-duration="1200"
-                            className="absolute opacity-80 md:opacity-90 z-0
-                                w-[220%] max-w-none left-[-180%] top-[40%]
+                            className="absolute opacity-90 z-0
                                 md:w-[70%] md:max-w-[750px] md:left-[-10%] md:top-[50%]
                                 lg:w-[100%] lg:left-[-7%] lg:top-[50%]
                                 -translate-y-1/2 h-auto object-contain transition-all duration-500"
@@ -169,8 +168,7 @@ const CarpetWhyChoose = () => {
                             alt=""
                             data-aos="fade-left"
                             data-aos-duration="1200"
-                            className="absolute opacity-80 md:opacity-90 z-0
-                                w-[220%] max-w-none right-[-180%] top-[40%]
+                            className="absolute opacity-90 z-0
                                 md:w-[70%] md:max-w-[750px] md:right-[-10%] md:top-[50%]
                                 lg:w-[100%] lg:right-[-7%] lg:top-[50%]
                                 -translate-y-1/2 h-auto object-contain transition-all duration-500"

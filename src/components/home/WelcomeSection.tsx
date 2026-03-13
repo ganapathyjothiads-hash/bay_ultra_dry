@@ -1,9 +1,29 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Button from "../ui/Button";
 import { Check, Star } from "lucide-react";
+import { motion, useInView, useSpring, useTransform } from "framer-motion";
+
+const Counter = ({ value }: { value: number }) => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: "-50px" });
+    const spring = useSpring(0, { 
+        stiffness: 30, 
+        damping: 15,
+        restDelta: 0.001
+    });
+    const display = useTransform(spring, (current) => Math.round(current));
+
+    useEffect(() => {
+        if (isInView) {
+            spring.set(value);
+        }
+    }, [isInView, spring, value]);
+
+    return <motion.span ref={ref}>{display}</motion.span>;
+};
 
 const testimonials = [
     {
@@ -172,19 +192,31 @@ const WelcomeSection = () => {
                             </div>
 
                             {/* Experience Card */}
-                            <div className="bg-white border border-slate-100 p-6 pt-5 rounded-[16px] shadow-[0px_8px_24px_rgba(0,0,0,0.12)] flex flex-col justify-between gap-[26px] h-full">
+                            <div className="bg-white border border-slate-100 p-6 pt-5 rounded-[16px] shadow-[0px_8px_24px_rgba(0,0,0,0.12)] flex flex-col justify-between gap-[26px] h-full hover:shadow-[0px_12px_32px_rgba(0,0,0,0.16)] transition-shadow duration-500 group">
                                 <div>
                                     <div className="flex items-center gap-3 pb-2">
-                                        <span className="text-[32px] font-medium text-[#0f172a] leading-none">10+</span>
+                                        <div className="flex items-baseline">
+                                            <span className="text-[32px] font-bold text-[#0f172a] leading-none">
+                                                <Counter value={10} />
+                                            </span>
+                                            <span className="text-[22px] font-bold text-[#1A4299] ml-1">+</span>
+                                        </div>
                                         <p className="text-[12px] font-medium text-[#475569] leading-[1.3]">
                                             Years<br />Experience
                                         </p>
                                     </div>
-                                    <div className="h-[2px] w-full bg-slate-400"></div>
+                                    <div className="h-[2px] w-full bg-slate-200 overflow-hidden relative">
+                                        <motion.div 
+                                            initial={{ scaleX: 0 }}
+                                            whileInView={{ scaleX: 1 }}
+                                            transition={{ duration: 1.5, ease: "easeOut" }}
+                                            className="absolute inset-0 bg-[#FBBF24] origin-left"
+                                        />
+                                    </div>
                                 </div>
                                 <div className="flex flex-col gap-[6px]">
-                                    <h4 className="text-[12px] font-semibold text-[#0f172a] leading-tight">Fast Communication</h4>
-                                    <p className="text-[12px] text-[#475569] font-medium leading-[1.4]">
+                                    <h4 className="text-[12px] font-bold text-[#0f172a] leading-tight group-hover:text-[#1A4299] transition-colors">Fast Communication</h4>
+                                    <p className="text-[12px] text-[#475569] font-medium leading-[1.4] opacity-80">
                                         quick responses<br />and clear updates
                                     </p>
                                 </div>
@@ -192,7 +224,72 @@ const WelcomeSection = () => {
                         </div>
                     </div>
 
-                   
+                    {/* 5. Testimonial Card */}
+                    {/* <div
+                        data-aos="fade-left"
+                        data-aos-duration="1000"
+                        data-aos-delay="400"
+                        className="order-8 lg:order-none lg:col-span-4 p-8 rounded-[16px] relative overflow-hidden flex flex-col shadow-lg lg:mt-0"
+                        style={{ background: 'linear-gradient(241.26deg, #DAF1FF 28.79%, #FFCB71 98.22%)' }}
+                    >
+                        <div
+                            className="absolute bottom-0 left-0 w-full h-[25%] z-0"
+                            style={{ background: 'linear-gradient(91.57deg, #FFF8AA -7.72%, #C0E683 48.06%, #2B97FB 103.83%)' }}
+                        ></div>
+                        <div
+                            className="hidden lg:block absolute top-0 right-0 w-[20%] h-full z-0 bg-gradient-to-b from-transparent to-[#2B97FB]/50"
+                        ></div>
+
+                        <div className="absolute top-8 left-8 w-14 h-12 pointer-events-none select-none z-10 opacity-60">
+                            <Image
+                                src="/assets/images/quote.png"
+                                alt="Quote Icon"
+                                fill
+                                className="object-contain"
+                            />
+                        </div>
+
+                        <div className="absolute top-8 right-8 flex gap-2 z-20">
+                            {testimonials.map((_, idx) => (
+                                <button
+                                    key={idx}
+                                    onClick={() => setActiveTestimonial(idx)}
+                                    className={`w-3 h-3 rounded-full transition-all duration-300 ${activeTestimonial === idx ? "bg-[#1E40AF]" : "bg-[#94A3B8] hover:bg-[#64748B]"}`}
+                                    aria-label={`Go to slide ${idx + 1}`}
+                                />
+                            ))}
+                        </div>
+
+                        <div className="relative z-10 mt-16 flex-grow overflow-hidden">
+                            <div
+                                className="flex h-full transition-transform duration-500 ease-in-out"
+                                style={{ transform: `translateX(-${activeTestimonial * 100}%)` }}
+                            >
+                                {testimonials.map((testimonial, idx) => (
+                                    <div key={idx} className="w-full h-full flex-shrink-0 flex flex-col justify-between">
+                                        <p className="text-[15.5px] font-medium text-[#1E293B] leading-[1.6]">
+                                            {testimonial.text}
+                                        </p>
+
+                                        <div className="flex items-center gap-4 mt-20 pb-1">
+                                            <div className="relative w-[52px] h-[52px] rounded-full overflow-hidden shadow-sm border-2 border-white/50">
+                                                <Image
+                                                    src={testimonial.image}
+                                                    alt={testimonial.author}
+                                                    fill
+                                                    className="object-cover"
+                                                />
+                                            </div>
+                                            <div>
+                                                <h5 className="text-[17px] font-bold text-[#1E293B] leading-none mb-1.5">{testimonial.author}</h5>
+                                                <p className="text-[13.5px] font-medium text-[#334155]">{testimonial.role}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div> */}
 
                     <div
                         data-aos="fade-left"
@@ -254,7 +351,7 @@ const WelcomeSection = () => {
                         </div>
 
                         {/* Bottom Author Section */}
-                        <div className="flex items-center gap-4 px-8 py-6 bg-[linear-gradient(91.57deg,#FFF8AA_-7.72%,#C0E683_48.06%,#2B97FB_103.83%)] relative z-10">
+                        <div className="flex items-center gap-4 px-8 py-8 bg-[linear-gradient(91.57deg,#FFF8AA_-7.72%,#C0E683_48.06%,#2B97FB_103.83%)] relative z-10">
 
                             <div className="relative w-[54px] h-[54px] rounded-full overflow-hidden border-2 border-white shadow-md">
                                 <Image

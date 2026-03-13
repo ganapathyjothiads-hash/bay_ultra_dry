@@ -33,7 +33,7 @@ const ContactUsContent = () => {
             </header>
 
             {/* Merged Section: Hero + Info + Form */}
-            <div className="relative bg-white overflow-hidden pt-[100px]">
+            <div className="relative bg-white overflow-hidden">
                 {/* Decoration Layer */}
                 <div className="absolute inset-0 pointer-events-none">
                     <div className="relative max-w-[1300px] mx-auto h-full w-full">
@@ -65,17 +65,11 @@ const ContactUsContent = () => {
                         </div>
 
                         {/* Right S-Frame Decoration */}
-                        <div className="absolute bottom-[-2%] right-[-60%] md:right-[-22%] w-[150%] md:w-[37%] lg:w-[50%] z-0">
-                            <img
-                                src="/assets/images/upholsteryCleaning/Upholstery_SFrame2.png"
-                                alt=""
-                                className="w-full h-auto opacity-100"
-                            />
-                        </div>
+                        
 
                         {/* Color Glow - Green (Centered behind Cards area) */}
                         <div
-                            className="absolute z-[1] w-[400px] h-[400px] top-[15%] md:top-[25%] left-[50%] md:w-[500px] md:h-[500px] md:left-[60%] -translate-x-1/2 bg-[#00FF26] opacity-[35%] md:opacity-40 blur-[120px] md:blur-[150px] rounded-full"
+                            className="absolute z-[1] w-[400px] h-[400px] top-[35%] md:top-[40%] left-[50%] md:left-[60%] -translate-x-1/2 bg-[#00FF26] opacity-[35%] md:opacity-40 blur-[120px] md:blur-[150px] rounded-full"
                         />
 
                         {/* Color Glow - Blue */}
