@@ -49,7 +49,7 @@ const AboutUsHero: React.FC = () => {
                 aria-hidden
                 data-aos="fade-right"
                 data-aos-duration="1200"
-                className="absolute top-[80px] lg:top-0 min-w-[430px] lg:min-w-none -left-[2%] w-[100%] xl:w-[93%] h-[75%] lg:h-[80%] xl:object-cover z-[10] pointer-events-none opacity-100"
+                className="absolute top-[-20px] lg:top-0 -left-[45%] lg:-left-[2%] w-[190%] max-w-none lg:max-w-full lg:w-[100%] xl:w-[93%] h-[95%] lg:h-[80%] object-fill lg:object-fill xl:object-cover z-[10] pointer-events-none opacity-100"
             />
 
             {/* Right side 'About Us' vertical text */}
@@ -99,11 +99,11 @@ const AboutUsHero: React.FC = () => {
             {/* textual content */}
             <div className="absolute inset-x-0 top-0 h-full z-[30] flex flex-col justify-center px-6 md:px-12 max-w-[1440px] mx-auto pb-20 lg:pb-32 lg:mt-[-5%] ">
                 <h1
-                    className="font-display text-[24px] md:text-[45px] lg:text-[50px] xl:text-[60px] font-medium leading-[1.3] mb-8 tracking-[-0.03em] max-w-[80%] sm:max-w-[90%] lg:max-w-[80%] xl:max-w-[1100px] text-[#304462]"
+                    className="font-display text-[26px] md:text-[45px] lg:text-[50px] xl:text-[60px] font-medium leading-[1.2] lg:leading-[1.3] mb-5 tracking-[-0.03em] max-w-[90%] sm:max-w-[90%] lg:max-w-[80%] xl:max-w-[1100px] text-[#304462]"
                     data-aos="fade-up"
                     data-aos-delay="200"
                 >
-                    About <img src="/assets/images/star 1.png" alt="star" className="inline-block w-[35px] md:w-[45px] lg:w-[45px] h-auto align-middle mx-1 lg:mx-2 -mt-2 lg:-mt-3" /> <span className="text-[#1C4195]">Bay Ultra Dry,</span> Your Local <br className="hidden lg:block" />
+                    About <img src="/assets/images/star 1.png" alt="star" className="inline-block w-[26px] md:w-[45px] lg:w-[45px] h-auto align-middle mx-1 lg:mx-2 -mt-2 md:-mt-3" /> <span className="text-[#1C4195]">Bay Ultra Dry,</span><br className="lg:hidden" /> Your Local <br className="hidden lg:block" />
                     Tauranga Cleaning Experts
                 </h1>
 

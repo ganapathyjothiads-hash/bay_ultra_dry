@@ -34,7 +34,7 @@ const ServicesSection = () => {
     }, [isHovered]);
 
     return (
-        <section className="relative w-full bg-[#FFF1A4] overflow-hidden py-12 md:py-24 px-6 md:px-12 lg:px-20 min-h-screen flex items-center">
+        <section className="relative w-full bg-[#FFF1A4] overflow-hidden py-12 md:py-24 md:px-12 lg:px-20 min-h-screen flex items-center">
 
             {/* Background Wavy Lines */}
             <div className="absolute top-0 right-0 w-[50%] h-[400px] md:w-[43%] md:h-[600px] opacity-80 pointer-events-none">
@@ -136,11 +136,11 @@ const ServicesSection = () => {
 
                                     </div>
 
-                                    <h3 className="text-[16px] md:text-[26px] font-bold text-[#1A4299] mb-2 md:mb-4 pr-16 tracking-tight leading-tight mt-1">
+                                    <h3 className="text-[19px] md:text-[26px] font-bold text-[#1A4299] mb-2 md:mb-4 pr-16 tracking-tight leading-tight mt-1">
                                         {service.title}
                                     </h3>
 
-                                    <p className="text-[#2C2C2C] leading-[1.55] text-[11px] md:text-[13px] font-medium">
+                                    <p className="text-[#2C2C2C] leading-[1.55] text-[15px] md:text-[13px] font-medium">
                                         {service.description}
                                     </p>
 

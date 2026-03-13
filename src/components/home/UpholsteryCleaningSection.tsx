@@ -59,9 +59,9 @@ const UpholsteryCleaningSection = () => {
 
   return (
     <section
-      className="w-full overflow-hidden relative lg:bg-[linear-gradient(90deg,#44A4F6_0%,#C3E985_45%,#FBF0A6_100%)] bg-[linear-gradient(180deg,#44A4F6_0%,#C3E985_45%,#FBF0A6_100%)]"
+      className="w-full overflow-hidden relative bg-[linear-gradient(90deg,#FBF0A6_0%,#C3E985_45%,#44A4F6_100%)] lg:bg-[linear-gradient(90deg,#44A4F6_0%,#C3E985_45%,#FBF0A6_100%)]"
     >
-      <div className="w-full flex flex-col lg:flex-row items-stretch lg:items-center pt-0 pb-6 lg:py-16">
+      <div className="w-full flex flex-col lg:flex-row items-stretch lg:items-center pt-0 pb-8 lg:py-16">
 
         {/* VIDEO SIDE */}
         <motion.div
@@ -117,7 +117,7 @@ const UpholsteryCleaningSection = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
-          className="w-full lg:w-[54%] flex flex-col justify-center px-6 md:px-12 lg:px-[60px] xl:px-[80px] pt-6 lg:pt-0"
+          className="w-full lg:w-[54%] flex flex-col justify-center px-4 md:px-12 lg:px-[60px] xl:px-[80px] pt-8 lg:pt-0"
         >
           <div>
 
@@ -131,14 +131,14 @@ const UpholsteryCleaningSection = () => {
 
                 <motion.p
                   variants={fadeUp}
-                  className="text-[#1A1A1A] text-[14px] md:text-[13px] font-medium leading-[1.6] max-w-[700px]"
+                  className="text-[#1A1A1A] text-[14px] md:text-[15px] font-medium leading-[1.6] max-w-[700px]"
                 >
                   Breathe new life into your furniture. Our professional upholstery cleaning revives your favourite pieces, leaving them fresh, clean, and free from allergens and odours.
                 </motion.p>
 
                 <motion.p
                   variants={fadeUp}
-                  className="text-[#1A1A1A] text-[14px] md:text-[13px] font-medium leading-[1.6] max-w-[700px]"
+                  className="text-[#1A1A1A] text-[14px] md:text-[15px] font-medium leading-[1.6] max-w-[700px]"
                 >
                   Using fabric-safe, powerful products, we deliver a deep clean that protects your investment and your well-being.
                 </motion.p>

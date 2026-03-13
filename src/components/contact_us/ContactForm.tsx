@@ -127,12 +127,12 @@ const ContactForm = () => {
     };
 
     return (
-        <section className="relative w-full pt-0 pb-[240px] md:py-12 px-6 overflow-x-hidden">
+        <section className="relative w-full pt-0 pb-[240px] md:py-12 px-6 overflow-hidden">
             {/* Decoration Layer - Locked to Content Max-Width */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="relative max-w-[1300px] mx-auto h-full w-full">
                     {/* Water Splash Decoration - Center Right */}
-                    <div className="absolute w-[30%] md:w-[12%] top-[14%] md:top-[35%] lg:top-[30%] right-[2%] md:right-[-30px] z-[2]">
+                    <div className="absolute w-[30%] md:w-[12%] top-[12%] md:top-[35%] lg:top-[30%] right-[2%] md:right-[-30px] z-[2]">
                         <img
                             src="/assets/images/contact_us/Water_Splash_top.png"
                             alt=""
@@ -150,7 +150,7 @@ const ContactForm = () => {
                     </div>
 
                     {/* Left S-Frame Decoration */}
-                    <div className="absolute top-[14%]  md:top-[1%] lg:top-[1%] left-[-18%] md:left-[-22%] w-[75%] md:w-[37%] lg:w-[50%] z-0">
+                    <div className="absolute top-[10%]  md:top-[1%] lg:top-[1%] left-[-129%] md:left-[-22%] w-[171%] md:w-[37%] lg:w-[50%] z-0">
                         <img
                             src="/assets/images/upholsteryCleaning/Upholstery_SFrame.png"
                             alt=""
@@ -180,17 +180,17 @@ const ContactForm = () => {
                     </p>
 
                     <h2
-                        className="text-[#304462] font-display font-medium md:font-normal leading-tight text-[24px] md:text-[36px] lg:text-[42px] mb-2 md:mb-4"
+                        className="text-[#304462] font-display font-medium md:font-normal leading-tight text-[18px] md:text-[36px] lg:text-[42px] mb-2 md:mb-4"
                         data-aos="fade-up"
                     >
                         Tell Us What You Need!
                     </h2>
-                    <p className="text-[#1D1D1D] font-sans text-[10px] md:text-[12px] px-4 md:px-8 mb-4 md:mb-8" data-aos="fade-up" data-aos-delay="100">
+                    <p className="text-[#1D1D1D] font-sans text-[12px] md:text-[12px] px-4 md:px-8 mb-4 md:mb-8" data-aos="fade-up" data-aos-delay="100">
                         Fill out the form below and our team will <br className="block md:hidden" /> reach out within <span className="text-[#005D38] font-medium">24 hours</span>.
                     </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="max-w-[1000px] mx-auto bg-transparent mt-[0px] sm:mt-[60px] md:mt-0 relative z-10">
+                <form onSubmit={handleSubmit} className="max-w-[1000px] mx-auto bg-transparent mb-[10px] sm:mt-[60px] md:mt-0 relative z-10">
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-x-4 sm:gap-x-4 md:gap-x-6 gap-y-6">
                         {/* Full Name */}
                         <div className="flex flex-col gap-3">
@@ -303,7 +303,7 @@ const ContactForm = () => {
                     </div>
 
                     {/* Footer Row: Checkbox and Buttons */}
-                    <div className="mt-8 flex flex-col sm:flex-col md:flex-row items-start md:items-center justify-between gap-6 sm:gap-8 md:gap-6">
+                    <div className="mt-5 md:mt-8 flex flex-col sm:flex-col md:flex-row items-start md:items-center justify-between gap-5 sm:gap-8 md:gap-6">
                         <div className="flex items-center gap-4">
                             <div className="relative flex items-center">
                                 <input
@@ -315,12 +315,12 @@ const ContactForm = () => {
                                     className="w-3 h-3 md:w-4 md:h-4 rounded border-[#D1D5DB] text-[#1e3a8a] focus:ring-[#1e3a8a] cursor-pointer"
                                 />
                             </div>
-                            <label htmlFor="confirmed" className="text-[#1D1D1D] text-[13px] sm:text-[14px] font-sans font-medium cursor-pointer opacity-90">
+                            <label htmlFor="confirmed" className="text-[#1D1D1D] text-[14px] sm:text-[14px] font-sans font-medium cursor-pointer opacity-100">
                                 I confirm that all the information provided is accurate and complete.
                             </label>
                         </div>
 
-                        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 md:gap-6 w-full md:w-auto mt-6 md:mt-0">
+                        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 md:gap-6 w-full md:w-auto mt-0 md:mt-0">
                             <ActionButton
                                 type="button"
                                 onClick={handleClear}
