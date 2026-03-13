@@ -24,7 +24,11 @@ const UpholsteryWhyChoose = () => {
     return (
         <section className="w-full flex flex-col md:flex-row min-h-[600px] bg-white overflow-hidden">
             {/* Left Image Section */}
-            <div className="w-full md:w-1/2 relative min-h-[500px] lg:min-h-[700px]">
+            <div 
+                className="w-full md:w-1/2 relative min-h-[500px] lg:min-h-[700px]"
+                data-aos="fade-right"
+                data-aos-duration="1000"
+            >
                 <img
                     src="/assets/images/upholsteryCleaning/Upholstery_Why.png"
                     alt="Handshake - Trusted Service"
@@ -64,7 +68,11 @@ const UpholsteryWhyChoose = () => {
                         ))}
                     </div>
 
-                    <p className=" md:mt-4 text-[#304462] text-[15px] md:text-[15px] italic opacity-90 max-w-[500px] leading-relaxed">
+                    <p 
+                        className=" md:mt-4 text-[#304462] text-[15px] md:text-[15px] italic opacity-90 max-w-[500px] leading-relaxed"
+                        data-aos="fade-up"
+                        data-aos-delay="600"
+                    >
                         "From family furniture to full commercial seating — we've got the tools and know-how to get it clean."
                     </p>
                 </div>

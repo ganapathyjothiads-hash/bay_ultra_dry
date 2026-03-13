@@ -5,6 +5,7 @@ import Image from "next/image";
 import Button from "../ui/Button";
 import { Check, Star } from "lucide-react";
 import { motion, useInView, useSpring, useTransform } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 const Counter = ({ value }: { value: number }) => {
     const ref = useRef(null);
@@ -50,6 +51,7 @@ const testimonials = [
 ];
 
 const WelcomeSection = () => {
+    const router = useRouter();
     const [activeTestimonial, setActiveTestimonial] = useState(0);
 
     useEffect(() => {
@@ -121,7 +123,9 @@ const WelcomeSection = () => {
                         <p className="text-[14px] md:text-[15px] leading-[1.3] text-[#1e293b] mb-6">
                             <span className="font-bold">Bay Ultra Dry</span> is committed to exceptional results, clear communication, and a rapid response. Whether you need a deep carpet clean, an upholstery refresh, or emergency flood restoration, we deliver a thorough job with minimal disruption and the utmost care.
                         </p>
-                        <Button>Contact Us</Button>
+                        <Button variant="primary" onClick={() => router.push('/contact')}>
+                            Contact Us
+                        </Button>
                     </div>
 
                     {/* 1. Owners Image */}

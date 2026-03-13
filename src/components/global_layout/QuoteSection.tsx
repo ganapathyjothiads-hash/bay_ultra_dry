@@ -121,10 +121,12 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
         : "linear-gradient(239.87deg, #B2DAFF 4.79%, #FFFFFF 140.86%)";
 
     return (
-        <section className="relative w-full py-12 lg:py-20 overflow-hidden"
+        <section 
+            className="relative w-full py-12 lg:py-20 overflow-hidden bg-[linear-gradient(90deg,#FFFFFF_0%,#F5A51C_100%)] lg:[background:var(--desktop-bg)]"
             style={{
-                background: backgroundStyle,
-            }}>
+                "--desktop-bg": backgroundStyle,
+            } as React.CSSProperties}
+        >
             {/* Background Wavy Lines - Top Right */}
             <div className="absolute top-[1%] right-[-88%] lg:top-[3%] lg:right-[0%] w-[600px] lg:w-[720px] h-[300px] lg:h-[400px]  pointer-events-none translate-x-1/4 -translate-y-1/4">
                 <Image
@@ -155,14 +157,14 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
                         className="flex flex-col space-y-8 lg:sticky"
                     >
                         <div className="space-y-6">
-                            <h2 className="font-display text-[32px] md:text-[48px] font-regular text-[#304462] leading-tight tracking-tight">
+                            <h2 className="font-instrument text-[25px] md:text-[48px] font-medium text-[#000000] leading-tight tracking-tight">
                                 Request A Fast Quote
                             </h2>
                             <div className="space-y-5 max-w-[600px]">
-                                <p className="text-[14px] md:text-[17px] text-[#1D1D1D] font-medium leading-[1.6]">
+                                <p className="font-nunito text-[14px] md:text-[17px] text-[#1D1D1D] font-medium leading-[1.6]">
                                     Need urgent flood assistance or want to refresh your carpets and upholstery? Simply fill out the form below — our team will get back to you within the hour.
                                 </p>
-                                <p className="text-[14px] md:text-[17px] text-[#1D1D1D] font-medium leading-[1.6]">
+                                <p className="font-nunito text-[14px] md:text-[17px] text-[#1D1D1D] font-medium leading-[1.6]">
                                     For urgent flood emergencies, please call us directly at
                                 </p>
                             </div>
@@ -176,7 +178,7 @@ const QuoteSection = ({ variant = "home" }: QuoteSectionProps) => {
                                         className="object-contain" // Or object-cover if it matches better
                                     />
                                 </div>
-                                <span className="font-nunito text-[22px] md:text-[26px] font-medium text-[#1D1D1D] tracking-tight">07 571 2279</span>
+                                <a href="tel:075712279" className="font-nunito text-[22px] md:text-[26px] font-medium text-[#1D1D1D] tracking-tight hover:underline transition-all">07 571 2279</a>
                             </div>
                         </div>
 

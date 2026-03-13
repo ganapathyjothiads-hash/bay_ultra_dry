@@ -24,13 +24,22 @@ const UpholsteryHero = () => {
                     />
                 </div>
                 {/* Hero Text Content */}
-                <div className="relative z-[10] max-w-[1440px] mx-auto px-6 md:px-16 lg:px-20 w-full flex flex-col items-center md:items-start pt-[40%] pb-[55%] sm:pt-[20%] sm:pb-[30%] lg:pt-0 lg:pb-0">
+                <div className="relative z-[10] max-w-[1440px] mx-auto px-6 md:px-16 lg:px-20 w-full flex flex-col items-center md:items-start pt-[40%] pb-[50%] sm:pt-[20%] sm:pb-[30%] lg:pt-0 lg:pb-0">
                     <div className="w-full text-left">
-                        <h1 className="text-white font-medium text-[25px] sm:text-[38px] md:text-[42px] lg:text-[60px] leading-[1.2] md:leading-[1.2] mb-5 lg:mb-8 tracking-tight ">
+                        <h1 
+                            data-aos="fade-up"
+                            data-aos-duration="1000"
+                            className="text-white font-medium text-[27px] sm:text-[38px] md:text-[42px] lg:text-[60px] leading-[1.2] md:leading-[1.2] mb-5 lg:mb-8 tracking-tight "
+                        >
                             Professional Upholstery Cleaning <br className="hidden md:block" />
                             In Tauranga Sofas, Chairs & More
                         </h1>
-                        <p className="text-[E8E8E8] text-[17px] font-medium max-w-[875px] leading-relaxed opacity-90 mx-auto md:mx-0">
+                        <p 
+                            data-aos="fade-up"
+                            data-aos-duration="1000"
+                            data-aos-delay="200"
+                            className="text-[E8E8E8] text-[17px] md:text-[17px] font-medium max-w-[875px] leading-relaxed opacity-90 mx-auto md:mx-0"
+                        >
                             Breathe new life into your furniture for a fresher, cleaner, and allergen-free home.
                         </p>
                     </div>

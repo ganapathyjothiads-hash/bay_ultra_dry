@@ -69,7 +69,7 @@ const ContactUsContent = () => {
 
                         {/* Color Glow - Green (Centered behind Cards area) */}
                         <div
-                            className="absolute z-[1] w-[400px] h-[400px] top-[35%] md:top-[40%] left-[50%] md:left-[60%] -translate-x-1/2 bg-[#00FF26] opacity-[35%] md:opacity-40 blur-[120px] md:blur-[150px] rounded-full"
+                            className="absolute z-[1] w-[200px] md:w-[400px] h-[300px] md:h-[400px] top-[35%] md:top-[40%] left-[70%] md:left-[60%] -translate-x-1/2 bg-[#00FF26] opacity-[40%] md:opacity-40 blur-[120px] md:blur-[150px] rounded-full"
                         />
 
                         {/* Color Glow - Blue */}

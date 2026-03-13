@@ -122,7 +122,7 @@ const AboutOurPromise: React.FC = () => {
                             data-aos="fade-right"
                             data-aos-delay="500"
                         >
-                            <div className="relative w-[115px] h-[48px]">
+                            <div className="relative w-[115px] h-[48px] left-[-5px]">
                                 <Image
                                     src="/assets/images/About_Review.png"
                                     alt="Customers"

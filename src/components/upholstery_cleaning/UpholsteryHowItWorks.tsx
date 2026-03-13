@@ -29,7 +29,11 @@ const UpholsteryHowItWorks = () => {
     return (
         <section className="w-full py-10 md:py-20 bg-white">
             <div className="max-w-[1440px] mx-auto px-4 md:px-10 lg:px-20">
-                <h2 className="text-[#304462] font-display font-regular text-[26px] md:text-[48px] text-center mb-6 md:mb-12">
+                <h2 
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                    className="text-[#304462] font-display font-regular text-[26px] md:text-[48px] text-center mb-6 md:mb-12"
+                >
                     How It Works
                 </h2>
 

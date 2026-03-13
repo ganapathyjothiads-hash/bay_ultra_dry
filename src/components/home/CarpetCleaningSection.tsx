@@ -104,7 +104,7 @@ const CarpetCleaningSection = () => {
                     <div>
 
                         <motion.div variants={fadeUp} className="mb-8 lg:mb-10">
-                            <h2 className="text-[#304462] text-[36px] md:text-[54px] lg:text-[49px] font-[400]  leading-[1.05] mb-3 lg:mb-4 tracking-tighter">
+                            <h2 className="text-[#304462] text-[25px] md:text-[54px] lg:text-[49px] font-[400]  leading-[1.05] mb-3 lg:mb-4 tracking-tighter">
                                 Carpet Cleaning
                             </h2>
 

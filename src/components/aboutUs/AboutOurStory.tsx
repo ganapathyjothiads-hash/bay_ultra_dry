@@ -4,7 +4,9 @@ import React from "react";
 import Image from "next/image";
 import { Star, ArrowUpRight } from "lucide-react";
 import Button from "../ui/Button";
+import { useRouter } from "next/navigation";
 const AboutOurStory: React.FC = () => {
+    const router = useRouter();
     return (
         <section className="relative w-full bg-white pb-10 lg:pb-24 items-center flex flex-col pt-10 lg:pt-0">
             {/* Transitional Row: Disk and Cards bridging the sections */}
@@ -64,7 +66,7 @@ const AboutOurStory: React.FC = () => {
                             data-aos="fade-up"
                             data-aos-delay="300"
                         >
-                            <Image src="/assets/images/IICR.png" alt="IICRC" fill className="object-contain" />
+                            <Image src="/assets/images/IICRC.png" alt="IICRC" fill className="object-contain w-[160%]" />
                         </div>
                     </div>
                 </div>
@@ -92,7 +94,7 @@ const AboutOurStory: React.FC = () => {
                             Our Story
                         </h2>
 
-                        <div className="text-[14px] leading-[1.8] space-y-[24px] font-[400] text-[#2C2C2C] tracking-normal mb-8 lg:max-w-[620px]">
+                        <div className="text-[17px] leading-[1.8] space-y-[24px] font-[400] text-[#2C2C2C] tracking-normal mb-8 lg:max-w-[620px]">
                             <p>
                                 Since 2022, our mission at Bay Ultra Dry has been straightforward—to set the standard for reliable, high-quality cleaning and restoration in Tauranga.
                             </p>
@@ -104,8 +106,8 @@ const AboutOurStory: React.FC = () => {
                             </p>
                         </div>
 
-                        <div>
-                            <Button variant="primary">
+                        <div className="flex justify-center lg:justify-start">
+                            <Button variant="primary" onClick={() => router.push('/contact')}>
                                 Contact Us
                             </Button>
                         </div>
@@ -113,7 +115,7 @@ const AboutOurStory: React.FC = () => {
 
                     {/* This quote is pushed to the absolute bottom of the 680px box by justify-between */}
                     <div
-                        className="text-[#0082FB] font-[600] italic text-[16px] lg:text-[16px] leading-[1.6] max-w-[550px] mx-auto lg:mt-0 mt-10"
+                        className="font-inter text-[#0082FB] font-semibold italic text-[16px] lg:text-[16px] leading-[1.6] max-w-[550px] mx-auto lg:mt-0 mt-10"
                         data-aos="fade-up"
                         data-aos-delay="200"
                     >

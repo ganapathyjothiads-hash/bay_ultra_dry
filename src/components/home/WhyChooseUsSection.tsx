@@ -163,7 +163,7 @@ const WhyChooseUsSection = () => {
             </section>
 
             {/* ========== MOBILE LAYOUT (below lg) ========== */}
-            <section className="lg:hidden w-full bg-white flex flex-col items-center py-14 px-5 gap-5">
+            <section className="lg:hidden w-full bg-white flex flex-col items-center py-14 px-5 gap-5 overflow-hidden">
 
                 {/* Title */}
                 <h2
@@ -175,47 +175,20 @@ const WhyChooseUsSection = () => {
                 </h2>
 
                 {/* Card 1: Trusted By */}
-                <div
-                    data-aos="fade-up"
-                    data-aos-duration="800"
-                    className="w-full max-w-[320px] bg-white px-6 py-5 rounded-[14px] shadow-[0_4px_20px_rgba(0,0,0,0.07)] border border-[#f1f5f9] flex flex-col text-left"
-                >
-                    <span className="text-[#64748b] text-[12px] font-medium leading-none">Trusted by,</span>
-                    <div className="flex items-baseline gap-1 mt-2 mb-1">
-                        <h3 className="text-[44px] font-bold text-[#0f172a] leading-none tracking-tight">1000</h3>
-                        <span className="text-[22px] font-semibold text-[#0f172a] leading-none pb-1">+</span>
-                    </div>
-                    <p className="text-[#64748b] text-[12px] font-medium leading-none">of locals across Tauranga.</p>
+                <div data-aos="fade-up" data-aos-duration="800" className="relative w-full max-w-[320px] h-[160px]">
+                    <Image src="/assets/images/1000++.png" alt="Trusted by 1000+ locals" fill className="object-contain" />
                 </div>
 
                 {/* Card 2: Google */}
-                <div
-                    data-aos="fade-up"
-                    data-aos-duration="800"
-                    data-aos-delay="100"
-                    className="w-full max-w-[320px] bg-white px-6 py-5 rounded-[14px] shadow-[0_4px_20px_rgba(0,0,0,0.07)] border border-[#f1f5f9] flex flex-col items-center gap-3"
-                >
-                    <div className="flex gap-1">
-                        {[1, 2, 3, 4, 5].map((s) => (
-                            <Star key={s} size={15} fill="#fbbf24" color="#fbbf24" strokeWidth={0} />
-                        ))}
-                    </div>
-                    <span className="text-[38px] font-bold tracking-tighter inline-flex items-center leading-none">
-                        <span className="text-[#4285F4]">G</span>
-                        <span className="text-[#EA4335]">o</span>
-                        <span className="text-[#FBBC05]">o</span>
-                        <span className="text-[#4285F4]">g</span>
-                        <span className="text-[#34A853]">l</span>
-                        <span className="text-[#EA4335]">e</span>
-                    </span>
-                    <p className="text-[#0f172a] text-[12px] font-semibold leading-tight text-center">Fully Insured &amp; Safety Certified</p>
+                <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" className="relative w-full max-w-[320px] h-[160px]">
+                    <Image src="/assets/images/google2.png" alt="Google Certified" fill className="object-contain" />
                 </div>
 
                 {/* Specialist Image — Mobile */}
                 <div
                     data-aos="fade-up"
                     data-aos-duration="1000"
-                    className="relative w-full max-w-[320px] flex justify-center"
+                    className="relative w-full max-w-[320px] flex justify-center py-4"
                 >
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[190%] aspect-square z-0 pointer-events-none opacity-90">
                         <Image
@@ -226,7 +199,7 @@ const WhyChooseUsSection = () => {
                         />
                     </div>
                     <Image
-                        src="/assets/images/WhyChoose.png"
+                        src="/assets/images/Why_Choose.png"
                         alt="Professional Cleaning Specialist"
                         width={320}
                         height={360}
@@ -236,69 +209,23 @@ const WhyChooseUsSection = () => {
                 </div>
 
                 {/* Card 3: Fast Communication */}
-                <div
-                    data-aos="fade-up"
-                    data-aos-duration="800"
-                    className="w-full max-w-[320px] bg-white px-6 py-5 rounded-[14px] shadow-[0_4px_20px_rgba(0,0,0,0.07)] border border-[#f1f5f9] flex flex-col gap-3"
-                >
-                    <div className="w-10 h-10 relative">
-                        <Image src="/assets/icons/bandwidth 1.png" alt="" fill className="object-contain" />
-                    </div>
-                    <div className="space-y-1">
-                        <h4 className="text-[16px] font-bold text-[#0f172a] leading-tight">Fast Communication</h4>
-                        <p className="text-[13px] text-[#64748b] font-medium leading-snug">Quick responses and clear updates</p>
-                    </div>
+                <div data-aos="fade-up" data-aos-duration="800" className="relative w-full max-w-[320px] h-[160px] top-[-46px]">
+                    <Image src="/assets/images/fast_com.png" alt="Fast Communication" fill className="object-contain" />
                 </div>
 
                 {/* Card 4: IICRC */}
-                <div
-                    data-aos="fade-up"
-                    data-aos-duration="800"
-                    data-aos-delay="100"
-                    className="w-full max-w-[320px] bg-white px-6 py-5 rounded-[14px] shadow-[0_4px_20px_rgba(0,0,0,0.07)] border border-[#f1f5f9] flex flex-col gap-3"
-                >
-                    <div className="flex items-center gap-2">
-                        <div className="w-9 h-9 relative shrink-0">
-                            <Image src="/assets/icons/image 2.png" alt="" fill className="object-contain" />
-                        </div>
-                        <span className="font-bold text-[14px] text-[#0f172a] tracking-tight">IICRC</span>
-                    </div>
-                    <div className="space-y-1">
-                        <h4 className="text-[16px] font-bold text-[#0f172a] leading-snug">Fully Insured &amp; Safety Certified</h4>
-                        <p className="text-[13px] text-[#64748b] font-medium leading-tight">IICRC Certified</p>
-                    </div>
+                <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" className="relative w-full max-w-[320px] h-[160px]">
+                    <Image src="/assets/images/IICRC.png" alt="IICRC Certified" fill className="object-contain" />
                 </div>
 
                 {/* Card 5: Locally Owned */}
-                <div
-                    data-aos="fade-up"
-                    data-aos-duration="800"
-                    data-aos-delay="200"
-                    className="w-full max-w-[320px] bg-white px-6 py-5 rounded-[14px] shadow-[0_4px_20px_rgba(0,0,0,0.07)] border border-[#f1f5f9] flex flex-col gap-3"
-                >
-                    <div className="w-9 h-9 relative">
-                        <Image src="/assets/icons/place 1.png" alt="" fill className="object-contain" />
-                    </div>
-                    <div className="space-y-1">
-                        <h4 className="text-[16px] font-bold text-[#0f172a] leading-tight">Locally Owned</h4>
-                        <p className="text-[13px] text-[#64748b] font-medium leading-snug">A Tauranga business you can count on</p>
-                    </div>
+                <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" className="relative w-full max-w-[320px] h-[160px]">
+                    <Image src="/assets/images/locally.png" alt="Locally Owned" fill className="object-contain" />
                 </div>
 
                 {/* Card 6: Flexible Scheduling */}
-                <div
-                    data-aos="fade-up"
-                    data-aos-duration="800"
-                    data-aos-delay="300"
-                    className="w-full max-w-[320px] bg-white px-6 py-5 rounded-[14px] shadow-[0_4px_20px_rgba(0,0,0,0.07)] border border-[#f1f5f9] flex flex-col gap-3 mb-6"
-                >
-                    <div className="w-9 h-9 relative">
-                        <Image src="/assets/icons/calendar 1.png" alt="" fill className="object-contain" />
-                    </div>
-                    <div className="space-y-1">
-                        <h4 className="text-[16px] font-bold text-[#0f172a] leading-tight">Flexible Scheduling</h4>
-                        <p className="text-[13px] text-[#64748b] font-medium leading-snug">Days, Nights, Weekends, and Holidays</p>
-                    </div>
+                <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" className="relative w-full max-w-[320px] h-[160px] mb-6">
+                    <Image src="/assets/images/flexible.png" alt="Flexible Scheduling" fill className="object-contain" />
                 </div>
 
             </section>
